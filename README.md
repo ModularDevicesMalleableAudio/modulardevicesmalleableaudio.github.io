@@ -5,10 +5,10 @@ Source for the Modular Devices / Malleable Audio site:
 
 ## How it deploys
 
-GitHub Pages builds and publishes on every push to `main` — Settings →
-Pages is set to "Deploy from a branch", `main` at `/` (root). There is no
-CI workflow: **a push to `main` is a deploy**, normally live inside a
-minute. Build results appear in the Actions tab as `pages-build-deployment`.
+GitHub Pages builds and publishes on every push to `main` via the `pages`
+workflow in `.github/workflows/pages.yml` — Settings → Pages is set to
+"GitHub Actions". **A push to `main` is a deploy**, normally live inside a
+minute; the run appears in the Actions tab as `pages`.
 
 This is a *user* Pages site, so it is served from the domain root. It used
 to be a project site at `/mdma/`; the repo was renamed to move it to the

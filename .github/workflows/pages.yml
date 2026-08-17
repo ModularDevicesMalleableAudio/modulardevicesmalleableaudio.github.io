@@ -1,0 +1,67 @@
+name: pages
+
+# Builds the site with the same github-pages gem environment the legacy branch
+# builder used (actions/jekyll-build-pages), so switching to Actions changes who
+# runs the build and nothing about how it is built.
+#
+# baseurl/url are taken from the live Pages deployment rather than from the
+# committed _config.yml, so the build is correct wherever the site is served
+# from. Renaming the repo or adding a custom domain needs no commit here.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve Pages address
+        id: pages
+        uses: actions/configure-pages@v5
+
+      - name: Pin baseurl and url to the Pages deployment
+        run: |
+          set -euo pipefail
+          # _config.yml is CRLF with no trailing newline, so the appended keys
+          # must start on a fresh line or they land inside header_pages.
+          sed -i -e '/^baseurl:/d' -e '/^url:/d' _config.yml
+          printf '\nbaseurl: "%s"\nurl: "%s"\n' \
+            '${{ steps.pages.outputs.base_path }}' \
+            '${{ steps.pages.outputs.origin }}' >> _config.yml
+          echo "--- effective address config:"
+          grep -nE '^(baseurl|url):' _config.yml
+          # fail loudly rather than building a site with a mangled config
+          grep -qE '^baseurl:' _config.yml
+          grep -qE '^url:' _config.yml
+          grep -qE '^  - repos\.md' _config.yml
+
+      - name: Build with Jekyll
+        uses: actions/jekyll-build-pages@v1
+        with:
+          source: ./
+          destination: ./_site
+
+      - uses: actions/upload-pages-artifact@v3
+
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
