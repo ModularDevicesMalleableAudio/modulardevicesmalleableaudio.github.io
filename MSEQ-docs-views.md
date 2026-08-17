@@ -25,7 +25,7 @@ Finally, on the right hand side of the right hand launchpad are the buttons that
 All of this, and the MSEQ is _multiplayer too_ (because jamming on your own isn't as much fun!). Each player has their own view into the sequences being played onto the MSEQ, and can edit or embellish the sequences in real time, or work on different sequences concurrently. This is what we think makes our sequencer special. 
 
 # Launchcontrol global controls
-> Before we get into it any further, a note on setup... as described in the [hardware setup section,](/mdma/documentation/MSEQ/setup) each of the two launchcontrols is paired with two launchpad MkIIs (LP). In this guide we assume when describing the operation of controls that the _relevant_ launchcontrol or launchpad means you are using the device that is supposed to be paired to the device in question.
+> Before we get into it any further, a note on setup... as described in the [hardware setup section,]({{ '/documentation/MSEQ/setup' | relative_url }}) each of the two launchcontrols is paired with two launchpad MkIIs (LP). In this guide we assume when describing the operation of controls that the _relevant_ launchcontrol or launchpad means you are using the device that is supposed to be paired to the device in question.
 
 ## LC Shift, mute, solo, & record arm buttons
 There are 4 buttons on the right of the launch control (LC) that are global, in that they will consistently have the same behaviour independent of which user view you are in. These are used as modifiers for inputting notes, for interacting with the row mute buttons (see [below](#mutes)), and for interacting with the buttons on the launchcontrol underneath the faders (see [below](#lc-bottom-buttons))
@@ -396,7 +396,7 @@ This default view is the equivalent view to the note-input view for the synthesi
 To avoid confusion each drum sound has a different colour mute light as shown in the table & images below and there is a status light on the 5th channel of the relevant launch control which lights orange when in the alternate hats/cymbal view (see above images).
 
 <div class="centre_img" align="center">
-    <img src="/mdma/assets/drummutes.jpeg" width="40%" margin-bottom=10px margin-top=10px/>
+    <img src="{{ '/assets/drummutes.jpeg' | relative_url }}" width="40%" margin-bottom=10px margin-top=10px/>
 </div>
 
 

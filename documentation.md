@@ -11,5 +11,5 @@ This is where you'll find the documentation.
 - [Setup][malleable-808-sequencer-setup]
 - [Manual][malleable-808-sequencer-manual]
 
-[malleable-808-sequencer-setup]: /mdma/documentation/MSEQ/setup
-[malleable-808-sequencer-manual]: /mdma/documentation/MSEQ/manual
+[malleable-808-sequencer-setup]: {{ '/documentation/MSEQ/setup' | relative_url }}
+[malleable-808-sequencer-manual]: {{ '/documentation/MSEQ/manual' | relative_url }}
