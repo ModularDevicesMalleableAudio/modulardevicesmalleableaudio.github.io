@@ -14,6 +14,7 @@ github_username:  ModularDevicesMalleableAudio
 plugins:
   - jekyll-seo-tag
   - jekyll-feed
+  - jekyll-sitemap
 
 footer: mdma
 header_pages:

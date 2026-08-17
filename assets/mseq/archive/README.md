@@ -1,3 +1,10 @@
+---
+# Kept out of the sitemap: this is an internal index for a durable copy, not
+# a page we want search engines to surface. The github-pages gem enables
+# jekyll-optional-front-matter, so this file renders as a page regardless.
+sitemap: false
+---
+
 # MSEQ manual — archived source images
 
 The 2021-era photographs used by the original MSEQ manual

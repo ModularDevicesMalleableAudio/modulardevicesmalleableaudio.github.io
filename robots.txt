@@ -1,1 +1,9 @@
-User-agent: * Disallow: 
+---
+# Front matter is required so Jekyll renders the Liquid below rather than
+# copying this file verbatim. The sitemap URL then follows site.url, so it
+# stays correct if the site ever moves.
+---
+User-agent: *
+Allow: /
+
+Sitemap: {{ '/sitemap.xml' | absolute_url }}
