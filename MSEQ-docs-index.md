@@ -4,5 +4,5 @@ title: MSEQ docs - setup
 permalink: /documentation/MSEQ/
 ---
 
-- [Setup](/mdma/documentation/MSEQ/setup)
-- [Manual](/mdma/documentation/MSEQ/manual)
+- [Setup]({{ '/documentation/MSEQ/setup' | relative_url }})
+- [Manual]({{ '/documentation/MSEQ/manual' | relative_url }})

@@ -56,6 +56,42 @@ footer { margin-bottom: 20px; }
 .menu ul li a:hover { text-decoration: none; color: var(--background-color); background-color: var(--base-color); }
 
 /**
+ * Figures
+ *
+ * Some figures exist twice: a capture from the webapp, which is legible, and a
+ * photograph of the same thing on the hardware, which is what you actually
+ * play. The toggle swaps between them. Radio buttons and sibling selectors do
+ * the work, so there is no script to load and nothing to go wrong; with
+ * styling disabled both images simply appear one after the other.
+ */
+figure.fig-pair { margin: 0 0 18px;  padding: 0; }
+figure.fig-pair input { position: absolute;  opacity: 0;  pointer-events: none; }
+figure.fig-pair label { display: inline-block;  cursor: pointer;  font-size: 12px;  padding: 2px 10px;  margin: 0 6px 8px 0;  border: dashed 1px rgba(219, 219, 219, 0.35);  color: rgba(219, 219, 219, 0.62); }
+figure.fig-pair label:hover { color: var(--background-color);  background-color: var(--base-color); }
+figure.fig-pair input:checked + label { color: var(--text-color);  border: var(--border); }
+figure.fig-pair input:focus-visible + label { outline: 1px solid var(--base-color);  outline-offset: 2px; }
+figure.fig-pair img { display: block;  max-width: 100%;  border: dashed 1px rgba(219, 219, 219, 0.35); }
+figure.fig-pair .shot-hardware { display: none; }
+figure.fig-pair .pick-hardware:checked ~ .shot-webapp { display: none; }
+figure.fig-pair .pick-hardware:checked ~ .shot-hardware { display: block; }
+figure.fig-pair figcaption { font-size: 12px;  color: rgba(219, 219, 219, 0.62);  margin-top: 8px; }
+
+/**
+ * Tables
+ *
+ * Markdown tables carried no styling, so cells ran together and a row whose
+ * text wrapped was hard to tell from the next one. Dashed rules match the
+ * borders used by the menu and footer. On small screens the table scrolls
+ * sideways rather than forcing the page wider than the viewport.
+ */
+table { width: 100%;  border-collapse: collapse;  margin: 0 0 18px;  border: var(--border); }
+th, td { text-align: left;  padding: 8px 12px;  vertical-align: top;  border-bottom: dashed 1px rgba(219, 219, 219, 0.3);  border-right: dashed 1px rgba(219, 219, 219, 0.3); }
+th:last-child, td:last-child { border-right: none; }
+th { font-weight: bold;  border-bottom: var(--border); }
+tbody tr:last-child td { border-bottom: none; }
+@media only screen and (max-device-width: 600px) { table { display: block;  width: max-content;  max-width: 100%;  overflow-x: auto; } }
+
+/**
  * Form
  */
 input, select, textarea { padding: 0;  margin: 0;  -webkit-appearance: none;  -webkit-border-radius: 0;  border: none; }

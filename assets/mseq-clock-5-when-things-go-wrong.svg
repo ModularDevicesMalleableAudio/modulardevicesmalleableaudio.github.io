@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="637" viewBox="0 0 700 637" font-family="'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="The four special cases in the MSEQ clock loop — transport start, clock dropout, a large persistent phase excursion, and a wrong tempo hint — plus the deliberate timing offset that the loop holds rather than corrects.">
+<style>.title{font-size:14px;font-weight:700;fill:#DBDBDB}.h{font-size:12px;font-weight:700;fill:#DBDBDB}.t{font-size:11px;fill:rgba(219,219,219,0.62)}.i{font-size:11px;fill:#DBDBDB}.k{font-size:11px;font-weight:700;fill:#DBDBDB}.s{font-size:10px;fill:rgba(219,219,219,0.62)}</style>
+<rect x=".5" y=".5" width="699" height="636" fill="#0b0b0b" stroke="rgba(219,219,219,0.35)" stroke-dasharray="3 3"/>
+<text x="20" y="36" class="title">What the loop does when things go wrong</text>
+<text x="20" y="53" class="t">A gentle nudge is right for noise and wrong for a genuine jump. Four cases get</text>
+<text x="20" y="70" class="t">their own answer; everything else is left to the ±1 ms trim from figure 4.</text>
+<rect x="20" y="98" width="322" height="157" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="32" y="118" class="h" fill="#86c8ff">Ableton hits play</text>
+<text x="32" y="139" class="i" fill="#86c8ff">on FA, then on the first F8</text>
+<text x="32" y="156" class="t">Reset both counts and place tick 0 at once,</text>
+<text x="32" y="173" class="t">then snap onto the first real tick when it</text>
+<text x="32" y="190" class="t">lands — Live sends it about 101 ms after the</text>
+<text x="32" y="207" class="t">FA, because its clock runs ahead of its</text>
+<text x="32" y="224" class="t">audio. One step, not a slow slide into place.</text>
+<rect x="358" y="98" width="322" height="157" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="370" y="118" class="h" fill="#ed9d13">The clock stops arriving</text>
+<text x="370" y="139" class="i" fill="#ed9d13">no input for more than 3 output ticks</text>
+<text x="370" y="156" class="t">Coast: keep emitting at the last trusted rate</text>
+<text x="370" y="173" class="t">and keep counting, so the position is still</text>
+<text x="370" y="190" class="t">right when it returns. It never quietly</text>
+<text x="370" y="207" class="t">becomes a free-running metronome, and 1250 ms</text>
+<text x="370" y="224" class="t">of silence still trips the patch's</text>
+<text x="370" y="241" class="t">all-notes-off alarm.</text>
+<rect x="20" y="271" width="322" height="157" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="32" y="291" class="h" fill="#F0A0A0">Something jumped</text>
+<text x="32" y="312" class="i" fill="#F0A0A0">|error| &gt; 4 periods for 6 ticks</text>
+<text x="32" y="329" class="t">A transport jump, or a tempo change during a</text>
+<text x="32" y="346" class="t">dropout, is a real discontinuity: fix it in</text>
+<text x="32" y="363" class="t">one step rather than leaning on the loop for</text>
+<text x="32" y="380" class="t">a bar. Checked once per output tick, so a</text>
+<text x="32" y="397" class="t">stall and its burst — one scheduler slice —</text>
+<text x="32" y="414" class="t">cannot trigger it.</text>
+<rect x="358" y="271" width="322" height="157" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="370" y="291" class="h" fill="#ed9d13">The tempo number is wrong</text>
+<text x="370" y="312" class="i" fill="#ed9d13">off by &gt; 3 BPM for 24 ticks</text>
+<text x="370" y="329" class="t">The tempo hint travels a different path from</text>
+<text x="370" y="346" class="t">the clock and can go stale. After a 48-tick</text>
+<text x="370" y="363" class="t">grace it is dropped in favour of the measured</text>
+<text x="370" y="380" class="t">rate. Real case: the hint sat at 138 while</text>
+<text x="370" y="397" class="t">the master ran 140, and later 136.</text>
+<rect x="20" y="450" width="660" height="102" fill="none" stroke="#b38aff" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="32" y="470" class="i" fill="#b38aff">offset: -250 to +250 ms, held as part of the target</text>
+<text x="32" y="487" class="t">Live transmits its clock early by the audio output latency, about 115 ms, so that an external</text>
+<text x="32" y="504" class="t">synth's returning audio lands on the grid. There is one knob and two possible targets — that</text>
+<text x="32" y="521" class="t">audio on the grid, or the MIDI Ableton records — so MSEQ makes it a setting. The loop treats it</text>
+<text x="32" y="538" class="t">as where it is meant to be, never as an error to remove.</text>
+<line x1="20" y1="576" x2="680" y2="576" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="20" y="596" class="t">Every threshold here is a constant in backend/clock_discipline_core.lua, unit-</text>
+<text x="20" y="613" class="t">tested against a synthetic tick stream that reproduces stalls, bursts and steps.</text>
+</svg>

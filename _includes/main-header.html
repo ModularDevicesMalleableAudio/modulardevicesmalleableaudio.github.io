@@ -1,6 +1,6 @@
 {%- assign page_paths = site.header_pages | default: default_paths -%}
 <header>
-  <img src="assets/mdmaheader.jpeg" alt="main-header" width="100%"> 
+  <img src="{{ '/assets/mdmaheader.jpeg' | relative_url }}" alt="main-header" width="100%"> 
   <div class="menu">
     <ul>
       {%- for path in page_paths -%}

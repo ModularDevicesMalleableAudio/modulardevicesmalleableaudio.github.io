@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="587" viewBox="0 0 700 587" font-family="'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="The old MSEQ clock design: incoming ticks fed only a 1250 ms watchdog while a free-running metro drove the counter, and a chart of the resulting drift growing from a quarter of a beat at bar 1 to half a beat by bar 10.">
+<style>.title{font-size:14px;font-weight:700;fill:#DBDBDB}.h{font-size:12px;font-weight:700;fill:#DBDBDB}.t{font-size:11px;fill:rgba(219,219,219,0.62)}.i{font-size:11px;fill:#DBDBDB}.k{font-size:11px;font-weight:700;fill:#DBDBDB}.s{font-size:10px;fill:rgba(219,219,219,0.62)}</style>
+<rect x=".5" y=".5" width="699" height="586" fill="#0b0b0b" stroke="rgba(219,219,219,0.35)" stroke-dasharray="3 3"/>
+<text x="20" y="36" class="title">The problem: the clock was watched, not followed</text>
+<text x="20" y="53" class="t">Before issue #279 the incoming ticks fed a silence watchdog and nothing else.</text>
+<text x="20" y="70" class="t">A local metronome, set from a tempo number, decided when steps happened.</text>
+<text x="20" y="98" class="h">What the incoming ticks were wired to</text>
+<rect x="20" y="112" width="64.2" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="29" y="128" class="i" fill="#86c8ff">F8 tick</text>
+<line x1="90.2" y1="124" x2="109.2" y2="124" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M109.2,120.5 L114.2,124 L109.2,127.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="120.2" y="112" width="84" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="129.2" y="128" class="i" fill="#DBDBDB">delay 1250</text>
+<line x1="210.2" y1="124" x2="229.2" y2="124" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M229.2,120.5 L234.2,124 L229.2,127.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="240.2" y="112" width="103.8" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="249.2" y="128" class="i" fill="#DBDBDB">all notes off</text>
+<text x="360" y="128" class="t">a silence alarm, nothing more</text>
+<rect x="20" y="152" width="660" height="36" fill="none" stroke="#F0A0A0" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="35" y1="165" x2="45" y2="175" stroke="#F0A0A0" stroke-width="1.5"/>
+<line x1="35" y1="175" x2="45" y2="165" stroke="#F0A0A0" stroke-width="1.5"/>
+<text x="58" y="174" class="i" fill="#F0A0A0">no path between the two: the tick never reached the counter</text>
+<text x="20" y="208" class="h">What actually moved the sequencer</text>
+<rect x="20" y="222" width="150" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="29" y="238" class="i" fill="#DBDBDB">tempo number (CC 99)</text>
+<line x1="176" y1="234" x2="195" y2="234" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M195,230.5 L200,234 L195,237.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="206" y="222" width="77.4" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="215" y="238" class="i" fill="#ed9d13">metro 125</text>
+<line x1="289.4" y1="234" x2="308.4" y2="234" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M308.4,230.5 L313.4,234 L308.4,237.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="319.4" y="222" width="103.8" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="328.4" y="238" class="i" fill="#5ba711">counter 0 143</text>
+<text x="439.2" y="238" class="t" fill="#ed9d13">free-running</text>
+<text x="20" y="271" class="t">The rate was set once from a tempo number and the position was never</text>
+<text x="20" y="288" class="t">compared with Ableton's. An open loop keeps every error it ever makes.</text>
+<text x="20" y="331" class="h">How far ahead of Ableton MSEQ ran</text>
+<line x1="120" y1="353" x2="120" y2="465" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="120" y1="353" x2="668" y2="353" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="108" y="357" class="s" text-anchor="end">on the grid</text>
+<line x1="120" y1="390.333" x2="668" y2="390.333" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="108" y="394.333" class="s" text-anchor="end">a 1/16 early</text>
+<line x1="120" y1="427.667" x2="668" y2="427.667" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="108" y="431.667" class="s" text-anchor="end">an 1/8 early</text>
+<path d="M120,391.827 L410.118,427.667" fill="none" stroke="#F0A0A0" stroke-width="2"/>
+<path d="M410.118,427.667 L668,459.524" fill="none" stroke="#F0A0A0" stroke-width="2" stroke-dasharray="4 4"/>
+<circle cx="120" cy="391.827" r="3" fill="#F0A0A0"/>
+<circle cx="410.118" cy="427.667" r="3" fill="#F0A0A0"/>
+<text x="130" y="383.827" class="s">bar 1</text>
+<text x="400.118" y="419.667" class="s" text-anchor="end">bar 10</text>
+<text x="668" y="439.524" class="s" text-anchor="end">and still going</text>
+<text x="120" y="481" class="s">bar 1</text>
+<text x="668" y="481" class="s" text-anchor="end">bar 18</text>
+<text x="20" y="502" class="i">Ten bars recorded against Live at 140 BPM: 0.9944 beat per beat, 0.56 % fast.</text>
+<line x1="20" y1="526" x2="680" y2="526" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="20" y="546" class="t">Smooth but wrong: jitter was a tidy ±7.6 ms while the position drifted away for</text>
+<text x="20" y="563" class="t">ever. Steady drift with low jitter is the fingerprint of a rate guessed once.</text>
+</svg>
