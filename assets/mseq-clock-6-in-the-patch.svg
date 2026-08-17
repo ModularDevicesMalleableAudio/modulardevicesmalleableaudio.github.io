@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="596" viewBox="0 0 700 596" font-family="'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="The MSEQ clock external in metro_clock.pd: the realtime byte classifier and timer feeding clock_follow, its four inlets and five outlets, and the counter and modulo divider tree it drives.">
+<style>.title{font-size:14px;font-weight:700;fill:#DBDBDB}.h{font-size:12px;font-weight:700;fill:#DBDBDB}.t{font-size:11px;fill:rgba(219,219,219,0.62)}.i{font-size:11px;fill:#DBDBDB}.k{font-size:11px;font-weight:700;fill:#DBDBDB}.s{font-size:10px;fill:rgba(219,219,219,0.62)}</style>
+<rect x=".5" y=".5" width="699" height="595" fill="#0b0b0b" stroke="rgba(219,219,219,0.35)" stroke-dasharray="3 3"/>
+<text x="20" y="36" class="title">Where it lives in the patch</text>
+<text x="20" y="53" class="t">metro_clock.pd keeps its byte classifier and its divider tree. Only the source of</text>
+<text x="20" y="70" class="t">the tick changed: an external now sits between them and owns the schedule.</text>
+<rect x="20" y="98" width="106.4" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="27" y="113" class="i" fill="#86c8ff">midirealtimein</text>
+<line x1="130.4" y1="109" x2="145.4" y2="109" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M145.4,105.5 L150.4,109 L145.4,112.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="154.4" y="98" width="139.4" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="161.4" y="113" class="i" fill="#86c8ff">sel 250 251 252 248</text>
+<text x="305.8" y="113" class="t">the byte classifier, unchanged</text>
+<path d="M166.4,120 L166.4,149 L193.4,149" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M193.4,145.5 L198.4,149 L193.4,152.5 z" fill="rgba(219,219,219,0.35)"/>
+<path d="M198.4,138 L250.4,138 L244.4,149 L250.4,160 L198.4,160 Z" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="205.4" y="153" class="i" fill="#DBDBDB">start</text>
+<path d="M258.4,138 L330.2,138 L324.2,149 L330.2,160 L258.4,160 Z" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="265.4" y="153" class="i" fill="#DBDBDB">continue</text>
+<path d="M338.2,138 L383.6,138 L377.6,149 L383.6,160 L338.2,160 Z" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="345.2" y="153" class="i" fill="#DBDBDB">stop</text>
+<text x="399.6" y="153" class="t">transport, straight through</text>
+<path d="M166.4,160 L166.4,181 L193.4,181" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M193.4,177.5 L198.4,181 L193.4,184.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="198.4" y="170" width="73.4" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="205.4" y="185" class="i" fill="#DBDBDB">t b b b b</text>
+<line x1="275.8" y1="181" x2="288.8" y2="181" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M288.8,177.5 L293.8,181 L288.8,184.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="297.8" y="170" width="47" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="304.8" y="185" class="i" fill="#DBDBDB">timer</text>
+<line x1="348.8" y1="181" x2="361.8" y2="181" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M361.8,177.5 L366.8,181 L361.8,184.5 z" fill="rgba(219,219,219,0.35)"/>
+<path d="M370.8,170 L436,170 L430,181 L436,192 L370.8,192 Z" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="377.8" y="185" class="i" fill="#86c8ff">tick $1</text>
+<text x="448" y="185" class="t" fill="#86c8ff">the gap Δ, in ms</text>
+<path d="M210.4,192 L210.4,213 L233.4,213" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M233.4,209.5 L238.4,213 L233.4,216.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="238.4" y="202" width="80" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="245.4" y="217" class="i" fill="#DBDBDB">delay 1250</text>
+<line x1="322.4" y1="213" x2="335.4" y2="213" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M335.4,209.5 L340.4,213 L335.4,216.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="344.4" y="202" width="165.8" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="351.4" y="217" class="i" fill="#DBDBDB">s all_notes_off_trigger</text>
+<text x="522.2" y="217" class="t">kept</text>
+<rect x="20" y="234" width="172.4" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="27" y="249" class="i" fill="#DBDBDB" xml:space="preserve">ctlin 99 16  ctlin 98 16</text>
+<line x1="196.4" y1="245" x2="209.4" y2="245" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M209.4,241.5 L214.4,245 L209.4,248.5 z" fill="rgba(219,219,219,0.35)"/>
+<path d="M218.4,234 L343,234 L337,245 L343,256 L218.4,256 Z" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="225.4" y="249" class="i" fill="#DBDBDB" xml:space="preserve">cc99 $1  cc98 $1</text>
+<text x="355" y="249" class="t">tempo = 60 + cc99 + cc98/100</text>
+<path d="M20,266 L45.6,266 L39.6,277 L45.6,288 L20,288 Z" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="27" y="281" class="i" fill="#b38aff">0</text>
+<text x="57.6" y="281" class="t" fill="#b38aff">the rig's offset in ms, edited here</text>
+<text x="102.5" y="314" class="s" text-anchor="middle">in0 events</text>
+<line x1="102.5" y1="318" x2="102.5" y2="322" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="267.5" y="314" class="s" text-anchor="middle">in1 tempo</text>
+<line x1="267.5" y1="318" x2="267.5" y2="322" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="432.5" y="314" class="s" text-anchor="middle">in2 mode</text>
+<line x1="432.5" y1="318" x2="432.5" y2="322" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="597.5" y="314" class="s" text-anchor="middle">in3 offset</text>
+<line x1="597.5" y1="318" x2="597.5" y2="322" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<rect x="20" y="322" width="660" height="46" fill="none" stroke="#5ba711" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="32" y="341" class="h" fill="#5ba711">clock_follow.pd_lua</text>
+<text x="32" y="358" class="t">thin PD adapter, owns the schedule</text>
+<text x="668" y="341" class="h" text-anchor="end">clock_discipline_core.lua</text>
+<text x="668" y="358" class="t" text-anchor="end">pure logic, no PD calls, unit-tested</text>
+<line x1="86" y1="368" x2="86" y2="375" stroke="#5ba711" stroke-width="1"/>
+<path d="M82.5,375 L86,380 L89.5,375 z" fill="#5ba711"/>
+<text x="86" y="392" class="s" text-anchor="middle">out0</text>
+<text x="86" y="410" class="i" fill="#5ba711" text-anchor="middle">counter 0 143</text>
+<line x1="218" y1="368" x2="218" y2="375" stroke="#DBDBDB" stroke-width="1"/>
+<path d="M214.5,375 L218,380 L221.5,375 z" fill="#DBDBDB"/>
+<text x="218" y="392" class="s" text-anchor="middle">out1</text>
+<text x="218" y="410" class="i" fill="#DBDBDB" text-anchor="middle">reset to step 0</text>
+<line x1="350" y1="368" x2="350" y2="375" stroke="#DBDBDB" stroke-width="1"/>
+<path d="M346.5,375 L350,380 L353.5,375 z" fill="#DBDBDB"/>
+<text x="350" y="392" class="s" text-anchor="middle">out2</text>
+<text x="350" y="410" class="i" fill="#DBDBDB" text-anchor="middle">current_bpm</text>
+<line x1="482" y1="368" x2="482" y2="375" stroke="#DBDBDB" stroke-width="1"/>
+<path d="M478.5,375 L482,380 L485.5,375 z" fill="#DBDBDB"/>
+<text x="482" y="392" class="s" text-anchor="middle">out3</text>
+<text x="482" y="410" class="i" fill="#DBDBDB" text-anchor="middle">s midi250</text>
+<line x1="614" y1="368" x2="614" y2="375" stroke="#DBDBDB" stroke-width="1"/>
+<path d="M610.5,375 L614,380 L617.5,375 z" fill="#DBDBDB"/>
+<text x="614" y="392" class="s" text-anchor="middle">out4</text>
+<text x="614" y="410" class="i" fill="#DBDBDB" text-anchor="middle">the stop chain</text>
+<line x1="86" y1="416" x2="86" y2="425" stroke="#5ba711" stroke-width="1"/>
+<path d="M82.5,425 L86,430 L89.5,425 z" fill="#5ba711"/>
+<rect x="20" y="434" width="410" height="22" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="27" y="449" class="i" fill="#5ba711" xml:space="preserve">% 6   % 12   % 24   % 16   % 32   % 64   % 36   % 72   % 144</text>
+<text x="20" y="477" class="t">nine clock divisions — sixteenths, triplets, dotted — to every sequencer.</text>
+<text x="20" y="494" class="t">Untouched by this work.</text>
+<line x1="20" y1="518" x2="680" y2="518" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="20" y="538" class="t">What it cannot fix: below PD's message layer sit audio-block quantisation (about</text>
+<text x="20" y="555" class="t">1.45 ms at 64 samples) and MIDI serialisation. Removing those means ticking in the</text>
+<text x="20" y="572" class="t">audio domain, or moving to Ableton Link — not a heavier loop.</text>
+</svg>
