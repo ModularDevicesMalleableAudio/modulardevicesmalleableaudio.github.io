@@ -30,6 +30,7 @@ exclude:
   - vendor/cache/
   - vendor/gems/
   - vendor/ruby/
+  - README.md
   - assets/mseq/archive/
 
 footer: mdma
