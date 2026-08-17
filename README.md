@@ -16,13 +16,25 @@ root, and `baseurl` is now empty.
 
 ## Running it locally
 
+Build into `_site/` without installing Ruby (gems are cached in `vendor/`, so
+repeat runs take a few seconds):
+
 ```sh
-bundle install
-bundle exec jekyll serve
+docker run --rm -e BUNDLE_PATH=/srv/vendor/bundle -v "$PWD":/srv -w /srv ruby:3.1 \
+  bash -c 'bundle install --quiet && bundle exec jekyll build'
 ```
 
-Then open <http://localhost:4000/>. Because `baseurl` is empty, local paths
-match live paths exactly.
+Use `build`, not `serve`. `github-pages ~> 223` pins Jekyll 3.9, which builds
+fine on a modern Ruby but whose `serve` dies on Ruby 3.x with "no implicit
+conversion of Hash into Integer". Serve the output separately instead.
+
+One catch when serving `_site/` yourself: the MSEQ permalinks have no trailing
+slash, so Jekyll writes `documentation/MSEQ/manual.html` and Pages serves it at
+`/documentation/MSEQ/manual`. `python3 -m http.server` won't do that mapping, so
+those two URLs 404 locally even though they work live — use a server that falls
+back to `.html`, or check them as `manual.html`.
+
+Because `baseurl` is empty, local paths otherwise match live paths exactly.
 
 ## Conventions
 
