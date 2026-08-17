@@ -13,10 +13,26 @@ upload store, which is outside our control and can vanish without notice, so
 this directory is the durable copy.
 
 These are the *originals*, unmodified: multi-megabyte, off-axis, and shot under
-stage lighting. They are **not** meant to be served. They are kept so that the
+stage lighting. They are **not** meant to be served, and `_config.yml` excludes
+this directory from the build so they never are. They are kept so that the
 manual's history is recoverable and so any future crop or re-encode starts from
-the real file rather than a downscaled copy. Current documentation figures live
-in the sequencer repo under `docs/img/` and are published to `assets/mseq/`.
+the real file rather than a downscaled copy.
+
+## Derived web copies
+
+The manual links to web-sized derivatives one level up, in `assets/mseq/`, with
+the same filenames as here. They were generated from these originals with:
+
+- longest edge capped at **1400px** (2x the 700px content column), aspect ratio
+  preserved, Lanczos resampling, and **no cropping**;
+- images already narrower than 1400px left at their original size
+  (`lc-buttons.jpg`, `view-selection*.jpeg`);
+- JPEG quality 82, progressive, optimised;
+- **all EXIF stripped** - eight of these originals carry GPS coordinates - while
+  the ICC colour profile is preserved so colours do not shift.
+
+That took the served set from 24.9MB to 4.0MB. Regenerate the derivatives from
+this directory if the manual's figures ever need redoing.
 
 Files were renamed to say what they show; the GitLab names were a mix of
 `PXL_*`, `WhatsApp_Image_*` and bare UUIDs. The mapping below was produced by

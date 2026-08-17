@@ -16,6 +16,22 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
+# Setting exclude REPLACES Jekyll's defaults rather than adding to them, so the
+# defaults are restated here - dropping them publishes Gemfile/Gemfile.lock.
+#
+# The archive holds the originals of the manual's photographs: kept in git as
+# the durable copy, never published. The web-sized derivatives alongside it in
+# assets/mseq are what the manual links to. See assets/mseq/archive/README.md.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - assets/mseq/archive/
+
 footer: mdma
 header_pages:
   - index.md
