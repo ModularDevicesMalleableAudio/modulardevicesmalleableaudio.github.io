@@ -3,6 +3,32 @@
 Source for the Modular Devices / Malleable Audio site:
 <https://modulardevicesmalleableaudio.github.io/>
 
+## Publishing MSEQ documentation
+
+The MSEQ documentation is authored in the `docs/` directory of the
+[`sequencer`](https://github.com/ModularDevicesMalleableAudio/sequencer) repo.
+The `MSEQ-docs-*.md`, `MSEQ-view-*.md`, and `MSEQ-docs-manifest.json` files in
+this repo are generated output and must not be edited by hand. The generator
+checks their recorded hashes and refuses to overwrite hand-edited output.
+
+Publishing is a deliberate operator step:
+
+```sh
+cd ~/code/sequencer
+uv run --script scripts/build_site_docs.py --out ~/code/mdma/mdma
+
+cd ~/code/mdma/mdma
+./scripts/build-local.sh
+./scripts/serve-local.py  # review at http://localhost:4000
+git add -A
+git commit
+git push
+```
+
+The sequencer repo's `docs/site-manifest.yml` controls which pages are
+published, their order, titles, and URLs. See its `docs/README.md` for the full
+publishing and figure-generation contracts.
+
 ## How it deploys
 
 GitHub Pages builds and publishes on every push to `main` via the `pages`
