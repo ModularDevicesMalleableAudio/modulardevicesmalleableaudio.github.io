@@ -5,23 +5,50 @@
  * Style variables
  */
 $base-font-family:     'Source Code Pro', monospace !default;
-$base-font-size:       14px !default;
-$mobile-font-size:     14px !default;
+/**
+ * Sizes are in rem so that the browser's own default-font setting drives them.
+ * A px size is absolute: a reader who sets their default font to Large gets
+ * 14px anyway, and the preference is silently ignored. 1rem is whatever they
+ * asked for — 16px unless they changed it — and everything scales off that.
+ */
+$base-font-size:       1rem !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
-$container-max-width:  700px !default;
+$container-max-width:  900px !default;
+
+/**
+ * Spacing scale
+ *
+ * Three steps, and everything vertical uses one of them. $space-block is the
+ * gap between top-level blocks, $space-tight the gap between things that
+ * belong together (list items, and the blocks inside one), and $space-section
+ * the air above a heading. Nested content is deliberately tighter than
+ * top-level content: that difference is what makes a list read as one object
+ * rather than a run of loose paragraphs.
+ */
+$space-block:          1rem !default;
+$space-tight:          0.5rem !default;
+$space-section:        1.5rem !default;
 
 /**
  * Global
  */
 body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
-h1  { font-size: 24px;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
-h2  { font-size: 18px;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
-h3, h4, h5, h6 { font-size: $base-font-size;  margin: 0px;  margin-top: 22px;  font-weight: bold;  color: var(--text-color); }
-p, ul, ol { margin: 0px;  color: var(--text-color); }
+h1  { font-size: 1.5rem;  font-weight: bold;  color: var(--text-color); }
+h2  { font-size: 1.125rem;  font-weight: bold;  color: var(--text-color); }
+h3, h4, h5, h6 { font-size: $base-font-size;  font-weight: bold;  color: var(--text-color); }
+p, ul, ol { color: var(--text-color); }
 a { text-decoration: underline;  color: var(--link-color); }
 a:hover { color: var(--background-color); background-color: var(--base-color); }
-@media only screen and (max-device-width: 600px) { * { font-size: $mobile-font-size !important; } }
+
+/*
+ * A Markdown `---` divides one article into sections, which is a quieter job
+ * than a table border or a nav boundary, so it gets the same dash used for
+ * table cell interiors and figure frames rather than the full-strength one.
+ * The browser default (a solid grey inset line) matched nothing else on the
+ * page, which is what made separators look inconsistent site-wide.
+ */
+hr { border: none;  border-top: dashed 1px rgba(219, 219, 219, 0.35);  margin: $space-section 0; }
 
 /**
  * Layout
@@ -33,6 +60,20 @@ header p { text-align: left;  margin: 0; }
 footer { margin-bottom: 20px; }
 
 /**
+ * Footer social links
+ *
+ * Icons only, in a row, hard right, with nothing drawn around them. They used
+ * to live in a layout table, which the table styling added for the docs then
+ * boxed and ruled like a data grid. A nav of links has no such baggage, and
+ * the hover inversion that suits text links is suppressed here because on a
+ * transparent PNG it lights up the glyph's bounding box rather than the glyph.
+ */
+.social a { display: inline-block;  margin-left: 12px;  text-decoration: none; }
+.social a:hover { background-color: transparent; }
+.social img { display: block;  opacity: 0.75; }
+.social a:hover img { opacity: 1; }
+
+/**
  * Prose: wrapping and vertical rhythm
  *
  * Paragraphs deliberately do not set `white-space: pre-wrap`. The generated
@@ -42,18 +83,40 @@ footer { margin-bottom: 20px; }
  * word onto a line of its own. Prose reflows to the measure; anything that
  * needs fixed whitespace belongs in a code block, which `pre` still handles.
  *
- * Lists carried no bottom margin while paragraphs had 15px, so a list ran
- * straight into whatever followed it. Those docs also use a bold-only
- * paragraph as a sub-heading above a list, and the two together read as though
- * each sub-heading belonged to the section above it: flush against the
- * preceding list, but 15px clear of its own. Lists now close with the same 15px
- * as a paragraph, and a bold-only paragraph is spaced like the heading it
- * stands in for - clear space above, tight to the list below.
+ * Every block owns its own bottom margin. Spacing used to be carried by `p`
+ * alone, so the gap around a code block or a table existed only as a side
+ * effect of whatever paragraph happened to sit above it: remove the paragraph
+ * and the space vanished. The markdown says what a thing is, this says how
+ * much room it gets, and an author never edits prose to move pixels.
  */
-p { word-wrap: break-word;  word-break: break-word;  margin-bottom: 15px; }
-ul, ol { margin-bottom: 15px; }
-li > ul, li > ol { margin-bottom: 0; }
-p:has(> strong:only-child) { margin-top: 22px;  margin-bottom: 4px; }
+p { word-wrap: break-word;  word-break: break-word; }
+:where(p, ul, ol, table, blockquote, figure, div.highlighter-rouge) { margin: 0 0 $space-block; }
+h1, h2, h3, h4, h5, h6 { margin: $space-section 0 $space-tight; }
+main > *:first-child { margin-top: 0; }
+main > *:last-child { margin-bottom: 0; }
+
+/**
+ * A bold-only paragraph is a sub-heading in these docs, so it is spaced like
+ * one: clear above, tight to whatever it introduces.
+ */
+p:has(> strong:only-child) { margin: $space-section 0 $space-tight; }
+
+/**
+ * List items are evenly spaced, and a list reads the same whether markdown
+ * made it tight or loose. A blank line anywhere in a list makes kramdown wrap
+ * every item's text in <p>, so without this one list would space its items by
+ * a paragraph margin and the next, identical-looking list would not.
+ *
+ * The block rule above is wrapped in :where() so it contributes no
+ * specificity. A code block's wrapper carries a class and would otherwise
+ * outrank these child selectors, keeping its own bottom margin and reopening
+ * the gap at the end of an item that this is here to close.
+ */
+li { margin-bottom: $space-tight; }
+li:last-child { margin-bottom: 0; }
+li > * { margin-bottom: 0; }
+li > * + * { margin-top: $space-tight; }
+li > ul, li > ol { margin-top: $space-tight; }
 
 /**
  * Highlight/Markup
@@ -71,7 +134,7 @@ p:has(> strong:only-child) { margin-top: 22px;  margin-bottom: 4px; }
 /**
  * Header/Navigation
  */
-.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: 25px; }
+.menu { border-top: var(--border);  border-bottom: var(--border);  margin-bottom: $space-section; }
 .menu ul { margin-top: 12px;  margin-bottom: 12px;  padding-left: 0px;  list-style-type: none;  text-align: right; }
 .menu ul li { display: inline;  margin-left: 10px; }
 .menu ul li a { text-decoration: none;  color: var(--text-color); }
@@ -96,9 +159,9 @@ main img { max-width: 100%;  height: auto; }
  * the work, so there is no script to load and nothing to go wrong; with
  * styling disabled both images simply appear one after the other.
  */
-figure.fig-pair { margin: 0 0 18px;  padding: 0; }
+figure.fig-pair { margin: 0 0 $space-block;  padding: 0; }
 figure.fig-pair input { position: absolute;  opacity: 0;  pointer-events: none; }
-figure.fig-pair label { display: inline-block;  cursor: pointer;  font-size: 12px;  padding: 2px 10px;  margin: 0 6px 8px 0;  border: dashed 1px rgba(219, 219, 219, 0.35);  color: rgba(219, 219, 219, 0.62); }
+figure.fig-pair label { display: inline-block;  cursor: pointer;  font-size: 0.75rem;  padding: 2px 10px;  margin: 0 6px 8px 0;  border: dashed 1px rgba(219, 219, 219, 0.35);  color: rgba(219, 219, 219, 0.62); }
 figure.fig-pair label:hover { color: var(--background-color);  background-color: var(--base-color); }
 figure.fig-pair input:checked + label { color: var(--text-color);  border: var(--border); }
 figure.fig-pair input:focus-visible + label { outline: 1px solid var(--base-color);  outline-offset: 2px; }
@@ -106,7 +169,39 @@ figure.fig-pair img { display: block;  max-width: 100%;  border: dashed 1px rgba
 figure.fig-pair .shot-hardware { display: none; }
 figure.fig-pair .pick-hardware:checked ~ .shot-webapp { display: none; }
 figure.fig-pair .pick-hardware:checked ~ .shot-hardware { display: block; }
-figure.fig-pair figcaption { font-size: 12px;  color: rgba(219, 219, 219, 0.62);  margin-top: 8px; }
+figure.fig-pair figcaption { font-size: 0.75rem;  color: rgba(219, 219, 219, 0.62);  margin-top: $space-tight; }
+
+/**
+ * Documentation navigation
+ *
+ * The MSEQ documentation pages are generated (see the sequencer repo's
+ * scripts/build_site_docs.py). Two blocks sit at the head of every page: a
+ * breadcrumb trail saying where you are, and a previous/up/next pager saying
+ * where you can go, with a rule beneath separating navigation from article.
+ * The section's other pages are listed at the foot instead, as plain Markdown,
+ * because that list is for when you have finished reading. All of it is plain
+ * inline links, so with styling disabled it still reads as a sentence, and the
+ * pager stacks on a phone rather than pushing the page wider than the viewport.
+ */
+nav.docs-breadcrumbs { font-size: $base-font-size;  color: rgba(219, 219, 219, 0.62);  margin: 0 0 $space-tight; }
+nav.docs-breadcrumbs a { color: rgba(219, 219, 219, 0.62); }
+nav.docs-breadcrumbs a:hover { color: var(--text-color); }
+nav.docs-breadcrumbs [aria-current="page"] { color: var(--text-color); }
+
+/* Jump links on long pages, so a reader after one answer can get to it. */
+nav.docs-contents { font-size: 0.875rem;  margin: 0 0 $space-section;  color: rgba(219, 219, 219, 0.62); }
+nav.docs-contents b { color: var(--text-color); }
+
+nav.docs-pager { font-size: 0.875rem;  margin: 0 0 $space-block;  padding-bottom: $space-tight;  border-bottom: var(--border); }
+nav.docs-pager .up { color: rgba(219, 219, 219, 0.62); }
+
+/* The foot of the page: a rule, the pager again, then the section's other
+   pages. The rule belongs to the wrapper, so the generator can drop the doc's
+   own trailing `---` and the two never stack. */
+.docs-page-nav { margin: $space-block 0 0;  padding-top: $space-tight;  border-top: var(--border); }
+.docs-page-nav nav.docs-pager { margin: 0 0 $space-tight;  padding: 0;  border-bottom: none; }
+nav.docs-siblings { font-size: 0.875rem;  color: rgba(219, 219, 219, 0.62); }
+@media only screen and (max-width: 600px) { nav.docs-pager > span { display: block; }  nav.docs-pager .sep { display: none; } }
 
 /**
  * Tables
@@ -114,14 +209,16 @@ figure.fig-pair figcaption { font-size: 12px;  color: rgba(219, 219, 219, 0.62);
  * Markdown tables carried no styling, so cells ran together and a row whose
  * text wrapped was hard to tell from the next one. Dashed rules match the
  * borders used by the menu and footer. On small screens the table scrolls
- * sideways rather than forcing the page wider than the viewport.
+ * sideways rather than forcing the page wider than the viewport. The query
+ * tests the viewport, not the physical screen, so a narrow desktop window
+ * behaves like a phone.
  */
-table { width: 100%;  border-collapse: collapse;  margin: 0 0 18px;  border: var(--border); }
-th, td { text-align: left;  padding: 8px 12px;  vertical-align: top;  border-bottom: dashed 1px rgba(219, 219, 219, 0.3);  border-right: dashed 1px rgba(219, 219, 219, 0.3); }
-th:last-child, td:last-child { border-right: none; }
-th { font-weight: bold;  border-bottom: var(--border); }
-tbody tr:last-child td { border-bottom: none; }
-@media only screen and (max-device-width: 600px) { table { display: block;  width: max-content;  max-width: 100%;  overflow-x: auto; } }
+main table { width: 100%;  border-collapse: collapse;  margin: 0 0 $space-block;  border: var(--border); }
+main th, main td { text-align: left;  padding: 8px 12px;  vertical-align: top;  border-bottom: dashed 1px rgba(219, 219, 219, 0.3);  border-right: dashed 1px rgba(219, 219, 219, 0.3); }
+main th:last-child, main td:last-child { border-right: none; }
+main th { font-weight: bold;  border-bottom: var(--border); }
+main tbody tr:last-child td { border-bottom: none; }
+@media only screen and (max-width: 600px) { main table { display: block;  width: max-content;  max-width: 100%;  overflow-x: auto; } }
 
 /**
  * Form
@@ -141,7 +238,7 @@ textarea { vertical-align: top; }
  * Code and syntax highlighting
  */
 .lineno { color: var(--code-color-1); margin-right: 15px; }
-figure.highlight { margin: 5px 0; }
+figure.highlight { margin: 0 0 $space-block; }
 pre { background-color: var(--background-color);  border: none;  padding: 0;  margin: 0;  overflow:auto;  font-size: $base-font-size;  color: var(--text-color);  line-height: 1.7 !important;  font-family: $base-font-family !important; }
 .highlight .hll { background-color: var(--code-color-2); }
 .highlight .c { color: var(--code-color-1); font-style: italic } /* Comment */
