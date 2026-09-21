@@ -180,8 +180,8 @@ figure.fig-pair figcaption { font-size: 0.75rem;  color: rgba(219, 219, 219, 0.6
  * where you can go, with a rule beneath separating navigation from article.
  * The section's other pages are listed at the foot instead, as plain Markdown,
  * because that list is for when you have finished reading. All of it is plain
- * inline links, so with styling disabled it still reads as a sentence, and the
- * pager stacks on a phone rather than pushing the page wider than the viewport.
+ * inline links, so with styling disabled it still reads as a sentence. What a
+ * phone does with the two head blocks is described further down.
  */
 nav.docs-breadcrumbs { font-size: $base-font-size;  color: rgba(219, 219, 219, 0.62);  margin: 0 0 $space-tight; }
 nav.docs-breadcrumbs a { color: rgba(219, 219, 219, 0.62); }
@@ -201,7 +201,48 @@ nav.docs-pager .up { color: rgba(219, 219, 219, 0.62); }
 .docs-page-nav { margin: $space-block 0 0;  padding-top: $space-tight;  border-top: var(--border); }
 .docs-page-nav nav.docs-pager { margin: 0 0 $space-tight;  padding: 0;  border-bottom: none; }
 nav.docs-siblings { font-size: 0.875rem;  color: rgba(219, 219, 219, 0.62); }
-@media only screen and (max-width: 600px) { nav.docs-pager > span { display: block; }  nav.docs-pager .sep { display: none; } }
+/**
+ * Documentation navigation on a phone
+ *
+ * At the head of the page the two navs cost four or five lines before the
+ * article begins — most of the first screen once the site header and menu are
+ * counted — so on a narrow viewport they share a single line: the trail on the
+ * left, and the pager reduced to a ‹ › pair on the right. The words are still
+ * in the markup; only their size is zeroed, so the links keep their accessible
+ * names ("Previous: Selecting sequencers and views") and a reader with styling
+ * disabled still gets the full sentence. The arrows hang off the anchor rather
+ * than the span so the glyph and its padding are one tap target.
+ *
+ * The trail is clipped rather than wrapped, because a second line would put
+ * the arrows out of reach of the line they belong to. Losing the tail of it
+ * costs nothing: the last crumb is the page title, which the h1 repeats
+ * immediately below. The pager floats rather than sitting in the flow beside
+ * the trail, because two inline-blocks are separated by a collapsed space that
+ * the percentages have to leave room for; a float has no such gap. The rule
+ * that separated nav from article moves to the heading, which is also what
+ * clears the float.
+ *
+ * The foot of the page is untouched: there the pager is the whole point, so it
+ * keeps its labels and stacks one span per line.
+ *
+ * Both rules hide only the pager's own child separators. A step that crosses
+ * into another section carries a second one inside the label, between the
+ * section and the page, and that one has to stay.
+ */
+@media only screen and (max-width: 600px) {
+  nav.docs-breadcrumbs { display: inline-block;  max-width: 80%;  margin: 0;  font-size: 0.8125rem;  white-space: nowrap;  overflow: hidden;  text-overflow: ellipsis;  vertical-align: middle; }
+
+  main > nav.docs-pager { float: right;  margin: 0;  padding: 0;  border-bottom: none;  text-align: right;  font-size: 0; }
+  main > nav.docs-pager .up { display: none; }
+  main > nav.docs-pager > .sep { display: none; }
+  main > nav.docs-pager a { display: inline-block;  padding: 6px 4px;  text-decoration: none; }
+  main > nav.docs-pager .prev a:before { content: "\2039";  font-size: 1rem; }
+  main > nav.docs-pager .next a:after { content: "\203A";  font-size: 1rem; }
+  main > nav.docs-pager + * { clear: both;  margin-top: $space-tight;  padding-top: $space-tight;  border-top: var(--border); }
+
+  .docs-page-nav nav.docs-pager > span { display: block; }
+  .docs-page-nav nav.docs-pager > .sep { display: none; }
+}
 
 /**
  * Tables
