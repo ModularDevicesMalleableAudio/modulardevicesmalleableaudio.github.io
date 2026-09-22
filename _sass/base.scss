@@ -273,15 +273,13 @@ nav.docs-siblings { font-size: 0.875rem;  color: rgba(219, 219, 219, 0.62); }
  *
  * The trail is clipped rather than wrapped, because a second line would put
  * the arrows out of reach of the line they belong to. Losing the tail of it
- * costs nothing: the last crumb is the page title, and an h1 on the same
- * screen states it in full. The pager floats rather than sitting in the flow
+ * costs nothing: the last crumb is the page title, which the h1 states in
+ * full immediately below. The pager floats rather than sitting in the flow
  * beside the trail, because two inline-blocks are separated by a collapsed
  * space that the percentages have to leave room for; a float has no such
  * gap. The rule that separated nav from article moves to whatever follows
- * the pager, which is also what clears the float: the opening paragraph on a
- * generated page, whose heading the layout supplies above the trail rather
- * than below it, and the heading itself on a page that carries one of its
- * own.
+ * the pager, which is also what clears the float: the h1, which the
+ * sequencer repo's build_site_docs.py emits there on every page.
  *
  * The foot of the page is untouched: there the pager is the whole point, so it
  * keeps its labels and stacks one span per line.
