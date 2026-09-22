@@ -49,9 +49,35 @@ $space-section:        1.5rem !default;
  * Global
  */
 body { background-color: var(--background-color);  margin: 0 auto;  padding: 0;  font-family: $base-font-family;  font-size: $base-font-size;  color: var(--text-color);  text-align: left;  line-height: $base-line-height !important; }
+/**
+ * Headings
+ *
+ * Three levels are in use: one h1 per page, 276 h2, 132 h3 (h4 appears three
+ * times, h5 and h6 never). They were 1.5rem, 1.125rem and 1rem bold, which
+ * made every h3 body text with weight on it — and not one of the 132 had a
+ * rule or anything else above it to say a new part had started.
+ *
+ * The fix is not more sizes. Source Code Pro is monospaced, so a size step
+ * small enough to stay in keeping is too small to see, and one big enough to
+ * see is louder than this site talks. Monospace offers better axes: h2 takes
+ * a rule, h3 takes case and tracking, and the type scale does not move.
+ *
+ * h3 is uppercase because a fixed advance is what makes uppercase legible
+ * rather than shouty — the letterforms keep the grid the rest of the page is
+ * already on — and because it is the one treatment that cannot be confused
+ * with bold running text. The tracking stops the capitals from packing.
+ */
 h1  { font-size: 1.5rem;  font-weight: bold;  color: var(--text-color); }
-h2  { font-size: 1.125rem;  font-weight: bold;  color: var(--text-color); }
-h3, h4, h5, h6 { font-size: $base-font-size;  font-weight: bold;  color: var(--text-color); }
+h2  { font-size: 1.125rem;  font-weight: bold;  color: var(--text-color);  padding-bottom: $space-tight;  border-bottom: dashed 1px rgba(219, 219, 219, 0.35); }
+h3, h4, h5, h6 { font-size: $base-font-size;  font-weight: bold;  color: var(--text-color);  text-transform: uppercase;  letter-spacing: 0.08em; }
+
+/*
+ * Code in a heading opts out of both. A few headings name things whose case is
+ * the meaning — a `cloud-sync/publish` path, the `drive` and `drive.file`
+ * OAuth scopes — and uppercasing those states something false about them.
+ * Tracking goes too: a path wants to read as one token, not spaced out.
+ */
+h3 code, h4 code, h5 code, h6 code { text-transform: none;  letter-spacing: 0; }
 p, ul, ol { color: var(--text-color); }
 a { text-decoration: underline;  color: var(--link-color); }
 a:hover { color: var(--background-color); background-color: var(--base-color); }
@@ -64,6 +90,16 @@ a:hover { color: var(--background-color); background-color: var(--base-color); }
  * page, which is what made separators look inconsistent site-wide.
  */
 hr { border: none;  border-top: dashed 1px rgba(219, 219, 219, 0.35);  margin: $space-section 0; }
+
+/*
+ * A section heading draws its own rule, so the one the markdown sometimes puts
+ * above it would be a second line saying the same thing. Which markdown does
+ * that is not consistent and never was: the prose docs put `---` above 154 of
+ * their 172 h2, and the 26 view-reference pages above none of their 104, so
+ * half the documentation had visible section breaks and half had none. With
+ * the rule on the heading all 276 behave alike, and this hides the leftover.
+ */
+hr:has(+ h2) { display: none; }
 
 /**
  * Layout
@@ -106,7 +142,14 @@ footer { margin-bottom: 20px; }
  */
 p { word-wrap: break-word;  word-break: break-word; }
 :where(p, ul, ol, table, blockquote, figure, div.highlighter-rouge) { margin: 0 0 $space-block; }
-h1, h2, h3, h4, h5, h6 { margin: $space-section 0 $space-tight; }
+/*
+ * h2 gets a step more air than the scale's top rung, because it now opens a
+ * ruled section and has to clear the block above it without help from an hr.
+ * h3 keeps the ordinary section gap, so it reads as subordinate to h2 on
+ * spacing alone, before any of the styling registers.
+ */
+h1, h3, h4, h5, h6 { margin: $space-section 0 $space-tight; }
+h2 { margin: $space-section + $space-block 0 $space-block; }
 main > *:first-child { margin-top: 0; }
 main > *:last-child { margin-bottom: 0; }
 
