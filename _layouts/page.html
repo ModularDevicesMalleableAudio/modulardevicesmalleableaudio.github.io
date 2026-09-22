@@ -2,4 +2,31 @@
 layout: default
 ---
 
+{%- comment -%}
+  A documentation page that arrives without a heading gets the one its front
+  matter names.
+
+  The sequencer repo's scripts/build_site_docs.py strips the source H1 on the
+  way out, so the page title is single-sourced from its site-manifest.yml and
+  cannot drift from the breadcrumb and the nav. What it does not do is put the
+  title back, and nothing else here ever did: page.title reaches <title> and
+  stops. Without this, 58 of the 59 generated pages render with no heading at
+  all, opening mid-prose under the breadcrumb.
+
+  Scoped by URL rather than given a layout of its own, so the generator carries
+  on emitting `layout: page` and this site stays independent of it. about.md
+  and the other hand-written pages share this layout and open with their own
+  `##`, so the URL test leaves them alone.
+
+  The `<h1` test is what makes this safe to land before the pages are
+  regenerated: the copies presently in the repo still carry their source
+  heading, and supplying a second one would give them two. It reads as the
+  rule it is — a page gets exactly one heading, from whichever source has it.
+{%- endcomment -%}
+{%- if page.url contains '/documentation/MSEQ' -%}
+  {%- unless content contains '<h1' -%}
+<h1>{{ page.title | escape }}</h1>
+  {%- endunless -%}
+{%- endif -%}
+
 {{ content }}
