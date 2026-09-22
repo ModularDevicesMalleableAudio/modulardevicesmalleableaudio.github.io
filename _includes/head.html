@@ -1,7 +1,9 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <!-- No maximum-scale/user-scalable: pinch-zoom is how you inspect a pad
+       capture or a wide table on a phone, and blocking it fails WCAG 1.4.4. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>{{ page.title }}</title>
   {%- seo title=false -%}
 
