@@ -14,7 +14,22 @@ $base-font-family:     'Source Code Pro', monospace !default;
 $base-font-size:       1rem !default;
 $base-line-height:     1.5 !default;
 $container-width:      90% !default;
-$container-max-width:  900px !default;
+/**
+ * The measure.
+ *
+ * Source Code Pro is monospaced, so every glyph takes the same 0.6em: at 1rem
+ * the column holds max-width / 9.6 characters, and nothing about the text
+ * changes that. 900px worked out at about 94 characters a line, past the 90
+ * that is usually treated as the ceiling and well past the 45-75 that reads
+ * comfortably — which on a 3,000-word page like note-arp is the difference
+ * between reading and scanning. 720px lands on 75.
+ *
+ * The tables narrow with the prose, because they share this container. That is
+ * the cost of doing it with one variable, and it was judged acceptable against
+ * the widest table on the site. Letting tables and figures break out of the
+ * column is a separate change, and a larger one.
+ */
+$container-max-width:  720px !default;
 
 /**
  * Spacing scale
