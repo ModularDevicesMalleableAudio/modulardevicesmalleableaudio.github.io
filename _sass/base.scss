@@ -272,7 +272,20 @@ input, select, textarea, textarea::-webkit-input-placeholder { text-indent: 0px;
 ::-ms-input-placeholder { color: var(--placeholder-color); }
 input[type=submit] { font-size: $base-font-size;  font-family: $base-font-family;  line-height: $base-line-height;  cursor: pointer;  color: var(--link-color);  background-color: var(--background-color); }
 input[type=submit]:hover { color: var(--background-color); background-color: var(--base-color); }
+/**
+ * Focus
+ *
+ * `*:focus { outline: none }` on its own removed the focus ring from every
+ * link on the site, which on 57 cross-linked documentation pages left keyboard
+ * navigation with nowhere visible to be — a WCAG 2.4.7 failure, and the reason
+ * tabbing through the docs felt like guesswork. The mouse case it was there to
+ * suppress is exactly what :focus-visible already excludes, so the ring comes
+ * back for keyboard focus only. Solid rather than the site's usual dashed: a
+ * dashed ring reads as one more frame among the table and figure borders, and
+ * this one has to be found at a glance.
+ */
 *:focus { outline: none; }
+*:focus-visible { outline: solid 2px var(--base-color);  outline-offset: 2px; }
 textarea { vertical-align: top; }
 
 /**
