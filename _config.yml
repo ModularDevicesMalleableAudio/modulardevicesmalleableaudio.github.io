@@ -35,9 +35,15 @@ exclude:
   - assets/mseq/archive/
 
 footer: mdma
-header_pages:
-  - index.md
-  - about.md
-  - projects.md
-  - documentation.md
-  - repos.md
+
+# Site navigation. Labels and targets live here, not in page front matter, so
+# nav entries can point at generated pages (MSEQ-docs-*.md, whose titles and
+# filenames are owned by scripts/build_site_docs.py in the sequencer repo)
+# without this site depending on either. Rendered by _includes/header.html and
+# _includes/main-header.html.
+nav:
+  - { title: MDMA, url: / }
+  - { title: About, url: /about/ }
+  - { title: Projects, url: /projects/ }
+  - { title: Docs, url: /documentation/MSEQ/manual }
+  - { title: Code, url: /repos/ }
