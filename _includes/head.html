@@ -4,7 +4,34 @@
   <!-- No maximum-scale/user-scalable: pinch-zoom is how you inspect a pad
        capture or a wide table on a phone, and blocking it fails WCAG 1.4.4. -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>{{ page.title }}</title>
+  {%- comment -%}
+    Browser-tab title.
+
+    `page.title` alone gave the 57 generated MSEQ pages titles like "Swing" and
+    "Trigs": indistinguishable in a tab strip, a bookmark list or a search
+    result, and with nothing to say they belong to MSEQ, to the documentation,
+    or to this site. The suffix supplies that context, most-specific first, so
+    a truncated tab still shows the page's own name. Pages whose own title
+    already says MSEQ — the manual, the contents page — skip that segment
+    rather than stutter it.
+
+    The suffix is chosen here from the URL rather than set in each page's front
+    matter, because the MSEQ pages are build output from the sequencer repo's
+    scripts/build_site_docs.py and carry only layout, title and permalink.
+    Editing them is not an option; they are overwritten on every publish.
+  {%- endcomment -%}
+  {%- capture page_title -%}
+    {%- if page.url == '/' or page.title == nil or page.title == empty -%}
+      {{ site.title }}
+    {%- elsif page.title contains 'MSEQ' -%}
+      {{ page.title }} · MDMA
+    {%- elsif page.url contains '/documentation/MSEQ' -%}
+      {{ page.title }} · MSEQ docs · MDMA
+    {%- else -%}
+      {{ page.title }} · MDMA
+    {%- endif -%}
+  {%- endcapture -%}
+  <title>{{ page_title | strip }}</title>
   {%- seo title=false -%}
 
   {% if page.robots %}
