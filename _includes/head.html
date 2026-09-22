@@ -38,17 +38,17 @@
     <meta name="robots" content="{{page.robots}}" />
   {% endif %}
 
-  {%- if site.listen_for_clients_preferred_style -%}
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/main.css' | relative_url }}">
-  {%- else -%}
-    {%- if site.style == 'light' -%}
-      <link rel="stylesheet" type="text/css" href="{{ '/assets/main-light.css' | relative_url }}">
-    {%- elsif site.style == 'hacker' -%}
-      <link rel="stylesheet" type="text/css" href="{{ '/assets/main-hacker.css' | relative_url }}">
-    {%- else -%}
-      <link rel="stylesheet" type="text/css" href="{{ '/assets/main-dark.css' | relative_url }}">
-    {%- endif -%}
-  {%- endif -%}
+  {%- comment -%}
+    One stylesheet, because there is one theme.
+
+    This used to branch on `site.style` to main-light.css and main-hacker.css,
+    neither of which has ever existed: setting the option served a page with no
+    styles at all. The remaining branch was no better — main.scss and
+    main-dark.scss both `@import "dark"`, so every arm compiled to the same
+    bytes. A light theme means adding _sass/_light.scss and honouring
+    prefers-color-scheme here; until then a single link is the honest thing.
+  {%- endcomment -%}
+  <link rel="stylesheet" type="text/css" href="{{ '/assets/main.css' | relative_url }}">
 
   <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/apple-touch-icon.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/favicon-32x32.png' | relative_url }}">
