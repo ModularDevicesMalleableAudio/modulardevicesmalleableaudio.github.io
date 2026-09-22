@@ -29,6 +29,29 @@ The sequencer repo's `docs/site-manifest.yml` controls which pages are
 published, their order, titles, and URLs. See its `docs/README.md` for the full
 publishing and figure-generation contracts.
 
+## Reading the docs on a phone
+
+For proofreading away from a desk, `scripts/build-mobile-docs.py` bundles every
+generated MSEQ page into one self-contained HTML file — pages, images, styles
+and script inlined, nothing loaded from the network:
+
+```sh
+./scripts/build-mobile-docs.py    # -> _mobile/mseq-docs.html, about 4MB
+```
+
+Send that single file to the phone however is convenient and open it in the
+browser: it works offline, and can be added to the home screen. It carries a
+searchable contents drawer, per-page contents, prev/next paging, the
+webapp/hardware figure toggles, tap-to-zoom images, and light/dark and text-size
+controls.
+
+The running order and section headings come from `MSEQ-docs-index.md`, so
+regenerating the docs is enough — this script needs no edit when pages are
+added, renamed or reordered. It needs `pandoc` (markdown) and Pillow (images are
+re-encoded to WebP at phone width, taking 10MB of assets down to about 2.4MB);
+`--no-optimise` skips Pillow at the cost of a much larger file. Output lands in
+the gitignored `_mobile/`.
+
 ## How it deploys
 
 GitHub Pages builds and publishes on every push to `main` via the `pages`
@@ -83,4 +106,11 @@ subpath or onto a custom domain.
 | `_layouts/`, `_includes/` | Page templates and shared fragments |
 | `_sass/` | Styles, imported by `assets/*.scss` |
 | `assets/` | Images and compiled CSS entry points |
+| `scripts/` | Local build helpers; untracked, never published |
 | `MSEQ-docs-*.md` | MSEQ documentation, mapped by `permalink` to `/documentation/MSEQ/...` |
+| `documentation.html` | Redirect stub: `/documentation/` → `/documentation/MSEQ/manual` |
+
+The top navigation is the `nav:` list in `_config.yml` — labels and URLs, read
+by `_includes/header.html` and `_includes/main-header.html`. Entries are plain
+URLs, so they can point at generated pages without depending on the generator's
+filenames or titles.
