@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="513" viewBox="0 0 700 513" font-family="'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="MIDI clock explained: the FA, F8 and FC bytes, a ruler showing 24 ticks per beat and six ticks per sixteenth step, and the path from Ableton to MSEQ's note output.">
+<style>.title{font-size:14px;font-weight:700;fill:#DBDBDB}.h{font-size:12px;font-weight:700;fill:#DBDBDB}.t{font-size:11px;fill:rgba(219,219,219,0.62)}.i{font-size:11px;fill:#DBDBDB}.k{font-size:11px;font-weight:700;fill:#DBDBDB}.s{font-size:10px;fill:rgba(219,219,219,0.62)}</style>
+<rect x=".5" y=".5" width="699" height="512" fill="#0b0b0b" stroke="rgba(219,219,219,0.35)" stroke-dasharray="3 3"/>
+<text x="20" y="36" class="title">What a MIDI clock actually is</text>
+<text x="20" y="53" class="t">Ableton sends MSEQ one byte, F8, twenty-four times per beat. When those bytes</text>
+<text x="20" y="70" class="t">arrive is the only sense of time MSEQ gets from the outside world.</text>
+<text x="20" y="98" class="h">The three bytes that matter</text>
+<text x="20" y="119" class="k" fill="#86c8ff">FA</text>
+<text x="54" y="119" class="i">start</text>
+<text x="120" y="119" class="t">go back to the top and run</text>
+<text x="20" y="136" class="k" fill="#86c8ff">F8</text>
+<text x="54" y="136" class="i">clock</text>
+<text x="120" y="136" class="t">one tick — 24 of them in every beat</text>
+<text x="20" y="153" class="k" fill="#86c8ff">FC</text>
+<text x="54" y="153" class="i">stop</text>
+<text x="120" y="153" class="t">stop, and silence every held note</text>
+<text x="20" y="174" class="t">No bar number, no position, no timestamp: only arrivals.</text>
+<line x1="50" y1="217" x2="650" y2="217" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="50" y1="217" x2="50" y2="222" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="650" y1="217" x2="650" y2="222" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="350" y="210" class="t" text-anchor="middle">one beat = 24 ticks</text>
+<line x1="50" y1="249" x2="650" y2="249" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="50" y1="232" x2="50" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="76.087" y1="239" x2="76.087" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="102.174" y1="239" x2="102.174" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="128.261" y1="239" x2="128.261" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="154.348" y1="239" x2="154.348" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="180.435" y1="239" x2="180.435" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="206.522" y1="232" x2="206.522" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="232.609" y1="239" x2="232.609" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="258.696" y1="239" x2="258.696" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="284.783" y1="239" x2="284.783" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="310.87" y1="239" x2="310.87" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="336.957" y1="239" x2="336.957" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="363.043" y1="232" x2="363.043" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="389.13" y1="239" x2="389.13" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="415.217" y1="239" x2="415.217" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="441.304" y1="239" x2="441.304" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="467.391" y1="239" x2="467.391" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="493.478" y1="239" x2="493.478" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="519.565" y1="232" x2="519.565" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="545.652" y1="239" x2="545.652" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="571.739" y1="239" x2="571.739" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="597.826" y1="239" x2="597.826" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="623.913" y1="239" x2="623.913" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="650" y1="239" x2="650" y2="249" stroke="#86c8ff" stroke-width="1.5"/>
+<line x1="50" y1="257" x2="180.435" y2="257" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="50" y1="257" x2="50" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="180.435" y1="257" x2="180.435" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="115.217" y="271" class="s" text-anchor="middle">1/16 step 1</text>
+<line x1="206.522" y1="257" x2="336.957" y2="257" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="206.522" y1="257" x2="206.522" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="336.957" y1="257" x2="336.957" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="271.739" y="271" class="s" text-anchor="middle">1/16 step 2</text>
+<line x1="363.043" y1="257" x2="493.478" y2="257" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="363.043" y1="257" x2="363.043" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="493.478" y1="257" x2="493.478" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="428.261" y="271" class="s" text-anchor="middle">1/16 step 3</text>
+<line x1="519.565" y1="257" x2="650" y2="257" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="519.565" y1="257" x2="519.565" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="650" y1="257" x2="650" y2="253" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<text x="584.783" y="271" class="s" text-anchor="middle">1/16 step 4</text>
+<text x="20" y="294" class="t">Six ticks make one 1/16 step, so a bar is 96 ticks. A tick lasts 2500 / BPM ms:</text>
+<text x="20" y="311" class="i">at 140 BPM that is 17.9 ms, and one step is 107 ms.</text>
+<text x="20" y="354" class="h">The whole path</text>
+<rect x="20" y="368" width="97.2" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="29" y="384" class="i" fill="#86c8ff">Ableton Live</text>
+<line x1="121.2" y1="380" x2="166.55" y2="380" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M166.55,376.5 L171.55,380 L166.55,383.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="175.55" y="368" width="70.8" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="184.55" y="384" class="i" fill="#86c8ff">USB MIDI</text>
+<line x1="250.35" y1="380" x2="295.7" y2="380" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M295.7,376.5 L300.7,380 L295.7,383.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="304.7" y="368" width="77.4" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="313.7" y="384" class="i" fill="#DBDBDB">Pure Data</text>
+<line x1="386.1" y1="380" x2="431.45" y2="380" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M431.45,376.5 L436.45,380 L431.45,383.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="440.45" y="368" width="103.8" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="449.45" y="384" class="i" fill="#5ba711">counter 0 143</text>
+<line x1="548.25" y1="380" x2="593.6" y2="380" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M593.6,376.5 L598.6,380 L593.6,383.5 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="602.6" y="368" width="77.4" height="24" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="611.6" y="384" class="i" fill="#5ba711">notes out</text>
+<text x="20" y="411" class="t">MSEQ's master counter runs 0…143 — six beats — and every clock division is</text>
+<text x="20" y="428" class="t">a modulo of it. That arithmetic has always been correct.</text>
+<line x1="20" y1="452" x2="680" y2="452" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="20" y="472" class="t">So the whole job is this: decide when to advance that counter, using nothing but</text>
+<text x="20" y="489" class="t">the arrival times of a stream of identical bytes.</text>
+</svg>

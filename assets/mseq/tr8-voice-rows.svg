@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="542" height="469" viewBox="0 0 542 469" font-family="'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="TR-8 row map: which drum voice sits on which Launchpad row, in the colour that row&#8217;s button lights">
+<style>.t{font-size:11px;fill:rgba(219,219,219,0.62)}.v{font-size:14px;font-weight:700}.d{font-size:11px;opacity:.8}.h{font-size:12px;font-weight:700;fill:#DBDBDB}.n{font-size:11px;fill:rgba(219,219,219,0.62)}</style>
+<rect x=".5" y=".5" width="541" height="468" fill="#0b0b0b" stroke="rgba(219,219,219,0.35)" stroke-dasharray="3 3"/>
+<text x="20" y="38" font-size="14" font-weight="700" fill="#DBDBDB">TR-8 rows and voices</text>
+<text x="20" y="59" class="t">Each row is drawn in the colour its button lights.</text>
+<text x="58" y="88" class="h">Main view</text>
+<text x="46" y="122" class="n" text-anchor="end">8A</text>
+<rect x="58" y="100" width="222" height="36" fill="#86c8ff"/>
+<text x="70" y="122" class="v" fill="#0b0b0b">HT</text>
+<text x="268" y="122" class="d" fill="#0b0b0b" text-anchor="end">high tom</text>
+<text x="46" y="163" class="n" text-anchor="end">7B</text>
+<rect x="58" y="141" width="222" height="36" fill="#86c8ff"/>
+<text x="70" y="163" class="v" fill="#0b0b0b">MT</text>
+<text x="268" y="163" class="d" fill="#0b0b0b" text-anchor="end">mid tom</text>
+<text x="46" y="204" class="n" text-anchor="end">6C</text>
+<rect x="58" y="182" width="222" height="36" fill="#86c8ff"/>
+<text x="70" y="204" class="v" fill="#0b0b0b">LT</text>
+<text x="268" y="204" class="d" fill="#0b0b0b" text-anchor="end">low tom</text>
+<text x="46" y="245" class="n" text-anchor="end">5D</text>
+<rect x="58" y="223" width="222" height="36" fill="#028a7c"/>
+<text x="70" y="245" class="v" fill="#DBDBDB">SD1</text>
+<text x="268" y="245" class="d" fill="#DBDBDB" text-anchor="end">snare</text>
+<text x="46" y="286" class="n" text-anchor="end">4E</text>
+<rect x="58" y="264" width="222" height="36" fill="#028a7c"/>
+<text x="70" y="286" class="v" fill="#DBDBDB">SD2</text>
+<text x="268" y="286" class="d" fill="#DBDBDB" text-anchor="end">snare · 2nd</text>
+<text x="46" y="327" class="n" text-anchor="end">3F</text>
+<rect x="58" y="305" width="222" height="36" fill="#820610"/>
+<text x="70" y="327" class="v" fill="#DBDBDB">BD1</text>
+<text x="268" y="327" class="d" fill="#DBDBDB" text-anchor="end">kick</text>
+<text x="46" y="368" class="n" text-anchor="end">2G</text>
+<rect x="58" y="346" width="222" height="36" fill="#820610"/>
+<text x="70" y="368" class="v" fill="#DBDBDB">BD2</text>
+<text x="268" y="368" class="d" fill="#DBDBDB" text-anchor="end">kick · 2nd</text>
+<text x="46" y="409" class="n" text-anchor="end">1H</text>
+<rect x="58" y="387" width="222" height="36" fill="#820610"/>
+<text x="70" y="409" class="v" fill="#DBDBDB">Boom-tsk</text>
+<text x="268" y="409" class="d" fill="#DBDBDB" text-anchor="end">control row</text>
+<text x="300" y="88" class="h">Alternate view</text>
+<rect x="300" y="100" width="222" height="36" fill="#028a7c"/>
+<text x="312" y="122" class="v" fill="#DBDBDB">RC</text>
+<text x="510" y="122" class="d" fill="#DBDBDB" text-anchor="end">ride</text>
+<rect x="300" y="141" width="222" height="36" fill="#028a7c"/>
+<text x="312" y="163" class="v" fill="#DBDBDB">CC</text>
+<text x="510" y="163" class="d" fill="#DBDBDB" text-anchor="end">crash</text>
+<rect x="300" y="182" width="222" height="36" fill="#028a7c"/>
+<text x="312" y="204" class="v" fill="#DBDBDB">OH</text>
+<text x="510" y="204" class="d" fill="#DBDBDB" text-anchor="end">open hat</text>
+<rect x="300" y="223" width="222" height="36" fill="#028a7c"/>
+<text x="312" y="245" class="v" fill="#DBDBDB">CH</text>
+<text x="510" y="245" class="d" fill="#DBDBDB" text-anchor="end">closed hat</text>
+<rect x="300" y="264" width="222" height="36" fill="#820610"/>
+<text x="312" y="286" class="v" fill="#DBDBDB">CP1</text>
+<text x="510" y="286" class="d" fill="#DBDBDB" text-anchor="end">clap</text>
+<rect x="300" y="305" width="222" height="36" fill="#820610"/>
+<text x="312" y="327" class="v" fill="#DBDBDB">CP2</text>
+<text x="510" y="327" class="d" fill="#DBDBDB" text-anchor="end">clap · 2nd</text>
+<rect x="300" y="346" width="222" height="36" fill="#86c8ff"/>
+<text x="312" y="368" class="v" fill="#0b0b0b">RS1</text>
+<text x="510" y="368" class="d" fill="#0b0b0b" text-anchor="end">rimshot</text>
+<rect x="300" y="387" width="222" height="36" fill="#86c8ff"/>
+<text x="312" y="409" class="v" fill="#0b0b0b">RS2</text>
+<text x="510" y="409" class="d" fill="#0b0b0b" text-anchor="end">rimshot · 2nd</text>
+<text x="20" y="449" class="t">Paired voices get a second row, with lower default velocity for ghost notes.</text>
+</svg>

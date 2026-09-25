@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="639" viewBox="0 0 700 639" font-family="'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="The MSEQ clock control loop: measure the gap between incoming ticks, compute the ideal position from tick counts, rate and offset, then correct the next output wait by ten per cent of the error, capped at one millisecond per tick.">
+<style>.title{font-size:14px;font-weight:700;fill:#DBDBDB}.h{font-size:12px;font-weight:700;fill:#DBDBDB}.t{font-size:11px;fill:rgba(219,219,219,0.62)}.i{font-size:11px;fill:#DBDBDB}.k{font-size:11px;font-weight:700;fill:#DBDBDB}.s{font-size:10px;fill:rgba(219,219,219,0.62)}</style>
+<rect x=".5" y=".5" width="699" height="638" fill="#0b0b0b" stroke="rgba(219,219,219,0.35)" stroke-dasharray="3 3"/>
+<text x="20" y="36" class="title">The fix: MSEQ runs its own clock and steers it</text>
+<text x="20" y="53" class="t">A flywheel. MSEQ emits its own even tick stream, compares it with Ableton's, and</text>
+<text x="20" y="70" class="t">trims the next wait by a fraction of the difference — never by more than a hair.</text>
+<rect x="20" y="98" width="618" height="106" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="32" y="118" class="h" fill="#86c8ff">1 · measure what arrived</text>
+<text x="32" y="139" class="i" fill="#86c8ff" xml:space="preserve">Δ         = gap since the previous F8, from [timer]</text>
+<text x="32" y="156" class="i" fill="#86c8ff" xml:space="preserve">in_ticks  = in_ticks + 1</text>
+<text x="32" y="173" class="i" fill="#86c8ff" xml:space="preserve">in_phase  = in_phase + Δ</text>
+<text x="32" y="190" class="t">Every tick, however odd its gap. This is evidence, not a trigger.</text>
+<line x1="60" y1="204" x2="60" y2="215" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M56.5,215 L60,220 L63.5,215 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="20" y="220" width="618" height="140" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="32" y="240" class="h" fill="#DBDBDB">2 · work out where MSEQ ought to be by now</text>
+<text x="32" y="261" class="i" xml:space="preserve">rate   = 2500 / BPM    — Ableton's tempo, as CC 99 + CC 98</text>
+<text x="32" y="278" class="t" xml:space="preserve">         or the mean gap over the last 48 ticks, if no tempo is sent</text>
+<text x="32" y="295" class="i" xml:space="preserve">ideal  = in_phase + (out_ticks − in_ticks) × rate + offset</text>
+<text x="32" y="312" class="i" xml:space="preserve">error  = out_phase − ideal    — positive means MSEQ is late</text>
+<text x="32" y="329" class="t">Counting both streams is what lets a wanted offset be held rather</text>
+<text x="32" y="346" class="t">than mistaken for an error, and a gap in delivery pass harmlessly.</text>
+<line x1="60" y1="360" x2="60" y2="371" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<path d="M56.5,371 L60,376 L63.5,371 z" fill="rgba(219,219,219,0.35)"/>
+<rect x="20" y="376" width="618" height="106" fill="none" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="32" y="396" class="h" fill="#5ba711">3 · adjust the next wait, a little</text>
+<text x="32" y="417" class="i" fill="#5ba711" xml:space="preserve">delay  = rate − 0.1 × error, capped at ±1 ms per tick</text>
+<text x="32" y="434" class="i" fill="#5ba711">pd.Clock waits that long, then bangs counter 0 143.</text>
+<text x="32" y="451" class="t">MSEQ's own clock decides when every step fires; Ableton only ever</text>
+<text x="32" y="468" class="t">nudges its speed. Delivery noise cannot reach the notes directly.</text>
+<path d="M638,429 L658,429 L658,290 L643,290" fill="none" stroke="#5ba711" stroke-width="1"/>
+<path d="M643,286.5 L638,290 L643,293.5 z" fill="#5ba711"/>
+<text x="670" y="359.5" class="s" fill="#5ba711" text-anchor="middle" transform="rotate(-90 670 359.5)">out_ticks, out_phase</text>
+<text x="20" y="506" class="h">one tick at 140 BPM, to scale</text>
+<line x1="32" y1="532" x2="668" y2="532" stroke="rgba(219,219,219,0.35)" stroke-width="1.5"/>
+<line x1="32" y1="526" x2="32" y2="538" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<line x1="668" y1="526" x2="668" y2="538" stroke="rgba(219,219,219,0.35)" stroke-width="1"/>
+<rect x="632.384" y="526" width="35.616" height="12" fill="#5ba711"/>
+<text x="32" y="554" class="t">17.9 ms</text>
+<text x="668" y="554" class="t" fill="#5ba711" text-anchor="end">±1 ms — all the loop may move it</text>
+<line x1="20" y1="578" x2="680" y2="578" stroke="rgba(219,219,219,0.35)" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="20" y="598" class="t">Measured over 17 minutes against a 140 BPM master: phase error median +2.6 ms</text>
+<text x="20" y="615" class="t">(sd 0.9 ms) and total drift +2 to +3 ms, not growing, from 2.5 ms of input jitter.</text>
+</svg>
