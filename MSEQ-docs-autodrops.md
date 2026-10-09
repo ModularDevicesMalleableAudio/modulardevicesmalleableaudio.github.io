@@ -123,18 +123,18 @@ the 16-bar cycle, then unmute it.
 ### Cancelling and replacing
 
 Pressing the **top-row** button for that sequencer while a cue is pending
-cancels the autodrop and returns the sequencer to unmuted. Pressing the same
-bottom-row button again either cancels or replaces the cue, depending on what is
-already pending:
+cancels the autodrop and returns the sequencer to unmuted. That is the only way
+to cancel a plain mute autodrop cue: pressing the bottom-row button again either
+cancels a 16-bar cue or replaces the cue, depending on what is already pending.
 
 **No modifier, and REC ARM, both follow the same table:**
 
 | Current state | Result |
 |---------------|--------|
-| Unmuted (or any active autodrop) | Cue the autodrop |
+| Unmuted, cued to mute, or a CC or note drop running | Cue the autodrop |
 | Already cued for 16-bar autodrop | Cancel, returning the sequencer to unmuted |
-| Otherwise cued for any autodrop | Replace with this flavour |
-| Muted | No effect |
+| Otherwise cued for any autodrop | Replace with this flavour (no change if it already is this flavour) |
+| Muted, cued to unmute, or a mute autodrop running | No effect |
 
 **SHIFT + SOLO** hands the request to the autodrop engine instead of writing a
 mute state directly, so it follows its own rules:
@@ -155,14 +155,14 @@ manual cues use.
 
 | State | Top row LED | Bottom row LED |
 |-------|-------------|----------------|
-| Mute autodrop cued | Flashing green/off | Flashing off/red |
-| Mute autodrop active | Yellow | Red |
-| 16-bar autodrop cued | Flashing green/off | Flashing off/red |
-| 16-bar autodrop active | Yellow | Red |
-| CC autodrop cued | Green | Flashing off/yellow |
-| CC autodrop active | Green | Yellow |
-| Note autodrop cued | Green | Flashing off/orange |
-| Note autodrop active | Green | Orange |
+| Mute autodrop cued | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span></span>Flashing green/off | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444"></span></span>Flashing off/red |
+| Mute autodrop active | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red |
+| 16-bar autodrop cued | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span></span>Flashing green/off | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444"></span></span>Flashing off/red |
+| 16-bar autodrop active | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red |
+| CC autodrop cued | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15"></span></span>Flashing off/yellow |
+| CC autodrop active | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow |
+| Note autodrop cued | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f97316"></span></span>Flashing off/orange |
+| Note autodrop active | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f97316;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Orange |
 
 ### State transitions
 

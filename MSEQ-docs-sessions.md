@@ -208,7 +208,7 @@ mid-set:
 
 The arrows are the same two LaunchControl buttons that rotate a trig pattern
 everywhere else. The IO and peer views are the two exceptions where they page the
-catalog instead (see [Reset and randomise](/documentation/MSEQ/reset)).
+catalog instead (see [pattern-rotation.md](/documentation/MSEQ/rotation)).
 
 There is **one** step of undo and one of redo, and they are mutually exclusive:
 after you undo, the pad offers redo, and after you load something new, it offers

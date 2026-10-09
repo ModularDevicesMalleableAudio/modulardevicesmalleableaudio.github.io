@@ -14,7 +14,7 @@ permalink: /documentation/MSEQ/lc-bottom-row
 
 <h1>Bottom row</h1>
 
-The LC bottom row primarily controls **sequencer autodrops**. The full autodrop reference is [Autodrops](/documentation/MSEQ/autodrops). This page documents the non-autodrop functions that the same buttons expose when a modifier is held.
+The bottom row of buttons on the LaunchControl XL (the lower of the two rows beneath the faders) primarily controls **sequencer autodrops**. The full autodrop reference is [Autodrops](/documentation/MSEQ/autodrops). This page documents the non-autodrop functions that the same buttons expose when a modifier is held.
 
 ---
 
@@ -52,15 +52,15 @@ Bottom-row LED colours reflect the **sequencer autodrop state**, using the same 
 
 | State | Bottom row LED |
 |-------|---------------|
-| No autodrop pending | Off |
-| Cued to mute-drop | Flashing off/red |
-| Mute-drop running | Red |
-| Cued to CC drop | Flashing off/yellow |
-| CC drop running | Yellow |
-| Cued to note drop | Flashing off/orange |
-| Note drop running | Orange |
-| Cued to mute on the 16 | Flashing off/green |
-| Cued to unmute on the 16 | Yellow |
+| No autodrop pending | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Off |
+| Cued to mute-drop | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444"></span></span>Flashing off/red |
+| Mute-drop running | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red |
+| Cued to CC drop | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15"></span></span>Flashing off/yellow |
+| CC drop running | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow |
+| Cued to note drop | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f97316"></span></span>Flashing off/orange |
+| Note drop running | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f97316;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Orange |
+| Cued to mute on the 16 | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e"></span></span>Flashing off/green |
+| Cued to unmute on the 16 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow |
 
 ---
 

@@ -14,56 +14,146 @@ permalink: /documentation/MSEQ/mutes
 
 <h1>Mutes and row states</h1>
 
-MSEQ has two independent layers of muting: **sequencer mutes** (silence an entire sequencer) and **row mutes** (control the play mode of individual rows within a sequencer). Both support cued transitions. You set the intent and the system resolves it at the next 8-bar or 16-bar boundary of the cycle, so changes land where the music turns over rather than wherever your hands were. A cue is not a next-bar promise: read the timing sections below before you rely on one mid-set.
+MSEQ mutes at two levels, and they work independently of each other.
+
+**Sequencer mutes** control a whole sequencer. Mute one and every row in it goes
+silent. Unmute it and every row goes back to playing in whatever state you left
+it in. You set sequencer mutes from the **LaunchControl XL**, one button per
+sequencer.
+
+**Row mutes** control a single row within one sequencer. A row often carries
+just one note of the sequence, so a row mute lets you take that note out of the
+pattern and leave the rest playing. You set row mutes from the column of round
+buttons down the right-hand edge of your left Launchpad, one button per row.
+
+Row mutes also do more than switch a row on and off. As well as **muted** and
+**unmuted**, a row can **drone**, holding a single note for as long as it stays
+in that state, or play **legato**, stretching each note so that it runs into the
+next. The four states are described in full under [Row Mutes](#row-mutes).
+
+You can do all of this from the [webapp](/documentation/MSEQ/webapp) as well. Its LaunchControl
+panel has the same two rows of sequencer buttons, and the round buttons beside
+its grid are the row mutes. In the browser the modifiers are toggles: tap
+**ARM** once for REC ARM, make your presses, then tap it again to release it.
+
+---
+
+## Cues and autodrops
+
+You can change sequencer mutes and row mutes in two ways that wait for the
+music: a **cue** or an **autodrop**.
+
+### Cues
+
+A cue is a mute change you set now that lands later, at the next 8-bar or 16-bar
+boundary of the cycle. MSEQ runs a 16-bar cycle, counted bar 0 to bar 15, so
+bar 0 is the top of the cycle and bar 8 is the halfway point. A cue lets you
+bring a sequencer in, or take it out, exactly where the music turns over rather
+than wherever your hands happened to be.
+
+- **8-bar cue** (a plain press on the LaunchControl's top row of buttons) lands
+  at bar 8 or bar 0, whichever comes round first. Press in the first half of the
+  cycle and it lands at bar 8. Press in the second half and it waits for bar 0.
+- **16-bar cue** (the same press with REC ARM held) only ever lands at bar 0.
+- **Row cues** only ever land at bar 0. A row has no 8-bar cue, so a row cued at
+  bar 9 waits seven bars.
+
+A cue is not a next-bar promise. Pressed just after a boundary, it can sit for
+up to eight bars (or up to sixteen, if it only lands at bar 0) before anything
+happens.
+
+### Autodrops
+
+An autodrop is the performative version: a mute that lands at the next timing
+point and then takes itself back off. A playing sequencer or row goes silent at
+the next timing point and comes back at the top of the next cycle, with no
+second press.
+
+Every autodrop ends at bar 0, but it starts at whichever timing point comes next
+after your press, so **the length of the drop depends on when you press**:
+
+| You press during | The drop starts at | It lasts |
+|---|---|---|
+| Bars 0 to 7 | Bar 8 | 8 bars |
+| Bars 8 to 11 | Bar 12 | 4 bars |
+| Bars 12 to 14 | Bar 15, step 1 | 1 bar (16 steps) |
+| Bar 15, steps 1 to 8 | Bar 15, step 9 | 8 steps |
+| Bar 15, steps 9 to 12 | Bar 15, step 13 | 4 steps |
+
+Cue early for a long break, or cue in the last bar for a quick fill. Press the
+same button later each cycle and the drops get shorter, which pushes the music
+towards the turnaround without you counting a single bar. Hold REC ARM and the
+drop waits for bar 0 instead and lasts the full 16 bars.
+
+A muted row works the other way round: it autodrops **in**, playing for the
+length of the drop and then going quiet again. The full gestures and every
+autodrop flavour are in [Autodrops](/documentation/MSEQ/autodrops).
 
 ---
 
 ## Sequencer Mutes
 
-Sequencer mutes are controlled from the **LaunchControl XL**. Each player's LC shows two rows of 7 buttons, one button per sequencer. Which sequencers appear depends on the active LC user template: **U1, U3 and U5** show sequencers 1–7, **U2, U4 and U6** show sequencers 9–15. (Column 8 of both rows is not a sequencer. Those two buttons are the `8A` / `8B` modifiers, see [LaunchControl modifier buttons](/documentation/MSEQ/lc-status).)
+Sequencer mutes live on the **two rows of buttons along the bottom of the
+LaunchControl XL**, beneath the faders. Each row has eight buttons. The first
+seven belong to one sequencer each, column by column, so the third button in
+either row is sequencer 3. The top row mutes and unmutes. The bottom row cues
+autodrops.
 
-### How timing works
+Which sequencers the seven columns stand for depends on the active LC user
+template: **U1, U3 and U5** show sequencers 1–7, **U2, U4 and U6** show
+sequencers 9–15. (Column 8 of both rows is not a sequencer. Those two buttons
+are the `8A` / `8B` modifiers, see [LaunchControl modifier buttons](/documentation/MSEQ/lc-status).) Any modifier
+not listed in the two sections below does nothing on these rows, so a stray hold
+costs you nothing.
 
-MSEQ runs a 16-bar cycle, counted bar 0 to bar 15, so **bar 0 is the top of the cycle** and bar 15 is its last bar. Mute cues resolve at bar boundaries within that cycle:
+<img src="/assets/mseq/lc-buttons-layout.svg" alt="Diagram of the Launch Control XL button layout: a two-by-eight grid of buttons named 1A to 7A across the mutes row and 1B to 7B across the autodrop row, with column 8 outlined and named 8A and 8B as the two modifiers; beside it a four-button function column holding SHIFT (panel label Device), MUTE, SOLO and REC ARM; and beside that a photograph of that column on the rig, four square rubber buttons lit pink under stage lighting, labelled Device, Mute, Solo and Record Arm from top to bottom" style="display:block;margin-inline:auto">
 
-- **8-bar cue** (a plain mute or unmute press) waits for the halfway point or the top of the cycle, whichever comes round first. Press in the first half and it lands at bar 8. Press in the second half and it waits for bar 0.
-- **16-bar cue** (the same press with REC ARM held) only ever lands at bar 0, so it always waits for the top of the next cycle, however early you pressed.
-- **Autodrop cue** takes bar 8, bar 12 or bar 0, whichever comes round first, and then bar 15 offers three more chances (at steps 1, 9 and 13). That is what lets the short 16, 8 and 4-step drops land right on the turnaround.
+### Top row of buttons: mute and unmute
 
-So the later in the cycle you press, the sooner your cue lands, and a drop cued in the last bar arrives within it.
+Press a sequencer's button in the LC's **top row of buttons** (1A to 7A) to cue
+it to mute or unmute at the next 8-bar boundary. Press it again before the cue
+lands and the cue is cancelled. What a press does depends on what the sequencer
+is doing:
 
-### Top row: mute/unmute
+| Sequencer is | Pressing its top-row button |
+|---|---|
+| Playing | Cues a mute at the next 8-bar boundary |
+| Cued to mute | Cancels the cue: the sequencer keeps playing |
+| Muted, or silenced by an autodrop | Cues an unmute at the next 8-bar boundary |
+| Cued to unmute | Cancels the cue: the sequencer stays muted |
+| Cued to autodrop | Cancels the autodrop: the sequencer keeps playing |
 
-Pressing a top-row button with no modifier pressed cues the sequencer to mute or unmute at the next 8-bar boundary. The action depends on current state:
+Hold **REC ARM** and the same presses cue to the 16-bar boundary instead, so the
+change waits for bar 0.
 
-| Current state | Action |
-|---------------|--------|
-| Unmuted (or any cued-to-autodrop state) | Cancel autodrop / cue mute at next 8-bar |
-| Cued to mute | Cancel the cue (return to unmuted immediately) |
-| Muted (or autodrop-muted) | Cue unmute at next 8-bar |
-| Cued to unmute | Cancel the cue (remain muted) |
+Under two other modifiers the top row changes octaves instead:
 
-With **REC ARM** held, the same logic applies but uses a 16-bar boundary instead of 8-bar.
+- **SHIFT** + press raises the sequencer octave by one, up to +4.
+- **MUTE** + press raises the jam keyboard octave by one, up to +8.
 
-With **SHIFT** held: increment the sequencer octave (up to +4).
+### Bottom row of buttons: autodrop
 
-With **MUTE** held: increment the jam keyboard octave (up to +8).
+Press a sequencer's button in the LC's **bottom row of buttons** (1B to 7B) to
+cue an autodrop. The sequencer goes silent at the next timing point and comes
+back on its own at bar 0 (the timing is under [Autodrops](#autodrops) above).
+Hold **REC ARM** to cue a 16-bar autodrop instead, which waits for bar 0 and
+lasts the whole cycle.
 
-### Bottom row: autodrop
+| Sequencer is | Bottom-row press | REC ARM + bottom-row press |
+|---|---|---|
+| Playing, or cued to mute | Cues an autodrop | Cues a 16-bar autodrop |
+| Cued to a 16-bar autodrop | Cancels it: the sequencer keeps playing | Cancels it: the sequencer keeps playing |
+| Cued to any other autodrop | Makes it a plain autodrop (no change if it already is one) | Switches it to a 16-bar autodrop |
+| Muted, or silenced by an autodrop | Nothing | Nothing |
 
-Autodrop temporarily mutes a sequencer for a fixed duration and then automatically unmutes it. Pressing a bottom-row button with no modifier cues an autodrop at the next available boundary (bar 8 or 12 within the cycle):
+A bottom-row press never cancels a plain autodrop cue. To take one back, press
+the sequencer's **top-row** button.
 
-| Current state | Action |
-|---------------|--------|
-| Unmuted | Cue autodrop (mute → auto-unmute at next cycle) |
-| Cued to autodrop | Toggle: switch to 16-bar autodrop, or cancel |
-| Already in 16-bar autodrop cue | Cancel the autodrop |
+Under other modifiers the bottom row does something else:
 
-With **REC ARM** held: cue a 16-bar autodrop (fires at the next 16-bar boundary, lasts the full 16 bars).
-
-With **SHIFT** held: decrement the sequencer octave (down to −4).
-
-With **MUTE** held: decrement the jam keyboard octave (down to 0).
+- **SHIFT** + press lowers the sequencer octave by one, down to −4.
+- **MUTE** + press lowers the jam keyboard octave by one, down to 0.
+- **SHIFT + SOLO** + press cues a CC autodrop (see [Autodrops](/documentation/MSEQ/autodrops)).
 
 ### Autodrop types
 
@@ -83,47 +173,61 @@ unmuted, so the sequencer plays on. See the "Limitations" section of
 
 ### LED colours
 
-The two rows of LC LEDs reflect the current sequencer mute state:
+Both rows of LC buttons light to show each sequencer's mute state. A flashing
+button is drawn as both of the colours it alternates between.
 
-| State | Top row | Bottom row |
-|-------|---------|------------|
-| Unmuted | Green | Off |
-| Cued to mute | Flashing off/green | Off |
-| Muted | Red | Off |
-| Cued to unmute | Yellow | Off |
-| Cued to mute on the 16 | Flashing off/green | Flashing off/green |
-| Cued to unmute on the 16 | Yellow | Yellow |
-| Cued to mute-drop | Flashing green/off | Flashing off/red |
-| Mute-drop running | Yellow | Red |
-| Cued to CC drop | Green | Flashing off/yellow |
-| CC drop running | Green | Yellow |
-| Cued to note drop | Green | Flashing off/orange |
-| Note drop running | Green | Orange |
+| State | Top row LED | Bottom row LED |
+|-------|-------------|----------------|
+| Unmuted | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Off |
+| Cued to mute | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e"></span></span>Flashing off/green | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Off |
+| Muted | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Off |
+| Cued to unmute | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Off |
+| Cued to mute on the 16 | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e"></span></span>Flashing off/green | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e"></span></span>Flashing off/green |
+| Cued to unmute on the 16 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow |
+| Cued to mute-drop | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span></span>Flashing green/off | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444"></span></span>Flashing off/red |
+| Mute-drop running | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#ef4444;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red |
+| Cued to CC drop | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15"></span></span>Flashing off/yellow |
+| CC drop running | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#facc15;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Yellow |
+| Cued to note drop | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f97316"></span></span>Flashing off/orange |
+| Note drop running | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#22c55e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f97316;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Orange |
 
 ---
 
 ## Row Mutes
 
-Row mutes are set per-sequencer from the **Launchpad** (the vertical column of buttons on the right-hand side of the left-hand pad), and control how each of the 8 rows within a sequencer plays. Rows are numbered 1 at the bottom of the pad up to 8 at the top (see the "What You See" section of [Trigs](/documentation/MSEQ/trigs)).
+You set row mutes from the column of round buttons down the right-hand edge of
+your left Launchpad, one button per row of the selected sequencer. Rows are
+numbered 1 at the bottom of the Launchpad up to 8 at the top (see the "What You
+See" section of [Trigs](/documentation/MSEQ/trigs)).
 
-The TL;DR is that a plain press mutes and unmutes the row, **MUTE** will make that row drone, **SOLO** will make it play in legato, and **REC ARM** cues the change rather than applying it immediately. You can combine REC ARM with MUTE or SOLO to cue the drone and legato statuses. In this way you can move between states as and when you like, but with also the freedom to cue a change in state for the future, which is particularly helpful in a live situation. The full gesture table is in the "Row Mode" section of [Trigs](/documentation/MSEQ/trigs).
+A plain press mutes or unmutes the row straight away. Hold **MUTE** and the press
+makes the row drone. Hold **SOLO** and it plays legato. Hold **REC ARM** and the
+change is cued rather than applied, and REC ARM combines with MUTE or SOLO to cue
+drone or legato. So you can switch a row the moment you want to, or set the
+change up now and let it land on the boundary. The full gesture table is in the
+"Row Mode" section of [Trigs](/documentation/MSEQ/trigs).
 
 Each row can be in one of four play modes:
 
 | Mode | Behaviour |
 |------|-----------|
-| **Unmuted** | Normal step playback |
-| **Legato** | Steps play with extended duty: notes connect into each other |
-| **Drone** | A single note fires immediately on entering this mode and is held continuously until the row leaves Drone mode |
-| **Muted** | Row is silent; no notes fire |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>**Unmuted** | Normal step playback |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>**Legato** | Steps play with extended duty: notes connect into each other |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>**Drone** | A single note fires immediately on entering this mode and is held continuously until the row leaves Drone mode |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>**Muted** | Row is silent; no notes fire |
 
 ### Cued transitions
 
-Row mode changes are cued to the **16-bar boundary only** (bar 0). Unlike a sequencer mute, they do not get the halfway chance at bar 8, so a row cued at bar 9 waits seven bars. The full set of cued states covers every combination of current mode → target mode.
+A row cue lands at bar 0 only (see [Cues](#cues) above). You can cue a row from
+any of the four states to any other.
 
-Pressing the same cue gesture again cancels it and leaves the row in the mode it is already playing, so a cue you change your mind about costs you one press rather than a wait.
+Pressing the same cue gesture again cancels it and leaves the row in the mode it
+is already playing, so a cue you change your mind about costs you one press
+rather than a wait.
 
-Rows can also be cued to autodrop, from whichever mode they are in, which drops them in or out for part of the cycle and then puts them back without another press.
+Hold **SHIFT** and press a row's button to cue a row autodrop from whichever
+state the row is in. A playing row drops out and a muted row drops in, and the
+row goes back to its state at bar 0 (see [Autodrops](#autodrops) above).
 
 ### Row LED colours
 
@@ -136,25 +240,25 @@ where a row is and where it is going.
 |---|---|
 | Muted | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>Off |
 | Muted, cued unmuted | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#435d7c;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>Slate grey |
-| Muted, cued drone | Slate grey / teal-green |
+| Muted, cued drone | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#435d7c"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span></span>Slate grey / teal-green |
 | Muted, cued legato | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#435d7c"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span></span>Slate grey / blue |
-| Drone | Teal-green |
-| Drone, cued muted | Teal-green / off |
-| Drone, cued unmuted | Teal-green / orange |
-| Drone, cued legato | Teal-green / blue |
+| Drone | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>Teal-green |
+| Drone, cued muted | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span></span>Teal-green / off |
+| Drone, cued unmuted | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a"></span></span>Teal-green / orange |
+| Drone, cued legato | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span></span>Teal-green / blue |
 | Legato | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>Blue |
 | Legato, cued muted | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span></span>Blue / off |
-| Legato, cued unmuted | Blue / orange |
-| Legato, cued drone | Blue / teal-green |
-| Unmuted | Orange |
-| Unmuted, cued muted | Orange / off |
-| Unmuted, cued drone | Orange / teal-green |
-| Unmuted, cued legato | Orange / blue |
+| Legato, cued unmuted | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a"></span></span>Blue / orange |
+| Legato, cued drone | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span></span>Blue / teal-green |
+| Unmuted | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>Orange |
+| Unmuted, cued muted | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#000000"></span></span>Orange / off |
+| Unmuted, cued drone | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span></span>Orange / teal-green |
+| Unmuted, cued legato | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span></span>Orange / blue |
 | Muted, cued autodrop in | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#435d7c"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#7a44bc"></span></span>Slate grey / purple |
-| Drone, cued autodrop in | Teal-green / purple |
+| Drone, cued autodrop in | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#7a44bc"></span></span>Teal-green / purple |
 | Legato, cued autodrop in | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#7a44bc"></span></span>Blue / purple |
-| Unmuted, cued autodrop in | Orange / purple |
-| Drone, autodropped out | Slate grey / teal-green |
+| Unmuted, cued autodrop in | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d0914a"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#7a44bc"></span></span>Orange / purple |
+| Drone, autodropped out | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#435d7c"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#0fa586"></span></span>Slate grey / teal-green |
 | Legato, autodropped out | <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);border-radius:.6em;overflow:hidden;vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#435d7c"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#428fff"></span></span>Slate grey / blue |
 | Unmuted, autodropped out | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#435d7c;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>Slate grey |
 | Autodropped in | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#7a44bc;border:solid 1px rgba(219,219,219,0.5);border-radius:50%;vertical-align:-.12em;margin-inline-end:.55em"></span>Purple |
@@ -166,25 +270,20 @@ where a row is and where it is going.
 
 ### Drone behaviour
 
-When a row enters Drone mode, MSEQ immediately computes and fires the note that step 1 of the row would produce (using the current scale, chord, and octave settings) and holds it as a sustained MIDI note-on. When the row leaves Drone mode, a note-off is sent for that held note. This means the drone note reflects the current chord and scale state at the moment Drone was engaged.
+When a row enters Drone mode, MSEQ fires the note that row would play at that
+moment (its current note-arp position, under the current scale, chord and
+octave settings) and holds it as a sustained MIDI note-on. When the row leaves
+Drone mode, MSEQ sends a note-off for that held note. The drone keeps the note
+it started with: change the chord or scale later and the held note does not
+follow. If the row has an octave sequence, the drone takes the octave set for
+steps 1 to 4, whichever step the playhead is on when you press.
 
----
+A drone sounds only while its sequencer is unmuted. Mute the sequencer, or let
+a mute autodrop take it out, and MSEQ stops the drone along with every other
+row. Unmute it and the drone starts again on the note the row would play now,
+so it picks up any chord change made in the meantime. Stopping the DAW silences
+every drone too, and pressing Start brings each one back the same way. Loading
+a session, a sequencer or a chord progression, or undoing a load, does the
+same: every drone that is still meant to sound restarts on the next step.
 
-## LC Modifier Button Reference
-
-The LC's 6 modifier buttons (see [LaunchControl modifier buttons](/documentation/MSEQ/lc-status)) can be held alone
-or in pairs. These are the ones the two sequencer rows listen to:
-
-| Button(s) | Effect on top row | Effect on bottom row |
-|-----------|-------------------|----------------------|
-| None | 8-bar mute cue | Autodrop cue |
-| SHIFT | Sequencer octave up | Sequencer octave down |
-| MUTE | Keyboard octave up | Keyboard octave down |
-| REC ARM | 16-bar mute cue | 16-bar autodrop cue |
-| SHIFT + SOLO | – | CC autodrop cue (see [Autodrops](/documentation/MSEQ/autodrops)) |
-
-Any other modifier or pair does nothing on these two rows, so a stray hold costs
-you nothing. The same buttons do plenty elsewhere: the grid views give each one
-its own gesture.
-
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/octave-tree">Octave tree</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><strong>Mutes and row states</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/octave-tree">Octave tree</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><strong>Mutes and row states</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>

@@ -10,48 +10,31 @@ permalink: /documentation/MSEQ/jam-keyboard
 
 <nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Jam keyboard</span></nav>
 
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/reset">Reset and randomise</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/note-arp">Note arps</a> →</span></nav>
+<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/rotation">Pattern rotation</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/note-arp">Note arps</a> →</span></nav>
 
 <h1>Jam keyboard</h1>
 
-The jam-keyboard is a live-input view that turns the Launchpad MK2 grid
-into a scale-aware piano keyboard whose held notes are checked by a
-16-step rhythmic trig pattern. Press keys on rows 1–7 to hold notes;
-author the gate pattern that releases those notes into the engine on
-the top row of the same LPs, using the LC only as a modifier.
-
-It is a **rhythmic gate pattern instrument**, not a play-on-press
-keyboard. Held notes only sound on active pattern steps; releasing
-the LP key clears the gate.
-
-The gates are what make it playable. When you have a big chunk of
-latency between your fingers hitting the keyboard and the sound hitting
-your eardrums, it's difficult to play in time, so here you hold the
-notes and let the pattern place them, and what you play lands on the
-grid whether or not your timing does. Hold a chord, edit the gates
-underneath it, and the part rewrites itself while you keep holding.
-
-The keys are laid out isomorphically, a bit like what you've seen on the
-Ableton Push, and the same layout as the note keyboard in the
-[note arp view](/documentation/MSEQ/note-arp), so a shape you learn in one place
-transposes to the other.
+The jam keyboard turns your Launchpads into a keyboard that you play through a
+trig pattern. Hold notes on the keyboard, and they play on every trig of a
+16-step pattern along the top row. Nothing sounds when you press a key: the
+trigs place the notes, so what you play lands in time even when latency makes
+playing in time hard. Hold a chord and edit the trigs underneath it, and the
+part changes while you keep holding.
 
 ---
 
-## What You See on the Launchpads
+## What you see on the Launchpads
 
-Each player's LP shows the same layout: rows 1–7 are a piano-style
-keyboard, row 8 is the trig pattern editor. Both pads show the **same**
-keyboard, not two halves of one, so either hand can play the whole
-range.
+Both of your Launchpads show the same layout: the trig pattern along the top
+row, and the keyboard on the seven rows below it.
 
 <figure class="fig-pair">
 <input type="radio" name="jam-keyboard" id="jam-keyboard-webapp" class="pick-webapp" checked>
 <label for="jam-keyboard-webapp">webapp</label>
 <input type="radio" name="jam-keyboard" id="jam-keyboard-hardware" class="pick-hardware">
 <label for="jam-keyboard-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/jam-keyboard.png" alt="A locked jam keyboard: the same eight mustard held-note pads form a rising shape on both Launchpads, three slate octave markers remain visible on each LP, the row-7 freeze pads are red, and the top row carries a six-cell coloured gate pattern">
-<img class="shot-hardware" src="/assets/mseq/hardware/jam-keyboard.jpg" alt="A locked jam keyboard: the same eight mustard held-note pads form a rising shape on both Launchpads, three slate octave markers remain visible on each LP, the row-7 freeze pads are red, and the top row carries a six-cell coloured gate pattern, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/jam-keyboard.png" alt="A locked jam keyboard: the same eight mustard held-note pads form a rising shape on both Launchpads, three slate octave markers remain visible on each LP, the row-7 freeze pads are red, and the top row carries a six-cell coloured trig pattern">
+<img class="shot-hardware" src="/assets/mseq/hardware/jam-keyboard.jpg" alt="A locked jam keyboard: the same eight mustard held-note pads form a rising shape on both Launchpads, three slate octave markers remain visible on each LP, the row-7 freeze pads are red, and the top row carries a six-cell coloured trig pattern, photographed on the hardware">
 </figure>
 
 *An eight-note shape held across the keyboard and locked with the freeze toggle.
@@ -60,138 +43,61 @@ pads, because each LP carries the whole keyboard. The red pad at the right of
 row 7 says freeze is locked. Across the top, five trig-status pads are lit; step 1 is separately washed
 out under the playhead.*
 
-### Rows 1–7: Keyboard
+### The top row: trig pattern
 
-Notes are laid out as scale degrees plus octave offsets. The mapping is
-fixed and spans roughly four octaves across rows 1–7. Row 7 has only seven
-keys: the eighth pad in that row is the **freeze toggle**.
+The top row holds a 16-step trig pattern, split across your two Launchpads the
+same way the trig view splits its steps: steps 1 to 8 on your LHS, 9 to 16 on
+your RHS. Both players edit the same pattern.
 
-- **Unlocked:** the freeze pad is off-white.
-- **Locked (frozen):** the freeze pad is red.
+These trigs behave exactly like the ones in the [trig view](/documentation/MSEQ/trigs): every
+trig status, and the LaunchControl modifiers that set them, work the same way
+here, except Euclidean (8B). [Reset and randomise](/documentation/MSEQ/reset) work too, and
+act on the whole pattern. The LaunchControl arrows
+[rotate](/documentation/MSEQ/rotation) it one step at a time, but here they rewrite the
+pattern in place, so SHIFT + MUTE and SHIFT + SOLO with an arrow do nothing.
 
-The pad that starts each octave is highlighted, so you can find your place
-at a glance. The octave you are on decides the tint that held notes take.
+### The bottom seven rows: keyboard
 
-Held notes are drawn in the active octave colour. Unpressed keys
-show the default keyboard colouring with octave-start markers
-emphasised.
+The seven rows below the trig pattern are a keyboard in the current key and
+scale, spanning about four octaves. Each Launchpad shows the whole keyboard,
+not half of it, so either hand can reach every note. The layout is the same as
+the keyboard in the [note arp view](/documentation/MSEQ/note-arp), so a shape you learn in
+one transposes to the other.
 
-### Row 8: Trig Pattern
-
-The top row of each LP edits the 16-step gate pattern. The
-sixteen steps are split across **your own two pads**, the same way the trig
-view splits its sixteen steps:
-
-- Your **LHS** pad's row 8 edits **steps 1–8**.
-- Your **RHS** pad's row 8 edits **steps 9–16**.
-
-Both players reach all sixteen steps this way, and both are editing the same
-pattern.
-
-Cells use the same trig-status palette as trig view: ON, OFF,
-TRIGMUTE, PERCENTAGE_CHANCE, MOD1/2/4/8/16, INVMOD4/8/16,
-SUS_START, SUS_HOLD. The current playhead within the pattern is
-drawn with the positioner colour.
+The pad that starts each octave is highlighted, so you can find your place at a
+glance, and held notes light up in the colour of the octave you are on. The
+last pad of row 7 is not a key: it is the **freeze** pad, off-white when
+unlocked and red when locked.
 
 ---
 
-## How To Play
+## How to play
 
-1. **Pick an octave** with the LaunchControl: hold MUTE and press that
-   sequencer's button on the top row to go up, or on the bottom row to go
-   down (see [LaunchControl bottom row](/documentation/MSEQ/lc-bottom-row)). The keyboard octave runs
-   0 to +8 and is remembered per sequencer.
-2. **Press an LP key** in rows 1–7. The key holds its scale degree in the
-   current key and scale, shifted by the octave you picked. Nothing sounds on
-   the press itself: the note waits for the next active step of the gate
-   pattern.
-3. **Hold the key.** The note stays held until you release it.
-4. **Author the trig pattern** with row 8 (steps 1–16). On active
-   pattern steps the engine fires every currently-held note; on
-   inactive steps it stays silent. Releasing the key drops that
-   note from the gate immediately.
+Pick an octave on the LaunchControl first: hold MUTE and press the sequencer's
+button in the LaunchControl's top row of buttons to go up an octave, or in its
+bottom row to go down. The keyboard octave runs from 0 to +8 (see
+[Mutes and row states](/documentation/MSEQ/mutes) and [LaunchControl bottom row](/documentation/MSEQ/lc-bottom-row)). Then hold keys on the keyboard. Every
+held note plays on each trig of the pattern, and stops as soon as you let go
+of its key. Both players, and both of each player's Launchpads, play into the
+same set of held notes, so a note pressed in two places keeps playing until
+the last of them is released.
 
-Both players, and both LPs of one player, play into the same set of held
-notes. If the same note is pressed from two different buttons it only stops
-when the last of them is released.
+### Freeze
 
-### Freeze lock / unlock
-
-The pad at **row 7, column 8** (the one key row 7 gives up) toggles a
-shared freeze lock:
-
-- First press (unlocked → locked): latches the current gate state.
-- Second press (locked → unlocked): clears jam-keyboard gates/holds and
-  sends all-notes-off for this jam sequencer.
-- Pressing a new keyboard note while locked also unlocks first, then
-  starts a fresh live hold state.
-
-Freeze state persists across view changes and top-row trig edits.
-
-### Trig-pattern editing modifiers
-
-Row 8 edits respect the LaunchControl XL modifier held at the moment of
-press, the same way the trig view does:
-
-| LC state         | Press effect on step                       |
-|------------------|--------------------------------------------|
-| (none)           | Toggle OFF ↔ ON (TRIGMUTE/SUS → ON)        |
-| SHIFT            | Toggle PERCENTAGE_CHANCE                   |
-| MUTE             | TRIGMUTE                                   |
-| SOLO             | Two-press sustain: start, then end step    |
-| 8A (inv-mod)     | Cycle INVMOD4 → INVMOD8 → INVMOD16         |
-| REC ARM          | Cycle MOD1 → MOD2 → MOD4 → MOD8 → MOD16    |
-| SHIFT + MUTE       | **Clears the whole pattern**: all 16 steps to OFF + jam-sequencer all-notes-off |
-| SHIFT + SOLO       | **Randomises the whole pattern**: all 16 steps  |
-
-Those last two are the only whole-view gestures here. They do not act on the
-step you pressed: **any** row-8 press with the modifier held rewrites all
-sixteen steps at once, and there is no undo. `SHIFT+MUTE` also clears
-jam-keyboard freeze and holds and sends all-notes-off scoped to this jam
-sequencer (not a global panic).
-
-### Trig-pattern rotation
-
-When the jam-keyboard view is active, the LaunchControl left/right arrows rotate
-the 16-step jam-keyboard trig pattern in place:
-
-- **left arrow** shifts the pattern one step left with wraparound.
-- **right arrow** shifts the pattern one step right with wraparound.
-
-This path is intentionally destructive for the runtime jam pattern rather than a
-saved offset model; the jam-keyboard trig pattern is not session-persistent.
-SHIFT + MUTE / SHIFT + SOLO + arrow are ignored here. Use the row-8 grid gestures
-above to reset or randomise the jam pattern.
+Press the freeze pad to lock the notes you are holding, so you can take your
+hands off the keyboard and keep the part playing. Press it again to unlock,
+which releases every held note. Pressing a new key while locked also unlocks,
+and starts a fresh set of held notes. Freeze stays locked when you change view
+or edit the trigs.
 
 ---
 
-## Behaviour Notes
+## Cross-references
 
-- **No persistent musical state.** Note gates and the trig pattern
-  exist only at runtime, so there is nothing to save per project.
-  Reset and randomise still work. They clear or random-fill the
-  16-step gate pattern, as the modifier table above describes and
-  [Reset and randomise](/documentation/MSEQ/reset) records. But nothing they touch
-  outlives the session.
-- **Shared state across players.** Both players share one set of held notes
-  and one trig pattern. P1 and P2 cannot run independent patterns or note
-  sets on the jam keyboard.
-- **Note-off path is always honoured**, even when the view is not
-  active for a player. This prevents stuck notes if a player
-  navigates away mid-press. Note-ons are checked by view-active.
-- **Scale awareness.** Changing the global key or scale retunes future
-  presses immediately, but notes you are already holding keep their original
-  pitch until you release them.
+- [Trigs](/documentation/MSEQ/trigs): the trig statuses and the modifiers that set them
+- [pattern-rotation.md](/documentation/MSEQ/rotation): rotating a trig pattern with the LaunchControl arrows
+- [Note arp](/documentation/MSEQ/note-arp): the same keyboard layout, used to write note arps
+- [LaunchControl bottom row](/documentation/MSEQ/lc-bottom-row): octave shifts on the LaunchControl
+- [Selecting sequencers and views](/documentation/MSEQ/selection): how to bring the jam keyboard onto a Launchpad
 
----
-
-## Cross-References
-
-- [Reset and randomise](/documentation/MSEQ/reset): JAM_KEYBOARD's row-8 reset and
-  randomise, in the full per-view matrix.
-- [Selecting sequencers and views](/documentation/MSEQ/selection)
- : how to bring the jam keyboard onto an LP.
-- [LaunchControl modifier buttons](/documentation/MSEQ/lc-status): LaunchControl modifier states
-  used by the trig-pattern editor.
-
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/reset">Reset and randomise</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/note-arp">Note arps</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><strong>Jam keyboard</strong></nav></div>
+<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/rotation">Pattern rotation</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/note-arp">Note arps</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><strong>Jam keyboard</strong></nav></div>

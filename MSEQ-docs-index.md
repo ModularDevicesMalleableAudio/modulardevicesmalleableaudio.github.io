@@ -25,6 +25,7 @@ permalink: /documentation/MSEQ/
 - [Mutes and row states](/documentation/MSEQ/mutes)
 - [Euclidean trigs](/documentation/MSEQ/euclidean)
 - [Reset and randomise](/documentation/MSEQ/reset)
+- [Pattern rotation](/documentation/MSEQ/rotation)
 - [Jam keyboard](/documentation/MSEQ/jam-keyboard)
 
 ## Arps

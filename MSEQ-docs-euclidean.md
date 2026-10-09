@@ -14,84 +14,43 @@ permalink: /documentation/MSEQ/euclidean
 
 <h1>Euclidean trigs</h1>
 
-Euclidean trigs are an **overlay on top of normal TRIG rows**.
+A Euclidean pattern is an overlay on a row of the trig view. It fills the
+steps you have left empty and never touches the ones you have written.
 
-- Normal trig values still work as before.
-- Euclidean only fires on steps where the base trig is `OFF`.
-- If a step already has another trig status (mute/prob/mod/sus/etc), that status wins: Euclidean is the lowest-priority trig source.
+Any trig you place on a step wins over the pattern. That makes the trig grid
+your editor for it. Hold MUTE and press a step to silence one hit with a
+TRIGMUTE. Add ON, mod or percentage-chance trigs on the steps in between to
+embellish it.
+
+A Euclidean hit is an ordinary trig. It plays exactly as an ON trig would,
+with its velocity, duty and note coming from the
+[step values](/documentation/MSEQ/step-views), the [velo and duty arps](/documentation/MSEQ/velo-duty-arps) and
+the row's [note arp](/documentation/MSEQ/note-arp).
 
 ---
 
 ## How to add a Euclidean trig pattern
 
-1. Select the sequencer you want (it must be in **TRIG** view).
-2. **Hold LC_8B**, the lower-right modifier button on the LaunchControl XL (see [LaunchControl modifier buttons](/documentation/MSEQ/lc-status)), **and press a step** on the Launchpad grid.
-3. The pressed step becomes the **rotation start point**: the first pulse of the Euclidean pattern lands on that step.
-4. On first enable, density is auto-bumped from 0 to 1, so you immediately hear a single hit at the pressed step.
+<img src="/assets/mseq/lc-euclid-faders.svg" alt="The webapp's LaunchControl XL console with everything dimmed except faders 6, 7 and 8, outlined and labelled density, rotation and length, and the 8B button, outlined and labelled hold and press a step" style="display:block;margin-inline:auto">
 
-### Repeated presses on the same row
+In a trig view, hold **8B** on the LaunchControl XL and press a step on the
+Launchpad grid. That step becomes the start of a Euclidean pattern with a
+single pulse on it.
 
-- **Same step pressed again** (LC_8B + same step): Euclidean pattern for that row toggles **off** and the pattern is cleared.
-- **Different step pressed** (LC_8B + different step): Euclidean stays enabled and the pattern **re-rotates** to start at the new step. Density and length are unchanged.
+Faders 6, 7 and 8 then control the pattern, as the diagram shows.
 
-### Row selection
+- **Density** (fader 6): raise it to add pulses. The MSEQ spreads them as evenly as it can along the row.
+- **Rotation** (fader 7): moves the whole pattern along the row.
+- **Length** (fader 8): sets how many steps the pattern runs before it repeats, from 1 to 16.
 
-The last row you press with LC_8B becomes the **selected row** for that sequencer. The fader controls (below) target whichever row is currently selected. Selected row is remembered **per sequencer and per player**, so the two of you can have different rows selected on the same sequencer. That same selection is what the LC arrow-key trig rotation acts on (see [Reset and randomise](/documentation/MSEQ/reset)).
+The faders edit the **selected row**, which is the last row you
+pressed with 8B. Each player has their own selected row on each sequencer. To
+move a pattern, hold 8B and press a different step on its row. To turn it off,
+hold 8B and press the step it starts on.
 
----
-
-## Algorithm
-
-The pattern is computed using the **Bjorklund algorithm** (Toussaint, 2005), which spreads the pulses across the pattern length as evenly as possible. The result is a maximally even rhythm: gaps between consecutive pulses differ by at most 1 step.
-
-Examples at rotation 0:
-
-| Density | Length | Pattern | Rhythm name |
-|---------|--------|---------|-------------|
-| 1 | 16 | `1000000000000000` | – |
-| 3 | 8 | `10010010` | Tresillo |
-| 4 | 16 | `1000100010001000` | Four-on-the-floor |
-| 5 | 8 | `10110110` | Cuban cinquillo |
-| 4 | 12 | `100100100100` | – |
-
-Rotation shifts the pattern so the first pulse lands at the pressed step. For example, E(3,8) with rotation=2 gives `10100100`: the base tresillo pattern shifted right by 2.
-
----
-
-## Fader controls (while player is in trig view)
-
-The LC faders control Euclidean parameters for the **currently selected row** on the viewed sequencer. Faders only respond when the player is in trig view.
-
-| Control | Fader | Range | Description |
-|---------|-------|-------|-------------|
-| **Density** | 6 | 0 to length | Number of pulses in the pattern |
-| **Rotation** | 7 | 0 to length−1 | Start offset (same as LC_8B step press) |
-| **Length** | 8 | 1 to 16 | Pattern length in steps |
-
-These are the last three of the eight faders, on whichever LaunchControl you
-are playing. Which of the two players' selected row a move lands on is decided
-by the **template** the unit is on rather than by the unit itself, so if a
-fader appears to be editing the other player's row, the template is the thing
-to check.
-
-Notes:
-
-- Length changes automatically clamp density and rotation into valid range.
-- Every fader move recomputes the pattern, and the engine picks it up on the next clock tick.
-- The rotation fader and the LC_8B step press are two ways at the same setting, so they always agree: press a new step and the fader position follows, move the fader and the highlighted step follows.
-
----
-
-## Display
-
-When a Euclidean row is enabled, OFF steps where the Euclidean pattern fires are shown in **magenta** on the Launchpad:
-
-| Condition | LP velocity (colour) |
-|-----------|---------------------|
-| Euclidean step on the **selected row** | 57 (bright magenta) |
-| Euclidean step on a **non-selected row** | 59 (dim magenta) |
-
-The overlay only appears on unmuted rows where the base trig is OFF. Steps with any other status (ON, mute, mod chance, sustain, etc.) show their normal colour and are not affected by the Euclidean overlay.
+Turning a pattern off keeps its density and length. Hold 8B and press a step
+on that row again, and the pattern comes back in the same shape, starting on
+the step you pressed.
 
 ---
 
@@ -102,17 +61,6 @@ The overlay only appears on unmuted rows where the base trig is OFF. Steps with 
 - The base trig row (all steps set to OFF)
 - The Euclidean overlay for that row (disabled + pattern zeroed)
 
-Density, rotation, and length parameters are **not** cleared. They are preserved so re-enabling the row with LC_8B restores the same pattern shape.
+Density, rotation, and length parameters are **not** cleared. They are preserved so re-enabling the row with 8B restores the same pattern shape.
 
----
-
-## Priority
-
-Euclidean trigs have the **lowest priority** of all trig types. The full priority order (highest to lowest):
-
-1. Manual trig statuses (ON, TRIGMUTE, MOD*, INVMOD*, SUS_START, SUS_HOLD, PERCENTAGE_CHANCE)
-2. Euclidean overlay (fires only when the base trig is OFF)
-
-This means you can place manual trigs on top of a Euclidean row and they take precedence: the Euclidean pattern fills in the gaps.
-
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/mutes">Mutes and row states</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/reset">Reset and randomise</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><strong>Euclidean trigs</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/mutes">Mutes and row states</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/reset">Reset and randomise</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><strong>Euclidean trigs</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>

@@ -10,7 +10,7 @@ permalink: /documentation/MSEQ/reset
 
 <nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Reset and randomise</span></nav>
 
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a> →</span></nav>
+<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/rotation">Pattern rotation</a> →</span></nav>
 
 <h1>Reset and randomise</h1>
 
@@ -31,88 +31,71 @@ The arp views are the exception worth remembering: on the LP LHS they listen
 only to **column 9**, because columns 1–8 there are the length picker. Press
 column 9 with the modifier held and the gesture lands; press anywhere else on
 the LHS and nothing happens at all.
-## What each view resets
+
+## What gets reset/randomised in each view
 
 Both gestures act on the view you are currently in, and in most views on the row
 or cell you press. Nothing is global: you cannot reset the whole rig by accident.
-The two views that act on more than the pressed pad are the jam keyboard, where
-any row-8 press rewrites all sixteen steps, and the note arp's MUTE + column 1
-preset cell, which resets a whole sequencer.
+The jam keyboard is the exception: any row-8 press rewrites all sixteen steps.
 
-| View | Reset gives you | Randomise gives you |
-|---|---|---|
-| **Trigs** | The pressed row cleared, Euclidean overlay included | The pressed row refilled at a random density |
-| **Step duty / step velo / TR-8 accent** | The whole row set to the value of the row you pressed | Values scattered around the pressed row's value, so the shape stays but the detail moves |
-| **Row octave** | The pressed row flat: base octave zero, all eight slots zero | A random base octave and eight random slot values |
-| **CP modulator** | The pressed bar back to no modulation | A random offset on the pressed bar |
-| **Chord progression** | The whole progression set to the degree of the row you pressed | Every bar a random chord degree |
-| **Duty arp / velo arp / TR-8 velo arp** | From LHS col 9, the row you pressed filled with its neutral value; from the RHS, the selected row filled with the pressed row's value | The selected arp filled at random from LHS col 9, or scattered around the pressed row from the RHS |
-| **CC arp** | The selected arp filled with its current value | Values scattered around the current value |
-| **Jam keyboard** | The whole 16-step gate pattern cleared, and any held notes released | The whole 16-step pattern refilled at random |
-| **Swing** | The pressed slot back to straight, both coarse and fine | A random coarse swing on the pressed slot, fine left alone |
-| **Note arp, chord edit** | Nothing. These two views ignore both gestures | Nothing |
+**There is no undo.** Reset and randomise overwrite immediately, so the previous
+pattern is gone. If you want a way back, save the session first (see
+[Saving and loading sessions](/documentation/MSEQ/sessions)).
 
-Two things are worth knowing before you use these live:
+### Trigs
 
-- **There is no undo.** Reset and randomise overwrite immediately, so the
-  previous pattern is gone. If you want a way back, save the session first
-  (see [Saving and loading sessions](/documentation/MSEQ/sessions)).
-- **Randomise on swing leaves fine swing alone**, deliberately, so a fine
-  adjustment you dialled in by hand survives a randomise of the coarse value.
+- **Reset**: clears the pressed row, Euclidean overlay included.
+- **Randomise**: refills the pressed row at a random density.
 
-### Chord progression values
+### Step duty, step velo and TR-8 accent
 
-The chord progression grid holds scale degrees, not semitones. Row 1 is the
-root (the I chord at the base octave) and row 8 is the root an octave above,
-with the six other diatonic degrees between them.
+- **Reset**: sets the whole row to the value of the row you pressed.
+- **Randomise**: scatters the values around the pressed row's value, so the shape stays but the detail moves.
 
-Reset therefore gives you the degree of whichever row you pressed, so the top
-and bottom rows both produce a I chord, an octave apart. Randomise picks from
-the seven distinct degrees and leaves out the octave-up root, so the root is
-not twice as likely as everything else.
+### Row octave
 
----
+- **Reset**: flattens the pressed row: base octave zero, all eight slots zero.
+- **Randomise**: gives the pressed row a random base octave and eight random slot values.
 
-## LC arrow-button rotation gesture
+### CP modulator
 
-Uses the LaunchControl **left/right** arrows. For synth and TR-8 sequencers, rotation is a
-per-sequencer property applied at playback time, so it is active in **every view
-EXCEPT IO / Peer-IO** (where the same arrows page-navigate). In non-display
-views (e.g. octave, note-arp) the rotation still applies. You just won't see it
-until you return to a view that shows the trig pattern (TRIG / step-velo /
-step-duty). JAM_KEYBOARD is a special case: while that view is active, the same
-arrows rotate the runtime jam-keyboard trig pattern directly instead of the
-synth offset.
+- **Reset**: returns the pressed bar to no modulation.
+- **Randomise**: puts a random offset on the pressed bar.
 
-| Control | Modifier | Action |
-|---|---|---|
-| Left arrow  | none | Rotate current synth left  (period-matched offset `−= 1`) |
-| Right arrow | none | Rotate current synth right (period-matched offset `+= 1`) |
-| Either arrow | SHIFT + MUTE | **Reset**: both rotation offsets back to zero |
-| Either arrow | SHIFT + SOLO | **Randomise**: a random rotation for each |
+### Chord progression
 
-A sequencer keeps two rotations, one for straight divisions and one for
-triplet divisions, and they move independently. Both gestures act on both at
-once, whichever division you are currently playing.
+- **Reset**: sets every bar to the chord of the row you pressed.
+- **Randomise**: gives every bar a random chord.
 
-### TR-8 drum sequencer (sequencer 13)
+### Duty arp, velo arp and TR-8 velo arp
 
-Per-row rotation uses the last-touched TRIG row (shared with Euclidean fader
-controls). Rotation applies to whichever bank the view is showing, main or alt.
+- **Reset**: from LHS col 9, fills the row you pressed with its neutral value. From the RHS, fills the selected arp with the pressed row's value.
+- **Randomise**: from LHS col 9, fills the selected arp at random. From the RHS, scatters the values around the pressed row.
 
-| Control | Modifier | Action |
-|---|---|---|
-| Left arrow  | none | Rotate selected row left (`−1 mod 16`) |
-| Right arrow | none | Rotate selected row right (`+1 mod 16`) |
-| Either arrow | SHIFT + MUTE | **Reset**: selected row offset → `0` |
-| Either arrow | SHIFT + SOLO | **Randomise**: selected row offset ← `rand[0,16)` |
+### CC arp
 
-Constraints:
+- **Reset**: fills the selected arp with its current value.
+- **Randomise**: scatters the values around the current value.
 
-- The arrow keys never rotate boom-tsk row 1 while the TR-8 sequencer is unmuted.
-- Offset is per-row per-bank, not per-player.
-- Reset/randomise acts on the selected row only.
-- The TR-8 has no triplet divisions, so each row keeps a single rotation
-  rather than the synth path's pair.
+### Jam keyboard
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><strong>Reset and randomise</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+- **Reset**: clears the whole 16-step gate pattern and releases any held notes.
+- **Randomise**: refills the whole 16-step pattern at random.
+
+### Swing
+
+- **Reset**: returns the pressed slot to straight, both coarse and fine.
+- **Randomise**: gives the pressed slot a random coarse swing. Fine swing is left alone, so a fine adjustment you dialled in by hand survives.
+
+### Note arp
+
+SHIFT + MUTE and SHIFT + SOLO do nothing here. The note arp has its own
+reset and presets instead: hold MUTE and press the LHS overview to load one of
+56 preset figures, or press column 1 to reset the sequencer to init. See
+[Write a preset figure](/documentation/MSEQ/note-arp#write-a-preset-figure) and
+[Reset, and getting back](/documentation/MSEQ/note-arp#reset-and-getting-back).
+
+The LaunchControl arrows have reset and randomise gestures of their own, for a
+sequencer's trig rotation: see [pattern-rotation.md](/documentation/MSEQ/rotation).
+
+<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/rotation">Pattern rotation</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><strong>Reset and randomise</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>

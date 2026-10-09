@@ -71,7 +71,7 @@ corresponding status; with no modifier a press toggles `OFF` ↔ `ON`.
 |---|---|---|---|
 | Density | 6 / 14 | Pulses in the selected row's Euclidean pattern (0–length) | any |
 | Rotation | 7 / 15 | Pattern start offset (same as 8B step press) | any |
-| Length | 8 / 16 | Pattern length 1–16 (clamps density/rotation) | any |
+| Length | 8 / 16 | Pattern length 1–16. Clamps rotation; density is kept, and every step fires while density exceeds length | any |
 
 ### Special case
 
@@ -82,7 +82,7 @@ corresponding status; with no modifier a press toggles `OFF` ↔ `ON`.
 ## See also
 
 - [Trigs](/documentation/MSEQ/trigs): status colours, mod bar tables, sustain semantics
-- [Euclidean trigs](/documentation/MSEQ/euclidean): Euclidean algorithm, display colours, arrays
+- [Euclidean trigs](/documentation/MSEQ/euclidean): adding and controlling a Euclidean pattern, clear behaviour
 - [Mutes and row states](/documentation/MSEQ/mutes): row mode state machine and LED colours
 - [Reset and randomise](/documentation/MSEQ/reset): reset/randomise matrix
 
