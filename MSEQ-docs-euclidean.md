@@ -24,7 +24,7 @@ embellish it.
 
 A Euclidean hit is an ordinary trig. It plays exactly as an ON trig would,
 with its velocity, duty and note coming from the
-[step values](/documentation/MSEQ/step-views), the [velo and duty arps](/documentation/MSEQ/velo-duty-arps) and
+[step values](/documentation/MSEQ/step-views), the [velocity and duty arps](/documentation/MSEQ/velo-duty-arps) and
 the row's [note arp](/documentation/MSEQ/note-arp).
 
 ---

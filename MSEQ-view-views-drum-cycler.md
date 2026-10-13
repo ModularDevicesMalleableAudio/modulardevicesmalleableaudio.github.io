@@ -24,8 +24,8 @@ pattern and makes no sound; it only shapes the route UP/DOWN takes.
 
 ## Interaction
 
-The **top row of the LP RHS**, one pad per slot, counting left to right
-from column 1. The other 56 pads and the whole LP LHS stay dark.
+The **top row of the RHS LP**, one pad per slot, counting left to right
+from column 1. The other 56 pads and the whole LHS LP stay dark.
 
 | Slot | Pad | Destination | Lit colour |
 |---|---|---|---|
@@ -45,8 +45,8 @@ walk is a property of the rig, not of a player.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a pad on the top row | LP RHS row 8 | Toggle that slot in or out of the walk (`0` ↔ its preset value) | none |
-| Press a reserved pad | LP RHS row 8, cols 7–8 | Nothing. No destination is mapped there | none |
+| Press a pad on the top row | RHS LP row 8 | Toggle that slot in or out of the walk (`0` ↔ its preset value) | none |
+| Press a reserved pad | RHS LP row 8, cols 7–8 | Nothing. No destination is mapped there | none |
 
 > Each slot holds a signed sequencer number: `13` is TR-8 normal, `-13` is
 > TR-8 alt, `0` is out of the walk. UP/DOWN walks to the next **non-zero**

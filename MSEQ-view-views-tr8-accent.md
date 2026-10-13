@@ -35,9 +35,9 @@ writes that row's accent instantly. No modifier needed.
 |---|---|---|---|
 | Press | LP grid | Set the step (column) to the pressed row's accent | none |
 | SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 steps → accent of row R | shift+mute |
-| SHIFT + MUTE + press | LP LHS col 9 | **Reset**: all 16 steps → `5` (row 6) | shift+mute |
+| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `5` (row 6) | shift+mute |
 | SHIFT + SOLO + press row R | LP grid | **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | shift+solo |
-| SHIFT + SOLO + press | LP LHS col 9 | **Randomise**: all 16 steps uniform random across values 0–7 | shift+solo |
+| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 0–7 | shift+solo |
 
 ## See also
 

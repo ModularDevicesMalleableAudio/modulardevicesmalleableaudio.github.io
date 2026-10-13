@@ -27,7 +27,7 @@ the row's trig fires.
 steps use the row's palette colour, position colour marks the playing
 step; unassigned rows stay dark. **RHS LP**: value editor for the selected
 row (column = step 1–8, row = value 0–7), one lit pad per step at the
-value's height rather than a filled bar. The LP LHS also carries row
+value's height rather than a filled bar. The LHS LP also carries row
 selection: a single press selects, a double-tap on the same column
 confirms a new arp length. Sequencer 13 has two variants (main / alt kit) on
 separate views with independent tables.
@@ -38,24 +38,24 @@ separate views with independent tables.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press column N (2–8) | LP LHS | Select that row (length unchanged) | none |
-| Double-tap column N (2–8) (≤350 ms) | LP LHS | Set the row's arp length to N | none |
-| Press column 1 | LP LHS | Select the row only (length unchanged) | none |
-| Double-tap column 1 (≤350 ms) | LP LHS | Toggle the row's length 0 ↔ 1 | none |
-| SHIFT + press column N (2–8) | LP LHS | Set the row's length to N on a single press | shift |
-| SHIFT + press column 1 | LP LHS | Toggle the row's length 0 ↔ 1 | shift |
-| SHIFT + press | LP LHS col 9 | Disable the row (length → 0) | shift |
-| SHIFT + MUTE + press | LP LHS col 9 | **Hard reset**: length → 0, all 8 step values → default 3 | shift+mute |
-| SHIFT + SOLO + press | LP LHS col 9 | **Randomise** all 8 step values (length unchanged) | shift+solo |
+| Press column N (2–8) | LHS LP | Select that row (length unchanged) | none |
+| Double-tap column N (2–8) (≤350 ms) | LHS LP | Set the row's arp length to N | none |
+| Press column 1 | LHS LP | Select the row only (length unchanged) | none |
+| Double-tap column 1 (≤350 ms) | LHS LP | Toggle the row's length 0 ↔ 1 | none |
+| SHIFT + press column N (2–8) | LHS LP | Set the row's length to N on a single press | shift |
+| SHIFT + press column 1 | LHS LP | Toggle the row's length 0 ↔ 1 | shift |
+| SHIFT + press | LHS LP col 9 | Disable the row (length → 0) | shift |
+| SHIFT + MUTE + press | LHS LP col 9 | **Hard reset**: length → 0, all 8 step values → default 3 | shift+mute |
+| SHIFT + SOLO + press | LHS LP col 9 | **Randomise** all 8 step values (length unchanged) | shift+solo |
 
 ### RHS: value editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP RHS | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
-| SHIFT + press column N | LP RHS | Write the value **and** set the row's arp length to N (this can shrink the length) | shift |
-| SHIFT + MUTE + press | LP RHS | **Reset**: fill selected arp with the row's constant value | shift+mute |
-| SHIFT + SOLO + press | LP RHS | **Randomise**: gaussian fill of the selected arp | shift+solo |
+| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
+| SHIFT + press column N | RHS LP | Write the value **and** set the row's arp length to N (this can shrink the length) | shift |
+| SHIFT + MUTE + press | RHS LP | **Reset**: fill selected arp with the row's constant value | shift+mute |
+| SHIFT + SOLO + press | RHS LP | **Randomise**: gaussian fill of the selected arp | shift+solo |
 
 > Length writes on unassigned rows are silently ignored (focus still
 > follows the press). Unmodified, an RHS press never touches the length:

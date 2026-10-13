@@ -17,7 +17,7 @@ permalink: /documentation/MSEQ/drums
 This page covers the drum-specific surfaces: the **DRUM_CYCLER**
 destination picker and the **TR-8 alt latch**.
 
-For the TR-8 accent, velo-arp, and autodrop UX, see
+For the TR-8 accent, velocity arp, and autodrop UX, see
 [Autodrops](/documentation/MSEQ/autodrops), [Step values](/documentation/MSEQ/step-views), and
 [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps).
 
@@ -134,8 +134,8 @@ shapes the route the UP/DOWN buttons take.
 
 ### What you see
 
-The **top row of the LP RHS**, one pad per slot, counting left to right
-from column 1. The other 56 pads and the whole LP LHS stay dark.
+The **top row of the RHS LP**, one pad per slot, counting left to right
+from column 1. The other 56 pads and the whole LHS LP stay dark.
 
 | Slot | Pad | Destination | Lit colour |
 |---|---|---|---|
@@ -199,7 +199,7 @@ view buttons never changes the latch, and it survives moving between
 views. Only the cycler and a patch reset affect it.
 
 The latch swings the whole TR-8 surface between the main kit and the alt kit
-at once, so trigs, row mutes, velo arps, accents and CC arps all follow it
+at once, so trigs, row mutes, velocity arps, accents and CC arps all follow it
 together. It is held per player, so the two of you can be on different kits at once.
 
 ### Cross-references

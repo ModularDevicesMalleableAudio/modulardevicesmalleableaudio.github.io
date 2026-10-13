@@ -35,18 +35,18 @@ its 4 octaves. P1 and P2 edit state is fully independent.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| SHIFT + press (row, col) | LP LHS | Set that row's arp length to the pressed column (1–8) immediately | shift |
-| Double-tap same cell (≤350 ms, no modifier) | LP LHS | Set that row's arp length to the column | none |
-| MUTE + press, cols 2–8 | LP LHS | Load preset arpeggio into all 8 rows of the sequencer: row picks the mode (row 8 UP, then DOUBLE_UP, UP_PEDAL, DOUBLE_UP_PEDAL, DOUB_DOWN_PEDAL, DOWN_PEDAL, DOUBLE_DOWN, row 1 DOWN), column picks the interval (seconds … octaves); the pressed pad flashes lime-yellow for ~1 s | mute |
-| Press any cell | LP LHS | Select that row + step for editing (fires under every modifier) | any |
-| MUTE + press, col 1 | LP LHS | **Reset to init**, sequencer-wide: write the canonical diatonic cascade to all 8 rows, **zero every row's length**, rebuild the overlay. Destructive, no undo | mute |
+| SHIFT + press (row, col) | LHS LP | Set that row's arp length to the pressed column (1–8) immediately | shift |
+| Double-tap same cell (≤350 ms, no modifier) | LHS LP | Set that row's arp length to the column | none |
+| MUTE + press, cols 2–8 | LHS LP | Load preset arpeggio into all 8 rows of the sequencer: row picks the mode (row 8 UP, then DOUBLE_UP, UP_PEDAL, DOUBLE_UP_PEDAL, DOUB_DOWN_PEDAL, DOWN_PEDAL, DOUBLE_DOWN, row 1 DOWN), column picks the interval (seconds … octaves); the pressed pad flashes lime-yellow for ~1 s | mute |
+| Press any cell | LHS LP | Select that row + step for editing (fires under every modifier) | any |
+| MUTE + press, col 1 | LHS LP | **Reset to init**, sequencer-wide: write the canonical diatonic cascade to all 8 rows, **zero every row's length**, rebuild the overlay. Destructive, no undo | mute |
 
 ### RHS: keyboard editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a key | LP RHS | Write the resolved pitch into the selected row's selected step | none |
-| Press position 88 | LP RHS | Write a **rest** (no-note sentinel) into the slot | none |
+| Press a key | RHS LP | Write the resolved pitch into the selected row's selected step | none |
+| Press position 88 | RHS LP | Write a **rest** (no-note sentinel) into the slot | none |
 
 ### Whole-view behaviour
 
@@ -61,7 +61,7 @@ its 4 octaves. P1 and P2 edit state is fully independent.
 
 ## See also
 
-- [Note arp](/documentation/MSEQ/note-arp): full preset table, length-picker details, troubleshooting
+- [Note arp](/documentation/MSEQ/note-arp): what note arps are for, and a walkthrough of the view
 - [LaunchControl modifier buttons](/documentation/MSEQ/lc-status): modifier reference
 - [Reset and randomise](/documentation/MSEQ/reset): records the deliberate no-op
 

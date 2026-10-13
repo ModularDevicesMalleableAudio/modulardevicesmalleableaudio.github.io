@@ -38,7 +38,7 @@ page indicator, and its top pad paints cloud-sync status.
 | Press RHS col 8, then RHS 88 | Chord column → chord top | Load saved chord progression | none |
 | SHIFT + RHS 88, then RHS col 8 | Chord top → chord row | Save chord progression | shift |
 | REC_ARM + load/undo gesture | Any load/undo pad | Arm or replace a bar-edge cue | rec_arm |
-| Bare LHS 88 | Top-right LP LHS | Undo or redo the most recent load | none |
+| Bare LHS 88 | Top-right LHS LP | Undo or redo the most recent load | none |
 | Bare LHS 89 | Col 9 top | Sync now | none |
 | SHIFT + LHS 89 | Col 9 top | Toggle background sync enabled | shift |
 | SHIFT + MUTE + LHS 89 | Col 9 top | Reset sync status/backoff | shift+mute |

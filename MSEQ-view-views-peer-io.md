@@ -37,7 +37,7 @@ state, while sharing the global pending-cue and undo/redo machinery.
 | REC_ARM on target live row | Top row | Arm peer sequencer-load cue | rec_arm |
 | Press occupied RHS col 8, then RHS 88 | Chord column → chord top | Load peer chord progression | none |
 | REC_ARM on RHS 88 | Chord top | Arm peer chord-progression cue | rec_arm |
-| Bare LHS 88 | Top-right LP LHS | Undo/redo, unless a cross-view cue hint is showing | none |
+| Bare LHS 88 | Top-right LHS LP | Undo/redo, unless a cross-view cue hint is showing | none |
 | Bare LHS 89 | Col 9 top | Sync now: push local and pull peer browse mirror | none |
 | SHIFT + LHS 89 | Col 9 top | Toggle background sync enabled | shift |
 | SHIFT + MUTE + LHS 89 | Col 9 top | Reset sync status/backoff | shift+mute |

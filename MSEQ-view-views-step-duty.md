@@ -50,9 +50,9 @@ instantly. No modifier needed.
 |---|---|---|---|
 | Press | LP grid | Set the step (column) to the pressed row's duty | none |
 | SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 steps → value of row R | shift+mute |
-| SHIFT + MUTE + press | LP LHS col 9 | **Reset**: all 16 steps → `5` (row 6, `1/8T` on the shipped curve) | shift+mute |
+| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `5` (row 6, `1/8T` on the shipped curve) | shift+mute |
 | SHIFT + SOLO + press row R | LP grid | **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | shift+solo |
-| SHIFT + SOLO + press | LP LHS col 9 | **Randomise**: all 16 steps uniform random across values 0–7 | shift+solo |
+| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 0–7 | shift+solo |
 | Row-mode gestures | Row mutes | Row play-mode controls still apply (see "Row mode" in [Trig view reference](/documentation/MSEQ/views/trig)) | any |
 
 ## See also

@@ -14,57 +14,60 @@ permalink: /documentation/MSEQ/cloud-sync
 
 <h1>Cloud sync setup</h1>
 
-**Audience: a human operator setting up a Pi by hand.** It walks through
-getting [rclone](https://rclone.org) talking to the shared Google Drive so a
-Pi can back up its sessions and browse a peer's. What the sync does once it is
-running (the publish projection, the peer mirror, and the read-only peer view)
-is in [Saving and loading sessions](/documentation/MSEQ/sessions).
+This page connects your Pis to Google Drive with
+[rclone](https://rclone.org), so each Pi can back up its sessions and browse
+the other's. What the sync does once it is running (the publish projection,
+the peer mirror and the read-only peer IO view) is in
+[Saving and loading sessions](/documentation/MSEQ/sessions).
 
 You do **not** need to understand the sync daemon to follow this. You do need:
 
-- physical/SSH access to each Pi as the `patch` user,
-- a laptop/desktop **with a web browser** (the Pi is headless: the OAuth
-  step cannot be done on the Pi alone),
-- access to the shared `info.malleable@gmail.com` Google account.
+- physical or SSH access to each Pi as the `patch` user,
+- a laptop or desktop **with a web browser** (the Pi is headless, so the
+  Google sign-in step cannot be done on the Pi alone),
+- a Google account for the Pis to share. A dedicated account for your rig is
+  better than your personal one, because every Pi will hold a credential for it.
 
-Work through the sections in order. Sections 1–3 are done **once for the whole
-fleet**. Sections 4–7 are done **on each Pi**. Section 8 verifies the peers can
+Work through the sections in order. Sections 1 to 3 are done **once**, not per
+Pi. Sections 4 to 7 are done **on each Pi**. Section 8 checks that the Pis can
 see each other.
 
 > ⚠️ **`/etc/mseq/rclone.conf` is a secret.** It contains a live Google
-> credential. Never commit it, paste it into chat/logs, or copy it into the
-> repo. If it leaks, revoke the token in Google immediately (Section 9).
+> credential, and `rclone obscure` only disguises it: it does not encrypt it.
+> Never commit the file, paste it into chat or logs, or copy it into the repo.
+> If it leaks, go to Google Account → *Security → Third-party access* and
+> remove `mseq-cloud-sync`, then repeat Sections 1 and 5.
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#0-decide-the-auth-model-read-first">0. Decide the auth model (read first)</a><span class="sep" aria-hidden="true"> · </span><a href="#1-create-your-own-google-oauth-client-once-fleet-wide">1. Create your own Google OAuth client (once, fleet-wide)</a><span class="sep" aria-hidden="true"> · </span><a href="#2-reference-the-shared-drive-layout">2. (Reference) The shared Drive layout</a><span class="sep" aria-hidden="true"> · </span><a href="#3-create-the-shared-root-folder-once-fleet-wide">3. Create the shared root folder (once, fleet-wide)</a><span class="sep" aria-hidden="true"> · </span><a href="#4-install-rclone-on-the-pi">4. Install rclone on the Pi</a><span class="sep" aria-hidden="true"> · </span><a href="#5-run-rclone-config-for-google-drive-on-each-pi-the-headless-flow">5. Run rclone config for Google Drive (on each Pi: the headless flow)</a><span class="sep" aria-hidden="true"> · </span><a href="#6-optional-confine-the-remote-to-the-mseq-folder">6. (Optional) Confine the remote to the mseq/ folder</a><span class="sep" aria-hidden="true"> · </span><a href="#7-install-the-config-and-smoke-test-on-each-pi">7. Install the config and smoke-test (on each Pi)</a><span class="sep" aria-hidden="true"> · </span><a href="#8-confirm-the-peers-can-see-each-other-after-both-pis-are-set-up">8. Confirm the peers can see each other (after both Pis are set up)</a><span class="sep" aria-hidden="true"> · </span><a href="#if-something-goes-wrong">If something goes wrong</a></nav>
+<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#0-choose-how-the-pis-sign-in-read-first">0. Choose how the Pis sign in (read first)</a><span class="sep" aria-hidden="true"> · </span><a href="#1-create-your-own-google-oauth-client-once">1. Create your own Google OAuth client (once)</a><span class="sep" aria-hidden="true"> · </span><a href="#2-reference-the-shared-drive-layout">2. (Reference) The shared Drive layout</a><span class="sep" aria-hidden="true"> · </span><a href="#3-create-the-shared-root-folder-once">3. Create the shared root folder (once)</a><span class="sep" aria-hidden="true"> · </span><a href="#4-install-rclone-on-the-pi">4. Install rclone on the Pi</a><span class="sep" aria-hidden="true"> · </span><a href="#5-run-rclone-config-for-google-drive-on-each-pi-the-headless-flow">5. Run rclone config for Google Drive (on each Pi: the headless flow)</a><span class="sep" aria-hidden="true"> · </span><a href="#6-optional-confine-the-remote-to-the-mseq-folder">6. (Optional) Confine the remote to the mseq/ folder</a><span class="sep" aria-hidden="true"> · </span><a href="#7-install-the-config-and-smoke-test-on-each-pi">7. Install the config and smoke-test (on each Pi)</a><span class="sep" aria-hidden="true"> · </span><a href="#8-confirm-the-pis-can-see-each-other-after-both-are-set-up">8. Confirm the Pis can see each other (after both are set up)</a><span class="sep" aria-hidden="true"> · </span><a href="#9-service-account-variant-only-if-you-chose-it-in-section-0">9. Service-account variant (only if you chose it in Section 0)</a><span class="sep" aria-hidden="true"> · </span><a href="#if-something-goes-wrong">If something goes wrong</a></nav>
 
 ---
 
-## 0. Decide the auth model (read first)
+## 0. Choose how the Pis sign in (read first)
 
-There are two ways for the Pis to authenticate to Drive. Pick one before
-touching anything.
+There are two ways for the Pis to sign in to Drive. Pick one before touching
+anything.
 
-| | **Shared-account OAuth** (recommended for v1) | **Per-Pi service accounts** |
+| | **Shared-account OAuth** (recommended) | **Per-Pi service accounts** |
 |---|---|---|
-| How | Both Pis log in *as* `info.malleable@gmail.com` | Each Pi has its own service-account JSON; the `mseq/` folder is shared with each |
+| How | Every Pi signs in *as* the same Google account | Each Pi has its own service-account JSON; the `mseq/` folder is shared with each |
 | Peer browse | Works with no extra sharing (both Pis are the same Drive identity) | Requires explicitly sharing `mseq/` with each service account |
 | Blast radius if a Pi is stolen | Full access to the Google account | Only the `mseq/` tree that account was shared into |
 | Setup effort | Lower | Higher |
 
-For the current two trusted performer Pis, **use shared-account OAuth.** The
-rest of this guide is written for that path; the service-account variant is
-summarised in Section 10.
+If you trust everyone who can get their hands on the Pis, **use shared-account
+OAuth.** The rest of this page is written for that path. The service-account
+variant is summarised in Section 9.
 
 ---
 
-## 1. Create your own Google OAuth client (once, fleet-wide)
+## 1. Create your own Google OAuth client (once)
 
 rclone ships with a *shared* default OAuth client ID. It works, but it is
 **heavily rate-limited** and you will hit throttling during normal sync. Create
 your own client. It is free and takes ~10 minutes.
 
-Do this once, signed in to the **shared Google account**
-(`info.malleable@gmail.com`), at <https://console.cloud.google.com>.
+Do this once, signed in to the **Google account the Pis will share**, at
+<https://console.cloud.google.com>.
 
 1. **Create a project** (top bar → project picker → *New Project*). Name it
    e.g. `mseq-cloud-sync`. Select it once created.
@@ -79,7 +82,7 @@ Do this once, signed in to the **shared Google account**
      the developer email. You can leave logos/links blank.
    - **Scopes**: you can leave the scope list empty here; rclone requests the
      scope at config time (Section 5). Click through.
-   - **Test users**: **add `info.malleable@gmail.com` as a test user.** This is
+   - **Test users**: **add the shared account as a test user.** This is
      important (see the box below).
 
    > ⚠️ **Publishing status = "Testing" expires tokens after 7 days.** If you
@@ -102,26 +105,28 @@ Do this once, signed in to the **shared Google account**
 
 ## 2. (Reference) The shared Drive layout
 
-The sync daemon expects this tree under the shared account's Drive. You don't
-create the per-Pi folders by hand here: the smoke test in Section 7 and the
-daemon's first push create them. You only create the **root** in Section 3.
+The sync daemon expects this tree in the shared account's Drive, with one
+folder per Pi named after its hostname. The examples on this page call the two
+Pis `mseq-a` and `mseq-b`. You don't create the per-Pi folders by hand: the
+smoke test in Section 7 and the daemon's first push create them. You only
+create the **root** in Section 3.
 
 ```
 mseq/
-  mseq-pi4/
-    patches/        # mseq-pi4's published sessions (it writes; the peer reads)
-    _contrib/       # reserved for a future contribution feature (unused in v1)
-  studio-mseq-pi4/
-    patches/        # studio-mseq-pi4's published sessions
+  mseq-a/
+    patches/        # mseq-a's published sessions (it writes; its peer reads)
+    _contrib/       # reserved; nothing uses it yet
+  mseq-b/
+    patches/        # mseq-b's published sessions
     _contrib/
 ```
 
 ---
 
-## 3. Create the shared root folder (once, fleet-wide)
+## 3. Create the shared root folder (once)
 
 The `mseq/` folder must exist before either Pi pushes. Easiest: in the Drive
-web UI, signed in as `info.malleable@gmail.com`, create a top-level folder
+web UI, signed in as the shared account, create a top-level folder
 named exactly **`mseq`**. That's all this step needs.
 
 (You can also create it with rclone from any machine once you've completed a
@@ -188,7 +193,7 @@ run that exact command there:
 rclone authorize "drive" "<long-base64-blob>"
 ```
 
-It opens a browser, you sign in as `info.malleable@gmail.com` and approve
+It opens a browser, you sign in as the shared account and approve
 access. rclone then prints a token blob (`{"access_token":...}`). Copy the
 **entire** blob, return to the Pi's still-waiting wizard, and paste it at the
 `config_token>` prompt.
@@ -197,7 +202,7 @@ Finish the wizard:
 
 | Prompt | Answer |
 |---|---|
-| `Configure this as a Shared Drive (Team Drive)?` | **`n`** (the shared *account* is a normal My Drive, not a Team Drive) |
+| `Configure this as a Shared Drive (Team Drive)?` | **`n`** (the shared account's Drive is a normal My Drive, not a Team Drive) |
 | `y/e/d` (confirm remote) | **`y`** |
 | `e/n/d/r/c/s/q` | **`q`** (quit config) |
 
@@ -234,11 +239,11 @@ rclone config --config /tmp/mseq-rclone.conf
 #   root_folder_id> <THIS_PART>
 ```
 
-If you set this, the daemon should address paths **relative to `mseq/`** (e.g.
-`gdrive:mseq-pi4/patches` rather than `gdrive:mseq/mseq-pi4/patches`). To avoid
-confusion across the two Pis, it's simplest to **skip `root_folder_id` for v1**
-and keep the full `gdrive:mseq/...` paths the daemon config in section 3.1 assumes.
-Reduce blast radius via file permissions + physical trust instead.
+If you set this, the daemon has to address paths **relative to `mseq/`** (for
+example `gdrive:mseq-a/patches` rather than `gdrive:mseq/mseq-a/patches`). To
+avoid confusion across the two Pis, it's simplest to **skip `root_folder_id`**
+and keep the full `gdrive:mseq/...` paths that `RCLONE_REMOTE` in Section 7
+assumes. Reduce blast radius with file permissions and physical trust instead.
 
 ---
 
@@ -277,16 +282,16 @@ sudo -u patch rclone --config /etc/mseq/rclone.conf mkdir gdrive:mseq/$(hostname
 ```
 
 The first two should list without error; the `mkdir`s create this Pi's
-namespace. (`$(hostname)` is the Pi's `pi_id`, e.g. `mseq-pi4`.)
+folder. (`$(hostname)` is the Pi's `PI_ID`, for example `mseq-a`.)
 
 Then create `/etc/mseq/cloud-sync.env`. All six fields are required: the sync
 daemon refuses to run without them, and omitting `PATCHES_DIR` gets you
 `PATCHES_DIR: unbound variable` on the first cycle rather than a helpful error:
 
 ```sh
-# /etc/mseq/cloud-sync.env — this Pi's cloud-sync identity
-PI_ID=mseq-pi4                       # this Pi's id (its hostname); names its folder on the remote
-PEERS=mseq-pi3                       # the one peer to mirror from (v1 allows exactly one, no commas)
+# /etc/mseq/cloud-sync.env: this Pi's cloud-sync identity
+PI_ID=mseq-a                         # this Pi's id (its hostname); names its folder on the remote
+PEERS=mseq-b                         # the one peer to mirror from (exactly one, no commas)
 RCLONE_REMOTE=gdrive:mseq            # the shared root folder from section 3
 RCLONE_CONFIG=/etc/mseq/rclone.conf  # the config installed above
 PATCHES_DIR=/home/patch/code/sequencer/patches       # PD's session catalog, the publish source
@@ -394,36 +399,55 @@ The final rclone command should not print `Failed to save config`.
 
 ---
 
-## 8. Confirm the peers can see each other (after both Pis are set up)
+## 8. Confirm the Pis can see each other (after both are set up)
 
-This is the pull-browse precondition. If it's wrong, the Phase 2 PEER view will
-just look empty with no obvious error. From **each** Pi, list the **other** Pi's
-published tree:
+If this is wrong, the peer IO view just looks empty, with no obvious error.
+From **each** Pi, list the **other** Pi's published folder:
 
 ```bash
-# On studio-mseq-pi4:
-sudo -u patch rclone --config /etc/mseq/rclone.conf lsd gdrive:mseq/mseq-pi4/patches
-# On mseq-pi4:
-sudo -u patch rclone --config /etc/mseq/rclone.conf lsd gdrive:mseq/studio-mseq-pi4/patches
+# On mseq-a:
+sudo -u patch rclone --config /etc/mseq/rclone.conf lsd gdrive:mseq/mseq-b/patches
+# On mseq-b:
+sudo -u patch rclone --config /etc/mseq/rclone.conf lsd gdrive:mseq/mseq-a/patches
 ```
 
 An **empty but successful** listing (the peer hasn't pushed yet) is fine. A
-**permission or not-found error** means the auth model isn't wired correctly.
-Fix it before expecting the PEER view to show anything.
+**permission or not-found error** means the sign-in model isn't wired
+correctly. Fix it before expecting the peer IO view to show anything.
+
+---
+
+## 9. Service-account variant (only if you chose it in Section 0)
+
+Instead of signing in through the browser:
+
+1. In Cloud Console: *IAM & Admin → Service Accounts → Create*. Create one
+   service account **per Pi** (or one shared: your call). For each, *Keys → Add
+   Key → JSON* and download the JSON.
+2. Copy each Pi's JSON to it as `/etc/mseq/google-service-account.json`
+   (`0640 root:patch`).
+3. In `rclone config`, leave `client_id`/`client_secret` blank and set
+   `service_account_file> /etc/mseq/google-service-account.json`.
+4. **Share `mseq/` with each service account's email** (it looks like
+   `name@project.iam.gserviceaccount.com`) as **Editor** in the Drive web UI.
+   Without this, the service account cannot read or write the shared tree.
+5. Run the Section 8 check.
+
+If a service-account JSON leaks, delete that key in Cloud Console
+(*IAM & Admin → Service Accounts → Keys*) and add a new one.
 
 ---
 
 ## If something goes wrong
 
 Symptoms, likely causes and fixes are on
-[Cloud sync troubleshooting](/documentation/MSEQ/cloud-sync-troubleshooting), along with what
-to do if a credential leaks and the service-account variant of the auth model.
+[Cloud sync troubleshooting](/documentation/MSEQ/cloud-sync-troubleshooting).
 
 ---
 
 ## Cross-References
 
-- [Cloud sync troubleshooting](/documentation/MSEQ/cloud-sync-troubleshooting): when sync misbehaves, and credential recovery
+- [Cloud sync troubleshooting](/documentation/MSEQ/cloud-sync-troubleshooting): when sync misbehaves
 - [Saving and loading sessions](/documentation/MSEQ/sessions): the publish projection, the peer mirror and the peer view
 
 <div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/sessions">Saving and loading</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a><span class="sep" aria-hidden="true"> · </span><strong>Cloud sync setup</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></nav></div>

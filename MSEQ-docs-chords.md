@@ -79,7 +79,7 @@ Each player can edit the progression independently; changes take effect immediat
 
 - The chord progression is global: every sequencer that follows it reads the same chords and the same inversions.
 - The highlighted column is the bar you are on, counted bar 0 (the top of the cycle) to bar 15.
-- Both Launchpads (left and right) display the chord progression view simultaneously: bars 0–7 on the LP LHS, bars 8–15 on the LP RHS.
+- Both Launchpads (left and right) display the chord progression view simultaneously: bars 0–7 on the LHS LP, bars 8–15 on the RHS LP.
 
 ---
 

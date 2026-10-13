@@ -14,7 +14,7 @@ permalink: /documentation/MSEQ/arp-curves
 
 <h1>Arp curves</h1>
 
-Everywhere you draw a value on the grid: a step velocity, a step duty, a velo
+Everywhere you draw a value on the grid: a step velocity, a step duty, a velocity
 arp, a duty arp. You are drawing a number from **0 to 7**. That number is not a
 velocity and it is not a note length. It is a position on a **curve**, and the
 curve decides what 0 to 7 actually mean for that sequencer.
@@ -44,7 +44,7 @@ idea of "5" from the one driving a pad.
 The webapp settings page, under **Arp curves**. Eight faders, one per point, with
 the point number underneath.
 
-<img src="/assets/mseq/arp-curve-velo.png" alt="The arp curve editor on its Velo tab: a Velo/Duty toggle, a strip for sequencers 1–7 and 9–13, eight faders rising left to right with number boxes reading 0, 21, 42, 64, 85, 106, 116, 127, the decoded multiplier beneath each, and a preset slot row with Recall and Store buttons" style="display:block;margin-inline:auto">
+<img src="/assets/mseq/arp-curve-velo.png" alt="The arp curve editor on its Velocity tab: a Velocity/Duty toggle, a strip for sequencers 1–7 and 9–13, eight faders rising left to right with number boxes reading 0, 21, 42, 64, 85, 106, 116, 127, the decoded multiplier beneath each, and a preset slot row with Recall and Store buttons" style="display:block;margin-inline:auto">
 
 *The velocity curve. The number box is the raw point and the small figure below
 it is what the engine multiplies by, so you can see that point 5 is the identity
@@ -63,7 +63,7 @@ from ×0 up to **×1.2**. The shipped curve is an even ramp:
 | Raw | 0 | 21 | 42 | 64 | 85 | 106 | 116 | 127 |
 | Multiplier | ×0.00 | ×0.20 | ×0.40 | ×0.60 | ×0.80 | ×1.00 | ×1.10 | ×1.20 |
 
-**Point 5 is the identity.** It is what a freshly seeded pattern holds, so a velo
+**Point 5 is the identity.** It is what a freshly seeded pattern holds, so a velocity
 arp on a new session sounds exactly as though it were switched off until you move
 something. Above it there is deliberately not much room: two points of lift,
 because the multiplier is capped and a velocity is capped at 127 anyway.
@@ -166,9 +166,9 @@ the editor and the two are back in step.
 
 - [Step values](/documentation/MSEQ/step-views): where per-step values are drawn, and how
   velocity and duty differ in the way they combine
-- [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the velo and duty arps, which index
+- [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the velocity and duty arps, which index
   the same curves
 - [Saving and loading sessions](/documentation/MSEQ/sessions): what a session saves, and why curves are not
   in it
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velo and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><strong>Arp curves</strong></nav></div>
+<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><strong>Arp curves</strong></nav></div>

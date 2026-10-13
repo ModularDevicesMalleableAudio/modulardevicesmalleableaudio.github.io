@@ -231,7 +231,7 @@ row, so you can select exactly which sequencer and view to show with a single
 menu. It also moves the row mute status column from the right-hand side of the
 left Launchpad to the right-hand side of a combined 8x16 grid. Hence you can
 read the webapp half as one player's pair of Launchpads laid side by side: the
-left half is the LP LHS, the right half is the LP RHS, and the eight
+left half is the LHS LP, the right half is the RHS LP, and the eight
 circles down the right-hand edge are the row mute controls.
 
 ---

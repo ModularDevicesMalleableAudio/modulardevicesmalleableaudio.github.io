@@ -25,7 +25,7 @@ the held notes into the engine.
 
 Rows 1–7 are a piano-style keyboard spanning ~4 octaves (octave-start
 markers highlighted). Row 8 is the trig-pattern editor, split across each
-player's own pair of LPs: **your LP LHS** edits steps 1–8, **your LP RHS**
+player's own pair of LPs: **your LHS LP** edits steps 1–8, **your RHS LP**
 edits steps 9–16. Both players share one note-gate table and one pattern.
 Hold keys to gate notes; release to clear.
 

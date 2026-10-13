@@ -24,8 +24,8 @@ The trig view is the default view for every sequencer. It is the central editing
 
 The grid is 8 rows × 16 steps. Each Launchpad shows half the grid:
 
-- **LP LHS** (LP1 for P1, LP3 for P2): columns 1–8 = steps 1–8. Column 9 (rightmost LP button on each row) = row mode toggle.
-- **LP RHS** (LP2 for P1, LP4 for P2): columns 1–8 = steps 9–16.
+- **LHS LP** (LP1 for P1, LP3 for P2): columns 1–8 = steps 1–8. Column 9 (rightmost LP button on each row) = row mode toggle.
+- **RHS LP** (LP2 for P1, LP4 for P2): columns 1–8 = steps 9–16.
 
 Rows are numbered **1 at the bottom of the pad up to 8 at the top**. The manual counts them that way everywhere, so row 1 is always the bottom row you are looking at, whichever view you are in.
 
@@ -122,7 +122,7 @@ The sustain region wraps across bar boundaries: if start = 14 and end = 3, steps
 
 ## Row Mode (Column 9 on LHS)
 
-The rightmost button on each row of the LP LHS sets the **row play mode** for that row. The action depends on the LC modifier held:
+The rightmost button on each row of the LHS LP sets the **row play mode** for that row. The action depends on the LC modifier held:
 
 | LC modifier | Action |
 |-------------|--------|
@@ -173,7 +173,7 @@ These global gestures affect the currently pressed **row** in the trig view:
 | **SHIFT + MUTE** (hold both, then press a step in any column) | Reset the entire trig row to all-OFF. Also clears any Euclidean pattern on that row. |
 | **SHIFT + SOLO** (hold both, then press a step in any column) | Randomise the trig row with a random density pattern. |
 
-These gestures are view-aware: the same gesture produces different effects in other views (step_velo, step_duty and so on). [Reset and randomise](/documentation/MSEQ/reset) has the full matrix.
+These gestures are view-aware: the same gesture produces different effects in other views (step velocity, step duty and so on). [Reset and randomise](/documentation/MSEQ/reset) has the full matrix.
 
 ---
 

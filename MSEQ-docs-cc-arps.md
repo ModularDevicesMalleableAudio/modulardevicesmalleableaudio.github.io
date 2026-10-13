@@ -10,7 +10,7 @@ permalink: /documentation/MSEQ/cc-arps
 
 <nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Arps</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">CC arps</span></nav>
 
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/velo-duty-arps">Velo and duty arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a> →</span></nav>
+<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a> →</span></nav>
 
 <h1>CC arps</h1>
 
@@ -65,7 +65,7 @@ family; from there the palette is fixed per CC.
 
 8 rows × 8 steps showing every CC arp row at once.
 
-- Rows are numbered **1 at the bottom of the pad up to 8 at the top**, the same way round as the velo, duty and note arps and the trig view.
+- Rows are numbered **1 at the bottom of the pad up to 8 at the top**, the same way round as the velocity, duty and note arps and the trig view.
 - The step a row is **currently playing** is drawn in that row's palette colour (that CC's own palette), so the parameter family is what you see moving along the row. A row whose arp length is 1 is drawn in the palette colour too, since its single step is always the one playing.
 - The row's other active steps are drawn in a four-tone **blue gradation of their value**: deep navy for 0–1, mid blue for 2–3, pale blue for 4–5, vivid blue for 6–7. So the overview reads value as colour, where the editor on the right reads it as height.
 - Steps beyond a row’s arp length are unlit.
@@ -85,8 +85,8 @@ The row currently selected by that player gets an 8-step value editor on the RHS
 <label for="cc-arp-01-webapp">webapp</label>
 <input type="radio" name="cc-arp-01" id="cc-arp-01-hardware" class="pick-hardware">
 <label for="cc-arp-01-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/cc-arp-01.png" alt="A CC-arp view: on the LP LHS a green row with three lit pads and a pink row with six, in the palette colour at the head of each run and blue value gradations behind; a sky-blue and a lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the LP RHS, single pads trace the pink row's six values rising to the top and falling again, followed by two slate pads">
-<img class="shot-hardware" src="/assets/mseq/hardware/cc-arp-01.jpg" alt="A CC-arp view: on the LP LHS a green row with three lit pads and a pink row with six, in the palette colour at the head of each run and blue value gradations behind; a sky-blue and a lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the LP RHS, single pads trace the pink row's six values rising to the top and falling again, followed by two slate pads, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/cc-arp-01.png" alt="A CC-arp view: on the LHS LP a green row with three lit pads and a pink row with six, in the palette colour at the head of each run and blue value gradations behind; a sky-blue and a lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the RHS LP, single pads trace the pink row's six values rising to the top and falling again, followed by two slate pads">
+<img class="shot-hardware" src="/assets/mseq/hardware/cc-arp-01.jpg" alt="A CC-arp view: on the LHS LP a green row with three lit pads and a pink row with six, in the palette colour at the head of each run and blue value gradations behind; a sky-blue and a lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the RHS LP, single pads trace the pink row's six values rising to the top and falling again, followed by two slate pads, photographed on the hardware">
 </figure>
 
 *This is the NTS-1, which has four of its eight rows assigned to CCs. Only two of
@@ -108,7 +108,7 @@ The CC arp editor is a **two-stage** gesture: pick a row, then write step values
 
 ### 1. Select a row (Launchpad LHS, the overview LP)
 
-Press the LP LHS at column 1–8 to select that row and, on a double-tap, set that row's arp **length**:
+Press the LHS LP at column 1–8 to select that row and, on a double-tap, set that row's arp **length**:
 
 - A single press on any column 1–8 selects that row (focus switches to it) but does **not** change the length.
 - A **double-tap** (≤350 ms) on the same column confirms the length write:
@@ -126,11 +126,11 @@ With a row selected, press an LP key on the RHS grid. The grid position encodes 
 - Column 1–8 = arp step 1–8 of the selected row.
 - Row 1–8 (bottom → top) = value 0–7.
 
-An unmodified RHS press does not change the arp length. Length is set independently on the LP LHS. Hold **SHIFT** and the RHS press does both: it writes the value *and* sets the row's length to the column you pressed, which can shrink the pattern under your fingers. It is the quickest way to draw a short arp (press the last step you want with SHIFT held), and the easiest one to trigger by accident if you were reaching for a reset.
+An unmodified RHS press does not change the arp length. Length is set independently on the LHS LP. Hold **SHIFT** and the RHS press does both: it writes the value *and* sets the row's length to the column you pressed, which can shrink the pattern under your fingers. It is the quickest way to draw a short arp (press the last step you want with SHIFT held), and the easiest one to trigger by accident if you were reaching for a reset.
 
 ### Shift modifiers
 
-Holding an LC modifier changes what an LHS press does. With SHIFT alone the length write needs no double-tap; the other two act on column 9, the rightmost column of the LP LHS:
+Holding an LC modifier changes what an LHS press does. With SHIFT alone the length write needs no double-tap; the other two act on column 9, the rightmost column of the LHS LP:
 
 | Modifier              | Column pressed | Effect                                |
 |-----------------------|----------------|---------------------------------------|
@@ -177,4 +177,4 @@ On a synth sequencer all 8 CC rows share one trig group, so they advance togethe
 - [Arp curves](/documentation/MSEQ/arp-curves): the eight-entry curves a row's values are looked up in
 - [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the velocity and duty arps these work alongside
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/velo-duty-arps">Velo and duty arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velo and duty arps</a><span class="sep" aria-hidden="true"> · </span><strong>CC arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav></div>
+<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><strong>CC arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav></div>

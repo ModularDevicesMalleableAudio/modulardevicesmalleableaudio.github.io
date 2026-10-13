@@ -72,8 +72,8 @@ is the right hand side of this image.
 <label for="octave-01-chord-spread-webapp">webapp</label>
 <input type="radio" name="octave-01-chord-spread" id="octave-01-chord-spread-hardware" class="pick-hardware">
 <label for="octave-01-chord-spread-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/octave-01-chord-spread.png" alt="A row-octave grid: a mustard centre column labelled with each row's note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the LP RHS the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1">
-<img class="shot-hardware" src="/assets/mseq/hardware/octave-01-chord-spread.jpg" alt="A row-octave grid: a mustard centre column labelled with each row's note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the LP RHS the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/octave-01-chord-spread.png" alt="A row-octave grid: a mustard centre column labelled with each row's note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the RHS LP the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1">
+<img class="shot-hardware" src="/assets/mseq/hardware/octave-01-chord-spread.jpg" alt="A row-octave grid: a mustard centre column labelled with each row's note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the RHS LP the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1, photographed on the hardware">
 </figure>
 
 *The C minor chord from [Trigs](/documentation/MSEQ/trigs) pulled apart: the root row dropped an
@@ -115,8 +115,8 @@ through values you don't want on the way. Hold an LC modifier to narrow it:
 So SHIFT + MUTE are how you get to a value without walking past it, and REC
 ARM is the quickest way to punch a single slot back out of the pattern.
 
-The two pads add up. If the LP LHS puts a row at −3 and the first slot on the
-LP RHS is +1, that row plays at −3 for most of the bar but lifts to −2 for
+The two pads add up. If the LHS LP puts a row at −3 and the first slot on the
+RHS LP is +1, that row plays at −3 for most of the bar but lifts to −2 for
 steps 1–4 of every even bar. Any slot can take any value, so you can be
 constantly shifting, or shifting in an A/B style pattern over the two bars.
 

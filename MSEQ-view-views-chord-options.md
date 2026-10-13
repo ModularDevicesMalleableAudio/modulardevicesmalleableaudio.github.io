@@ -46,8 +46,8 @@ Three bands on the shared view:
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8, col 7 / col 8 | LP RHS | Select **major** / **minor** scale; broadcasts to every scale-aware view immediately | none |
-| Press row 7, col 7 / col 8 | LP RHS | Cycle the major / minor chord-adjustment mode: plain → adjusted → diatonic → plain. The two qualities are set independently | none |
+| Press row 8, col 7 / col 8 | RHS LP | Select **major** / **minor** scale; broadcasts to every scale-aware view immediately | none |
+| Press row 7, col 7 / col 8 | RHS LP | Cycle the major / minor chord-adjustment mode: plain → adjusted → diatonic → plain. The two qualities are set independently | none |
 
 ### Whole-view behaviour
 

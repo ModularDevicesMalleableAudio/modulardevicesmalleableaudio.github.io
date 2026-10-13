@@ -73,7 +73,7 @@ additionally hosts the per-sequencer CP-follow toggle.
 selected root lit red (C here). The bottom row is the CP-follow toggle, one pad
 per sequencer: lit in that sequencer's own colour when it follows the
 progression, and slate when it does not, so this rig has every sequencer following.
-The mint-green top-LP RHS selects minor. The two blue pads beneath it show
+The mint-green pad at the top of the RHS LP selects minor. The two blue pads beneath it show
 that both the major and minor chord-adjustment selectors are in Adjusted mode.*
 
 **Where it lives**: View slot 0 on the meta-sequencer, shared across both

@@ -27,7 +27,7 @@ Each player's modifiers are read at the moment of the press.  In views
 where the spec calls for it, **any pad in the active view** triggers the
 action.
 
-The arp views are the exception worth remembering: on the LP LHS they listen
+The arp views are the exception worth remembering: on the LHS LP they listen
 only to **column 9**, because columns 1–8 there are the length picker. Press
 column 9 with the modifier held and the gesture lands; press anywhere else on
 the LHS and nothing happens at all.
@@ -47,7 +47,7 @@ pattern is gone. If you want a way back, save the session first (see
 - **Reset**: clears the pressed row, Euclidean overlay included.
 - **Randomise**: refills the pressed row at a random density.
 
-### Step duty, step velo and TR-8 accent
+### Step duty, step velocity and TR-8 accent
 
 - **Reset**: sets the whole row to the value of the row you pressed.
 - **Randomise**: scatters the values around the pressed row's value, so the shape stays but the detail moves.
@@ -67,7 +67,7 @@ pattern is gone. If you want a way back, save the session first (see
 - **Reset**: sets every bar to the chord of the row you pressed.
 - **Randomise**: gives every bar a random chord.
 
-### Duty arp, velo arp and TR-8 velo arp
+### Duty arp, velocity arp and TR-8 velocity arp
 
 - **Reset**: from LHS col 9, fills the row you pressed with its neutral value. From the RHS, fills the selected arp with the pressed row's value.
 - **Randomise**: from LHS col 9, fills the selected arp at random. From the RHS, scatters the values around the pressed row.
@@ -92,8 +92,7 @@ pattern is gone. If you want a way back, save the session first (see
 SHIFT + MUTE and SHIFT + SOLO do nothing here. The note arp has its own
 reset and presets instead: hold MUTE and press the LHS overview to load one of
 56 preset figures, or press column 1 to reset the sequencer to init. See
-[Write a preset figure](/documentation/MSEQ/note-arp#write-a-preset-figure) and
-[Reset, and getting back](/documentation/MSEQ/note-arp#reset-and-getting-back).
+[Preset Figures](/documentation/MSEQ/note-arp#preset-figures).
 
 The LaunchControl arrows have reset and randomise gestures of their own, for a
 sequencer's trig rotation: see [pattern-rotation.md](/documentation/MSEQ/rotation).

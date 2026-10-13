@@ -31,7 +31,7 @@ permalink: /documentation/MSEQ/
 ## Arps
 
 - [Note arps](/documentation/MSEQ/note-arp)
-- [Velo and duty arps](/documentation/MSEQ/velo-duty-arps)
+- [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps)
 - [CC arps](/documentation/MSEQ/cc-arps)
 - [CC assignments](/documentation/MSEQ/cc-assignments)
 - [Arp curves](/documentation/MSEQ/arp-curves)

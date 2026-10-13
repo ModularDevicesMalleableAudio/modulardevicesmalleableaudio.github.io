@@ -105,11 +105,11 @@ it turned down the accent values stop doing anything.
 each end. Nine columns are slate, because on a drum pattern most steps carry a trig
 somewhere.*
 
-Arps act on your shape as well, and the two kinds act differently. A velo arp scales the
-value you set, the same way the velocity knob does. A velo arp set to zero is the one
+Arps act on your shape as well, and the two kinds act differently. A velocity arp scales the
+value you set, the same way the velocity knob does. A velocity arp set to zero is the one
 place a zero does silence a step, as a real rest. A duty arp does not scale at all: for
 as long as it runs, its value *replaces* the per-step value on that row.
-[Velo and duty arps](/documentation/MSEQ/velo-duty-arps) covers both.
+[Velocity and duty arps](/documentation/MSEQ/velo-duty-arps) covers both.
 
 The duty and velocity curves are per sequencer and you can edit them, so those two
 columns show the shipped defaults. The accent spread is fixed. See

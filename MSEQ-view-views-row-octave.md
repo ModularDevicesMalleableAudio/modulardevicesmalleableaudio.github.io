@@ -50,13 +50,13 @@ Exact LED layout is documented in [Octave tree](/documentation/MSEQ/octave-tree)
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP LHS | Set the pressed row's base octave immediately | none |
+| Press | LHS LP | Set the pressed row's base octave immediately | none |
 
 ### RHS: octave tree sequence
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP RHS | Set one 4-step octave-tree slot for the pressed row | none |
+| Press | RHS LP | Set one 4-step octave-tree slot for the pressed row | none |
 
 ### Whole-row gestures
 

@@ -165,8 +165,8 @@ fine 0, then three progressively paler blues as the fine knob climbs
 <label for="swing-webapp">webapp</label>
 <input type="radio" name="swing" id="swing-hardware" class="pick-hardware">
 <label for="swing-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/swing.png" alt="A swing grid: on the LP LHS a staircase of single lit pads climbing one row per column from the bottom left, spring green except column 4 which is pale cyan; on the LP RHS seven pads all sitting on the bottom row, coloured spring green, pale mint, pale cyan, pale blue, pale cyan, pale mint and spring green; columns 8 and 16 are unlit">
-<img class="shot-hardware" src="/assets/mseq/hardware/swing.jpg" alt="A swing grid: on the LP LHS a staircase of single lit pads climbing one row per column from the bottom left, spring green except column 4 which is pale cyan; on the LP RHS seven pads all sitting on the bottom row, coloured spring green, pale mint, pale cyan, pale blue, pale cyan, pale mint and spring green; columns 8 and 16 are unlit, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/swing.png" alt="A swing grid: on the LHS LP a staircase of single lit pads climbing one row per column from the bottom left, spring green except column 4 which is pale cyan; on the RHS LP seven pads all sitting on the bottom row, coloured spring green, pale mint, pale cyan, pale blue, pale cyan, pale mint and spring green; columns 8 and 16 are unlit">
+<img class="shot-hardware" src="/assets/mseq/hardware/swing.jpg" alt="A swing grid: on the LHS LP a staircase of single lit pads climbing one row per column from the bottom left, spring green except column 4 which is pale cyan; on the RHS LP seven pads all sitting on the bottom row, coloured spring green, pale mint, pale cyan, pale blue, pale cyan, pale mint and spring green; columns 8 and 16 are unlit, photographed on the hardware">
 </figure>
 
 *Swing has two controls and this grid shows you both at once. **Vertical position

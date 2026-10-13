@@ -36,19 +36,19 @@ alt state) even though the sequencer selection snaps.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row R, col N | LP LHS | Select row R; a double-tap within 350 ms sets its length to N slots | none |
-| SHIFT + press row R, col N | LP LHS | Select row R and set its length to N slots immediately | shift |
-| Press row R, col 9 | LP LHS col 9 | Select row R without changing its length | none |
-| SHIFT + MUTE + press row R, col 9 | LP LHS col 9 | **Reset** the pressed row's voice to its canonical value: ghost rows 2, boom-tsk 7, all others 5 (alt-view-aware) | shift+mute |
-| SHIFT + SOLO + press col 9 | LP LHS col 9 | **Randomise** the selected arp freely across values 0–7 | shift+solo |
+| Press row R, col N | LHS LP | Select row R; a double-tap within 350 ms sets its length to N slots | none |
+| SHIFT + press row R, col N | LHS LP | Select row R and set its length to N slots immediately | shift |
+| Press row R, col 9 | LHS LP col 9 | Select row R without changing its length | none |
+| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset** the pressed row's voice to its canonical value: ghost rows 2, boom-tsk 7, all others 5 (alt-view-aware) | shift+mute |
+| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise** the selected arp freely across values 0–7 | shift+solo |
 
 ### RHS: value editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP RHS | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
-| SHIFT + MUTE + press row R | LP RHS | **Reset**: fill selected arp with row R's value (alt-view-aware) | shift+mute |
-| SHIFT + SOLO + press row R | LP RHS | **Randomise**: selected arp gaussian around row R | shift+solo |
+| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
+| SHIFT + MUTE + press row R | RHS LP | **Reset**: fill selected arp with row R's value (alt-view-aware) | shift+mute |
+| SHIFT + SOLO + press row R | RHS LP | **Randomise**: selected arp gaussian around row R | shift+solo |
 
 A stored length of 0 means one active slot, not disabled playback. Column 1
 therefore parks the voice on its first velocity value. There is no off state

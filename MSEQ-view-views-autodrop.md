@@ -40,20 +40,20 @@ Eligibility cells (row 8) show the sequencer's own colour when on.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8, cols 1–7 | LP LHS | Toggle autodrop **eligibility** for seqs 1–7 | none |
-| Press row 7, cols 1–7 | LP LHS | Cue **mute autodrop** for seqs 1–7 (re-press cancels) | none |
-| Press row 6, cols 1–7 | LP LHS | Cue **CC autodrop** for seqs 1–7 | none |
-| Press row 5, cols 1–7 | LP LHS | Cue **note autodrop** for seqs 1–7 | none |
+| Press row 8, cols 1–7 | LHS LP | Toggle autodrop **eligibility** for seqs 1–7 | none |
+| Press row 7, cols 1–7 | LHS LP | Cue **mute autodrop** for seqs 1–7 (re-press cancels) | none |
+| Press row 6, cols 1–7 | LHS LP | Cue **CC autodrop** for seqs 1–7 | none |
+| Press row 5, cols 1–7 | LHS LP | Cue **note autodrop** for seqs 1–7 | none |
 
 ### RHS: sequencers 9–12 + TR-8
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8, cols 1–4 | LP RHS | Toggle eligibility for seqs 9–12 | none |
-| Press rows 5–7, cols 1–4 | LP RHS | Cue mute/CC/note autodrop for seqs 9–12 | none |
-| Press row 8, cols 5–6 | LP RHS | Toggle TR-8 bus eligibility | none |
-| Press col 5, rows 1–7 | LP RHS | Cue TR-8 **main** voices (BD/SD/LT/MT/HT); re-press toggles back | none |
-| Press col 6, rows 1–7 | LP RHS | Cue TR-8 **alt** voices (RS/HC/CH/OH/CY) | none |
+| Press row 8, cols 1–4 | RHS LP | Toggle eligibility for seqs 9–12 | none |
+| Press rows 5–7, cols 1–4 | RHS LP | Cue mute/CC/note autodrop for seqs 9–12 | none |
+| Press row 8, cols 5–6 | RHS LP | Toggle TR-8 bus eligibility | none |
+| Press col 5, rows 1–7 | RHS LP | Cue TR-8 **main** voices (BD/SD/LT/MT/HT); re-press toggles back | none |
+| Press col 6, rows 1–7 | RHS LP | Cue TR-8 **alt** voices (RS/HC/CH/OH/CY) | none |
 
 ### Shared behaviour
 

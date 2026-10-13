@@ -41,12 +41,12 @@ Edits take effect at the next bar boundary.
 |---|---|---|---|
 | Press (toggle row, row 1) | LP grid | Cycle that bar's status: OFF → ON → chance → MOD1 → MOD2 → OFF | none |
 | Press (value rows 2–8) | LP grid | Set that bar's scale-degree offset to the pressed row's value (row 5 = 0) | none |
-| SHIFT + MUTE + press row 1 | LP LHS col 9 | **Reset**: all 16 bars' status → ON | shift+mute |
+| SHIFT + MUTE + press row 1 | LHS LP col 9 | **Reset**: all 16 bars' status → ON | shift+mute |
 | SHIFT + MUTE + press value row | LP grid | **Reset**: that single bar's offset → 0 | shift+mute |
-| SHIFT + MUTE + press value row | LP LHS col 9 | **Reset**: all 16 bars' offsets → 0 | shift+mute |
-| SHIFT + SOLO + press row 1 | LP LHS col 9 | **Randomise**: each bar's status → random OFF or ON | shift+solo |
+| SHIFT + MUTE + press value row | LHS LP col 9 | **Reset**: all 16 bars' offsets → 0 | shift+mute |
+| SHIFT + SOLO + press row 1 | LHS LP col 9 | **Randomise**: each bar's status → random OFF or ON | shift+solo |
 | SHIFT + SOLO + press value row | LP grid | **Randomise**: that single bar's offset → random pick from {−3, −2, −1, 0, +1, +2, +3} | shift+solo |
-| SHIFT + SOLO + press value row | LP LHS col 9 | **Randomise**: all 16 bars' offsets → random picks | shift+solo |
+| SHIFT + SOLO + press value row | LHS LP col 9 | **Randomise**: all 16 bars' offsets → random picks | shift+solo |
 
 > Row 1 in columns 1–8 is intentionally **not** affected by
 > reset/randomise: only the col-9 whole-array gesture on row 1 touches

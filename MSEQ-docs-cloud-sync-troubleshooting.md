@@ -14,44 +14,9 @@ permalink: /documentation/MSEQ/cloud-sync-troubleshooting
 
 <h1>Cloud sync troubleshooting</h1>
 
-What to do when the Google Drive sync misbehaves, and what to do if a
-credential leaks. Setting the sync up in the first place is
-[Google Drive session sync](/documentation/MSEQ/cloud-sync), and the section
-numbers referred to below are that page's.
-
----
-
-## 9. If a credential leaks (incident response)
-
-If `rclone.conf`, the OAuth client secret, or a service-account JSON is ever
-committed, pasted into a log, or otherwise exposed:
-
-1. **Revoke** the OAuth client's access: Google Account → *Security → Third-party
-   access* → remove `mseq-cloud-sync`; and/or rotate the client secret in Cloud
-   Console (*Credentials → mseq-rclone → reset secret*).
-2. Treat the git history / log as compromised.
-3. Re-run Sections 1 and 5 to mint a fresh credential and re-auth each Pi.
-
-`rclone obscure` in the config is **obfuscation, not encryption**: treat the
-whole file as a live secret regardless.
-
----
-
-## 10. Service-account variant (only if you chose that model in Section 0)
-
-Instead of the OAuth dance:
-
-1. In Cloud Console: *IAM & Admin → Service Accounts → Create*. Create one
-   service account **per Pi** (or one shared: your call). For each, *Keys → Add
-   Key → JSON* and download the JSON.
-2. Copy each Pi's JSON to it as `/etc/mseq/google-service-account.json`
-   (`0640 root:patch`).
-3. In `rclone config`, leave `client_id`/`client_secret` blank and set
-   `service_account_file> /etc/mseq/google-service-account.json`.
-4. **Share `mseq/` with each service account's email** (it looks like
-   `name@project.iam.gserviceaccount.com`) as **Editor** in the Drive web UI.
-   Without this, the service account cannot read or write the shared tree.
-5. Run the Section 8 visibility check.
+What to do when the Google Drive sync misbehaves. Setting the sync up in the
+first place is [Google Drive session sync](/documentation/MSEQ/cloud-sync), and
+the section numbers referred to below are that page's.
 
 ---
 
@@ -60,10 +25,10 @@ Instead of the OAuth dance:
 | Symptom | Likely cause | Fix |
 |---|---|---|
 | Wizard tries to open a browser / hangs on a Pi | answered "yes" to auto config | Re-run, answer **No**, use `rclone authorize` on a desktop (Section 5) |
-| Sync works for ~7 days then stops | OAuth consent screen left in *Testing* | **Publish App** (Section 1.3) and re-auth |
+| Sync works for ~7 days then stops | OAuth consent screen left in *Testing* | **Publish App** (Section 1, step 3) and re-auth |
 | Frequent `rateLimitExceeded` / slow sync | using rclone's shared default client ID | create your own OAuth client (Section 1) |
-| PEER view empty, no error | peer never pushed yet | wait one push cycle; confirm with Section 8 |
-| Section 8 listing errors with permission/not-found | wrong auth model wiring | shared-account: confirm both Pis use the same account; service-account: confirm `mseq/` is shared (Section 10.4) |
+| Peer IO view empty, no error | peer never pushed yet | wait one push cycle; confirm with Section 8 |
+| Section 8 listing errors with permission/not-found | sign-in model wired wrongly | shared account: confirm both Pis signed in as the same account; service accounts: confirm `mseq/` is shared with each (Section 9, step 4) |
 
 ---
 
