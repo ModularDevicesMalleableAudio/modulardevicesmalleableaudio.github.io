@@ -8,19 +8,17 @@ permalink: /documentation/MSEQ/trigs
      docs/trigs.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Trigs</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#playing">Playing</a></nav>
 
 <h1>Trigs</h1>
 
 The trig view is the default view for every sequencer. It is the central editing surface: here you write which steps fire, set percentage chance, configure conditional and sustain trigs, and set per-row play modes.
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#what-you-see">What You See</a><span class="sep" aria-hidden="true"> · </span><a href="#trig-status-colours">Trig Status Colours</a><span class="sep" aria-hidden="true"> · </span><a href="#editing-steps-steps-116">Editing Steps (Steps 1–16)</a><span class="sep" aria-hidden="true"> · </span><a href="#sustain-sus_start--sus_hold">Sustain (SUS_START / SUS_HOLD)</a><span class="sep" aria-hidden="true"> · </span><a href="#row-mode-column-9-on-lhs">Row Mode (Column 9 on LHS)</a><span class="sep" aria-hidden="true"> · </span><a href="#reset-and-randomise-shift--mute--shift--solo">Reset and Randomise (SHIFT + MUTE / SHIFT + SOLO)</a></nav>
+<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#what-you-see">What you see</a><span class="sep" aria-hidden="true"> · </span><a href="#trig-status-colours">Trig status colours</a><span class="sep" aria-hidden="true"> · </span><a href="#editing-steps-steps-116">Editing steps (steps 1–16)</a><span class="sep" aria-hidden="true"> · </span><a href="#sustain-sus_start--sus_hold">Sustain (SUS_START / SUS_HOLD)</a><span class="sep" aria-hidden="true"> · </span><a href="#row-mode-column-9-on-lhs">Row mode (column 9 on LHS)</a><span class="sep" aria-hidden="true"> · </span><a href="#reset-and-randomise-shift--mute--shift--solo">Reset and randomise (SHIFT + MUTE / SHIFT + SOLO)</a></nav>
 
 ---
 
-## What You See
+## What you see
 
 The grid is 8 rows × 16 steps. Each Launchpad shows half the grid:
 
@@ -33,7 +31,7 @@ The trig view is per-sequencer: selecting a different sequencer (top-bar buttons
 
 ---
 
-## Trig Status Colours
+## Trig status colours
 
 Each step in the grid shows one of the following states:
 
@@ -84,7 +82,7 @@ When the sequencer's sequencer mute state is `MUTED` or any autodrop variant, th
 
 ---
 
-## Editing Steps (Steps 1–16)
+## Editing steps (steps 1–16)
 
 Press any step pad in columns 1–8 (LHS for steps 1–8, RHS for steps 9–16). The result depends on the LC modifier held at the moment of the press:
 
@@ -120,7 +118,7 @@ The sustain region wraps across bar boundaries: if start = 14 and end = 3, steps
 
 ---
 
-## Row Mode (Column 9 on LHS)
+## Row mode (column 9 on LHS)
 
 The rightmost button on each row of the LHS LP sets the **row play mode** for that row. The action depends on the LC modifier held:
 
@@ -164,7 +162,7 @@ See [Mutes and row states](/documentation/MSEQ/mutes) for the full cued-state tr
 
 ---
 
-## Reset and Randomise (SHIFT + MUTE / SHIFT + SOLO)
+## Reset and randomise (SHIFT + MUTE / SHIFT + SOLO)
 
 These global gestures affect the currently pressed **row** in the trig view:
 
@@ -177,7 +175,7 @@ These gestures are view-aware: the same gesture produces different effects in ot
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Building a pattern](/documentation/MSEQ/building-a-pattern): two worked examples, writing a pattern and what sets note length
 - [Euclidean trigs](/documentation/MSEQ/euclidean): Euclidean overlay density/length controls (LC-based)
@@ -186,4 +184,4 @@ These gestures are view-aware: the same gesture produces different effects in ot
 - [Note arp](/documentation/MSEQ/note-arp): Note arp view (view slot adjacent to trig)
 - [LaunchControl modifier buttons](/documentation/MSEQ/lc-status): LC modifier button reference
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><strong>Trigs</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><strong>Trigs</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

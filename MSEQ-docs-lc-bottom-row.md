@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/lc-bottom-row
      docs/lc-bottom-row.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>The LaunchControl</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Bottom row</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/toggles">Toggle views</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a></nav>
 
 <h1>Bottom row</h1>
 
@@ -24,7 +22,7 @@ The LC bottom row has 7 sequencer buttons, one per column, matching the top mute
 
 ---
 
-## Non-Autodrop Functions
+## Non-autodrop functions
 
 When a modifier is held while pressing a bottom-row button, the autodrop action is replaced:
 
@@ -64,11 +62,11 @@ Bottom-row LED colours reflect the **sequencer autodrop state**, using the same 
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Autodrops](/documentation/MSEQ/autodrops): Full autodrop reference (autodrop types, timing, cue behaviour)
 - [Mutes and row states](/documentation/MSEQ/mutes): Top row functions + all LED colour states
 - [LaunchControl modifier buttons](/documentation/MSEQ/lc-status): The 6 right-column modifier buttons
 - [LaunchControl knobs and faders](/documentation/MSEQ/lc-knobs): The 3 knob rows above the faders
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/toggles">Toggle views</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><strong>Bottom row</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/toggles">Toggle views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a>: <a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><strong>Bottom row</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/toggles">Toggle views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav>

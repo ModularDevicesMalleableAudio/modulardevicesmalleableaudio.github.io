@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/step-velo
      docs/view-reference/02-step-velo.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Step Velocity</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/step-duty">Step Duty</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/row-octave">Row Octave (Octave Tree)</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Step Velocity</h1>
 
@@ -35,9 +33,9 @@ velocity to that step instantly. No modifier needed.
 |---|---|---|---|
 | Press | LP grid | Set the step (column) to the pressed row's velocity | none |
 | SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 steps → velocity of row R | shift+mute |
-| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `5` (row 6, the velocity identity ×1.0) | shift+mute |
+| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `6` (row 6, the velocity identity ×1.0) | shift+mute |
 | SHIFT + SOLO + press row R | LP grid | **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | shift+solo |
-| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 0–7 | shift+solo |
+| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 1–8 | shift+solo |
 | Row-mode gestures | Row mutes | Row play-mode controls still apply (see "Row mode" in [Trig view reference](/documentation/MSEQ/views/trig)) | any |
 
 ## See also
@@ -46,4 +44,4 @@ velocity to that step instantly. No modifier needed.
 - [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): cyclic velocity **arp** (this view's arp sibling)
 - [Reset and randomise](/documentation/MSEQ/reset): reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/step-duty">Step Duty</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/row-octave">Row Octave (Octave Tree)</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/step-duty">Step Duty</a><span class="sep" aria-hidden="true"> · </span><strong>Step Velocity</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/row-octave">Row Octave (Octave Tree)</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

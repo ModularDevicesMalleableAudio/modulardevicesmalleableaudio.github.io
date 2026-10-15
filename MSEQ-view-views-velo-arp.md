@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/velo-arp
      docs/view-reference/07-velo-arp.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Velocity Arp</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/duty-arp">Duty Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/note-arp">Note Arp</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Velocity Arp</h1>
 
@@ -24,7 +22,7 @@ values, independent length per row), instead of a fixed per-step value.
 Two-stage editor. **LHS LP**: overview of all 8 rows' arp patterns (lit =
 active step, position colour = playing step, dark = beyond arp length),
 and the row/length selector. **RHS LP**: value editor for the selected row
-(column = arp step 1–8, row = value 0–7). Each RHS column shows one lit pad
+(column = arp step 1–8, row = value 1–8). Each RHS column shows one lit pad
 at the stored value's height, not a filled bar; steps past the length keep
 showing their value in slate.
 
@@ -37,14 +35,15 @@ showing their value in slate.
 | Press row R, col N | LHS LP | Select row R; a double-tap within 350 ms sets its length to N slots | none |
 | SHIFT + press row R, col N | LHS LP | Select row R and set its length to N slots immediately | shift |
 | Press row R, col 9 | LHS LP col 9 | Select row R without changing its length | none |
-| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset**: fill the pressed row's arp with `5`, the velocity identity (×1.0) | shift+mute |
-| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise**: selected arp fully random across values 0–7 | shift+solo |
+| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset**: fill the pressed row's arp with `6`, the velocity identity (×1.0) | shift+mute |
+| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise**: selected arp fully random across values 1–8 | shift+solo |
 
 ### RHS: value editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 0–7) | none |
+| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
+| SHIFT + press column N | RHS LP | Write the value **and** set the selected row's length to N slots (this can shrink the length) | shift |
 | SHIFT + MUTE + press row R | RHS LP | **Reset**: fill selected arp with row R's value | shift+mute |
 | SHIFT + SOLO + press row R | RHS LP | **Randomise**: selected arp gaussian around row R | shift+solo |
 
@@ -59,4 +58,4 @@ behaves as "no arp".
 - [Step values](/documentation/MSEQ/step-views): non-cyclic per-step velocity editor
 - [Reset and randomise](/documentation/MSEQ/reset): canonical reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/duty-arp">Duty Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/note-arp">Note Arp</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/duty-arp">Duty Arp</a><span class="sep" aria-hidden="true"> · </span><strong>Velocity Arp</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/note-arp">Note Arp</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

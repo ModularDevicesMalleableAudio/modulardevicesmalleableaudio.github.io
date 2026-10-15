@@ -8,23 +8,24 @@ permalink: /documentation/MSEQ/views/duty-arp
      docs/view-reference/06-duty-arp.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Duty Arp</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/jam-keyboard">Jam Keyboard</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/velo-arp">Velocity Arp</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Duty Arp</h1>
 
 ## Purpose
 
-Modulate each row's **note duty cycle** with a short cyclic pattern (up to
-8 values, independent length per row), instead of a fixed per-step value.
+Shift each row's **note length** with a short cyclic pattern (up to 8 values,
+independent length per row). Each value lengthens or shortens the note the
+step duty view set for that step, one note length at a time through the 16
+note lengths from `1/64` to `1/1`: 0 is four lengths shorter, 4 is no change,
+7 is three lengths longer, and the result stops at `1/64` and `1/1`. The duty arp does not read the sequencer's duty curve.
 
 ## Interaction
 
 Two-stage editor. **LHS LP**: overview of all 8 rows' arp patterns (lit =
 active step, position colour = playing step, dark = beyond arp length),
 and the row/length selector. **RHS LP**: value editor for the selected row
-(column = arp step 1–8, row = value 0–7). Each RHS column shows one lit pad
+(column = arp step 1–8, row = value 1–8). Each RHS column shows one lit pad
 at the stored value's height, not a filled bar; steps past the length keep
 showing their value in slate.
 
@@ -37,14 +38,15 @@ showing their value in slate.
 | Press row R, col N | LHS LP | Select row R; a double-tap within 350 ms sets its length to N slots | none |
 | SHIFT + press row R, col N | LHS LP | Select row R and set its length to N slots immediately | shift |
 | Press row R, col 9 | LHS LP col 9 | Select row R without changing its length | none |
-| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset**: fill the pressed row's arp with `4`, the duty identity (`1/16`, one whole step) | shift+mute |
-| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise**: selected arp fully random across values 0–7 | shift+solo |
+| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset**: fill the pressed row's arp with `5`, which leaves the step's length unchanged | shift+mute |
+| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise**: selected arp fully random across values 1–8 | shift+solo |
 
 ### RHS: value editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 0–7) | none |
+| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
+| SHIFT + press column N | RHS LP | Write the value **and** set the selected row's length to N slots (this can shrink the length) | shift |
 | SHIFT + MUTE + press row R | RHS LP | **Reset**: fill selected arp with row R's value | shift+mute |
 | SHIFT + SOLO + press row R | RHS LP | **Randomise**: selected arp gaussian around row R | shift+solo |
 
@@ -59,4 +61,4 @@ why it behaves as "no arp".
 - [Step values](/documentation/MSEQ/step-views): non-cyclic per-step duty editor
 - [Reset and randomise](/documentation/MSEQ/reset): canonical reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/jam-keyboard">Jam Keyboard</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/velo-arp">Velocity Arp</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/jam-keyboard">Jam Keyboard</a><span class="sep" aria-hidden="true"> · </span><strong>Duty Arp</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/velo-arp">Velocity Arp</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

@@ -8,29 +8,100 @@ permalink: /documentation/MSEQ/cc-assignments
      docs/cc-assignments.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Arps</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">CC assignments</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/cc-arps">CC arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/arp-curves">Arp curves</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#arps">Arps</a></nav>
 
 <h1>CC assignments</h1>
 
-Which CC each row of each sequencer sends, and what it moves on the synth.
-
-These are **our** assignments, for the instruments on our rig. They are not
-fixed and they are not a spec: nothing in MSEQ cares that sequencer 6 is an
-NTS-1, only that row D of sequencer 6 sends CC 43. Point a sequencer at your own
-synth and rewrite its eight rows from the webapp, as described in *Setting up
-your own* below. Read the tables here as a worked example of what a finished
-mapping looks like.
+Which CC message each CC pattern sends. These are fully customisable using the
+[MIDI Guide dataset by Pencil Research](https://github.com/pencilresearch/midi)
+(see [Setting up your own](#setting-up-your-own)), but we have some defaults
+that fit the synths we have (see [Default CC arps](#default-cc-arps)).
 
 How to write and edit the patterns that drive these rows is on
 [CC arps](/documentation/MSEQ/cc-arps).
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#sequencer-2-prophet-a">Sequencer 2: Prophet A</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-3-prophet-b">Sequencer 3: Prophet B</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-6-nts-1">Sequencer 6: NTS-1</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-9-tb-03">Sequencer 9: TB-03</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-11-juno">Sequencer 11: Juno</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-12-skulpt">Sequencer 12: SKULPT</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-13-tr-8-main-view-6">Sequencer 13: TR-8 Main (View 6)</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-13-tr-8-alt-view-7">Sequencer 13: TR-8 Alt (View 7)</a><span class="sep" aria-hidden="true"> · </span><a href="#setting-up-your-own">Setting up your own</a></nav>
+---
+
+## Setting up your own
+
+CC assignment happens in the browser, on the webapp's **CC mapping** page,
+reached from Settings. You do not need to know your synth's CC numbers: the page
+carries a MIDI CC database covering several hundred instruments, so you pick
+your synth by name and then pick the parameter by name.
+
+<img src="/assets/mseq/webapp-cc-mapping.png" alt="The CC mapping page as it opens: sequencer 2 selected, the synth list on the left grouped by manufacturer with a CC count beside each synth, an empty Parameters panel asking you to pick a synth, and rows 8 to 1 on the right, top to bottom, each showing its CC number, curve and colour" style="display:block;margin-inline:auto">
+
+The page is three panels, left to right, and you work across them:
+
+1. **Synth.** Search for your instrument and select it. If it is not in the
+   database, add it under **Custom (not listed)** at the top of the list, as
+   described in [Custom CC values](#custom-cc-values) below.
+2. **Parameters.** The instrument's parameters, grouped the way its own manual
+   groups them, each showing its CC number. Tapping one assigns it to the row
+   you are targeting.
+3. **Rows.** The sequencer's eight CC-arp rows, in Launchpad order: row 8 at
+   the top, row 1 at the bottom.
+   - Tap a row's number to target it, then tap a parameter to fill it.
+   - **Curve** sets how the row's values map to CC values (see
+     [CC arps](/documentation/MSEQ/cc-arps)).
+   - **Colour** sets how the row is drawn on the grid.
+   - Both start from the kind of parameter you assigned, and you can change
+     either.
+   - ✕ clears the row.
+
+Sequencer 13 is the drum sequencer and gets a **Main / Alt** switch beside the
+sequencer picker, because its two kits carry two separate sets of eight rows.
+
+Each drum row also shows a voice label (BD, SD, HT and so on) beside its
+number. The row's arp steps on that voice's trigs, so row 1 of Main moves only
+when the kick plays. You can change a drum row's CC but not its voice: put CY
+Decay on row 1 and the cymbal decay changes on kick hits. The
+[Default CC arps](#default-cc-arps) tables list the voice for every row.
+
+<img src="/assets/mseq/webapp-cc-mapping-drums.png" alt="The CC mapping page with sequencer 13 Main selected: the TR-8 picked in the synth list, its parameters in the middle panel, and rows 8 to 1 on the right, top to bottom, each with a voice label (HT, MT, LT, SD, SD, BD, BD, BD) between the row number and its CC" style="display:block;margin-inline:auto">
+
+### Custom CC values
+
+The database cannot list everything you might send CCs to: an Ableton
+instrument rack, a Max or Pd patch, a synth too new or too rare to be in it.
+Describe it yourself and it then works exactly like a listed synth.
+
+1. Tap **+ New custom synth** at the top of the synth list.
+2. Give it a name.
+3. Add a line for each parameter you want to reach: a name, its CC (a whole
+   number from 0 to 127) and its kind. The kind is the same one the database
+   gives its parameters (filter, envelope, pitch and so on), and it sets the
+   curve and colour a row starts with when you assign the parameter. The name
+   is optional; an unnamed parameter goes by its CC number. **+ Add parameter**
+   adds a line and ✕ removes one.
+4. Tap **Save**. The page refuses to save while a CC is out of range or the
+   synth has no name, and lists what needs fixing.
+
+<img src="/assets/mseq/webapp-cc-mapping-custom-form.png" alt="The custom synth form in the Parameters panel: the synth name &quot;Max grain patch&quot; and three parameters, Grain size on CC 74 (filter), Density on CC 75 (fx) and Pitch spread on CC 76 (pitch), with + Add parameter, Save and Cancel below" style="display:block;margin-inline:auto">
+
+Your synth then sits under **Custom (not listed)**. Select it and tap a
+parameter to fill the target row, as with any other synth.
+
+<img src="/assets/mseq/webapp-cc-mapping-custom.png" alt="Max grain patch selected under Custom (not listed), its three parameters in the Parameters panel with an Edit button above them, and row 8 of sequencer 6 now sending CC 74, Grain size, in dark gold" style="display:block;margin-inline:auto">
+
+Assignments and custom synths are stored on the Pi, not in sessions: every
+browser sees the same ones, and a session from another rig plays your CCs
+rather than theirs. If you edit the configuration file by hand, the page offers
+to re-import it.
+
+The bundled database is the
+[MIDI Guide dataset by Pencil Research](https://github.com/pencilresearch/midi),
+used under CC BY-SA 4.0.
 
 ---
 
-## Sequencer 2: Prophet A
+## Default CC arps
+
+These are the assignments for the instruments on our rig, a worked example of a
+finished mapping. Nothing in MSEQ cares that sequencer 6 is an NTS-1, only that
+row 5 of sequencer 6 sends CC 43.
+
+### Sequencer 2: Prophet A
 
 | Row | CC | Parameter |
 |-----|----|-----------|
@@ -45,26 +116,26 @@ How to write and edit the patterns that drive these rows is on
 
 ---
 
-## Sequencer 3: Prophet B
+### Sequencer 3: Prophet B
 
 Identical CC assignments to Prophet A (sequencer 2).
 
 ---
 
-## Sequencer 6: NTS-1
+### Sequencer 6: NTS-1
 
 | Row | CC | Parameter     |
 |-----|----|---------------|
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#63c5ff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>C | 54 | OSC Shape     |
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#04dd2e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>D | 43 | Filter Cutoff |
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c7ff96;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>E | 44 | Resonance     |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f25dd4;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>F | 29 | Mod depth     |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f25dd4;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>F | 29 | Mod FX depth  |
 
 Rows A, B, G and H are unassigned.
 
 ---
 
-## Sequencer 9: TB-03
+### Sequencer 9: TB-03
 
 | Row | CC | Parameter |
 |-----|----|-----------|
@@ -78,12 +149,12 @@ Rows 4, 3 and 2 are unassigned. CC 102 (slide) is handled separately by the TB-0
 
 ---
 
-## Sequencer 11: Juno
+### Sequencer 11: Juno
 
 | Row | CC | Parameter |
 |-----|----|-----------|
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#967562;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>8 | 16 | PWM |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#967562;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>7 | 14 | Sq Wave Level |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#63c5ff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>8 | 16 | PWM |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#86c8ff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>7 | 14 | Sq Wave Level |
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#b6d6f9;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>5 | 19 | Noise Level |
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#dde272;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>3 | 3 | LFO Rate |
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f25dd4;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>2 | 91 | Delay Level |
@@ -92,7 +163,7 @@ Rows 6, 4 and 1 are unassigned.
 
 ---
 
-## Sequencer 12: SKULPT
+### Sequencer 12: SKULPT
 
 | Row | CC | Parameter |
 |-----|----|-----------|
@@ -107,83 +178,44 @@ Rows 6, 4 and 1 are unassigned.
 
 ---
 
-## Sequencer 13: TR-8 Main (View 6)
+### Sequencer 13: TR-8 Main (View 6)
 
 Drum CC rows use per-row trig groups: rows controlling the same drum sound share a group.
 
-| Row | CC | TR-08 Parameter |
-|-----|----|-----------------|
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>8 | 52 | HT Tune |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>7 | 49 | MT Tune |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>6 | 46 | LT Tune |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>5 | 28 | SD Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#dde272;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>4 | 26 | SD Snappy |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>3 | 23 | BD Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#dde272;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>2 | 21 | BD Tone |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>1 | 20 | BD Tune |
+| Row | Voice | CC | TR-08 Parameter |
+|-----|-------|----|-----------------|
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>8 | HT | 52 | HT Tune |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>7 | MT | 49 | MT Tune |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>6 | LT | 46 | LT Tune |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>5 | SD | 28 | SD Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#dde272;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>4 | SD | 26 | SD Snappy |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>3 | BD | 23 | BD Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#dde272;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>2 | BD | 21 | BD Tone |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>1 | BD | 20 | BD Tune |
 
 The three BD rows (3, 2 and 1) share one trig group, and so do the two SD rows (5 and 4): a hit on any row of a group advances the whole group's arps together. The tom rows (8, 7 and 6) each have a group to themselves.
 
 ---
 
-## Sequencer 13: TR-8 Alt (View 7)
+### Sequencer 13: TR-8 Alt (View 7)
 
-| Row | CC | TR-08 Parameter |
-|-----|----|-----------------|
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>8 | 87 | CB Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>7 | 84 | CY Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>6 | 81 | OH Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>5 | 62 | CH Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>4 | 59 | CP Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>3 | 58 | CP Tune |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>2 | 56 | RS Decay |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>1 | 55 | RS Tune |
-
----
-
-## Setting up your own
-
-CC assignment happens in the browser, on the webapp's **CC mapping** page,
-reached from Settings. You do not need to know your synth's CC numbers: the page
-carries a MIDI CC database covering several hundred instruments, so you pick
-your synth by name and then pick the parameter by name.
-
-The page is three panels, left to right, and you work across them:
-
-1. **Synth.** Search for your instrument and select it. If it is not in the
-   database, pick anything close and correct the CC numbers afterwards; a row
-   is only ever a CC number underneath.
-2. **Parameters.** The instrument's parameters, grouped the way its own manual
-   groups them, each showing its CC number. Tapping one assigns it to the row
-   you are targeting.
-3. **Rows.** The eight CC-arp rows of the sequencer you chose at the top of the
-   page, labelled A at the top down to H at the bottom, matching the Launchpad.
-   Tap a row letter to make it the assign target, then tap a parameter to fill
-   it. Each assigned row shows its CC number and parameter name, a **curve**
-   (which of the eight-entry lookup tables the row's 0 to 7 values index, see
-   [CC arps](/documentation/MSEQ/cc-arps)) and a **palette** (the colour the row takes on the
-   grid). Both are filled in for you from the kind of parameter you assigned,
-   and both are editable. The ✕ clears the row.
-
-Sequencer 13 is the drum sequencer and gets a **Main / Alt** switch beside the
-sequencer picker, because its two kits carry two separate sets of eight rows.
-
-Assignments are a device setting rather than part of a session, so they stay put
-across every save and load, and a session borrowed from another rig arrives
-playing your CCs rather than theirs. If you edit the configuration file by hand
-on the Pi, the page notices and offers to re-import rather than overwriting your
-work.
-
-The bundled database is the
-[MIDI Guide dataset by Pencil Research](https://github.com/pencilresearch/midi),
-used under CC BY-SA 4.0.
+| Row | Voice | CC | TR-08 Parameter |
+|-----|-------|----|-----------------|
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>8 | CB | 87 | CB Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>7 | CY | 84 | CY Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>6 | OH | 81 | OH Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>5 | CH | 62 | CH Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>4 | CP | 59 | CP Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>3 | CP | 58 | CP Tune |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>2 | RS | 56 | RS Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>1 | RS | 55 | RS Tune |
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [CC arps](/documentation/MSEQ/cc-arps): writing CC arps, the grid, the edit gestures and how values are scaled
 - [Slew and CC smoothing](/documentation/MSEQ/slew): smoothing what these rows send
 - [Drum views](/documentation/MSEQ/drums): the drum sequencers, whose CC rows are grouped per voice
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/cc-arps">CC arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/arp-curves">Arp curves</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><strong>CC assignments</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#arps">Arps</a>: <a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><strong>CC assignments</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav>

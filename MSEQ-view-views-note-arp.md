@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/note-arp
      docs/view-reference/08-note-arp.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Note Arp</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/velo-arp">Velocity Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/cc-arp">CC Arp</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Note Arp</h1>
 
@@ -65,4 +63,4 @@ its 4 octaves. P1 and P2 edit state is fully independent.
 - [LaunchControl modifier buttons](/documentation/MSEQ/lc-status): modifier reference
 - [Reset and randomise](/documentation/MSEQ/reset): records the deliberate no-op
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/velo-arp">Velocity Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/cc-arp">CC Arp</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/velo-arp">Velocity Arp</a><span class="sep" aria-hidden="true"> · </span><strong>Note Arp</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/cc-arp">CC Arp</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

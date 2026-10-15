@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/toggles
      docs/toggles.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>The LaunchControl</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Toggle views</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/slew">Slew and CC smoothing</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a></nav>
 
 <h1>Toggle views</h1>
 
@@ -100,4 +98,4 @@ note that sequencer plays. Notes already sounding are not re-pitched.
 - [Mutes and row states](/documentation/MSEQ/mutes): sequencer and row mute model (autodrop is one of the cued states)
 - [Selecting sequencers and views](/documentation/MSEQ/selection): how to navigate to views 8.1 / 8.3 / 11 (col-9 view selectors on the LP, or top-bar sequencer + view button on the LC).
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/slew">Slew and CC smoothing</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><strong>Toggle views</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a>: <a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><strong>Toggle views</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav>

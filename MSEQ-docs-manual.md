@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/manual
      docs/overview.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Getting started</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Overview</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/setup">Setup</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#getting-started">Getting started</a></nav>
 
 <h1>Overview</h1>
 
@@ -259,7 +257,7 @@ circles down the right-hand edge are the row mute controls.
 - [CC arps](/documentation/MSEQ/cc-arps): sequencing CC messages
 - [Euclidean trigs](/documentation/MSEQ/euclidean): Euclidean rhythm overlays
 - [Slew and CC smoothing](/documentation/MSEQ/slew): smoothing CC movement
-- [Arp curves](/documentation/MSEQ/arp-curves): what a value of 0–7 actually means, per sequencer
+- [Arp curves](/documentation/MSEQ/arp-curves): what velocity arp and step duty values mean, per sequencer
 
 **Macro control**
 
@@ -276,7 +274,7 @@ circles down the right-hand edge are the row mute controls.
 - [Saving and loading sessions](/documentation/MSEQ/sessions): the slot catalog, for saving, loading, undo and peers
 - [Google Drive session sync](/documentation/MSEQ/cloud-sync): setting up session sync between rigs
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/setup">Setup</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><strong>Overview</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup">Setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup-debugging">Setup debugging</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/ableton">Ableton and MIDI routing</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#getting-started">Getting started</a>: <strong>Overview</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup">Setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup-debugging">Setup debugging</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/ableton">Ableton and MIDI routing</a></nav>
 
 <script>
 // Deep links into the old single-page manual still arrive with a #hash.

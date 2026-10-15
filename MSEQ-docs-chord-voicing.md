@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/chord-voicing
      docs/chord-voicing.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Harmony</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Voicing and modulation</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/chords">Chord progression</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Drums<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/drums">Drum views</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#harmony">Harmony</a></nav>
 
 <h1>Voicing and modulation</h1>
 
@@ -21,7 +19,7 @@ both read is on [Chord progression](/documentation/MSEQ/chords).
 
 ---
 
-## Chord Edit (view type 13)
+## Chord edit (view type 13)
 
 Chord edit is the per-sequencer voicing mask. While the chord progression decides *which chord* plays on each bar, chord edit decides *which of that chord's 8 scale-row notes that sequencer actually plays*. Each chord-following sequencer has its own mask, so a sequencer driving a bass can play just the root, while one driving a pad synth plays all eight rows.
 
@@ -51,7 +49,7 @@ all, so column 13 (the TR-8) never follows the progression.*
 
 ---
 
-## Chord Modulation
+## Chord modulation
 
 The chord progression interacts with per-sequencer chord modulation. Each sequencer can be set to modulate its chord automatically (e.g. per bar or per cycle), so the same global progression reads differently on each sequencer without you re-editing the grid.
 
@@ -59,7 +57,7 @@ Row octave sequencing (see [Octave tree](/documentation/MSEQ/octave-tree)) combi
 
 ---
 
-## Chord Progression Modulator (view type 4)
+## Chord progression modulator (view type 4)
 
 The chord progression modulator (CPM) is a **per-sequencer, per-bar diatonic transposition pattern** that overlays the global chord progression. Each sequencer can specify, for each of the 16 bars, a **scale-degree offset** added to the chord-progression slot before the scale is looked up, so the resulting chord stays inside the active scale. This lets you keep the same global progression but have different sequencers ride different movement on each bar: for example a bass that drops by 2 degrees on bar 7, while the pad stays at `0`.
 
@@ -115,11 +113,11 @@ The gestures above are local to this view. See [Reset and randomise](/documentat
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Chord progression](/documentation/MSEQ/chords): the shared progression these two layers modify
 - [Chords and scales](/documentation/MSEQ/chords-and-scales): root note, scale and how a chord is built
 - [Octave tree](/documentation/MSEQ/octave-tree): row-octave sequencing, which stacks with both
 - [Reset and randomise](/documentation/MSEQ/reset): the full reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/chords">Chord progression</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Drums<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/drums">Drum views</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chords">Chord progression</a><span class="sep" aria-hidden="true"> · </span><strong>Voicing and modulation</strong></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#harmony">Harmony</a>: <a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chords">Chord progression</a><span class="sep" aria-hidden="true"> · </span><strong>Voicing and modulation</strong><span class="sep" aria-hidden="true"> · </span><span class="next">Drums<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/drums">Drum views</a> →</span></nav>

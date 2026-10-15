@@ -8,117 +8,209 @@ permalink: /documentation/MSEQ/velo-duty-arps
      docs/velocity-duty-arps.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Arps</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Velocity and duty arps</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/note-arp">Note arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-arps">CC arps</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#arps">Arps</a></nav>
 
 <h1>Velocity and duty arps</h1>
 
-Velocity and duty arps modulate per-step velocity and duty cycle using short cyclic patterns: similar to how note arps and CC arps work. Each row has its own arp pattern (up to 8 values) and an independent arp length.
+Velocity and duty arps store a pattern of up to eight values per sequencer row.
+Every time a row's trigger fires, the row takes the next value in its pattern,
+then wraps back to the start when it reaches the end of the pattern's length.
+A velocity arp moves on past its own rests. A duty arp moves on only when a
+note actually plays, so a rest never uses up a duty value.
 
-Three arp variants exist:
+There are three of them:
 
-| View | What it shapes | View type | Sequencer(s) |
-|------|----------------|-----------|-----------|
-| Velocity arp | Velocity, per row | 7 | Synth seqs 1–7 and 9–12 |
-| Duty arp | Note length, per row | 6 | Synth seqs 1–7 and 9–12 |
-| TR-8 velocity arp | Velocity, per drum voice, main and alt kits | 19 | Seq 13 (TR-8) only |
+- **Velocity arp.** Each value picks a point on the sequencer's velocity curve,
+  and that multiplier scales the velocity from the step velocity view and the
+  velocity knob. A value whose point is ×0 silences the hit.
+- **TR-8 velocity arp.** One pattern per drum voice, with separate patterns for
+  the main and alt kits. Each value picks a point on the TR-8's velocity curve,
+  and the accent knob blends it with the accent on that step. A value whose
+  point is ×0 silences the hit.
+- **Duty arp.** A modifier on top of the note length you already set in the
+  step duty view. Values above 5 make each note longer, values below 5 make it
+  shorter, and 5 leaves it as it is.
 
-Velocity arp step values represent output velocity (0–7 mapped to MIDI velocities). Duty arp step values represent note duty cycle (0–7 mapped to duty fractions).
+By default each row's pattern is one value long and that value is neutral, so
+the arps change nothing until you edit them.
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#what-you-see">What You See</a><span class="sep" aria-hidden="true"> · </span><a href="#edit-workflow">Edit Workflow</a><span class="sep" aria-hidden="true"> · </span><a href="#reset-and-randomise">Reset and Randomise</a><span class="sep" aria-hidden="true"> · </span><a href="#tr-8-velocity-arp">TR-8 Velocity Arp</a></nav>
+The pattern advances on triggers, not on the clock, so its length does not
+have to match the row's trigs. A four-value pattern on a row with three trigs
+moves its accents, ghost notes and rests onto a different hit every bar, and
+takes four bars to come back round.
 
 ---
 
-## What You See
+## What a value means
 
-The view follows the same layout as [CC arps](/documentation/MSEQ/cc-arps):
+Every arp value is a number from 1, on the bottom row, to 8, on the top row.
+What it does depends on the arp.
 
-- **LHS LP**: 8 rows × 8 columns showing an overview of all rows' arp patterns. Each lit cell represents an active arp step for that row. The currently-playing step in each row is highlighted with the position colour (white). Steps beyond the row's arp length are unlit.
-- **RHS LP**: step-value editor for the currently-selected row. Values run 0–7, shown as a **single lit pad** per step at the height of its value (bottom = 0, top = 7), not as a bar filled from the bottom. Steps beyond the row's arp length still show their stored value, but in slate rather than in the value colour, so you can see where the list stops without counting.
+### Velocity arp
+
+A velocity arp value picks a point on the sequencer's velocity curve, and the
+hit's velocity is multiplied by that point. On the default curve a 6 leaves the
+hit as it is, and a 1 is a rest: the trig stays, but that pass of the pattern
+plays nothing.
+
+<img src="/assets/mseq/velocity-arp-curve.svg" alt="A line chart of the default velocity curve: velocity arp values 1 to 8 along the bottom as coloured pads, rising from a rest at 1 through ×0.20, ×0.40, ×0.60 and ×0.80 to ×1.00 at 6, highlighted as unchanged, then ×1.10 and ×1.20. A row beneath gives what each value sends with the velocity knob at 100 and the step velocity at the top: nothing, then 20, 40, 60, 80, 100, 110 and 120" style="display:block;margin-inline:auto">
+
+The arp is the last of three things that set a hit's velocity: the step
+velocity view and the sequencer's velocity knob (the middle knob row on the
+LaunchControl) come first, and all three multiply together. The figure's
+bottom row shows what that sends with the knob at 100 and the step at the top.
+The MSEQ never sends more than 127, or less than 10 for a hit that plays.
+
+The curve is per sequencer, and you can reshape it in the webapp: see
+[Arp curves](/documentation/MSEQ/arp-curves).
+
+### TR-8 velocity arp
+
+The TR-8 velocity arp reads the TR-8's own velocity curve in the same way, with
+one pattern per drum voice. The TR-8 has no step velocity. Instead the
+[accent sequencer](/documentation/MSEQ/step-views#what-acts-on-it) holds one value per step,
+shared by the whole kit, and the accent knob (the top knob in column 5) sets
+the balance between the two. Turned fully down, only the velocity arp counts;
+turned fully up, only the accent counts; at its default, halfway, each counts
+for half. The drum velocity knobs then set the overall level (see
+[Drum views](/documentation/MSEQ/drums)). A rest is still a rest wherever the accent knob
+sits.
+
+While [boom-tsk](/documentation/MSEQ/boom-tsk) is playing, its row ignores its velocity arp.
+
+### Duty arp
+
+A duty arp value does not set a note length. It lengthens or shortens the
+length the step duty view already gives that step, one note length at a time,
+through the sixteen note lengths the MSEQ plays. A 5 leaves the note as it is,
+each value above 5 makes it one length longer, and each value below 5 one
+length shorter.
+
+<img src="/assets/mseq/duty-arp-lengths.svg" alt="The sixteen note lengths from 1/64 to 1/1 as bars measured in steps, longest at the top, coloured by what reaches them: the step duty view on the default curve gives 1/64 to 1/8, the duty arp takes a note up to 1/4, the duty knob at full stretches that to the length of a 1/2, and only a reshaped step duty curve reaches 1/1. Beside the lengths, the duty arp values for a step at its default length, 1/16: 5 leaves it unchanged, 8 is three lengths longer at 1/8, and 1 is four lengths shorter at 1/64." style="display:block;margin-inline:auto">
+
+The duty arp uses no curve, so it does the same thing on every sequencer. The
+sequencer's duty knob (the top knob row on the LaunchControl) then stretches or
+shrinks the result. At its centre detent it changes nothing, and turned fully
+up it doubles the length, which is the grey band in the figure. You can switch that off for a sequencer in
+[Arp curves](/documentation/MSEQ/arp-curves#channel-duty-scales-note-length) to get the exact lengths.
+
+Two kinds of note take their length from the trig pattern instead, and ignore
+the duty arp's value: a note on a [legato](/documentation/MSEQ/mutes) row holds until the
+next trig, and a [sustained trig](/documentation/MSEQ/trigs) holds across its sustained steps.
+
+---
+
+## What you see
+
+If you have read the [Note arps](/documentation/MSEQ/note-arp) page, this will be familiar:
+the left hand Launchpad sets the pattern's length and the right hand Launchpad
+picks its values. Both Launchpads show values through colour, and the right
+hand Launchpad shows them by colour and position.
+
+### Left hand Launchpad
+
+The pattern overview. Each row shows the length of that row's pattern, one lit
+pad per step, coloured by its value: blue up to red on a velocity arp, green up
+to yellow on a duty arp. On a pattern longer than one value, the step that
+plays next is bright white.
+
+### Right hand Launchpad
+
+The value editor for the row you have selected (the last row you pressed on the
+left). Each column is one step of the pattern, and each step lights a **single
+pad** at the height of its value, from 1 on the bottom row to 8 on the top. It
+is not a bar filled from the bottom. Steps beyond the pattern's length still
+show their stored value, but in slate grey, so you can see where the pattern
+stops without counting.
 
 <figure class="fig-pair">
 <input type="radio" name="duty-arp-01" id="duty-arp-01-webapp" class="pick-webapp" checked>
 <label for="duty-arp-01-webapp">webapp</label>
 <input type="radio" name="duty-arp-01" id="duty-arp-01-hardware" class="pick-hardware">
 <label for="duty-arp-01-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/duty-arp-01.png" alt="A duty-arp view: the LHS LP's first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the green-to-yellow duty palette; the RHS LP shows one lit pad per step at varying heights, the first in white and the last three in slate">
-<img class="shot-hardware" src="/assets/mseq/hardware/duty-arp-01.jpg" alt="A duty-arp view: the LHS LP's first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the green-to-yellow duty palette; the RHS LP shows one lit pad per step at varying heights, the first in white and the last three in slate, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/duty-arp-01.png" alt="A duty-arp view: the LHS LP&#x27;s first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the green-to-yellow duty palette; the RHS LP shows one lit pad per step at varying heights, the first in white and the last three in slate">
+<img class="shot-hardware" src="/assets/mseq/hardware/duty-arp-01.jpg" alt="A duty-arp view: the LHS LP&#x27;s first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the green-to-yellow duty palette; the RHS LP shows one lit pad per step at varying heights, the first in white and the last three in slate, photographed on the hardware">
 </figure>
 
 *The duty arp. Same three rows as the note arp, same lengths: the LHS LP counts
-them, the RHS LP edits the selected row's five values, and white marks the slot
-that is playing right now.*
+them, the RHS LP edits the selected row's five values, and bright white marks
+the step that plays next.*
 
 <figure class="fig-pair">
 <input type="radio" name="velo-arp-01" id="velo-arp-01-webapp" class="pick-webapp" checked>
 <label for="velo-arp-01-webapp">webapp</label>
 <input type="radio" name="velo-arp-01" id="velo-arp-01-hardware" class="pick-hardware">
 <label for="velo-arp-01-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/velo-arp-01.png" alt="A velocity arp view: the LHS LP's first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the blue-to-red velocity palette; the RHS LP shows one lit pad per step, the first in white and the last three in slate">
-<img class="shot-hardware" src="/assets/mseq/hardware/velo-arp-01.jpg" alt="A velocity arp view: the LHS LP's first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the blue-to-red velocity palette; the RHS LP shows one lit pad per step, the first in white and the last three in slate, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/velo-arp-01.png" alt="A velocity arp view: the LHS LP&#x27;s first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the blue-to-red velocity palette; the RHS LP shows one lit pad per step, the first in white and the last three in slate">
+<img class="shot-hardware" src="/assets/mseq/hardware/velo-arp-01.jpg" alt="A velocity arp view: the LHS LP&#x27;s first column is lit on every row, with runs of two, five and three lit pads on three of them in white and the blue-to-red velocity palette; the RHS LP shows one lit pad per step, the first in white and the last three in slate, photographed on the hardware">
 </figure>
 
-*The velocity arp is the same instrument pointed at velocity, and the shared structure
-is the point: learn one of these views and you have learned four. Only the palette
-changes (blue up to red for velocity, green up to yellow for duty).*
+*The velocity arp is the same view pointed at velocity. Only the colours
+change.*
 
 ---
 
-## Edit Workflow
+## Set a pattern's length
 
-### 1. Select a row and set arp length (Launchpad LHS, the overview LP)
+On the left hand Launchpad, **hold SHIFT and press a pad**, or simply
+**double-tap a pad**, to set the pattern's length. That row's length becomes the
+column you pressed: column 1 for a single value, column 8 for all eight.
 
-Row lengths are set on the same LP that shows the overview, so you press the row you are looking at. Press LHS row R, column 1–8:
+Steps beyond the new length go dark straight away on the LHS LP, and turn slate
+on the RHS LP.
 
-- **Any press** selects row R (focus moves there; the length is unchanged).
-- **Double-tap** (two presses within 350 ms, no LC modifier held): sets that row's arp length to the column number. Column 1 gives a one-slot arp, column 8 gives all eight.
-- **Hold SHIFT and press once**: the same write without the double-tap.
+Holding SHIFT on the right hand Launchpad sets the length too: the press writes
+the value and makes the column you pressed the last step. It is the quickest way
+to draw a short pattern, and easy to do by accident.
 
-Column 9 selects the row and never writes a length, so it is the safe way to move focus.
-
-The stored length is the column number minus one, and the engine wraps the position with `pos > len`, so a stored 0 is one slot played on every trigger rather than a bypass: there is no "off" for a velocity or duty arp. Column 1 therefore parks the row on its first slot. After a reset that slot holds the neutral value (velocity ×1.0, duty one 16th), which is why it behaves as "no arp". But a first slot holding anything else applies to every hit on that row. Note which way each one applies: the velocity arp multiplies into the velocity you drew on the step, whilst the duty arp **replaces** the per-step note length outright (see [Step values](/documentation/MSEQ/step-views), which also lists the eight note lengths a duty value can pick, and [Arp curves](/documentation/MSEQ/arp-curves) for changing them).
-
-### 2. Write step values (Launchpad RHS)
-
-With a row selected, press a pad on the RHS:
-
-- Column (1–8) = arp step 1–8.
-- Row (1 = bottom = value 0, 8 = top = value 7) = the arp value to write.
+A duty arp one value long moves every note on the row by the same amount, so
+with a 5 the row plays the lengths you drew in step duty.
 
 ---
 
-## Reset and Randomise
+## Edit the pattern
 
-Hold the LC modifier, then press a pad. Which pad you press decides what the gesture means, and neither gesture touches the arp length.
+Editing takes two presses, one on each Launchpad:
 
-On the LHS LP both gestures live in **column 9**, the same column you use to move focus without writing a length. Columns 1–8 of the LHS ignore them entirely, so a mis-aimed press does nothing rather than something you did not want.
+1. **Press a pad on the LHS LP** to select that row, or press its **row mute
+   button**, the round button at the right-hand end of the row.
+2. **Press a pad on the RHS LP** to write a value. The column picks the step of
+   the pattern, and the row picks the value: the bottom row is 1, the top row
+   is 8.
+
+On the TR-8, the view edits whichever kit the TR-8 is showing: switch to the
+alt kit (see [Drum views](/documentation/MSEQ/drums)) to edit the alt voices' patterns.
+
+---
+
+## Reset and randomise
+
+Hold SHIFT + MUTE to reset, or SHIFT + SOLO to randomise, then press a row
+mute button on the LHS LP or a pad on the RHS LP. Neither changes the pattern's
+length.
 
 | Gesture | Effect |
 |---------|--------|
-| **SHIFT + MUTE**, press LHS col 9, row R | Reset row R's 8 arp steps to the neutral point on the shipped curves: 5 on a velocity arp (×1.0), 4 on a duty arp (`1/16`, one whole step). |
-| **SHIFT + MUTE**, press RHS row R | Reset the *selected* row's 8 steps to the value of the row you pressed (bottom row = 0, top row = 7). |
-| **SHIFT + SOLO**, press LHS col 9, any row | Randomise the selected row's 8 steps freely across 0–7. |
-| **SHIFT + SOLO**, press RHS row R | Randomise the selected row's 8 steps around row R's value, ±2, clamped 0–7. |
+| **SHIFT + MUTE** + row mute button | Reset that row to its neutral value: 6 on a velocity arp, 5 on a duty arp |
+| **SHIFT + MUTE** + RHS row R | Set every step of the selected row to row R's value |
+| **SHIFT + SOLO** + row mute button | Randomise the selected row across 1 to 8 |
+| **SHIFT + SOLO** + RHS row R | Randomise the selected row around row R's value |
 
-The two LHS gestures pick their row differently, which is worth a moment: **reset acts on the row you press**, so you can flatten a row you are not currently editing, whilst **randomise acts on the selected row**, whichever column-9 button you happen to hit. If you want to randomise a particular row, select it first.
+On the TR-8, reset gives each voice its own resting velocity: 3 on the second
+rows of a paired voice (BD2 and SD2 on the main kit, RS2 and CP2 on the alt),
+8 on the boom-tsk row, and 6 on every other row.
 
----
-
-## TR-8 Velocity Arp
-
-The TR-8 velocity arp view works identically to the synth velocity arp, but targets the `tr8_velo_arp_{row}` arrays (main kit) or `tr8_velo_arp_{row}_alt` arrays (alt kit). Selecting between main and alt is governed by the alt-view toggle on the TR-8 sequencer (sequencer 13).
-
-Reset follows the voice rather than a single value, because the drum rows do not all want the same resting velocity: the **ghost rows** (the second row of a paired voice, so SD2 and BD2 on the main kit, CP2 and RS2 on the alt) go to 2, the boom-tsk row at the bottom of the main view goes to 7, and every other row goes to 5. The arp length is untouched, as on the synth views. Randomise behaves exactly as the synth velocity arp does.
+[Reset and randomise](/documentation/MSEQ/reset) has the full matrix across every view.
 
 ---
 
-## Cross-References
+## Cross-references
 
-- [Note arp](/documentation/MSEQ/note-arp): Note arp view (same edit model, different array)
-- [CC arps](/documentation/MSEQ/cc-arps): CC arp (similar double-tap length model, different data, and a few gestures of its own)
-- [Step values](/documentation/MSEQ/step-views): Per-step velocity / duty editors (no arp cycling)
-- [Arp curves](/documentation/MSEQ/arp-curves): What the 0–7 values mean, and how to change that per sequencer
-- [Reset and randomise](/documentation/MSEQ/reset): Full reset / randomise matrix across all views
+- [Note arp](/documentation/MSEQ/note-arp): the same pattern model for pitch
+- [Step values](/documentation/MSEQ/step-views): step velocity, step duty and the TR-8 accent
+- [Arp curves](/documentation/MSEQ/arp-curves): what a velocity arp's values mean, and how to change that per sequencer
+- [CC arps](/documentation/MSEQ/cc-arps): the same length model for CC values
+- [Drum views](/documentation/MSEQ/drums): which voice sits on which TR-8 row, and where its velocity knobs are
+- [Reset and randomise](/documentation/MSEQ/reset): the full reset and randomise matrix across all views
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/note-arp">Note arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-arps">CC arps</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><strong>Velocity and duty arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#arps">Arps</a>: <a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><strong>Velocity and duty arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav>

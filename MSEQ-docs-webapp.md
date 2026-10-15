@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/webapp
      docs/webapp.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>The webapp</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Playing from the browser</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: The LaunchControl<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/webapp-settings">Settings and layout</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#the-webapp">The webapp</a></nav>
 
 <h1>Playing from the browser</h1>
 
@@ -156,7 +154,7 @@ Everything beyond the grid is reached from the icons at the top right.
   Save / load sessions and to two pages the hardware has no equivalent for:
   - **CC mapping**, which chooses the CC each CC-arp row sends. See
     [CC assignments](/documentation/MSEQ/cc-assignments#setting-up-your-own).
-  - **Arp curves**, which shape what the velocity and duty arp values mean. See
+  - **Arp curves**, which shape what velocity arp and step duty values mean. See
     [Arp curves](/documentation/MSEQ/arp-curves).
 
 Each of those pages has a **←** at the top left that takes you back.
@@ -216,15 +214,15 @@ heading and summary included.*
 
 Each section opens when you press its heading.
 
-<img src="/assets/mseq/webapp-phone-purpose.png" alt="The Purpose section open on the trig view's card: one paragraph saying what the view is for and listing the four row play modes" style="display:block;margin-inline:auto">
+<img src="/assets/mseq/webapp-phone-purpose.png" alt="The Purpose section open on the trig view&#x27;s card: one paragraph saying what the view is for and listing the four row play modes" style="display:block;margin-inline:auto">
 
 *Purpose: what the view is for, in a paragraph.*
 
-<img src="/assets/mseq/webapp-phone-interaction.png" alt="The Interaction section open on the trig view's card: a paragraph describing the grid's rows and steps, the trig status colours, the row mute buttons in column 9, and how a modifier changes a press" style="display:block;margin-inline:auto">
+<img src="/assets/mseq/webapp-phone-interaction.png" alt="The Interaction section open on the trig view&#x27;s card: a paragraph describing the grid&#x27;s rows and steps, the trig status colours, the row mute buttons in column 9, and how a modifier changes a press" style="display:block;margin-inline:auto">
 
 *Interaction: how the grid is laid out and how a press is read.*
 
-<img src="/assets/mseq/webapp-phone-shortcuts.png" alt="The Shortcuts section open on the trig view's card: a table of gestures, each with where it is made and what it does, starting with Press, SHIFT + press, MUTE + press, SOLO + press twice, REC ARM + press, 8A + press and 8B + press" style="display:block;margin-inline:auto">
+<img src="/assets/mseq/webapp-phone-shortcuts.png" alt="The Shortcuts section open on the trig view&#x27;s card: a table of gestures, each with where it is made and what it does, starting with Press, SHIFT + press, MUTE + press, SOLO + press twice, REC ARM + press, 8A + press and 8B + press" style="display:block;margin-inline:auto">
 
 *Shortcuts: every gesture the view answers, where you make it, and what it
 does. This one is open when the card first appears.*
@@ -307,7 +305,7 @@ If the page will not load at all, or never gets past the PIN, work through
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [webapp-settings.md](/documentation/MSEQ/webapp-settings): every row of the Settings page
 - [webapp-sessions.md](/documentation/MSEQ/webapp-sessions): saving and loading from the browser
@@ -316,4 +314,4 @@ If the page will not load at all, or never gets past the PIN, work through
 - [LaunchControl modifier buttons](/documentation/MSEQ/lc-status): the LaunchControl modifiers
 - [Setup](/documentation/MSEQ/setup): the rig this page assumes
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: The LaunchControl<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/webapp-settings">Settings and layout</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><strong>Playing from the browser</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/webapp-settings">Settings and layout</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← The LaunchControl<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#the-webapp">The webapp</a>: <strong>Playing from the browser</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/webapp-settings">Settings and layout</a></nav>

@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/sessions
      docs/session-io.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Sessions</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Saving and loading</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: The webapp<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/webapp-settings">Settings and layout</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#sessions">Sessions</a></nav>
 
 <h1>Saving and loading</h1>
 
@@ -23,7 +21,7 @@ catalog useful mid-set rather than only between sets.
 There are **98 slots**, laid out as 14 pages of 7. The IO view is where you
 work with them.
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#what-is-saved">What is saved</a><span class="sep" aria-hidden="true"> · </span><a href="#what-is-not-saved">What is not saved</a><span class="sep" aria-hidden="true"> · </span><a href="#what-you-see-on-the-launchpads">What You See on the Launchpads</a><span class="sep" aria-hidden="true"> · </span><a href="#gestures">Gestures</a><span class="sep" aria-hidden="true"> · </span><a href="#landing-a-load-on-the-bar">Landing a load on the bar</a><span class="sep" aria-hidden="true"> · </span><a href="#loading-from-another-machine">Loading from another machine</a></nav>
+<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#what-is-saved">What is saved</a><span class="sep" aria-hidden="true"> · </span><a href="#what-is-not-saved">What is not saved</a><span class="sep" aria-hidden="true"> · </span><a href="#what-you-see-on-the-launchpads">What you see on the Launchpads</a><span class="sep" aria-hidden="true"> · </span><a href="#gestures">Gestures</a><span class="sep" aria-hidden="true"> · </span><a href="#landing-a-load-on-the-bar">Landing a load on the bar</a><span class="sep" aria-hidden="true"> · </span><a href="#loading-from-another-machine">Loading from another machine</a></nav>
 
 ---
 
@@ -59,7 +57,7 @@ Three things a player will notice, all deliberate:
 
 ---
 
-## What You See on the Launchpads
+## What you see on the Launchpads
 
 The IO view uses both LPs as one 8×16 surface, and the top row means something
 different from the seven rows below it.
@@ -262,7 +260,7 @@ is the whole remix workflow: pull, play, save.
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Google Drive session sync](/documentation/MSEQ/cloud-sync): setting up the sync
   that fills the peer catalog
@@ -270,4 +268,4 @@ is the whole remix workflow: pull, play, save.
 - [Selecting sequencers and views](/documentation/MSEQ/selection): how to
   get to the IO view in the first place
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: The webapp<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/webapp-settings">Settings and layout</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><strong>Saving and loading</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync">Cloud sync setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← The webapp<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/webapp-settings">Settings and layout</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#sessions">Sessions</a>: <strong>Saving and loading</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync">Cloud sync setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></nav>

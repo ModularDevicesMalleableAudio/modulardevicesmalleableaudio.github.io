@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/cc-arp
      docs/view-reference/09-cc-arp.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">CC Arp</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/note-arp">Note Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/chord-options">Chord Options (Root / Scale / CP Toggle)</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>CC Arp</h1>
 
@@ -26,7 +24,7 @@ the row's trig fires.
 **LHS LP**: overview of all 8 CC rows (top = row 8 … bottom = row 1), lit
 steps use the row's palette colour, position colour marks the playing
 step; unassigned rows stay dark. **RHS LP**: value editor for the selected
-row (column = step 1–8, row = value 0–7), one lit pad per step at the
+row (column = step 1–8, row = value 1–8), one lit pad per step at the
 value's height rather than a filled bar. The LHS LP also carries row
 selection: a single press selects, a double-tap on the same column
 confirms a new arp length. Sequencer 13 has two variants (main / alt kit) on
@@ -45,7 +43,7 @@ separate views with independent tables.
 | SHIFT + press column N (2–8) | LHS LP | Set the row's length to N on a single press | shift |
 | SHIFT + press column 1 | LHS LP | Toggle the row's length 0 ↔ 1 | shift |
 | SHIFT + press | LHS LP col 9 | Disable the row (length → 0) | shift |
-| SHIFT + MUTE + press | LHS LP col 9 | **Hard reset**: length → 0, all 8 step values → default 3 | shift+mute |
+| SHIFT + MUTE + press | LHS LP col 9 | **Hard reset**: length → 0, all 8 step values → default 4 | shift+mute |
 | SHIFT + SOLO + press | LHS LP col 9 | **Randomise** all 8 step values (length unchanged) | shift+solo |
 
 ### RHS: value editor
@@ -67,4 +65,4 @@ separate views with independent tables.
 - [Slew and CC smoothing](/documentation/MSEQ/slew): slew view smooths between CC arp targets
 - [Reset and randomise](/documentation/MSEQ/reset): canonical reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/note-arp">Note Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/chord-options">Chord Options (Root / Scale / CP Toggle)</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/note-arp">Note Arp</a><span class="sep" aria-hidden="true"> · </span><strong>CC Arp</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/chord-options">Chord Options (Root / Scale / CP Toggle)</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/trig
      docs/view-reference/00-trig.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Trig</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Sessions<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/step-duty">Step Duty</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Trig</h1>
 
@@ -86,4 +84,4 @@ corresponding status; with no modifier a press toggles `OFF` ↔ `ON`.
 - [Mutes and row states](/documentation/MSEQ/mutes): row mode state machine and LED colours
 - [Reset and randomise](/documentation/MSEQ/reset): reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Sessions<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/step-duty">Step Duty</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Sessions<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference">View reference</a>: <strong>Trig</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/step-duty">Step Duty</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

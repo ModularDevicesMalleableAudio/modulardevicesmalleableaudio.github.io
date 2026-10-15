@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/webapp-settings
      docs/webapp-settings.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>The webapp</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Settings and layout</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/webapp">Playing from the browser</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Sessions<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/sessions">Saving and loading</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#the-webapp">The webapp</a></nav>
 
 <h1>Settings and layout</h1>
 
@@ -104,7 +102,7 @@ Three links to pages of their own:
 - **Save / load sessions**, described in [webapp-sessions.md](/documentation/MSEQ/webapp-sessions).
 - **CC mapping**, which chooses the CC each CC-arp row sends. See
   [CC assignments](/documentation/MSEQ/cc-assignments#setting-up-your-own).
-- **Arp curves**, which set what each velocity and duty arp value means. See
+- **Arp curves**, which set what velocity arp and step duty values mean. See
   [Arp curves](/documentation/MSEQ/arp-curves).
 
 ## Connection
@@ -117,9 +115,9 @@ someone, or leaving behind.
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [webapp.md](/documentation/MSEQ/webapp): the grid, the LaunchControl panel and the layouts
 - [webapp-sessions.md](/documentation/MSEQ/webapp-sessions): the Sessions page
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/webapp">Playing from the browser</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Sessions<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/sessions">Saving and loading</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/webapp">Playing from the browser</a><span class="sep" aria-hidden="true"> · </span><strong>Settings and layout</strong></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#the-webapp">The webapp</a>: <a href="/documentation/MSEQ/webapp">Playing from the browser</a><span class="sep" aria-hidden="true"> · </span><strong>Settings and layout</strong><span class="sep" aria-hidden="true"> · </span><span class="next">Sessions<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/sessions">Saving and loading</a> →</span></nav>

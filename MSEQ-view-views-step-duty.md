@@ -8,37 +8,40 @@ permalink: /documentation/MSEQ/views/step-duty
      docs/view-reference/01-step-duty.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Step Duty</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/trig">Trig</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/step-velo">Step Velocity</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Step Duty</h1>
 
 ## Purpose
 
 Edit the per-step **duty cycle** (note length) of the selected sequencer.
-Each of the 16 steps stores a value 0–7, and that value indexes the
-sequencer's own duty curve into the locked 16-entry note-length palette.
-On the shipped curve the eight rows are:
+Each of the 16 steps stores a value 1–8, and that value indexes the
+sequencer's own duty curve, which picks one of 16 fixed note lengths.
+On the default curve the eight rows are:
 
-| Row | Value | Note length |
-|---|---|---|
-| 1 (bottom) | 0 | `1/64` (0.25× a step) |
-| 2 | 1 | `1/32` (0.5×) |
-| 3 | 2 | `1/16T` (0.667×) |
-| 4 | 3 | `1/32.` (0.75×) |
-| 5 | 4 | `1/16` (1.0×: one whole step, the identity) |
-| 6 | 5 | `1/8T` (1.333×) |
-| 7 | 6 | `1/16.` (1.5×) |
-| 8 (top) | 7 | `1/8` (2.0×) |
+| Row and value | Note length |
+|---|---|
+| 1 (bottom) | `1/64` (0.25× a step) |
+| 2 | `1/32` (0.5×) |
+| 3 | `1/16T` (0.667×) |
+| 4 | `1/32.` (0.75×) |
+| 5 | `1/16` (1.0×: one whole step, the identity) |
+| 6 | `1/8T` (1.333×) |
+| 7 | `1/16.` (1.5×) |
+| 8 (top) | `1/8` (2.0×) |
 
 The curve is per-sequencer and editable, so a row can be pointed at any of
-the 16 palette entries, up to `1/1` (see [Arp curves](/documentation/MSEQ/arp-curves)).
+the 16 note lengths, up to `1/1` (see [Arp curves](/documentation/MSEQ/arp-curves)).
+
+The sequencer's duty arp then lengthens or shortens the step's note, one
+note length at a time: an arp value of 5 plays the step's length unchanged,
+each value above 5 one length longer and each value below 5 one shorter,
+stopping at `1/64` and `1/1` (see [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps)).
 
 ## Interaction
 
 Columns are steps (LHS = 1–8, RHS = 9–16), rows are values (row 1 bottom =
-0 … row 8 top = 7). Each step lights a **single pad** at the height of its
+1 … row 8 top = 8). Each step lights a **single pad** at the height of its
 stored value, not a bar filled from the bottom; a positioner colour marks
 the playing step, and columns whose step carries a trig are shaded slate
 behind the contour. Pressing a pad writes that row's value to that step
@@ -50,16 +53,16 @@ instantly. No modifier needed.
 |---|---|---|---|
 | Press | LP grid | Set the step (column) to the pressed row's duty | none |
 | SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 steps → value of row R | shift+mute |
-| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `5` (row 6, `1/8T` on the shipped curve) | shift+mute |
+| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `6` (row 6, `1/8T` on the default curve) | shift+mute |
 | SHIFT + SOLO + press row R | LP grid | **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | shift+solo |
-| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 0–7 | shift+solo |
+| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 1–8 | shift+solo |
 | Row-mode gestures | Row mutes | Row play-mode controls still apply (see "Row mode" in [Trig view reference](/documentation/MSEQ/views/trig)) | any |
 
 ## See also
 
 - [Step values](/documentation/MSEQ/step-views): shared step-view gesture model
-- [Arp curves](/documentation/MSEQ/arp-curves): editing which palette entries the eight rows pick
+- [Arp curves](/documentation/MSEQ/arp-curves): editing which note lengths the eight rows pick
 - [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): cyclic duty **arp** (this view's arp sibling)
 - [Reset and randomise](/documentation/MSEQ/reset): reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/trig">Trig</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/step-velo">Step Velocity</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/views/trig">Trig</a><span class="sep" aria-hidden="true"> · </span><strong>Step Duty</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/step-velo">Step Velocity</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

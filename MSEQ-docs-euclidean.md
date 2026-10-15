@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/euclidean
      docs/euclidean-trigs.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Euclidean trigs</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/mutes">Mutes and row states</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/reset">Reset and randomise</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#playing">Playing</a></nav>
 
 <h1>Euclidean trigs</h1>
 
@@ -31,7 +29,7 @@ the row's [note arp](/documentation/MSEQ/note-arp).
 
 ## How to add a Euclidean trig pattern
 
-<img src="/assets/mseq/lc-euclid-faders.svg" alt="The webapp's LaunchControl XL console with everything dimmed except faders 6, 7 and 8, outlined and labelled density, rotation and length, and the 8B button, outlined and labelled hold and press a step" style="display:block;margin-inline:auto">
+<img src="/assets/mseq/lc-euclid-faders.svg" alt="The webapp&#x27;s LaunchControl XL console with everything dimmed except faders 6, 7 and 8, outlined and labelled density, rotation and length, and the 8B button, outlined and labelled hold and press a step" style="display:block;margin-inline:auto">
 
 In a trig view, hold **8B** on the LaunchControl XL and press a step on the
 Launchpad grid. That step becomes the start of a Euclidean pattern with a
@@ -63,4 +61,4 @@ the step you pressed.
 
 Density, rotation, and length parameters are **not** cleared. They are preserved so re-enabling the row with 8B restores the same pattern shape.
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/mutes">Mutes and row states</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/reset">Reset and randomise</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><strong>Euclidean trigs</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><strong>Euclidean trigs</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/note-arp
      docs/note-arp-ui.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Arps</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Note arps</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Playing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#arps">Arps</a></nav>
 
 <h1>Note arps</h1>
 
@@ -33,16 +31,16 @@ scale. From here you can take that in three directions:
 
 ---
 
-## What You See
+## What you see
 
-### Left Hand Launchpad
+### Left hand Launchpad
 
 The pattern overview. Each row shows the length of that row's note pattern,
 one lit pad per step. Each step has its own colour, and the same colours mark
 that step's note on the right hand Launchpad, so you can also see the shape of
 the pattern at a glance.
 
-### Right Hand Launchpad
+### Right hand Launchpad
 
 The isomorphic keyboard for the row you have selected (the last row you
 pressed on the left). Each step of that row lights its note in the step's
@@ -59,8 +57,8 @@ beige, on both Launchpads.
 <label for="note-arp-01-lengths-webapp">webapp</label>
 <input type="radio" name="note-arp-01-lengths" id="note-arp-01-lengths-hardware" class="pick-hardware">
 <label for="note-arp-01-lengths-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/note-arp-01-lengths.png" alt="A note-arp view: the LHS LP's first column is red on every row, with runs of two, five and three coloured pads on three of them; the RHS LP shows eight visible slate-grey keyboard anchors and three adjacent pitches lit red, orange and mustard along the bottom">
-<img class="shot-hardware" src="/assets/mseq/hardware/note-arp-01-lengths.jpg" alt="A note-arp view: the LHS LP's first column is red on every row, with runs of two, five and three coloured pads on three of them; the RHS LP shows eight visible slate-grey keyboard anchors and three adjacent pitches lit red, orange and mustard along the bottom, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/note-arp-01-lengths.png" alt="A note-arp view: the LHS LP&#x27;s first column is red on every row, with runs of two, five and three coloured pads on three of them; the RHS LP shows eight visible slate-grey keyboard anchors and three adjacent pitches lit red, orange and mustard along the bottom">
+<img class="shot-hardware" src="/assets/mseq/hardware/note-arp-01-lengths.jpg" alt="A note-arp view: the LHS LP&#x27;s first column is red on every row, with runs of two, five and three coloured pads on three of them; the RHS LP shows eight visible slate-grey keyboard anchors and three adjacent pitches lit red, orange and mustard along the bottom, photographed on the hardware">
 </figure>
 
 *Three rows extended to patterns of three, five and two notes. The RHS LP shows
@@ -68,7 +66,7 @@ the keyboard for the selected three-note row.*
 
 ---
 
-## Set a Pattern's Length
+## Set a pattern's length
 
 On the left hand Launchpad, **hold SHIFT and press a pad**, or simply
 **double-tap a pad**, to set the pattern's length. That row's length becomes
@@ -78,7 +76,7 @@ Steps beyond the new length go dark straight away.
 
 ---
 
-## Edit the Pattern
+## Edit the pattern
 
 Editing takes two presses, one on each Launchpad:
 
@@ -88,7 +86,7 @@ Editing takes two presses, one on each Launchpad:
 
 ---
 
-## Preset Figures
+## Preset figures
 
 Hold **MUTE** and press a pad on the LHS LP to write a ready-made figure to all
 eight rows of the sequencer. The pads form a grid: the row you press picks the
@@ -158,10 +156,10 @@ pattern shifts with the chord, and can land on notes outside the scale.
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Octave tree](/documentation/MSEQ/octave-tree): the other way to move a row's pitch
 - [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the same edit model for velocity and duty
 - [Chords and scales](/documentation/MSEQ/chords-and-scales): the scale these patterns follow
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Playing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><strong>Note arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Playing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#arps">Arps</a>: <strong>Note arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav>

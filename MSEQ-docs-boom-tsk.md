@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/boom-tsk
      docs/boom-tsk.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Drums</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Boom-tsk</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/drums">Drum views</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Timing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/clock">Clock</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#drums">Drums</a></nav>
 
 <h1>Boom-tsk</h1>
 
@@ -121,4 +119,4 @@ For a true "build" that doesn't touch boom-tsk itself, prefer adding rows on **o
 - [Euclidean trigs](/documentation/MSEQ/euclidean): per-row Euclidean overlays for layering fills against the boom-tsk floor.
 - [Mutes and row states](/documentation/MSEQ/mutes): the sequencer and row mute states that boom-tsk drives.
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/drums">Drum views</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Timing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/clock">Clock</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/drums">Drum views</a><span class="sep" aria-hidden="true"> · </span><strong>Boom-tsk</strong></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#drums">Drums</a>: <a href="/documentation/MSEQ/drums">Drum views</a><span class="sep" aria-hidden="true"> · </span><strong>Boom-tsk</strong><span class="sep" aria-hidden="true"> · </span><span class="next">Timing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/clock">Clock</a> →</span></nav>

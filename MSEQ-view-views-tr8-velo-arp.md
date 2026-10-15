@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/tr8-velo-arp
      docs/view-reference/19-tr8-velo-arp.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">TR-8 Velocity Arp</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/tr8-accent">TR-8 Accent</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/cc-slew">CC Slew</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>TR-8 Velocity Arp</h1>
 
@@ -25,7 +23,7 @@ TR-8 alt latch state.
 
 Two-stage editor. **LHS LP**: overview of all 8 rows' arp patterns and the
 row/length selector. **RHS LP**: value editor for the selected row (column =
-arp step 1–8, row = value 0–7). Each RHS column shows one lit pad at the
+arp step 1–8, row = value 1–8). Each RHS column shows one lit pad at the
 stored value's height, not a filled bar. If a drum-cycle event arrives while
 this view is open, the view stays visible (so the editor can follow the new
 alt state) even though the sequencer selection snaps.
@@ -39,14 +37,15 @@ alt state) even though the sequencer selection snaps.
 | Press row R, col N | LHS LP | Select row R; a double-tap within 350 ms sets its length to N slots | none |
 | SHIFT + press row R, col N | LHS LP | Select row R and set its length to N slots immediately | shift |
 | Press row R, col 9 | LHS LP col 9 | Select row R without changing its length | none |
-| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset** the pressed row's voice to its canonical value: ghost rows 2, boom-tsk 7, all others 5 (alt-view-aware) | shift+mute |
-| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise** the selected arp freely across values 0–7 | shift+solo |
+| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset** the pressed row's voice to its canonical value: ghost rows 3, boom-tsk 8, all others 6 (alt-view-aware) | shift+mute |
+| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise** the selected arp freely across values 1–8 | shift+solo |
 
 ### RHS: value editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
 | Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
+| SHIFT + press column N | RHS LP | Write the value **and** set the selected row's length to N slots (this can shrink the length; alt-view-aware) | shift |
 | SHIFT + MUTE + press row R | RHS LP | **Reset**: fill selected arp with row R's value (alt-view-aware) | shift+mute |
 | SHIFT + SOLO + press row R | RHS LP | **Randomise**: selected arp gaussian around row R | shift+solo |
 
@@ -61,4 +60,4 @@ for the TR-8 velocity arp.
 - [Selecting sequencers and views](/documentation/MSEQ/selection): velocity-arp view persistence on drum-cycle
 - [Reset and randomise](/documentation/MSEQ/reset): canonical reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/tr8-accent">TR-8 Accent</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/cc-slew">CC Slew</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/tr8-accent">TR-8 Accent</a><span class="sep" aria-hidden="true"> · </span><strong>TR-8 Velocity Arp</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/cc-slew">CC Slew</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

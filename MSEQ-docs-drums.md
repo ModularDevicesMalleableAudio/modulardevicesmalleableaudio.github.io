@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/drums
      docs/drum-views.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Drums</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Drum views</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#drums">Drums</a></nav>
 
 <h1>Drum views</h1>
 
@@ -53,10 +51,14 @@ rimshot, in different colours and a different order.
 **Two rows for some voices.** Kick and snare on the main view, and
 rimshot and clap on the alt view, get **two rows each** rather than one.
 That gives those voices two separate velocity inputs, enabling you to add
-in **ghost notes** (the shipped defaults put the second row at a lower velocity
+in **ghost notes** (the defaults put the second row at a lower velocity
 than the first). The clap and rimshot pair also sends two different MIDI
 notes, so you can play all of the sounds of the TR-8 (assuming you pick
 the correct instrument).
+
+**Velocity knobs.** The TR-8's velocity knobs sit on the middle knob row of the
+sequencers 9–15 bank: column 5 for the kick rows, column 6 for the rest of the
+main kit, and column 7 for the alt kit.
 
 **Voice colours.** To avoid confusion, a TR-8 row that is playing normally
 lights its left-pad row button by voice rather than by row, so you can find a
@@ -220,4 +222,4 @@ together. It is held per player, so the two of you can be on different kits at o
 | Drum cycler | 16 | 4 | Picks which drum destinations UP/DOWN walks through |
 | TR-8 alt latch | 13 | n/a (not a view) | Switches the TR-8 surface between the main and alt kit |
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><strong>Drum views</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#drums">Drums</a>: <strong>Drum views</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a></nav>

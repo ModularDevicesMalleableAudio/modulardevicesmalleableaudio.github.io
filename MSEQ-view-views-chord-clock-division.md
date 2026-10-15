@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/chord-clock-division
      docs/view-reference/25-chord-clock-division.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Chord Clock Division</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/cc-slew">CC Slew</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/mw-toggle">Mod-Wheel Toggle</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Chord Clock Division</h1>
 
@@ -41,4 +39,4 @@ shared LED feedback.
 - [Chord progression](/documentation/MSEQ/chords), "Per-Chord Clock Division": full rate table
 - [Chord progression view reference](/documentation/MSEQ/views/chord-prog): the progression being advanced
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/cc-slew">CC Slew</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/mw-toggle">Mod-Wheel Toggle</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/cc-slew">CC Slew</a><span class="sep" aria-hidden="true"> · </span><strong>Chord Clock Division</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/mw-toggle">Mod-Wheel Toggle</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/lc-status
      docs/lc-status.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>The LaunchControl</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Modifier buttons</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Timing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/clock">Clock</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a></nav>
 
 <h1>Modifier buttons</h1>
 
@@ -54,4 +52,4 @@ different: an unlisted pair behaves as though only the first button were held.
 | SOLO + REC ARM | *(reserved)* |
 | 8A + 8B | Full mod → inv-mod increment cycle (MOD1 … MOD16 → INVMOD4 … INVMOD16 → OFF) |
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Timing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/clock">Clock</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><strong>Modifier buttons</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/toggles">Toggle views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Timing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/clock">Clock</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a>: <strong>Modifier buttons</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/toggles">Toggle views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav>

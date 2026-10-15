@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="478" viewBox="0 0 700 478" font-family="'Source Code Pro', ui-monospace, SFMono-Regular, Menlo, monospace" role="img" aria-label="Two CC curves against CC arp values 1 to 8. Curve 2 sends 0, 35, 55, 63, 68, 75, 95, 127. Curve 8 sends 5, 10, 15, 20, 35, 60, 90, 120.">
+<style>.title{font-size:14px;font-weight:700;fill:#DBDBDB}.t{font-size:11px;fill:rgba(219,219,219,0.62)}.i{font-size:11px;fill:#DBDBDB}.h{font-size:11px;font-weight:700;fill:#DBDBDB}</style>
+<rect x=".5" y=".5" width="699" height="477" fill="#0b0b0b" stroke="rgba(219,219,219,0.35)" stroke-dasharray="3 3"/>
+<text x="20" y="38" class="title">CC arp: each value sends a point on the row&#8217;s curve</text>
+<text x="20" y="59" class="t">The same value sends a different CC on a different curve. Each row&#8217;s curve is set</text>
+<text x="20" y="76" class="t">by its CC assignment. Values are drawn in the overview&#8217;s blue gradation.</text>
+<line x1="114" y1="336.0" x2="666" y2="336.0" stroke="rgba(219,219,219,0.16)" stroke-dasharray="3 3"/>
+<text x="108" y="340.0" class="t" text-anchor="end">0</text>
+<line x1="114" y1="225.1" x2="666" y2="225.1" stroke="rgba(219,219,219,0.16)" stroke-dasharray="3 3"/>
+<text x="108" y="229.1" class="t" text-anchor="end">64</text>
+<line x1="114" y1="116.0" x2="666" y2="116.0" stroke="rgba(219,219,219,0.16)" stroke-dasharray="3 3"/>
+<text x="108" y="120.0" class="t" text-anchor="end">127</text>
+<path d="M120.0,336.0 L197.1,275.4 L274.3,240.7 L351.4,226.9 L428.6,218.2 L505.7,206.1 L582.9,171.4 L660.0,116.0" fill="none" stroke="#DBDBDB" stroke-width="1.8"/>
+<circle cx="120.0" cy="336.0" r="4" fill="#2a50a5" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="197.1" cy="275.4" r="4" fill="#2a50a5" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="274.3" cy="240.7" r="4" fill="#2f71eb" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="351.4" cy="226.9" r="4" fill="#2f71eb" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="428.6" cy="218.2" r="4" fill="#609dff" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="505.7" cy="206.1" r="4" fill="#609dff" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="582.9" cy="171.4" r="4" fill="#2544d3" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="660.0" cy="116.0" r="4" fill="#2544d3" stroke="#DBDBDB" stroke-width="1"/>
+<path d="M120.0,327.3 L197.1,318.7 L274.3,310.0 L351.4,301.4 L428.6,275.4 L505.7,232.1 L582.9,180.1 L660.0,128.1" fill="none" stroke="#DBDBDB" stroke-width="1.8" stroke-dasharray="5 4"/>
+<circle cx="120.0" cy="327.3" r="4" fill="#2a50a5" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="197.1" cy="318.7" r="4" fill="#2a50a5" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="274.3" cy="310.0" r="4" fill="#2f71eb" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="351.4" cy="301.4" r="4" fill="#2f71eb" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="428.6" cy="275.4" r="4" fill="#609dff" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="505.7" cy="232.1" r="4" fill="#609dff" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="582.9" cy="180.1" r="4" fill="#2544d3" stroke="#DBDBDB" stroke-width="1"/>
+<circle cx="660.0" cy="128.1" r="4" fill="#2544d3" stroke="#DBDBDB" stroke-width="1"/>
+<rect x="109.0" y="351.0" width="22" height="22" rx="3" fill="#2a50a5"/><text x="120.0" y="366.0" font-size="11" font-weight="700" fill="#DBDBDB" text-anchor="middle">1</text>
+<rect x="186.1" y="351.0" width="22" height="22" rx="3" fill="#2a50a5"/><text x="197.1" y="366.0" font-size="11" font-weight="700" fill="#DBDBDB" text-anchor="middle">2</text>
+<rect x="263.3" y="351.0" width="22" height="22" rx="3" fill="#2f71eb"/><text x="274.3" y="366.0" font-size="11" font-weight="700" fill="#DBDBDB" text-anchor="middle">3</text>
+<rect x="340.4" y="351.0" width="22" height="22" rx="3" fill="#2f71eb"/><text x="351.4" y="366.0" font-size="11" font-weight="700" fill="#DBDBDB" text-anchor="middle">4</text>
+<rect x="417.6" y="351.0" width="22" height="22" rx="3" fill="#609dff"/><text x="428.6" y="366.0" font-size="11" font-weight="700" fill="#0b0b0b" text-anchor="middle">5</text>
+<rect x="494.7" y="351.0" width="22" height="22" rx="3" fill="#609dff"/><text x="505.7" y="366.0" font-size="11" font-weight="700" fill="#0b0b0b" text-anchor="middle">6</text>
+<rect x="571.9" y="351.0" width="22" height="22" rx="3" fill="#2544d3"/><text x="582.9" y="366.0" font-size="11" font-weight="700" fill="#DBDBDB" text-anchor="middle">7</text>
+<rect x="649.0" y="351.0" width="22" height="22" rx="3" fill="#2544d3"/><text x="660.0" y="366.0" font-size="11" font-weight="700" fill="#DBDBDB" text-anchor="middle">8</text>
+<text x="98" y="366" class="t" text-anchor="end">value</text>
+<line x1="20" y1="398" x2="44" y2="398" stroke="#DBDBDB" stroke-width="1.8"/>
+<text x="52" y="402" class="i">curve 2</text>
+<text x="120.0" y="402" class="i" text-anchor="middle">0</text>
+<text x="197.1" y="402" class="i" text-anchor="middle">35</text>
+<text x="274.3" y="402" class="i" text-anchor="middle">55</text>
+<text x="351.4" y="402" class="i" text-anchor="middle">63</text>
+<text x="428.6" y="402" class="i" text-anchor="middle">68</text>
+<text x="505.7" y="402" class="i" text-anchor="middle">75</text>
+<text x="582.9" y="402" class="i" text-anchor="middle">95</text>
+<text x="660.0" y="402" class="i" text-anchor="middle">127</text>
+<line x1="20" y1="420" x2="44" y2="420" stroke="#DBDBDB" stroke-width="1.8" stroke-dasharray="5 4"/>
+<text x="52" y="424" class="i">curve 8</text>
+<text x="120.0" y="424" class="i" text-anchor="middle">5</text>
+<text x="197.1" y="424" class="i" text-anchor="middle">10</text>
+<text x="274.3" y="424" class="i" text-anchor="middle">15</text>
+<text x="351.4" y="424" class="i" text-anchor="middle">20</text>
+<text x="428.6" y="424" class="i" text-anchor="middle">35</text>
+<text x="505.7" y="424" class="i" text-anchor="middle">60</text>
+<text x="582.9" y="424" class="i" text-anchor="middle">90</text>
+<text x="660.0" y="424" class="i" text-anchor="middle">120</text>
+<text x="20" y="458" class="t">Curve 2 is used by 5 of the 54 default rows, curve 8 by 3.</text>
+</svg>

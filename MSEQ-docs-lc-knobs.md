@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/lc-knobs
      docs/lc-knobs-faders.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>The LaunchControl</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Knobs and faders</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/lc-status">Modifier buttons</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a></nav>
 
 <h1>Knobs and faders</h1>
 
@@ -18,7 +16,7 @@ The LaunchControl XL has three rows of 8 knobs and 8 faders. Assignments depend 
 
 ---
 
-## Knob Rows
+## Knob rows
 
 Each player's LC shows 3 rows of 8 knobs. Columns 1–7 are the per-sequencer knobs; column 8 is the meta column, where the mid and bottom knobs do something and the top knob does nothing. The rows are named **top**, **mid**, and **bottom** (the physical row order on the hardware, from top to bottom on the LC panel).
 
@@ -26,7 +24,7 @@ Each player's LC shows 3 rows of 8 knobs. Columns 1–7 are the per-sequencer kn
 
 | Knob row | Controls |
 |----------|---------|
-| Top (row 1) | Per-sequencer **duty** (gate length) |
+| Top (row 1) | Per-sequencer **duty** (gate length): the centre detent leaves note lengths as set, fully up doubles them |
 | Mid (row 2) | Per-sequencer **velocity** |
 | Bottom (row 3) | Per-sequencer **percentage chance** threshold |
 | Mid, column 8 | **Mod wheel**: one shared CC 1 value, broadcast to whichever sequencers you switched on in the [mod-wheel toggle view](/documentation/MSEQ/toggles) |
@@ -90,11 +88,11 @@ The bottom row's column-8 ring is the exception: it shows the fine swing that kn
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [LaunchControl modifier buttons](/documentation/MSEQ/lc-status): The 6 right-column modifier buttons (not knobs or faders)
 - [Mutes and row states](/documentation/MSEQ/mutes): LC top and bottom rows (above the faders), the mute and autodrop buttons
 - [Ableton setup](/documentation/MSEQ/ableton): LC user template installation instructions
 - [Trigs](/documentation/MSEQ/trigs), "Percentage-Chance shading": how the chance threshold appears in the trig view
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/lc-status">Modifier buttons</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><strong>Knobs and faders</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/toggles">Toggle views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a>: <a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><strong>Knobs and faders</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/toggles">Toggle views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav>

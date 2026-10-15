@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/cloud-sync
      docs/cloud-sync-gdrive-setup.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Sessions</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Cloud sync setup</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#sessions">Sessions</a></nav>
 
 <h1>Cloud sync setup</h1>
 
@@ -445,9 +443,9 @@ Symptoms, likely causes and fixes are on
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Cloud sync troubleshooting](/documentation/MSEQ/cloud-sync-troubleshooting): when sync misbehaves
 - [Saving and loading sessions](/documentation/MSEQ/sessions): the publish projection, the peer mirror and the peer view
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/sessions">Saving and loading</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a><span class="sep" aria-hidden="true"> · </span><strong>Cloud sync setup</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#sessions">Sessions</a>: <a href="/documentation/MSEQ/sessions">Saving and loading</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/webapp-sessions">Saving and loading in the browser</a><span class="sep" aria-hidden="true"> · </span><strong>Cloud sync setup</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></nav>

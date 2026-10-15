@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/chords
      docs/chord-progression.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Harmony</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Chord progression</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#harmony">Harmony</a></nav>
 
 <h1>Chord progression</h1>
 
@@ -22,7 +20,7 @@ scale those chords come from are on
 
 ---
 
-## The Grid
+## The grid
 
 The view shows a 16-column × 8-row grid:
 
@@ -64,7 +62,7 @@ bar playing right now.*
 
 ---
 
-## Editing the Progression
+## Editing the progression
 
 Pressing a pad in the chord progression view sets the chord for that column to the row you pressed. The column immediately updates to reflect the new chord.
 
@@ -83,7 +81,7 @@ Each player can edit the progression independently; changes take effect immediat
 
 ---
 
-## Per-Chord Clock Division (view type 25)
+## Per-chord clock division (view type 25)
 
 Each sequencer has an independent chord-progression advance rate, and the chord clock division view is where you set it. The rate decides how fast that sequencer walks through the 16-bar progression grid, independent of its note-clock division.
 
@@ -106,11 +104,11 @@ Rates 1–4 produce bar-constant chords (the chord is stable within each bar). R
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Chords and scales](/documentation/MSEQ/chords-and-scales): root note, scale, and what a progression does to a sequence
 - [Voicing and modulation](/documentation/MSEQ/chord-voicing): chord edit and the per-bar chord modulator
 - [Trigs](/documentation/MSEQ/trigs): the trig view, where a chord-following sequencer plays its chords
 - [Reset and randomise](/documentation/MSEQ/reset): the full reset/randomise matrix. The chord progression grid (view 12) is the only chord view that answers those gestures; chord options (11), chord edit (13) and chord clock division (25) all ignore them deliberately, being either too disruptive or a single value
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a><span class="sep" aria-hidden="true"> · </span><strong>Chord progression</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#harmony">Harmony</a>: <a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a><span class="sep" aria-hidden="true"> · </span><strong>Chord progression</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav>

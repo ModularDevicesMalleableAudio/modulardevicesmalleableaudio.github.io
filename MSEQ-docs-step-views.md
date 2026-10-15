@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/step-views
      docs/step-views.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Step values</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/octave-tree">Octave tree</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#playing">Playing</a></nav>
 
 <h1>Step values</h1>
 
@@ -36,46 +34,51 @@ press, and holding SHIFT and pressing SOLO randomises them around it.
 <label for="duty-01-contour-webapp">webapp</label>
 <input type="radio" name="duty-01-contour" id="duty-01-contour-hardware" class="pick-hardware">
 <label for="duty-01-contour-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/duty-01-contour.png" alt="A duty grid with one lit pad per step, sitting at height 4 for most steps, at 7 on step 1, 3 on step 5, 5 on step 9 and 1 on step 13, with full-height slate columns behind steps 1, 2, 5, 9 and 13">
-<img class="shot-hardware" src="/assets/mseq/hardware/duty-01-contour.jpg" alt="A duty grid with one lit pad per step, sitting at height 4 for most steps, at 7 on step 1, 3 on step 5, 5 on step 9 and 1 on step 13, with full-height slate columns behind steps 1, 2, 5, 9 and 13, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/duty-01-contour.png" alt="A duty grid with one lit pad per step, sitting at height 5 for most steps, at 8 on step 1, 4 on step 5, 6 on step 9 and 2 on step 13, with full-height slate columns behind steps 1, 2, 5, 9 and 13">
+<img class="shot-hardware" src="/assets/mseq/hardware/duty-01-contour.jpg" alt="A duty grid with one lit pad per step, sitting at height 5 for most steps, at 8 on step 1, 4 on step 5, 6 on step 9 and 2 on step 13, with full-height slate columns behind steps 1, 2, 5, 9 and 13, photographed on the hardware">
 </figure>
 
-*Duty on the chord from [Trigs](/documentation/MSEQ/trigs). A baseline of 4 with step 1 pushed up to 7,
-step 9 raised to 5, and steps 5 and 13 pulled down.*
+*Duty on the chord from [Trigs](/documentation/MSEQ/trigs). A baseline of 5 with step 1 pushed up to 8,
+step 9 raised to 6, and steps 5 and 13 pulled down.*
 
 <figure class="fig-pair">
 <input type="radio" name="velo-01-accents" id="velo-01-accents-webapp" class="pick-webapp" checked>
 <label for="velo-01-accents-webapp">webapp</label>
 <input type="radio" name="velo-01-accents" id="velo-01-accents-hardware" class="pick-hardware">
 <label for="velo-01-accents-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/velo-01-accents.png" alt="A velocity grid with one lit pad per step, mostly at height 5, red at height 7 on step 1, periwinkle pads stepping down to 4 on step 5 and 3 on step 9, and a deep blue pad at height 2 on step 13">
-<img class="shot-hardware" src="/assets/mseq/hardware/velo-01-accents.jpg" alt="A velocity grid with one lit pad per step, mostly at height 5, red at height 7 on step 1, periwinkle pads stepping down to 4 on step 5 and 3 on step 9, and a deep blue pad at height 2 on step 13, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/velo-01-accents.png" alt="A velocity grid with one lit pad per step, mostly at height 6, red at height 8 on step 1, periwinkle pads stepping down to 5 on step 5 and 4 on step 9, and a deep blue pad at height 3 on step 13">
+<img class="shot-hardware" src="/assets/mseq/hardware/velo-01-accents.jpg" alt="A velocity grid with one lit pad per step, mostly at height 6, red at height 8 on step 1, periwinkle pads stepping down to 5 on step 5 and 4 on step 9, and a deep blue pad at height 3 on step 13, photographed on the hardware">
 </figure>
 
-*Velocity on the same four hits, and the same layout. An accent of 7 on step 1, then a
-descent to 2 by step 13. That sequencer's velocity knob, the middle knob row on the
+*Velocity on the same four hits, and the same layout. An accent of 8 on step 1, then a
+descent to 3 by step 13. That sequencer's velocity knob, the middle knob row on the
 LaunchControl, moves all of it together.*
 
 ---
 
 ## What a value means
 
-Every step holds a value from 0 to 7, and that number is never the velocity or the note
-length the MSEQ sends. What it means depends on which view you are in, because the three views
-measure three different things. The value in bold is the neutral one.
+Every step holds a value from 1, on the bottom row, to 8, on the top row, and that
+number is never the velocity or the note length the MSEQ sends. What it means
+depends on which view you are in, because the three views measure three
+different things. The value in bold is the neutral one.
 
 | Value | Duty (note length) | Velocity (share of the knob) | Accent (multiplier) |
 |-------|--------------------|------------------------------|---------------------|
-| 0 (bottom) | `1/64` | 8% | 0.80x |
-| 1 | `1/32` | 14% | 0.85x |
-| 2 | `1/16T` | 29% | 0.95x |
-| 3 | `1/32.` | 43% | **1.00x** |
-| 4 | **`1/16`** | 57% | 1.05x |
-| 5 | `1/8T` | 71% | 1.10x |
-| 6 | `1/16.` | 86% | 1.15x |
-| 7 (top) | `1/8` | **100%** | 1.20x |
+| 1 (bottom) | `1/64` | 8% | 0.80x |
+| 2 | `1/32` | 14% | 0.85x |
+| 3 | `1/16T` | 29% | 0.95x |
+| 4 | `1/32.` | 43% | **1.00x** |
+| 5 | **`1/16`** | 57% | 1.05x |
+| 6 | `1/8T` | 71% | 1.10x |
+| 7 | `1/16.` | 86% | 1.15x |
+| 8 (top) | `1/8` | **100%** | 1.20x |
 
-A value of 0 is never silence. On velocity it is the quietest value the MSEQ sends, and on duty
+The duty lengths are named at the Full clock division, where one step is a 16th.
+On a slower or faster sequencer they scale with the step: at Half, `1/16` lasts
+a whole Half step. See [Arp curves](/documentation/MSEQ/arp-curves#the-note-length-curve).
+
+A value of 1 is never silence. On velocity it is the quietest value the MSEQ sends, and on duty
 it is the shortest note rather than no note. To stop a step firing, turn its trig off.
 
 ---
@@ -97,22 +100,25 @@ it turned down the accent values stop doing anything.
 <label for="tr8-accent-webapp">webapp</label>
 <input type="radio" name="tr8-accent" id="tr8-accent-hardware" class="pick-hardware">
 <label for="tr8-accent-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/tr8-accent.png" alt="A TR-8 accent grid: most steps show a mustard pad at height 3, steps 3 and 11 sit higher in orange, steps 1 and 16 higher again in dark red, and nine of the sixteen columns are shaded slate behind the contour">
-<img class="shot-hardware" src="/assets/mseq/hardware/tr8-accent.jpg" alt="A TR-8 accent grid: most steps show a mustard pad at height 3, steps 3 and 11 sit higher in orange, steps 1 and 16 higher again in dark red, and nine of the sixteen columns are shaded slate behind the contour, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/tr8-accent.png" alt="A TR-8 accent grid: most steps show a mustard pad at height 4, steps 3 and 11 sit higher in orange, steps 1 and 16 higher again in dark red, and nine of the sixteen columns are shaded slate behind the contour">
+<img class="shot-hardware" src="/assets/mseq/hardware/tr8-accent.jpg" alt="A TR-8 accent grid: most steps show a mustard pad at height 4, steps 3 and 11 sit higher in orange, steps 1 and 16 higher again in dark red, and nine of the sixteen columns are shaded slate behind the contour, photographed on the hardware">
 </figure>
 
-*TR-8 accent on a busy kit. A baseline of 3, lifted to 5 on steps 3 and 11 and to 6 at
+*TR-8 accent on a busy kit. A baseline of 4, lifted to 6 on steps 3 and 11 and to 7 at
 each end. Nine columns are slate, because on a drum pattern most steps carry a trig
 somewhere.*
 
 Arps act on your shape as well, and the two kinds act differently. A velocity arp scales the
-value you set, the same way the velocity knob does. A velocity arp set to zero is the one
-place a zero does silence a step, as a real rest. A duty arp does not scale at all: for
-as long as it runs, its value *replaces* the per-step value on that row.
+value you set, the same way the velocity knob does. A velocity arp of 1, on the default curve, is
+the one place a value does silence a step, as a real rest. A duty arp does not scale at all: it
+moves the length you drew up or down the
+[list of note lengths](/documentation/MSEQ/arp-curves#the-note-length-curve). At 5 it leaves your step
+alone, each value above 5 makes the note one length longer, and each value below 5 one
+shorter.
 [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps) covers both.
 
-The duty and velocity curves are per sequencer and you can edit them, so those two
-columns show the shipped defaults. The accent spread is fixed. See
+The note-length curve is per sequencer and you can edit it, so the duty column
+shows the default. The velocity column and the accent spread are fixed. See
 [Arp curves](/documentation/MSEQ/arp-curves).
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/octave-tree">Octave tree</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><strong>Step values</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><strong>Step values</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/mutes
      docs/mute-states.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Mutes and row states</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/octave-tree">Octave tree</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#playing">Playing</a></nav>
 
 <h1>Mutes and row states</h1>
 
@@ -29,7 +27,7 @@ buttons down the right-hand edge of your left Launchpad, one button per row.
 Row mutes also do more than switch a row on and off. As well as **muted** and
 **unmuted**, a row can **drone**, holding a single note for as long as it stays
 in that state, or play **legato**, stretching each note so that it runs into the
-next. The four states are described in full under [Row Mutes](#row-mutes).
+next. The four states are described in full under [Row mutes](#row-mutes).
 
 You can do all of this from the [webapp](/documentation/MSEQ/webapp) as well. Its LaunchControl
 panel has the same two rows of sequencer buttons, and the round buttons beside
@@ -91,7 +89,7 @@ autodrop flavour are in [Autodrops](/documentation/MSEQ/autodrops).
 
 ---
 
-## Sequencer Mutes
+## Sequencer mutes
 
 Sequencer mutes live on the **two rows of buttons along the bottom of the
 LaunchControl XL**, beneath the faders. Each row has eight buttons. The first
@@ -193,7 +191,7 @@ button is drawn as both of the colours it alternates between.
 
 ---
 
-## Row Mutes
+## Row mutes
 
 You set row mutes from the column of round buttons down the right-hand edge of
 your left Launchpad, one button per row of the selected sequencer. Rows are
@@ -286,4 +284,4 @@ every drone too, and pressing Start brings each one back the same way. Loading
 a session, a sequencer or a chord progression, or undoing a load, does the
 same: every drone that is still meant to sound restarts on the next step.
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/octave-tree">Octave tree</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/euclidean">Euclidean trigs</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><strong>Mutes and row states</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><strong>Mutes and row states</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

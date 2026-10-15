@@ -8,173 +8,176 @@ permalink: /documentation/MSEQ/cc-arps
      docs/cc-arps.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Arps</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">CC arps</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#arps">Arps</a></nav>
 
 <h1>CC arps</h1>
 
-CC arps modulate per-step CC values using short repeating patterns, similar to how velocity arps and duty arps work for note parameters. Each CC row has its own arp pattern (up to 8 steps) and arp length, allowing rhythmic modulation of filter cutoff, resonance, decay, and other synthesiser parameters.
+CC arps store a pattern of up to eight values for each of a sequencer's CC
+rows. Each row sends one CC to a synth (see
+[CC assignments](/documentation/MSEQ/cc-assignments)). Every time the sequencer plays a note,
+every CC row takes the next value in its pattern and sends it, then wraps back
+to the start when it reaches the end of the pattern's length. Rests don't
+count. On the TR-8, rows move together in trig groups instead, so a kick
+parameter moves with the kick.
 
-This document covers the LP and LC gestures and what shows on the grid. Which CC each row of each sequencer sends is on [CC assignments](/documentation/MSEQ/cc-assignments).
+- **Move a parameter in time with the music.** A filter that opens across a
+  phrase, or a decay that alternates long and short.
+- **Toggle CC arp control.** Setting the row to have length 0 means no CC data
+  is sent, so that you can toggle between controlling it via the MSEQ and on
+  the synth.
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#why">Why</a><span class="sep" aria-hidden="true"> · </span><a href="#what-you-see-on-the-launchpads">What You See on the Launchpads</a><span class="sep" aria-hidden="true"> · </span><a href="#edit-workflow">Edit Workflow</a><span class="sep" aria-hidden="true"> · </span><a href="#how-cc-arps-work">How CC Arps Work</a><span class="sep" aria-hidden="true"> · </span><a href="#trig-groups-drums">Trig Groups (Drums)</a></nav>
+A pattern whose length doesn't match the notes lands on a different note each
+bar.
 
----
-
-## Why
-
-Another way to add variation to a pattern that is a bit limited or static
-sounding is by twiddling the knobs on the front of your synths. Whilst we love
-this as much as the next person, sometimes you just don't have enough hands.
-Luckily, MIDI can make up for it. A CC arp is a short list of values that walks
-forward every time that row's trigger fires, so the parameter moves in step with
-the pattern rather than independently of it.
-
-A row with an arp length of **0** sends nothing at all, which is the whole
-point. It hands the parameter back to you, so that you can control the relevant
-knob with your hand rather than fighting with the invisible MIDI hand that is
-also tweaking that parameter.
-
-### Colour tells you what kind of parameter you are moving
-
-Each row is coloured by the family of parameter it targets, so that you can
-read a CC arp view at a glance without having to remember the assignments. The
-palette is part of the CC assignment itself, so it can be tuned per synth, and
-when a parameter is assigned from the webapp its family picks the default:
-
-| Parameter family | Default palette | Reads as |
-|---|---|---|
-| Filter (cutoff, resonance) | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d9860c;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>2 | Dark gold |
-| Pitch / tuning | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>3 | Vivid orange |
-| Amp / level | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#86c8ff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>4 | Pale blue |
-| Envelope, decay | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#63c5ff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>5 | Sky blue |
-| LFO | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#821355;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>6 | Dim magenta |
-| Oscillator, waveform | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f25dd4;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>7 | Pink |
-| FX | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#04dd2e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>9 | Green |
-| Utility / unclassified | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#967562;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>1 | Tan→lilac gradient |
-
-Assign a parameter from the webapp and it takes the default palette for its
-family; from there the palette is fixed per CC.
+By default every row has a length of 0, so the CC arps send nothing until you
+give a row a pattern.
 
 ---
 
-## What You See on the Launchpads
+## What a value means
 
-### LHS (LP1 for P1, LP3 for P2): Pattern Overview
+Every CC arp value is a number from 1, on the bottom row, to 8, on the top
+row. A row doesn't send that number: the value picks one of eight points on
+the row's CC curve, and the row sends the CC value at that point. The curve is
+part of the CC assignment, and the curves are deliberately uneven, so the same
+height sends a different value on a filter row than on a decay row.
 
-8 rows × 8 steps showing every CC arp row at once.
+<img src="/assets/mseq/cc-arp-curves.svg" alt="Two CC curves plotted against CC arp values 1 to 8, the value pads drawn in the overview&#x27;s blue gradation. Curve 2 rises fast and flattens through the middle, sending 0, 35, 55, 63, 68, 75, 95 and 127. Curve 8 is exponential, with small steps at the bottom and big ones at the top, sending 5, 10, 15, 20, 35, 60, 90 and 120" style="display:block;margin-inline:auto">
 
-- Rows are numbered **1 at the bottom of the pad up to 8 at the top**, the same way round as the velocity, duty and note arps and the trig view.
-- The step a row is **currently playing** is drawn in that row's palette colour (that CC's own palette), so the parameter family is what you see moving along the row. A row whose arp length is 1 is drawn in the palette colour too, since its single step is always the one playing.
-- The row's other active steps are drawn in a four-tone **blue gradation of their value**: deep navy for 0–1, mid blue for 2–3, pale blue for 4–5, vivid blue for 6–7. So the overview reads value as colour, where the editor on the right reads it as height.
-- Steps beyond a row’s arp length are unlit.
-- A row with an arp length of **0** blinks its first step between the palette colour and unlit, which is how a handed-back parameter announces itself. (On the editor pad the same step blinks between the palette colour and slate.)
-- Unassigned rows stay unlit: on the NTS-1, for instance, rows 8, 7, 2 and 1 carry nothing.
+---
 
-### RHS (LP2 for P1, LP4 for P2): Step-Value Editor
+## What you see
 
-The row currently selected by that player gets an 8-step value editor on the RHS.
+If you have read the [Note arps](/documentation/MSEQ/note-arp) page, this will be familiar:
+the left hand Launchpad sets each row's length and the right hand Launchpad
+picks its values.
 
-- Step values run **0–7**, shown as a **single lit pad per step** at the height of its value (bottom row = 0, top row = 7). The eight steps read as a dotted contour across the pad, not as a bar chart.
-- Colours match the overview: the step being played takes the row’s palette colour, and the rest take the blue value gradation.
-- Steps **beyond** the length still show their stored value, but in slate, so you can see where the pattern stops without counting.
+### Left hand Launchpad
+
+The pattern overview. Each row shows the length of that row's pattern, one lit
+pad per step. The step that plays next is drawn in the row's own colour (see
+below), and the other steps show their value in blue, from deep navy for 1 and
+2 up to vivid blue for 7 and 8. A pattern one value long is always drawn in the
+row's colour.
+
+A row with a length of 0 blinks its first pad, so you can see which parameters
+are back under the synth's control. Rows without a CC assignment stay dark: on
+the NTS-1, for instance, rows 8, 7, 2 and 1.
+
+### Right hand Launchpad
+
+The value editor for the row you have selected (the last row you pressed on the
+left). Each column is one step of the pattern, and each step lights a **single
+pad** at the height of its value, from 1 on the bottom row to 8 on the top. It
+is not a bar filled from the bottom. The colours match the overview, and steps
+beyond the pattern's length still show their stored value, but in slate grey,
+so you can see where the pattern stops without counting.
 
 <figure class="fig-pair">
 <input type="radio" name="cc-arp-01" id="cc-arp-01-webapp" class="pick-webapp" checked>
 <label for="cc-arp-01-webapp">webapp</label>
 <input type="radio" name="cc-arp-01" id="cc-arp-01-hardware" class="pick-hardware">
 <label for="cc-arp-01-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/cc-arp-01.png" alt="A CC-arp view: on the LHS LP a green row with three lit pads and a pink row with six, in the palette colour at the head of each run and blue value gradations behind; a sky-blue and a lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the RHS LP, single pads trace the pink row's six values rising to the top and falling again, followed by two slate pads">
-<img class="shot-hardware" src="/assets/mseq/hardware/cc-arp-01.jpg" alt="A CC-arp view: on the LHS LP a green row with three lit pads and a pink row with six, in the palette colour at the head of each run and blue value gradations behind; a sky-blue and a lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the RHS LP, single pads trace the pink row's six values rising to the top and falling again, followed by two slate pads, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/cc-arp-01.png" alt="A CC-arp view: on the LHS LP a green row with three lit pads and a magenta row with six, in the row colour at the head of each run and blue value gradations behind; a sky-blue and a pale lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the RHS LP, single pads trace the magenta row&#x27;s six values rising to the top and falling again, followed by two slate pads">
+<img class="shot-hardware" src="/assets/mseq/hardware/cc-arp-01.jpg" alt="A CC-arp view: on the LHS LP a green row with three lit pads and a magenta row with six, in the row colour at the head of each run and blue value gradations behind; a sky-blue and a pale lime row carry a single blinking pad in column 1, and the remaining four rows are dark. On the RHS LP, single pads trace the magenta row&#x27;s six values rising to the top and falling again, followed by two slate pads, photographed on the hardware">
 </figure>
 
-*This is the NTS-1, which has four of its eight rows assigned to CCs. Only two of
-them show here: the green row (filter cutoff) and the pink row (mod depth), whose
-first pads carry the parameter colour because that is the step playing, with the
-remaining values behind in blue gradations. The other two assigned rows: sky-blue
-and lime: have an arp length of 0, so they blink their first pad on and off; the
-webapp capture froze them mid-blink on the dark half, while the hardware
-photograph caught them lit, so flipping this figure between the two shows you both
-halves of the blink. Rows A, B, G and H have no CC assignment and stay dark
-permanently. The selected pink row puts six values on the right-hand pad, rising
-from 1 to 7 and back down to 2, with the two unused steps in slate.*
+*The NTS-1, with four of its eight rows assigned. The green row (filter cutoff)
+plays three values and the magenta row (modulation effect depth) six, which the right hand
+Launchpad draws as a contour rising to the top and falling again. The other two
+assigned rows have a length of 0 and blink their first pad.*
+
+### Colour tells you what kind of parameter you are moving
+
+Each row is drawn in its CC's colour, so you can read a CC arp view at a glance
+without having to remember the assignments. The colour is part of the CC
+assignment, so it can be changed per synth. These are the colours the default
+assignments use; [CC assignments](/documentation/MSEQ/cc-assignments) shows the colour of every
+row.
+
+On the TR-8 the colours follow the drum parameter instead.
+
+| Colour | Used for |
+|---|---|
+| **Synth sequencers** | |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#04dd2e;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Bright green | Filter cutoff related CCs, including filter envelope amount |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c7ff96;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Pale lime | Filter resonance related CCs |
+| <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f25dd4"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#821355"></span></span>Bright magenta, dim magenta | FX related CCs, such as delay |
+| <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#63c5ff"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#86c8ff"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#b6d6f9"></span></span>Sky blue, light blue, powder blue | Waveshaping related CCs, including mixing noise into the oscillator |
+| <span style="display:inline-flex;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#d9860c"></span><span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f"></span></span>Dark gold, vivid orange | Oscillator detune related CCs |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#dde272;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Khaki | Glide and LFO rate |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Stone | Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e9faff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Ice white | Velocity depth |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#812a09;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Rust | Transpose |
+| **TR-8** | |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e36d0f;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Vivid orange | Tuning |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e2ddd6;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Stone | Decay |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#dde272;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Khaki | Tone and snappy |
+
+When you assign a parameter yourself from the webapp, it starts on a colour
+picked from its kind of parameter, and you can change it there.
 
 ---
 
-## Edit Workflow
+## Set a pattern's length
 
-The CC arp editor is a **two-stage** gesture: pick a row, then write step values.
+On the left hand Launchpad, **hold SHIFT and press a pad**, or simply
+**double-tap a pad**, to set the pattern's length. That row's length becomes the
+column you pressed: column 2 for two values, column 8 for all eight.
 
-### 1. Select a row (Launchpad LHS, the overview LP)
+Steps beyond the new length go dark straight away on the LHS LP, and turn slate
+on the RHS LP.
 
-Press the LHS LP at column 1–8 to select that row and, on a double-tap, set that row's arp **length**:
+Column 1 toggles the row between a length of 1 and a length of 0. At 0 the row
+sends nothing, so the knob on the synth is yours again.
 
-- A single press on any column 1–8 selects that row (focus switches to it) but does **not** change the length.
-- A **double-tap** (≤350 ms) on the same column confirms the length write:
-  - Columns 2–8: sets the row's arp length to the column number (2–8).
-  - Column 1: toggles the row's length between 0 (disabled) and 1.
-- Selected row tracks per-player; whichever row you pressed becomes that player’s focus.
-- Column 9 is reserved for shift gestures (see below).
+Holding SHIFT on the right hand Launchpad sets the length too: the press writes
+the value and makes the column you pressed the last step. It is the quickest way
+to draw a short pattern, and easy to do by accident.
 
-Unassigned rows are silently no-op for length writes; the selected row still updates so focus follows the press.
-
-### 2. Write step values (Launchpad MK2 RHS, on the player’s LP)
-
-With a row selected, press an LP key on the RHS grid. The grid position encodes step and value:
-
-- Column 1–8 = arp step 1–8 of the selected row.
-- Row 1–8 (bottom → top) = value 0–7.
-
-An unmodified RHS press does not change the arp length. Length is set independently on the LHS LP. Hold **SHIFT** and the RHS press does both: it writes the value *and* sets the row's length to the column you pressed, which can shrink the pattern under your fingers. It is the quickest way to draw a short arp (press the last step you want with SHIFT held), and the easiest one to trigger by accident if you were reaching for a reset.
-
-### Shift modifiers
-
-Holding an LC modifier changes what an LHS press does. With SHIFT alone the length write needs no double-tap; the other two act on column 9, the rightmost column of the LHS LP:
-
-| Modifier              | Column pressed | Effect                                |
-|-----------------------|----------------|---------------------------------------|
-| **SHIFT** alone       | 2–8            | Set the row's length to the column number, on a single press. |
-| **SHIFT** alone       | 1              | Toggle the row's length between 0 and 1. |
-| **SHIFT** alone       | 9              | Disable the row (length → 0).         |
-| **SHIFT + MUTE**      | 9              | **Hard reset**: length → 0, all 8 step values → default fill (3). |
-| **SHIFT + SOLO**      | 9              | **Randomise** all 8 step values; length unchanged. |
-
-### Edit independence
-
-P1 and P2 each have their own selected row slot. They never overwrite each other; both players can edit different rows in the same CC view simultaneously.
+On the TR-8, rows that control the same drum sound share one length: setting the
+length of one BD row sets all three.
 
 ---
 
-## How CC Arps Work
+## Edit the pattern
 
-Each sequencer row that has a CC assignment can also have a CC arp. The arp is an 8-step pattern of values 0–7. On each step where the row's trig fires, the current arp value is looked up in that row's **CC curve** and the result is sent as the CC value. The arp position advances each time the trig fires, wrapping at the configured arp length.
+Editing takes two presses, one on each Launchpad:
 
-When a trig does not fire (muted step, zero velocity, etc.), no CC is sent: CC output is **trig-checked**.
+1. **Press a pad on the LHS LP** to select that row. A single press never
+   changes the row's length.
+2. **Press a pad on the RHS LP** to write a value. The column picks the step of
+   the pattern, and the row picks the value: the bottom row is 1, the top row
+   is 8.
 
-### Scaling
-
-The arp value is not a multiplier: it is an **index into an eight-entry lookup table**, so the row's CC assignment picks its eight values rather than spacing them evenly.
-
-```
-cc_output = clamp(cc_curve_N[arp_value], 0, 127)
-```
-
-Which curve a row uses is fixed per CC. They are deliberately uneven. One curve runs 0, 25, 45, 60, 70, 83, 103, 127 (fine at the top, coarse at the bottom), while another runs 0, 1, 2, 4, 8, 12, 16, 20, 25 for a parameter that only wants the bottom of its range. That is why the same grid height sends a different value on a filter row than on a decay row.
+Pressing a row without a CC assignment selects it but changes nothing. Each
+player has their own selected row, so two players can edit different rows of the
+same view at once. On the TR-8, the main and alt kits have a CC arp view each.
 
 ---
 
-## Trig Groups (Drums)
+## Reset and randomise
 
-On a synth sequencer all 8 CC rows share one trig group, so they advance together. On the drums, rows that control the **same drum sound** are grouped instead: the group shares an arp length as well as a trig group, so setting the length on one BD row sets it for all three.
+Hold SHIFT + MUTE to reset, or SHIFT + SOLO to randomise, then press a row mute
+button on the LHS LP or a pad on the RHS LP.
+
+| Gesture | Effect |
+|---------|--------|
+| **SHIFT** + row mute button | Switch that row off: length 0 |
+| **SHIFT + MUTE** + row mute button | Reset that row: length 0, every value 4 |
+| **SHIFT + MUTE** + RHS row R | Set every step of the selected row to row R's value |
+| **SHIFT + SOLO** + row mute button | Randomise that row across 1 to 8, length unchanged |
+| **SHIFT + SOLO** + RHS row R | Randomise the selected row around row R's value |
+
+[Reset and randomise](/documentation/MSEQ/reset) has the full matrix across every view.
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [CC assignments](/documentation/MSEQ/cc-assignments): which CC every row of every sequencer sends
 - [Slew and CC smoothing](/documentation/MSEQ/slew): smoothing the values these arps send
-- [Arp curves](/documentation/MSEQ/arp-curves): the eight-entry curves a row's values are looked up in
+- [Note arp](/documentation/MSEQ/note-arp): the same pattern model for pitch
 - [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the velocity and duty arps these work alongside
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><strong>CC arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#arps">Arps</a>: <a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><strong>CC arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav>

@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/ableton
      docs/ableton-setup.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Getting started</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Ableton and MIDI routing</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/setup-debugging">Setup debugging</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Playing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#getting-started">Getting started</a></nav>
 
 <h1>Ableton and MIDI routing</h1>
 
@@ -80,7 +78,7 @@ Place each one on a MIDI track routed to the TR-8's MIDI input.
 
 ---
 
-## LaunchControl XL User Templates
+## LaunchControl XL user templates
 
 The LC user templates define which CC numbers each knob, fader, and button on
 the LaunchControl XL sends. MSEQ expects specific CC assignments; the provided
@@ -95,4 +93,4 @@ SysEx files configure the LC correctly.
 
 Switch between templates on the LC using the User 1/2/3 buttons. MSEQ reads the active user template number and adjusts which sequencers the LC buttons address accordingly. A template belongs to a bank, not to a player, so either unit can sit on any of the six.
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/setup-debugging">Setup debugging</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Playing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/manual">Overview</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup">Setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup-debugging">Setup debugging</a><span class="sep" aria-hidden="true"> · </span><strong>Ableton and MIDI routing</strong></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#getting-started">Getting started</a>: <a href="/documentation/MSEQ/manual">Overview</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup">Setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup-debugging">Setup debugging</a><span class="sep" aria-hidden="true"> · </span><strong>Ableton and MIDI routing</strong><span class="sep" aria-hidden="true"> · </span><span class="next">Playing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a> →</span></nav>

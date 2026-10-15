@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/cc-slew
      docs/view-reference/20-cc-slew.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">CC Slew</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/tr8-velo-arp">TR-8 Velocity Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/chord-clock-division">Chord Clock Division</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>CC Slew</h1>
 
@@ -48,4 +46,4 @@ plus row 8 purple. Both players share the surface.
 - [Slew and CC smoothing](/documentation/MSEQ/slew): time-constant table, auto-mode maths, arrays
 - [CC arp view reference](/documentation/MSEQ/views/cc-arp): the CC targets slew smooths between
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/tr8-velo-arp">TR-8 Velocity Arp</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/chord-clock-division">Chord Clock Division</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/tr8-velo-arp">TR-8 Velocity Arp</a><span class="sep" aria-hidden="true"> · </span><strong>CC Slew</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/chord-clock-division">Chord Clock Division</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

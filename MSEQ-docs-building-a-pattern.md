@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/building-a-pattern
      docs/building-a-pattern.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Building a pattern</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/trigs">Trigs</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/step-views">Step values</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#playing">Playing</a></nav>
 
 <h1>Building a pattern</h1>
 
@@ -267,7 +265,7 @@ it. Row play modes are covered on their own in
 
 ---
 
-## Modulo Division Reference
+## Modulo division reference
 
 The 16-bar cycle counts bars 0–15. Mod and InvMod conditions evaluate at the bar level (not the step level):
 
@@ -284,7 +282,7 @@ The 16-bar cycle counts bars 0–15. Mod and InvMod conditions evaluate at the b
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Trigs](/documentation/MSEQ/trigs): the trig view reference, covering every status, colour and edit gesture
 - [Step values](/documentation/MSEQ/step-views): per-step duty and velocity, which set the length and weight of one hit
@@ -292,4 +290,4 @@ The 16-bar cycle counts bars 0–15. Mod and InvMod conditions evaluate at the b
 - [Chords and scales](/documentation/MSEQ/chords-and-scales): key and scale, which decide the notes these rows play
 - [Euclidean trigs](/documentation/MSEQ/euclidean): filling the gaps in a pattern algorithmically
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/trigs">Trigs</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/step-views">Step values</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><strong>Building a pattern</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><strong>Building a pattern</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

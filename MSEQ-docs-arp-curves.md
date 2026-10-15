@@ -8,62 +8,52 @@ permalink: /documentation/MSEQ/arp-curves
      docs/arp-curves.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Arps</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Arp curves</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#arps">Arps</a></nav>
 
 <h1>Arp curves</h1>
 
-Everywhere you draw a value on the grid: a step velocity, a step duty, a velocity
-arp, a duty arp. You are drawing a number from **0 to 7**. That number is not a
-velocity and it is not a note length. It is a position on a **curve**, and the
-curve decides what 0 to 7 actually mean for that sequencer.
+Each sequencer has two curves, a **velocity curve** and a **note-length curve**.
+Each has eight points, one for each value from 1, on the bottom row, to 8, on the
+top row. The value you draw is not a velocity or a note length: the curve
+decides what it does on that sequencer, and you can edit both curves.
 
-Each sequencer has two of them: a **velocity curve** and a **note-length curve**.
-Both are eight points, both are editable, and both belong to the box rather than
-to the song.
+| Value | Curve it uses |
+|---|---|
+| Velocity arp, TR-8 velocity arp | the velocity curve |
+| Step duty | the note-length curve |
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#why-they-exist">Why they exist</a><span class="sep" aria-hidden="true"> · </span><a href="#where-to-find-them">Where to find them</a><span class="sep" aria-hidden="true"> · </span><a href="#the-velocity-curve">The velocity curve</a><span class="sep" aria-hidden="true"> · </span><a href="#the-note-length-curve">The note-length curve</a><span class="sep" aria-hidden="true"> · </span><a href="#presets">Presets</a><span class="sep" aria-hidden="true"> · </span><a href="#curves-belong-to-the-box-not-to-the-song">Curves belong to the box, not to the song</a></nav>
+Other values don't use these curves. Step velocity is a fixed share of the
+velocity knob, the duty arp moves a step's length up or down the list of note
+lengths, and CC arps have their own CC curves, set on
+[CC assignments](/documentation/MSEQ/cc-assignments).
+
+Curves are stored on the Pi, not in sessions or in a sequencer saved on its own,
+so loading a session or a sequencer never changes them.
 
 ---
 
-## Why they exist
+## Edit a curve
 
-The eight rows of a step or arp view are a comfortable number to play with and a
-useless number to be stuck with. Eight evenly spaced velocities are fine for one
-instrument and wrong for the next; eight note lengths that are not musical
-values are wrong for everything.
+1. Open **Settings** in the webapp and tap **Arp curves**.
+2. Choose **Velocity** or **Duty** at the top.
+3. Pick a sequencer from the strip below it.
+4. Drag a point's fader, or type in the box under it.
 
-The curve is the layer that fixes that. Draw the same shape on the grid, point
-the curve somewhere else, and the same pattern plays with a different response.
-It is per-sequencer, so the sequencer driving a bass synth can have a different
-idea of "5" from the one driving a pad.
+<img src="/assets/mseq/arp-curve-velo.png" alt="The arp curve editor on its Velocity tab: a Velocity/Duty toggle, a strip for sequencers 1–7 and 9–13, eight faders numbered 1 to 8, rising left to right, with number boxes reading 0, 21, 42, 64, 85, 106, 116, 127, the decoded multiplier beneath each, and a preset slot row with Recall and Store buttons" style="display:block;margin-inline:auto">
 
-## Where to find them
-
-The webapp settings page, under **Arp curves**. Eight faders, one per point, with
-the point number underneath.
-
-<img src="/assets/mseq/arp-curve-velo.png" alt="The arp curve editor on its Velocity tab: a Velocity/Duty toggle, a strip for sequencers 1–7 and 9–13, eight faders rising left to right with number boxes reading 0, 21, 42, 64, 85, 106, 116, 127, the decoded multiplier beneath each, and a preset slot row with Recall and Store buttons" style="display:block;margin-inline:auto">
-
-*The velocity curve. The number box is the raw point and the small figure below
-it is what the engine multiplies by, so you can see that point 5 is the identity
-and point 7 lifts a hit by a fifth. The strip along the top picks which
-sequencer you are editing.*
+You hear the change as you drag, and it is kept when you let go.
 
 ---
 
 ## The velocity curve
 
-A point is a number from **0 to 127**, which the engine reads as a multiplier
-from ×0 up to **×1.2**. The shipped curve is an even ramp:
+Each point on the velocity curve is a multiplier from ×0 up to **×1.2**. In the
+editor you set it as a number from **0 to 127**, with the multiplier shown
+underneath. The default curve:
 
-| Point | 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 |
-|---|---|---|---|---|---|---|---|---|
-| Raw | 0 | 21 | 42 | 64 | 85 | 106 | 116 | 127 |
-| Multiplier | ×0.00 | ×0.20 | ×0.40 | ×0.60 | ×0.80 | ×1.00 | ×1.10 | ×1.20 |
+<img src="/assets/mseq/velocity-arp-curve.svg" alt="A line chart of the default velocity curve: velocity arp values 1 to 8 along the bottom as coloured pads, rising from a rest at 1 through ×0.20, ×0.40, ×0.60 and ×0.80 to ×1.00 at 6, highlighted as unchanged, then ×1.10 and ×1.20. A row beneath gives what each value sends with the velocity knob at 100 and the step velocity at the top: nothing, then 20, 40, 60, 80, 100, 110 and 120" style="display:block;margin-inline:auto">
 
-**Point 5 is the identity.** It is what a freshly seeded pattern holds, so a velocity
+**Point 6 is the identity.** It is what a freshly seeded pattern holds, so a velocity
 arp on a new session sounds exactly as though it were switched off until you move
 something. Above it there is deliberately not much room: two points of lift,
 because the multiplier is capped and a velocity is capped at 127 anyway.
@@ -74,101 +64,67 @@ per-row scaling as everything else.
 
 ## The note-length curve
 
-Duty is where curves earn their keep, because a note length wants to be a
-*musical* value. A duty point does not store a multiplier; it picks an entry from
-a locked **16-entry palette**:
+Each point on the note-length curve is a note length. You pick it from a fixed
+list of sixteen, running from a 64th note to a whole note. The default curve
+gives its eight points the eight shortest, and a new step starts on `1/16`, one
+full step:
 
-```
-1/64  1/32  1/16T  1/32.  1/16  1/8T  1/16.  1/8
-1/4T  1/8.  1/4    1/2T   1/4.  1/2   1/2.   1/1
-```
+<img src="/assets/mseq/note-length-curve.svg" alt="The sixteen note lengths from 1/64 to 1/1 as bars measured in steps, longest at the top. The default note-length curve gives points 1 to 8 the eight shortest, 1/64 to 1/8, each drawn in the colour of its point; point 5, where a new step starts, is 1/16, one step. The longer lengths, up to 1/1, are only reached by reshaping the curve." style="display:block;margin-inline:auto">
 
-`T` is a triplet (two thirds) and `.` is dotted (one and a half), so the palette
-covers straight, dotted and triplet values from a 64th to a whole note. The
-editor shows you the name and, underneath, the length in steps.
+`T` is a triplet (two thirds of the plain length) and `.` is dotted (one and a
+half times the plain length). In the editor each point has a dropdown of these
+sixteen lengths, with the number of steps that length lasts underneath.
 
-<img src="/assets/mseq/arp-curve-duty.png" alt="The editor on its Duty tab, with sequencers 1–7 and 9–12 available: the eight faders carry dropdowns reading 1/64, 1/32, 1/16T, 1/32., 1/16, 1/8T, 1/16., 1/8, each with its length in steps beneath, plus a preset slot row and a toggle labelled "Sequencer duty scales note length"" style="display:block;margin-inline:auto">
+<img src="/assets/mseq/arp-curve-duty.png" alt="The editor on its Duty tab, with sequencers 1–7 and 9–12 available: the eight faders, numbered 1 to 8, carry dropdowns reading 1/64, 1/32, 1/16T, 1/32., 1/16, 1/8T, 1/16., 1/8, each with its length in steps beneath, plus a preset slot row and the toggle for whether the duty knob scales note length" style="display:block;margin-inline:auto">
 
-*The note-length curve. Eight distinct musical values, and the toggle at the
-bottom decides whether the sequencer's duty knob is allowed to stretch them.*
-
-One step is a 16th, so `1/16` is exactly one step and everything above it holds
-into the following step. **Point 4 is `1/16`**, the identity, and the same
-"sounds like it's off" logic applies as it does to velocity.
+The names assume the Full clock division, where one step is a 16th, so `1/16`
+lasts exactly one step and anything longer runs into the next step. Lengths
+follow the sequencer's speed: at Half, one step is an 8th, and a `1/16` still
+lasts one step, so a pattern keeps its feel when you change its speed (see
+[Clock division](/documentation/MSEQ/clock#clock-division)).
 
 Eleven sequencers have a note-length curve: **1–7 and 9–12**. The TR-8 does not,
 because drums are one-shots with nothing to sustain.
 
-### The sequencer-duty toggle
+The duty arp doesn't use this curve. It moves a step's length along the same
+sixteen lengths, the same way on every sequencer; see
+[Velocity and duty arps](/documentation/MSEQ/velo-duty-arps#duty-arp).
 
-Each sequencer has its own switch for whether the **sequencer duty knob** still
-applies on top of the curve:
+### Channel duty scales note length
 
-- **On** (the default): the knob stretches and shrinks the resolved length, so a
-  curve gives you the shape and the knob gives you a live grip on it.
-- **Off**: you get the palette's exact lengths, and the duty knob is ignored for
-  note length. Pick this when you want `1/8` to mean `1/8`.
+Each sequencer has a switch for whether its duty knob still acts on top of the
+curve:
 
-### One thing to watch on a TB-03
+- **On** (the default): the knob stretches and shrinks every length. At its
+  centre detent it changes nothing; fully up it doubles them.
+- **Off**: you get the exact lengths from the curve, and the knob is ignored
+  for note length.
 
-A TB-03 re-keys its slide whenever a resolved note length exceeds one step. On
-the shipped curve that is points 5, 6 and 7. If you author a curve that puts
-long values low down, you will get slides from grid positions that did not slide
-before.
+### TB-03 slides
+
+A TB-03 slides whenever a note lasts longer than one step. On the default curve
+that is points 6, 7 and 8, so a curve that puts long lengths on low points
+slides from steps that did not slide before. The duty arp counts too: it can
+push a short step past one step, or pull a long one back.
 
 ---
 
 ## Presets
 
-Each kind has a bank of **eight preset slots**, shared by every sequencer:
-
-- **Store** copies the sequencer's current curve into the slot you have selected.
-- **Recall** copies a slot into the sequencer you are editing.
-
-Both are **copies, and only copies**. Recalling a preset does not attach the
-sequencer to it: edit the curve afterwards and the preset is untouched, and
-editing the preset later does not reach back into any sequencer that once
-recalled it. There is no "this sequencer is using preset 3" state, deliberately:
-the slot control is a target for an action, not a relationship.
+Each curve type has eight preset slots, shared by every sequencer. **Store**
+copies the sequencer's curve into the selected slot, and **Recall** copies the
+slot into the sequencer. They are only copies: editing the curve afterwards
+leaves the preset alone, and editing the preset never changes a sequencer that
+recalled it.
 
 ---
 
-## Curves belong to the box, not to the song
-
-This is the part worth remembering, because it is the opposite of nearly
-everything else you can edit.
-
-Curves are a **device setting**, kept the way the CC map is kept, in their own
-config file rather than inside a session. So:
-
-- **loading a song does not change your curves**: that is the whole point;
-- a **peer load** does not bring a collaborator's curves with their patterns;
-- **copying a sequencer** to another does not copy its curves.
-
-Your box keeps its response and songs move between boxes. If you want a
-different feel for a different track, that is a preset recall, not a session
-load.
-
-Nothing about curves appears in a session file, and no session operation
-(save, load, undo, init) touches them. See
-[Saving and loading sessions](/documentation/MSEQ/sessions) for what a session *does* carry.
-
-### Editing the file by hand
-
-The config file is plain Lua and you can read it. If you edit it directly, the
-webapp notices at the next save and refuses to overwrite your work, asking you to
-reimport first. That is a guard, not a fault: reimport pulls your hand-edit into
-the editor and the two are back in step.
-
----
-
-## Cross-References
+## Cross-references
 
 - [Step values](/documentation/MSEQ/step-views): where per-step values are drawn, and how
   velocity and duty differ in the way they combine
-- [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the velocity and duty arps, which index
-  the same curves
-- [Saving and loading sessions](/documentation/MSEQ/sessions): what a session saves, and why curves are not
-  in it
+- [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the velocity arp, which indexes the
+  velocity curve, and the duty arp, which moves the step's length instead
+- [Saving and loading sessions](/documentation/MSEQ/sessions): what a session saves
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/cc-assignments">CC assignments</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><strong>Arp curves</strong></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#arps">Arps</a>: <a href="/documentation/MSEQ/note-arp">Note arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><strong>Arp curves</strong><span class="sep" aria-hidden="true"> · </span><span class="next">Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a> →</span></nav>

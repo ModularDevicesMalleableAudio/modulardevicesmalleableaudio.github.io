@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/webapp-sessions
      docs/webapp-sessions.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Sessions</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Saving and loading in the browser</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/sessions">Saving and loading</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cloud-sync">Cloud sync setup</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#sessions">Sessions</a></nav>
 
 <h1>Saving and loading in the browser</h1>
 
@@ -148,7 +146,7 @@ To make a peer's material your own, load it, then save it into a local slot.
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Saving and loading sessions](/documentation/MSEQ/sessions): what a session holds, and the IO view on the
   Launchpads
@@ -156,4 +154,4 @@ To make a peer's material your own, load it, then save it into a local slot.
 - [Google Drive session sync](/documentation/MSEQ/cloud-sync): setting up the sync
   that fills the Peer tab
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/sessions">Saving and loading</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/cloud-sync">Cloud sync setup</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/sessions">Saving and loading</a><span class="sep" aria-hidden="true"> · </span><strong>Saving and loading in the browser</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync">Cloud sync setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#sessions">Sessions</a>: <a href="/documentation/MSEQ/sessions">Saving and loading</a><span class="sep" aria-hidden="true"> · </span><strong>Saving and loading in the browser</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync">Cloud sync setup</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cloud-sync-troubleshooting">Cloud sync troubleshooting</a></nav>

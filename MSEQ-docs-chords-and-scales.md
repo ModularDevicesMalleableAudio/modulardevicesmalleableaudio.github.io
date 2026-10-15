@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/chords-and-scales
      docs/chords-and-scales.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Harmony</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Chords and scales</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/chords">Chord progression</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#harmony">Harmony</a></nav>
 
 <h1>Chords and scales</h1>
 
@@ -22,7 +20,7 @@ voicing on [Voicing and modulation](/documentation/MSEQ/chord-voicing).
 
 ---
 
-## What It Does To A Sequence
+## What it does to a sequence
 
 Those sequencers that are set to follow the chord progression will have the
 notes of their sequence transposed in line with the chord progression. This
@@ -41,7 +39,7 @@ a sequencer follows at all is the [CP toggle](#cp-toggle-row-1).
 
 ---
 
-## How Chords Are Constructed
+## How chords are constructed
 
 The chord at each bar is built from the current scale's root note and the chord degree you have selected. The chord-adjustment setting (see *Root Note + Scale* below) then colours it, offsetting individual rows so a chord is voiced rather than stacked straight up the scale.
 
@@ -54,7 +52,7 @@ Inversions reorder the notes of the chord:
 
 ---
 
-## Root Note + Scale (view type 11)
+## Root note + scale (view type 11)
 
 The chord options view is the global tonal centre control. It sets the root
 note and scale (minor or major) used by every chord-following sequencer, and
@@ -117,11 +115,11 @@ stay dark). Off is slate grey; on is that sequencer's own colour. See
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Chord progression](/documentation/MSEQ/chords): writing the progression itself, bar by bar
 - [Voicing and modulation](/documentation/MSEQ/chord-voicing): which notes of a chord each sequencer plays
 - [Toggle views](/documentation/MSEQ/toggles): the CP-follow toggle, documented alongside the other toggles
 - [Note arp](/documentation/MSEQ/note-arp): how diatonic mode affects moving note arps
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/chords">Chord progression</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><strong>Chords and scales</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chords">Chord progression</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#harmony">Harmony</a>: <strong>Chords and scales</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chords">Chord progression</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav>

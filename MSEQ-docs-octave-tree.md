@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/octave-tree
      docs/octave-tree.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Playing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Octave tree</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/step-views">Step values</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/mutes">Mutes and row states</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#playing">Playing</a></nav>
 
 <h1>Octave tree</h1>
 
@@ -72,8 +70,8 @@ is the right hand side of this image.
 <label for="octave-01-chord-spread-webapp">webapp</label>
 <input type="radio" name="octave-01-chord-spread" id="octave-01-chord-spread-hardware" class="pick-hardware">
 <label for="octave-01-chord-spread-hardware">hardware</label>
-<img class="shot-webapp" src="/assets/mseq/octave-01-chord-spread.png" alt="A row-octave grid: a mustard centre column labelled with each row's note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the RHS LP the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1">
-<img class="shot-hardware" src="/assets/mseq/hardware/octave-01-chord-spread.jpg" alt="A row-octave grid: a mustard centre column labelled with each row's note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the RHS LP the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1, photographed on the hardware">
+<img class="shot-webapp" src="/assets/mseq/octave-01-chord-spread.png" alt="A row-octave grid: a mustard centre column labelled with each row&#x27;s note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the RHS LP the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1">
+<img class="shot-hardware" src="/assets/mseq/hardware/octave-01-chord-spread.jpg" alt="A row-octave grid: a mustard centre column labelled with each row&#x27;s note, one red pad left of centre on the bottom row labelled C2, and two green pads right of centre on the G3 row labelled G4 and G5; on the RHS LP the bottom row begins +1, +2, +1, +2, while the G3 row contains −2 and −1, photographed on the hardware">
 </figure>
 
 *The C minor chord from [Trigs](/documentation/MSEQ/trigs) pulled apart: the root row dropped an
@@ -122,7 +120,7 @@ constantly shifting, or shifting in an A/B style pattern over the two bars.
 
 ---
 
-## Reset and Randomise
+## Reset and randomise
 
 | Gesture | Effect |
 |---------|--------|
@@ -131,10 +129,10 @@ constantly shifting, or shifting in an A/B style pattern over the two bars.
 
 ---
 
-## Cross-References
+## Cross-references
 
 - [Chords and scales](/documentation/MSEQ/chords-and-scales): Chord row-octave sequencing works in parallel with per-row octave trees
 - [Trigs](/documentation/MSEQ/trigs): trig view, where sequencer-level octave is set via SHIFT + top-row and MUTE + top-row LC buttons
 - [Reset and randomise](/documentation/MSEQ/reset): Full reset/randomise matrix across all views
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/step-views">Step values</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/mutes">Mutes and row states</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><strong>Octave tree</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><strong>Octave tree</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

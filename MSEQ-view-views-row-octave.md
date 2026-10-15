@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/row-octave
      docs/view-reference/03-row-octave.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Row Octave (Octave Tree)</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/step-velo">Step Velocity</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/cp-modulator">Chord Progression Modulator</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>Row Octave (Octave Tree)</h1>
 
@@ -74,4 +72,4 @@ Exact LED layout is documented in [Octave tree](/documentation/MSEQ/octave-tree)
 - [Chord progression](/documentation/MSEQ/chords): octave trees stack with chord progression
 - [Reset and randomise](/documentation/MSEQ/reset): reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/step-velo">Step Velocity</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/cp-modulator">Chord Progression Modulator</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/step-velo">Step Velocity</a><span class="sep" aria-hidden="true"> · </span><strong>Row Octave (Octave Tree)</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/cp-modulator">Chord Progression Modulator</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

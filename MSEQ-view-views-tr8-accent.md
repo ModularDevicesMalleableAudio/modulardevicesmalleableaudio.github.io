@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/views/tr8-accent
      docs/view-reference/18-tr8-accent.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>View reference</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">TR-8 Accent</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/sleep">Sleep</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/tr8-velo-arp">TR-8 Velocity Arp</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#view-reference">View reference</a></nav>
 
 <h1>TR-8 Accent</h1>
 
@@ -35,9 +33,9 @@ writes that row's accent instantly. No modifier needed.
 |---|---|---|---|
 | Press | LP grid | Set the step (column) to the pressed row's accent | none |
 | SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 steps → accent of row R | shift+mute |
-| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `5` (row 6) | shift+mute |
+| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `6` (row 6) | shift+mute |
 | SHIFT + SOLO + press row R | LP grid | **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | shift+solo |
-| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 0–7 | shift+solo |
+| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 1–8 | shift+solo |
 
 ## See also
 
@@ -45,4 +43,4 @@ writes that row's accent instantly. No modifier needed.
 - [Drum views](/documentation/MSEQ/drums): TR-8 note dispatch and alt-kit behaviour
 - [Reset and randomise](/documentation/MSEQ/reset): reset/randomise matrix
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/views/sleep">Sleep</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/views/tr8-velo-arp">TR-8 Velocity Arp</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/">all 26 pages in this section</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/sleep">Sleep</a><span class="sep" aria-hidden="true"> · </span><strong>TR-8 Accent</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/tr8-velo-arp">TR-8 Velocity Arp</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

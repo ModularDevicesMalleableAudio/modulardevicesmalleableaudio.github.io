@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/clock
      docs/clock-and-timing.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Timing</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Clock</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Drums<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: The LaunchControl<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/lc-status">Modifier buttons</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#timing">Timing</a></nav>
 
 <h1>Clock</h1>
 
@@ -27,11 +25,11 @@ This page covers the views and signals that govern when MSEQ steps fire:
 It does not cover BPM acquisition or M4L routing: see
 [Ableton setup](/documentation/MSEQ/ableton).
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#clock-division">Clock Division</a><span class="sep" aria-hidden="true"> · </span><a href="#swing">Swing</a><span class="sep" aria-hidden="true"> · </span><a href="#sleep">SLEEP</a><span class="sep" aria-hidden="true"> · </span><a href="#midi-clock-and-transport">MIDI Clock and Transport</a></nav>
+<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#clock-division">Clock division</a><span class="sep" aria-hidden="true"> · </span><a href="#swing">Swing</a><span class="sep" aria-hidden="true"> · </span><a href="#sleep">SLEEP</a><span class="sep" aria-hidden="true"> · </span><a href="#midi-clock-and-transport">MIDI clock and transport</a></nav>
 
 ---
 
-## Clock Division
+## Clock division
 
 ### What it does
 
@@ -50,6 +48,11 @@ to two thirds of one:
 | Triplet quarter| 8/3 × a 1/16 |
 | Triplet half   | 4/3 × a 1/16 |
 | Triplet full   | 2/3 × a 1/16 |
+
+Note lengths follow the step. A duty value, a legato note and a sustain all
+measure in this sequencer's steps, so slowing a sequencer to Half doubles
+every note length with it: a staccato line stays staccato, and a legato note
+still reaches the next trig.
 
 ### What you see
 
@@ -261,7 +264,7 @@ division) keeps running unchanged.
 
 ---
 
-## MIDI Clock and Transport
+## MIDI clock and transport
 
 MSEQ does not generate its own clock in production. It receives MIDI
 real-time clock at 24 PPQN from Ableton via the PiSound MIDI input, and that
@@ -344,4 +347,4 @@ grid, the **MIDI Clock Sync Delay** slider is the place to fix it (see
  : how players land on these views in the first place
 - [Saving and loading sessions](/documentation/MSEQ/sessions): divisions and swing are saved with the session
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: Drums<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: The LaunchControl<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/lc-status">Modifier buttons</a> →</span></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Drums<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#timing">Timing</a>: <strong>Clock</strong><span class="sep" aria-hidden="true"> · </span><span class="next">The LaunchControl<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/lc-status">Modifier buttons</a> →</span></nav>

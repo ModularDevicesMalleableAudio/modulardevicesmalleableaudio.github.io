@@ -8,9 +8,7 @@ permalink: /documentation/MSEQ/setup-debugging
      docs/setup-debugging.md.
      Do not edit here: edit the source and regenerate. -->
 
-<nav class="docs-breadcrumbs" aria-label="Breadcrumb"><a href="/documentation/MSEQ/">MSEQ documentation</a><span class="sep" aria-hidden="true"> › </span><span>Getting started</span><span class="sep" aria-hidden="true"> › </span><span aria-current="page">Setup debugging</span></nav>
-
-<nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/setup">Setup</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/ableton">Ableton and MIDI routing</a> →</span></nav>
+<nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#getting-started">Getting started</a></nav>
 
 <h1>Setup debugging</h1>
 
@@ -139,4 +137,4 @@ the [install readme](https://gitlab.com/malleable808/sequencer/-/blob/main/insta
 - [Cloud sync troubleshooting](/documentation/MSEQ/cloud-sync-troubleshooting): when session
   sync misbehaves
 
-<div class="docs-page-nav"><nav class="docs-pager" aria-label="Page navigation"><span class="prev">← Previous: <a href="/documentation/MSEQ/setup">Setup</a></span><span class="sep" aria-hidden="true"> · </span><span class="up">Up: <a href="/documentation/MSEQ/">MSEQ documentation</a></span><span class="sep" aria-hidden="true"> · </span><span class="next">Next: <a href="/documentation/MSEQ/ableton">Ableton and MIDI routing</a> →</span></nav><nav class="docs-siblings" aria-label="Other pages in this section"><a href="/documentation/MSEQ/manual">Overview</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup">Setup</a><span class="sep" aria-hidden="true"> · </span><strong>Setup debugging</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/ableton">Ableton and MIDI routing</a></nav></div>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#getting-started">Getting started</a>: <a href="/documentation/MSEQ/manual">Overview</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/setup">Setup</a><span class="sep" aria-hidden="true"> · </span><strong>Setup debugging</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/ableton">Ableton and MIDI routing</a></nav>
