@@ -50,6 +50,13 @@
   {%- endcomment -%}
   <link rel="stylesheet" type="text/css" href="{{ '/assets/main.css' | relative_url }}">
 
+  {%- comment -%}
+    Click-to-enlarge for content images. A file rather than an inline
+    script, so the Content-Security-Policy drafted in the layouts
+    (script-src 'self') can be switched on without breaking it.
+  {%- endcomment %}
+  <script src="{{ '/assets/js/lightbox.js' | relative_url }}" defer></script>
+
   <link rel="apple-touch-icon" sizes="180x180" href="{{ 'assets/apple-touch-icon.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/favicon-32x32.png' | relative_url }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/favicon-16x16.png' | relative_url }}">

@@ -230,6 +230,27 @@ figure.fig-pair .pick-hardware:checked ~ .shot-hardware { display: block; }
 figure.fig-pair figcaption { font-size: 0.75rem;  color: rgba(219, 219, 219, 0.62);  margin-top: $space-tight; }
 
 /**
+ * Lightbox
+ *
+ * assets/js/lightbox.js opens a content image in a <dialog> over a darkened
+ * page. The browser's default dialog is a padded, bordered box sized to its
+ * content; this one is the whole window, transparent, with the image centred
+ * in it and the darkening done by the backdrop. The padding keeps the image
+ * clear of the close button.
+ *
+ * A raster image is shown at most at its natural size, so a small one is not
+ * blown up into a blur. A vector has no such limit and fills the window.
+ */
+main img[data-lightbox] { cursor: zoom-in; }
+dialog.lightbox { box-sizing: border-box;  width: 100%;  height: 100%;  max-width: none;  max-height: none;  margin: 0;  padding: 3.5rem 1rem;  border: none;  background: transparent;  cursor: zoom-out; }
+dialog.lightbox[open] { display: flex;  align-items: center;  justify-content: center; }
+dialog.lightbox::backdrop { background: rgba(0, 0, 0, 0.92); }
+dialog.lightbox img { max-width: 100%;  max-height: 100%;  width: auto;  height: auto;  object-fit: contain; }
+dialog.lightbox.lightbox-vector img { width: 100%;  height: 100%; }
+dialog.lightbox .lightbox-close { position: fixed;  top: max(0.75rem, env(safe-area-inset-top));  right: max(0.75rem, env(safe-area-inset-right));  min-width: 2.75rem;  min-height: 2.75rem;  padding: 0;  font: inherit;  font-size: 1.5rem;  line-height: 1;  color: var(--text-color);  background-color: var(--background-color);  border: var(--border);  cursor: pointer; }
+dialog.lightbox .lightbox-close:hover { color: var(--background-color);  background-color: var(--base-color); }
+
+/**
  * Documentation navigation
  *
  * The MSEQ documentation pages are generated (see the sequencer repo's
