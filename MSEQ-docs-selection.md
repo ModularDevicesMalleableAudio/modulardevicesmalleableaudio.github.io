@@ -12,6 +12,8 @@ permalink: /documentation/MSEQ/selection
 
 <h1>Selecting sequencers and views</h1>
 
+<img src="/assets/mseq/selection-hero.jpg" alt="One hand turning a synth&#x27;s knobs while another plays a lit Launchpad in red light" style="display:block;margin-inline:auto">
+
 MSEQ supports two independent players, each looking at the same 16 sequencers through their own pair of Launchpads, with up to 8 views per sequencer. Selection is done from the Launchpad hardware: the top row chooses which sequencer you are editing, and the rightmost column (column 9) chooses which view of it you see.
 
 Selection is player-specific: moving sequencer or view changes only your hardware view of the sequencer, and the other player has their own. Changing view or sequencer also has no effect on what is playing, which carries on even when you are not looking at it.
