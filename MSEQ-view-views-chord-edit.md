@@ -30,8 +30,8 @@ to the same shared masks.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a pad | LP grid | Toggle that scale row on/off in the sequencer's chord voicing | none |
-| SHIFT + MUTE / SHIFT + SOLO | LP grid | **No-op**: deliberately excluded from reset/randomise | any |
+| Press a pad | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle that scale row on/off in the sequencer's chord voicing | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE / SHIFT + SOLO | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **No-op**: deliberately excluded from reset/randomise | <span class="cell-label">Modifiers</span> any |
 
 ## See also
 

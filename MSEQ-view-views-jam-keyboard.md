@@ -33,24 +33,24 @@ Hold keys to gate notes; release to clear.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press + hold rows 1–7 | LP grid | Gate the resolved note (scale degree + octave) until release | none |
-| Release rows 1–7 | LP grid | Drop the note from the gate | none |
-| Press row 7, col 8 (unlocked) | LP grid | **Freeze**: latch the current gate so the notes keep sounding after release | none |
-| Press row 7, col 8 (frozen) | LP grid | Unlock: clear the gate and send all-notes-off scoped to the jam sequencer | none |
-| Press a keyboard note while frozen | LP grid | Unlocks first, then starts a fresh live hold | none |
+| Press + hold rows 1–7 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Gate the resolved note (scale degree + octave) until release | <span class="cell-label">Modifiers</span> none |
+| Release rows 1–7 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Drop the note from the gate | <span class="cell-label">Modifiers</span> none |
+| Press row 7, col 8 (unlocked) | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Freeze**: latch the current gate so the notes keep sounding after release | <span class="cell-label">Modifiers</span> none |
+| Press row 7, col 8 (frozen) | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Unlock: clear the gate and send all-notes-off scoped to the jam sequencer | <span class="cell-label">Modifiers</span> none |
+| Press a keyboard note while frozen | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Unlocks first, then starts a fresh live hold | <span class="cell-label">Modifiers</span> none |
 
 ### Trig pattern (row 8: same modifier model as trig view)
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8 | LP grid | Toggle step OFF ↔ ON | none |
-| SHIFT + press row 8 | LP grid | Toggle PERCENTAGE_CHANCE | shift |
-| MUTE + press row 8 | LP grid | TRIGMUTE | mute |
-| SOLO + press row 8, twice | LP grid | Sustain: start step, then end step | solo |
-| REC ARM + press row 8 | LP grid | Cycle MOD1 → MOD2 → MOD4 → MOD8 → MOD16 | rec_arm |
-| 8A + press row 8 | LP grid | Cycle INVMOD4 → INVMOD8 → INVMOD16 | 8a |
-| SHIFT + MUTE + press row 8 | LP grid | **Reset the whole pattern**: all 16 steps → OFF + engine all-notes-off. Any row-8 cell, no undo | shift+mute |
-| SHIFT + SOLO + press row 8 | LP grid | **Randomise the whole pattern**: all 16 steps. Any row-8 cell, no undo | shift+solo |
+| Press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle step OFF ↔ ON | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle PERCENTAGE_CHANCE | <span class="cell-label">Modifiers</span> shift |
+| MUTE + press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> TRIGMUTE | <span class="cell-label">Modifiers</span> mute |
+| SOLO + press row 8, twice | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Sustain: start step, then end step | <span class="cell-label">Modifiers</span> solo |
+| REC ARM + press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Cycle MOD1 → MOD2 → MOD4 → MOD8 → MOD16 | <span class="cell-label">Modifiers</span> rec_arm |
+| 8A + press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Cycle INVMOD4 → INVMOD8 → INVMOD16 | <span class="cell-label">Modifiers</span> 8a |
+| SHIFT + MUTE + press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset the whole pattern**: all 16 steps → OFF + engine all-notes-off. Any row-8 cell, no undo | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise the whole pattern**: all 16 steps. Any row-8 cell, no undo | <span class="cell-label">Modifiers</span> shift+solo |
 
 > The freeze pad is a **shared** latch keyed on the jam sequencer, not per player:
 > either player's press moves the same freeze state. It is off-white when

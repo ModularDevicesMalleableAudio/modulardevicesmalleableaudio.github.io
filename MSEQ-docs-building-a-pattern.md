@@ -23,7 +23,7 @@ both: what every colour means and which modifier writes it.
 
 The quickest way to get a feel for the trig types is to watch a pattern grow.
 Everything below happens on one sequencer in C minor (see
-[Chords and scales](/documentation/MSEQ/chords-and-scales) for how key and scale are set), and
+[Key and following](/documentation/MSEQ/chords-and-scales) for how key and scale are set), and
 each figure changes exactly one thing from the figure before it, so you can
 attribute every difference to the gesture that caused it.
 
@@ -287,7 +287,7 @@ The 16-bar cycle counts bars 0–15. Mod and InvMod conditions evaluate at the b
 - [Trigs](/documentation/MSEQ/trigs): the trig view reference, covering every status, colour and edit gesture
 - [Step values](/documentation/MSEQ/step-views): per-step duty and velocity, which set the length and weight of one hit
 - [Mutes and row states](/documentation/MSEQ/mutes): row play modes, including drone and legato
-- [Chords and scales](/documentation/MSEQ/chords-and-scales): key and scale, which decide the notes these rows play
+- [Key and following](/documentation/MSEQ/chords-and-scales): key and scale, which decide the notes these rows play
 - [Euclidean trigs](/documentation/MSEQ/euclidean): filling the gaps in a pattern algorithmically
 
 <nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><strong>Building a pattern</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/rotation">Pattern rotation</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

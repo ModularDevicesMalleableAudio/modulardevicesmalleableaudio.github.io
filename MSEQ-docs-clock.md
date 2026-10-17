@@ -341,8 +341,8 @@ grid, the **MIDI Clock Sync Delay** slider is the place to fix it (see
 
 - [Ableton setup](/documentation/MSEQ/ableton): MIDI clock source, BPM
   detector, M4L routers, LC user templates
-- [Reset and randomise](/documentation/MSEQ/reset): per-view reset/randomise behaviour;
-  CLOCK_DIV is view 14, SWING is view 15, SLEEP is view 17
+- [Reset and randomise](/documentation/MSEQ/reset): per-view reset/randomise behaviour,
+  including the clock division, swing and sleep views
 - [Selecting sequencers and views](/documentation/MSEQ/selection)
  : how players land on these views in the first place
 - [Saving and loading sessions](/documentation/MSEQ/sessions): divisions and swing are saved with the session

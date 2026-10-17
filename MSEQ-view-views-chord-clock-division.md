@@ -31,12 +31,12 @@ shared LED feedback.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press column N (1–8) | LP grid | Set that sequencer's chord advance rate to N | none |
-| SHIFT + MUTE / SHIFT + SOLO | LP grid | **No-op**: deliberately excluded from reset/randomise (single-value view) | any |
+| Press column N (1–8) | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set that sequencer's chord advance rate to N | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE / SHIFT + SOLO | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **No-op**: deliberately excluded from reset/randomise (single-value view) | <span class="cell-label">Modifiers</span> any |
 
 ## See also
 
-- [Chord progression](/documentation/MSEQ/chords), "Per-Chord Clock Division": full rate table
+- [Key and following](/documentation/MSEQ/chords-and-scales), "Chord clock division": full rate table
 - [Chord progression view reference](/documentation/MSEQ/views/chord-prog): the progression being advanced
 
 <nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#view-reference">View reference</a>: <a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/cc-slew">CC Slew</a><span class="sep" aria-hidden="true"> · </span><strong>Chord Clock Division</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/views/mw-toggle">Mod-Wheel Toggle</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#view-reference" title="All 26 pages in View reference">…</a></nav>

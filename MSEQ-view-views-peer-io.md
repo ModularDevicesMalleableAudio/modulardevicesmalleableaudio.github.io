@@ -29,16 +29,16 @@ state, while sharing the global pending-cue and undo/redo machinery.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press occupied LHS col 8 | Session row | Load peer full session | none |
-| REC_ARM + occupied LHS col 8 | Session row | Arm peer full-session load cue | rec_arm |
-| Press occupied data pad, then live row | Data column → top row | Load peer sequencer into a live sequencer | none |
-| REC_ARM on target live row | Top row | Arm peer sequencer-load cue | rec_arm |
-| Press occupied RHS col 8, then RHS 88 | Chord column → chord top | Load peer chord progression | none |
-| REC_ARM on RHS 88 | Chord top | Arm peer chord-progression cue | rec_arm |
-| Bare LHS 88 | Top-right LHS LP | Undo/redo, unless a cross-view cue hint is showing | none |
-| Bare LHS 89 | Col 9 top | Sync now: push local and pull peer browse mirror | none |
-| SHIFT + LHS 89 | Col 9 top | Toggle background sync enabled | shift |
-| SHIFT + MUTE + LHS 89 | Col 9 top | Reset sync status/backoff | shift+mute |
+| Press occupied LHS col 8 | <span class="cell-label">Where</span> Session row | <span class="cell-label">Action</span> Load peer full session | <span class="cell-label">Modifiers</span> none |
+| REC_ARM + occupied LHS col 8 | <span class="cell-label">Where</span> Session row | <span class="cell-label">Action</span> Arm peer full-session load cue | <span class="cell-label">Modifiers</span> rec_arm |
+| Press occupied data pad, then live row | <span class="cell-label">Where</span> Data column → top row | <span class="cell-label">Action</span> Load peer sequencer into a live sequencer | <span class="cell-label">Modifiers</span> none |
+| REC_ARM on target live row | <span class="cell-label">Where</span> Top row | <span class="cell-label">Action</span> Arm peer sequencer-load cue | <span class="cell-label">Modifiers</span> rec_arm |
+| Press occupied RHS col 8, then RHS 88 | <span class="cell-label">Where</span> Chord column → chord top | <span class="cell-label">Action</span> Load peer chord progression | <span class="cell-label">Modifiers</span> none |
+| REC_ARM on RHS 88 | <span class="cell-label">Where</span> Chord top | <span class="cell-label">Action</span> Arm peer chord-progression cue | <span class="cell-label">Modifiers</span> rec_arm |
+| Bare LHS 88 | <span class="cell-label">Where</span> Top-right LHS LP | <span class="cell-label">Action</span> Undo/redo, unless a cross-view cue hint is showing | <span class="cell-label">Modifiers</span> none |
+| Bare LHS 89 | <span class="cell-label">Where</span> Col 9 top | <span class="cell-label">Action</span> Sync now: push local and pull peer browse mirror | <span class="cell-label">Modifiers</span> none |
+| SHIFT + LHS 89 | <span class="cell-label">Where</span> Col 9 top | <span class="cell-label">Action</span> Toggle background sync enabled | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + MUTE + LHS 89 | <span class="cell-label">Where</span> Col 9 top | <span class="cell-label">Action</span> Reset sync status/backoff | <span class="cell-label">Modifiers</span> shift+mute |
 
 There are no save, init, delete, overwrite, or contribution gestures in this
 view. SHIFT and SHIFT + MUTE save/init gestures are deliberately ignored.

@@ -31,12 +31,12 @@ velocity to that step instantly. No modifier needed.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP grid | Set the step (column) to the pressed row's velocity | none |
-| SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 steps → velocity of row R | shift+mute |
-| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `6` (row 6, the velocity identity ×1.0) | shift+mute |
-| SHIFT + SOLO + press row R | LP grid | **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | shift+solo |
-| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 1–8 | shift+solo |
-| Row-mode gestures | Row mutes | Row play-mode controls still apply (see "Row mode" in [Trig view reference](/documentation/MSEQ/views/trig)) | any |
+| Press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the step (column) to the pressed row's velocity | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset**: all 16 steps → velocity of row R | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + MUTE + press | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Reset**: all 16 steps → `6` (row 6, the velocity identity ×1.0) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | <span class="cell-label">Modifiers</span> shift+solo |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Randomise**: all 16 steps uniform random across values 1–8 | <span class="cell-label">Modifiers</span> shift+solo |
+| Row-mode gestures | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Row play-mode controls still apply (see "Row mode" in [Trig view reference](/documentation/MSEQ/views/trig)) | <span class="cell-label">Modifiers</span> any |
 
 ## See also
 

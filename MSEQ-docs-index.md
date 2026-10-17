@@ -8,6 +8,8 @@ permalink: /documentation/MSEQ/
 
 <h1>MSEQ documentation</h1>
 
+<p><img src="/assets/mseq/jam-session-hero.jpg" alt="A hand pressing lit pads on a Launchpad in a dark room, with more gear on the shelves behind" style="display:block;width:100%;height:auto"></p>
+
 ## Getting started
 
 - [Overview](/documentation/MSEQ/manual)
@@ -38,8 +40,8 @@ permalink: /documentation/MSEQ/
 
 ## Harmony
 
-- [Chords and scales](/documentation/MSEQ/chords-and-scales)
 - [Chord progression](/documentation/MSEQ/chords)
+- [Key and following](/documentation/MSEQ/chords-and-scales)
 - [Voicing and modulation](/documentation/MSEQ/chord-voicing)
 
 ## Drums

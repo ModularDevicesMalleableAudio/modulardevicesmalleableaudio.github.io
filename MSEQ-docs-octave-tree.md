@@ -131,7 +131,7 @@ constantly shifting, or shifting in an A/B style pattern over the two bars.
 
 ## Cross-references
 
-- [Chords and scales](/documentation/MSEQ/chords-and-scales): Chord row-octave sequencing works in parallel with per-row octave trees
+- [Key and following](/documentation/MSEQ/chords-and-scales): Chord row-octave sequencing works in parallel with per-row octave trees
 - [Trigs](/documentation/MSEQ/trigs): trig view, where sequencer-level octave is set via SHIFT + top-row and MUTE + top-row LC buttons
 - [Reset and randomise](/documentation/MSEQ/reset): Full reset/randomise matrix across all views
 

@@ -48,20 +48,20 @@ Exact LED layout is documented in [Octave tree](/documentation/MSEQ/octave-tree)
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LHS LP | Set the pressed row's base octave immediately | none |
+| Press | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Set the pressed row's base octave immediately | <span class="cell-label">Modifiers</span> none |
 
 ### RHS: octave tree sequence
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | RHS LP | Set one 4-step octave-tree slot for the pressed row | none |
+| Press | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Set one 4-step octave-tree slot for the pressed row | <span class="cell-label">Modifiers</span> none |
 
 ### Whole-row gestures
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| SHIFT + MUTE + press row R | LP grid | **Reset row R**: base octave → 0, all 8 sequence slots → 0 (flat) | shift+mute |
-| SHIFT + SOLO + press row R | LP grid | **Randomise row R**: base octave → random −3…+4; each sequence slot → random −4…+4 | shift+solo |
+| SHIFT + MUTE + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset row R**: base octave → 0, all 8 sequence slots → 0 (flat) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise row R**: base octave → random −3…+4; each sequence slot → random −4…+4 | <span class="cell-label">Modifiers</span> shift+solo |
 
 > Sequencer-level octave (all rows at once) is set from the LC: SHIFT + top
 > row = up, SHIFT + bottom row = down (see [Global controls reference](/documentation/MSEQ/views/global)).

@@ -113,6 +113,6 @@ per value rather than a burst of intermediate ones.
 
 - [CC arps](/documentation/MSEQ/cc-arps): the CC arp views that produce the targets slew smooths between.
 - [Clock and timing](/documentation/MSEQ/clock): step duration, which is what auto slew counts its glide in.
-- [Selecting sequencers and views](/documentation/MSEQ/selection): how to reach view 8.2 (the slew view) on any sequencer.
+- [Selecting sequencers and views](/documentation/MSEQ/selection): how to reach the CC slew view on sequencer 8.
 
 <nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a>: <a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/toggles">Toggle views</a><span class="sep" aria-hidden="true"> · </span><strong>Slew and CC smoothing</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav>

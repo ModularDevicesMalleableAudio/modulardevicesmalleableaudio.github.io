@@ -124,7 +124,7 @@ notes. Every view has its own page in this manual:
 - **CC Arp**: sequencing your synths' knobs ([CC arps](/documentation/MSEQ/cc-arps))
 - **Chord Options (Root / Scale / CP Toggle)**: root note, scale, and whether a
   sequencer follows the progression
-  ([Chords and scales](/documentation/MSEQ/chords-and-scales))
+  ([Key and following](/documentation/MSEQ/chords-and-scales))
 - **Chord Progression**: the sixteen-bar chord progression itself
   ([Chord progression](/documentation/MSEQ/chords))
 - **Chord Edit (Voicing Mask)**: which notes of the scale each sequencer takes
@@ -144,7 +144,7 @@ notes. Every view has its own page in this manual:
 - **CC Slew**: how quickly a CC slides to its new value
   ([Slew and CC smoothing](/documentation/MSEQ/slew))
 - **Chord Clock Division**: how fast each sequencer walks the progression
-  ([Chord progression](/documentation/MSEQ/chords))
+  ([Key and following](/documentation/MSEQ/chords-and-scales))
 - **Mod-Wheel Toggle**: which sequencers follow the shared mod-wheel knob
   ([Toggle views](/documentation/MSEQ/toggles))
 - **Autodrop**: cue sequencers and rows in and out
@@ -261,7 +261,8 @@ circles down the right-hand edge are the row mute controls.
 
 **Macro control**
 
-- [Chord progression](/documentation/MSEQ/chords): key, scale, chords, inversions
+- [Chord progression](/documentation/MSEQ/chords): the chord progression and its inversions
+- [Key and following](/documentation/MSEQ/chords-and-scales): key, scale, and which sequencers follow the progression
 - [Clock and timing](/documentation/MSEQ/clock): clock division, swing, SLEEP, transport
 - [Toggle views](/documentation/MSEQ/toggles): the toggle views
 - [Autodrops](/documentation/MSEQ/autodrops): dropping sequencers and rows in and out
@@ -286,7 +287,7 @@ var legacyAnchors = {
   "chord-progression-octave-tree": "octave-tree",
   "chord-progression-sequencer": "chords",
   "clock-division": "clock",
-  "clock-division-chord-progression-config": "clock",
+  "clock-division-chord-progression-config": "chords-and-scales",
   "direct-monitoring-jam-keyboard": "jam-keyboard",
   "duty-cycle-sequencer": "step-views",
   "jam-keyboard": "jam-keyboard",

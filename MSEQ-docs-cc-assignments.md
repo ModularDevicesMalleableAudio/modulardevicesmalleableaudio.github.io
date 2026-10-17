@@ -178,7 +178,7 @@ Rows 6, 4 and 1 are unassigned.
 
 ---
 
-### Sequencer 13: TR-8 Main (View 6)
+### Sequencer 13: TR-8 Main
 
 Drum CC rows use per-row trig groups: rows controlling the same drum sound share a group.
 
@@ -197,7 +197,7 @@ The three BD rows (3, 2 and 1) share one trig group, and so do the two SD rows (
 
 ---
 
-### Sequencer 13: TR-8 Alt (View 7)
+### Sequencer 13: TR-8 Alt
 
 | Row | Voice | CC | TR-08 Parameter |
 |-----|-------|----|-----------------|

@@ -37,28 +37,28 @@ Three bands on the shared view:
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8 root cell | LP grid | Set the global root note (0–11) | none |
-| Press row 1 sequencer cell | LP grid | Toggle that sequencer's chord-progression follow on/off | none |
+| Press row 8 root cell | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the global root note (0–11) | <span class="cell-label">Modifiers</span> none |
+| Press row 1 sequencer cell | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle that sequencer's chord-progression follow on/off | <span class="cell-label">Modifiers</span> none |
 
 ### RHS: scale / chord adjustment
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8, col 7 / col 8 | RHS LP | Select **major** / **minor** scale; broadcasts to every scale-aware view immediately | none |
-| Press row 7, col 7 / col 8 | RHS LP | Cycle the major / minor chord-adjustment mode: plain → adjusted → diatonic → plain. The two qualities are set independently | none |
+| Press row 8, col 7 / col 8 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Select **major** / **minor** scale; broadcasts to every scale-aware view immediately | <span class="cell-label">Modifiers</span> none |
+| Press row 7, col 7 / col 8 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Cycle the major / minor chord-adjustment mode: plain → adjusted → diatonic → plain. The two qualities are set independently | <span class="cell-label">Modifiers</span> none |
 
 ### Whole-view behaviour
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| SHIFT + MUTE / SHIFT + SOLO | LP grid | **No-op**: deliberately excluded from reset/randomise | any |
+| SHIFT + MUTE / SHIFT + SOLO | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **No-op**: deliberately excluded from reset/randomise | <span class="cell-label">Modifiers</span> any |
 
 > A scale-mode change instantly re-voices all chord-following sequencers
 > and re-draws note-arp keyboard overlays.
 
 ## See also
 
-- [Chords and scales](/documentation/MSEQ/chords-and-scales), "Root Note + Scale": cell colours and arrays
+- [Key and following](/documentation/MSEQ/chords-and-scales), "Chord options view": cell colours and arrays
 - [Toggle views](/documentation/MSEQ/toggles), "Chord progression toggle": engine semantics
 - [Note arp view reference](/documentation/MSEQ/views/note-arp): scale-mode interaction
 

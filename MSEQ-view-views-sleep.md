@@ -28,9 +28,9 @@ position 81. Selecting any other view re-enables rendering.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press position 81 | LP grid | Toggle the frontend lights on/off | none |
-| Press any view button | View selectors | Exit SLEEP (normal view selection) | none |
-| SHIFT + MUTE / SHIFT + SOLO | LP grid | **No-op**: SLEEP holds no musical state | any |
+| Press position 81 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle the frontend lights on/off | <span class="cell-label">Modifiers</span> none |
+| Press any view button | <span class="cell-label">Where</span> View selectors | <span class="cell-label">Action</span> Exit SLEEP (normal view selection) | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE / SHIFT + SOLO | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **No-op**: SLEEP holds no musical state | <span class="cell-label">Modifiers</span> any |
 
 ## See also
 

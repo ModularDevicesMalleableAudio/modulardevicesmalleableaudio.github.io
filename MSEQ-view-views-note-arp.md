@@ -33,24 +33,24 @@ its 4 octaves. P1 and P2 edit state is fully independent.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| SHIFT + press (row, col) | LHS LP | Set that row's arp length to the pressed column (1–8) immediately | shift |
-| Double-tap same cell (≤350 ms, no modifier) | LHS LP | Set that row's arp length to the column | none |
-| MUTE + press, cols 2–8 | LHS LP | Load preset arpeggio into all 8 rows of the sequencer: row picks the mode (row 8 UP, then DOUBLE_UP, UP_PEDAL, DOUBLE_UP_PEDAL, DOUB_DOWN_PEDAL, DOWN_PEDAL, DOUBLE_DOWN, row 1 DOWN), column picks the interval (seconds … octaves); the pressed pad flashes lime-yellow for ~1 s | mute |
-| Press any cell | LHS LP | Select that row + step for editing (fires under every modifier) | any |
-| MUTE + press, col 1 | LHS LP | **Reset to init**, sequencer-wide: write the canonical diatonic cascade to all 8 rows, **zero every row's length**, rebuild the overlay. Destructive, no undo | mute |
+| SHIFT + press (row, col) | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Set that row's arp length to the pressed column (1–8) immediately | <span class="cell-label">Modifiers</span> shift |
+| Double-tap same cell (≤350 ms, no modifier) | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Set that row's arp length to the column | <span class="cell-label">Modifiers</span> none |
+| MUTE + press, cols 2–8 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Load preset arpeggio into all 8 rows of the sequencer: row picks the mode (row 8 UP, then DOUBLE_UP, UP_PEDAL, DOUBLE_UP_PEDAL, DOUB_DOWN_PEDAL, DOWN_PEDAL, DOUBLE_DOWN, row 1 DOWN), column picks the interval (seconds … octaves); the pressed pad flashes lime-yellow for ~1 s | <span class="cell-label">Modifiers</span> mute |
+| Press any cell | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Select that row + step for editing (fires under every modifier) | <span class="cell-label">Modifiers</span> any |
+| MUTE + press, col 1 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> **Reset to init**, sequencer-wide: write the canonical diatonic cascade to all 8 rows, **zero every row's length**, rebuild the overlay. Destructive, no undo | <span class="cell-label">Modifiers</span> mute |
 
 ### RHS: keyboard editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a key | RHS LP | Write the resolved pitch into the selected row's selected step | none |
-| Press position 88 | RHS LP | Write a **rest** (no-note sentinel) into the slot | none |
+| Press a key | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Write the resolved pitch into the selected row's selected step | <span class="cell-label">Modifiers</span> none |
+| Press position 88 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Write a **rest** (no-note sentinel) into the slot | <span class="cell-label">Modifiers</span> none |
 
 ### Whole-view behaviour
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| SHIFT + MUTE / SHIFT + SOLO | LP grid | **No-op**: note arp deliberately has no reset/randomise | any |
+| SHIFT + MUTE / SHIFT + SOLO | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **No-op**: note arp deliberately has no reset/randomise | <span class="cell-label">Modifiers</span> any |
 
 > Scale mode (major/minor) is global, and changing it from the chord options
 > view **keeps your arps**: notes you played follow the new scale, notes

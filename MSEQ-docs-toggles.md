@@ -22,13 +22,13 @@ and the **chord-progression** toggle. All three live on the meta sequencers
 
 ---
 
-## Mod-wheel toggle (view 8.3)
+## Mod-wheel toggle
 
 **What it does**: Enables or disables shared mod-wheel (CC1) broadcast for
 that sequencer. One LaunchControl knob (LC8 knob 2) is fanned out to every sequencer whose toggle
 is on.
 
-**Where it lives.** View 8.3, on both LPs of both players: row 8 of the LHS
+**Where it lives.** The mod-wheel toggle view on sequencer 8, on both LPs of both players: row 8 of the LHS
 LP is one cell per sequencer 1–7, row 8 of the RHS LP one cell per sequencer 9–15. Sequencers 8
 and 16 have no mod-wheel routing and stay dark.
 
@@ -44,13 +44,13 @@ waiting for you to move it.
 
 ---
 
-## Autodrop eligibility toggle (view 8.1)
+## Autodrop eligibility toggle
 
 **What it does**: Marks a sequencer (or the TR-8 drum bus) as eligible to
 receive autodrops. Autodrops are the temporary mute/CC/note fills described in
 [Autodrops](/documentation/MSEQ/autodrops); this toggle is the per-sequencer opt-in.
 
-**Where it lives**: Row 8 of view 8.1. LHS cols 1–7 are synth sequencers 1–7; RHS
+**Where it lives**: Row 8 of the autodrop view on sequencer 8. LHS cols 1–7 are synth sequencers 1–7; RHS
 cols 1–4 are sequencers 9–12; RHS cols 5–6 both toggle the TR-8, whose main and alt
 banks share one eligibility setting. Other cells on the same view drive
 autodrop cues for individual rows and TR-8 voices, described in
@@ -68,18 +68,18 @@ hand.
 
 ---
 
-## Chord progression toggle (view 11)
+## Chord progression toggle
 
 **What it does**: Per-sequencer "follow chord progression" switch. With the
 toggle on, the sequencer's pitches follow the global chord progression, the root
 note and the inversion. With it off, the sequencer plays its own untransposed
 pitches.
 
-**Where it lives**: Row 1 of view 11. LHS cols 1–7 are sequencers 1–7; RHS cols
+**Where it lives**: Row 1 of the chord options view on sequencer 16. LHS cols 1–7 are sequencers 1–7; RHS cols
 1–7 are sequencers 9–15. Sequencers 8 and 16 (cols 8) have no CP toggle and stay dark.
 The view also holds the chord-root strip (row 8) and the scale-mode pads (RHS
 rows 7–8 cols 7–8), both covered in
-[Chords and scales](/documentation/MSEQ/chords-and-scales).
+[Key and following](/documentation/MSEQ/chords-and-scales).
 
 **What you see.** Off is slate grey, on is that sequencer's own colour.
 
@@ -96,6 +96,6 @@ note that sequencer plays. Notes already sounding are not re-pitched.
 - [Voicing and modulation](/documentation/MSEQ/chord-voicing): the per-sequencer voicing mask and modulator
 - [Autodrops](/documentation/MSEQ/autodrops): autodrop types and timing (checked by autodrop eligibility toggle)
 - [Mutes and row states](/documentation/MSEQ/mutes): sequencer and row mute model (autodrop is one of the cued states)
-- [Selecting sequencers and views](/documentation/MSEQ/selection): how to navigate to views 8.1 / 8.3 / 11 (col-9 view selectors on the LP, or top-bar sequencer + view button on the LC).
+- [Selecting sequencers and views](/documentation/MSEQ/selection): how to navigate to the autodrop, mod-wheel toggle and chord options views (col-9 view selectors on the LP, or top-bar sequencer + view button on the LC).
 
 <nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#the-launchcontrol">The LaunchControl</a>: <a href="/documentation/MSEQ/lc-status">Modifier buttons</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-knobs">Knobs and faders</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/lc-bottom-row">Bottom row</a><span class="sep" aria-hidden="true"> · </span><strong>Toggle views</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/slew">Slew and CC smoothing</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/autodrops">Autodrops</a></nav>

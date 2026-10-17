@@ -30,16 +30,16 @@ highlighted magenta. Both players edit the same shared arrays.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a new cell | LP grid | Set that bar's chord to the pressed row | none |
-| Press the lit cell again | LP grid | Cycle inversion: white → mustard → red → blue → green → white | none |
-| SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 bars → chord degree (R − 1) | shift+mute |
-| SHIFT + MUTE + press | Row mutes | **Reset**: all 16 bars → degree 0 (root) | shift+mute |
-| SHIFT + SOLO + press | LP grid | **Randomise**: each bar → uniform random degree 0–6 | shift+solo |
+| Press a new cell | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set that bar's chord to the pressed row | <span class="cell-label">Modifiers</span> none |
+| Press the lit cell again | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Cycle inversion: white → mustard → red → blue → green → white | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset**: all 16 bars → chord degree (R − 1) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + MUTE + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> **Reset**: all 16 bars → degree 0 (root) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise**: each bar → uniform random degree 0–6 | <span class="cell-label">Modifiers</span> shift+solo |
 
 ## See also
 
 - [Chord progression](/documentation/MSEQ/chords): inversion semantics and the grid
-- [Chords and scales](/documentation/MSEQ/chords-and-scales): chord construction and scale arrays
+- [Key and following](/documentation/MSEQ/chords-and-scales): chord construction and scale arrays
 - [Chord options view reference](/documentation/MSEQ/views/chord-options): root note and scale
 - [Chord edit view reference](/documentation/MSEQ/views/chord-edit): per-sequencer voicing mask
 - [Chord clock division view reference](/documentation/MSEQ/views/chord-clock-division): per-sequencer advance rate

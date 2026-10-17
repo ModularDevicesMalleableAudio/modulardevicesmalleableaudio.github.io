@@ -38,27 +38,27 @@ Eligibility cells (row 8) show the sequencer's own colour when on.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8, cols 1–7 | LHS LP | Toggle autodrop **eligibility** for seqs 1–7 | none |
-| Press row 7, cols 1–7 | LHS LP | Cue **mute autodrop** for seqs 1–7 (re-press cancels) | none |
-| Press row 6, cols 1–7 | LHS LP | Cue **CC autodrop** for seqs 1–7 | none |
-| Press row 5, cols 1–7 | LHS LP | Cue **note autodrop** for seqs 1–7 | none |
+| Press row 8, cols 1–7 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Toggle autodrop **eligibility** for seqs 1–7 | <span class="cell-label">Modifiers</span> none |
+| Press row 7, cols 1–7 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Cue **mute autodrop** for seqs 1–7 (re-press cancels) | <span class="cell-label">Modifiers</span> none |
+| Press row 6, cols 1–7 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Cue **CC autodrop** for seqs 1–7 | <span class="cell-label">Modifiers</span> none |
+| Press row 5, cols 1–7 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Cue **note autodrop** for seqs 1–7 | <span class="cell-label">Modifiers</span> none |
 
 ### RHS: sequencers 9–12 + TR-8
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8, cols 1–4 | RHS LP | Toggle eligibility for seqs 9–12 | none |
-| Press rows 5–7, cols 1–4 | RHS LP | Cue mute/CC/note autodrop for seqs 9–12 | none |
-| Press row 8, cols 5–6 | RHS LP | Toggle TR-8 bus eligibility | none |
-| Press col 5, rows 1–7 | RHS LP | Cue TR-8 **main** voices (BD/SD/LT/MT/HT); re-press toggles back | none |
-| Press col 6, rows 1–7 | RHS LP | Cue TR-8 **alt** voices (RS/HC/CH/OH/CY) | none |
+| Press row 8, cols 1–4 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Toggle eligibility for seqs 9–12 | <span class="cell-label">Modifiers</span> none |
+| Press rows 5–7, cols 1–4 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Cue mute/CC/note autodrop for seqs 9–12 | <span class="cell-label">Modifiers</span> none |
+| Press row 8, cols 5–6 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Toggle TR-8 bus eligibility | <span class="cell-label">Modifiers</span> none |
+| Press col 5, rows 1–7 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Cue TR-8 **main** voices (BD/SD/LT/MT/HT); re-press toggles back | <span class="cell-label">Modifiers</span> none |
+| Press col 6, rows 1–7 | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Cue TR-8 **alt** voices (RS/HC/CH/OH/CY) | <span class="cell-label">Modifiers</span> none |
 
 ### Shared behaviour
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Re-press a cued cell (same flavour) | LP grid | Cancel the cue | none |
-| Press a different-flavour row while cued | LP grid | Replace the cue if the new drop length ≥ existing | none |
+| Re-press a cued cell (same flavour) | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Cancel the cue | <span class="cell-label">Modifiers</span> none |
+| Press a different-flavour row while cued | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Replace the cue if the new drop length ≥ existing | <span class="cell-label">Modifiers</span> none |
 
 > A drop already in flight cannot be cancelled: the engine rejects the
 > press. Rows 1–4 on the LHS, col 8/9 cells, and the boom-tsk/ghost-RS

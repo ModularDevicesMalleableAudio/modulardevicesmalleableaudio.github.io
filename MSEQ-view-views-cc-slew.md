@@ -32,11 +32,11 @@ plus row 8 purple. Both players share the surface.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row N (2–7) | LP grid | Set manual slew level N (no-op if already N) | none |
-| Press row 1 | LP grid | Off → level 1; level 1 → **off**; any other state → level 1 | none |
-| Press row 8 | LP grid | Off/levels 1–7 → level 8; level 8 → **auto**; auto → level 8 | none |
-| SHIFT + MUTE + press (any row) | LP grid | **Column reset**: slew off (tau → 0) | shift+mute |
-| Press a column with no CC arps | LP grid | Ignored | none |
+| Press row N (2–7) | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set manual slew level N (no-op if already N) | <span class="cell-label">Modifiers</span> none |
+| Press row 1 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Off → level 1; level 1 → **off**; any other state → level 1 | <span class="cell-label">Modifiers</span> none |
+| Press row 8 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Off/levels 1–7 → level 8; level 8 → **auto**; auto → level 8 | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE + press (any row) | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Column reset**: slew off (tau → 0) | <span class="cell-label">Modifiers</span> shift+mute |
+| Press a column with no CC arps | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Ignored | <span class="cell-label">Modifiers</span> none |
 
 > There is no single always-off cell: to turn off without SHIFT + MUTE,
 > press row 1 (lands at level 1), then row 1 again (off).

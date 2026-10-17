@@ -34,20 +34,20 @@ alt state) even though the sequencer selection snaps.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row R, col N | LHS LP | Select row R; a double-tap within 350 ms sets its length to N slots | none |
-| SHIFT + press row R, col N | LHS LP | Select row R and set its length to N slots immediately | shift |
-| Press row R, col 9 | LHS LP col 9 | Select row R without changing its length | none |
-| SHIFT + MUTE + press row R, col 9 | LHS LP col 9 | **Reset** the pressed row's voice to its canonical value: ghost rows 3, boom-tsk 8, all others 6 (alt-view-aware) | shift+mute |
-| SHIFT + SOLO + press col 9 | LHS LP col 9 | **Randomise** the selected arp freely across values 1–8 | shift+solo |
+| Press row R, col N | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Select row R; a double-tap within 350 ms sets its length to N slots | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press row R, col N | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Select row R and set its length to N slots immediately | <span class="cell-label">Modifiers</span> shift |
+| Press row R, col 9 | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> Select row R without changing its length | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE + press row R, col 9 | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Reset** the pressed row's voice to its canonical value: ghost rows 3, boom-tsk 8, all others 6 (alt-view-aware) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press col 9 | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Randomise** the selected arp freely across values 1–8 | <span class="cell-label">Modifiers</span> shift+solo |
 
 ### RHS: value editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
-| SHIFT + press column N | RHS LP | Write the value **and** set the selected row's length to N slots (this can shrink the length; alt-view-aware) | shift |
-| SHIFT + MUTE + press row R | RHS LP | **Reset**: fill selected arp with row R's value (alt-view-aware) | shift+mute |
-| SHIFT + SOLO + press row R | RHS LP | **Randomise**: selected arp gaussian around row R | shift+solo |
+| Press | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Write the pressed row's value into the selected row's arp step (column 1–8) | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press column N | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Write the value **and** set the selected row's length to N slots (this can shrink the length; alt-view-aware) | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + MUTE + press row R | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> **Reset**: fill selected arp with row R's value (alt-view-aware) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press row R | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> **Randomise**: selected arp gaussian around row R | <span class="cell-label">Modifiers</span> shift+solo |
 
 A stored length of 0 means one active slot, not disabled playback. Column 1
 therefore parks the voice on its first velocity value. There is no off state

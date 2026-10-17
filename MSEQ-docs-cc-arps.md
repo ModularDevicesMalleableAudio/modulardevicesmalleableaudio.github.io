@@ -163,11 +163,11 @@ button on the LHS LP or a pad on the RHS LP.
 
 | Gesture | Effect |
 |---------|--------|
-| **SHIFT** + row mute button | Switch that row off: length 0 |
-| **SHIFT + MUTE** + row mute button | Reset that row: length 0, every value 4 |
-| **SHIFT + MUTE** + RHS row R | Set every step of the selected row to row R's value |
-| **SHIFT + SOLO** + row mute button | Randomise that row across 1 to 8, length unchanged |
-| **SHIFT + SOLO** + RHS row R | Randomise the selected row around row R's value |
+| <span class="keep-together">**SHIFT** + row mute button</span> | Switch that row off: length 0 |
+| <span class="keep-together">**SHIFT + MUTE** + row mute button</span> | Reset that row: length 0, every value 4 |
+| <span class="keep-together">**SHIFT + MUTE** + RHS row R</span> | Set every step of the selected row to row R's value |
+| <span class="keep-together">**SHIFT + SOLO** + row mute button</span> | Randomise that row across <span class="keep-together">1 to 8,</span> length unchanged |
+| <span class="keep-together">**SHIFT + SOLO** + RHS row R</span> | Randomise the selected row around row R's value |
 
 [Reset and randomise](/documentation/MSEQ/reset) has the full matrix across every view.
 

@@ -178,8 +178,8 @@ The cursor starts before the first slot and searches before it reads, so the
 first press of a session lands on slot 1 rather than sitting where it started.
 That is long-standing hardware behaviour and is deliberately preserved.
 
-The view repaints itself at boot, and lives at slot 4 of the
-meta-sequencer.
+The view repaints itself at boot, and lives on the meta-sequencer
+(sequencer 16).
 
 ### Cross-references
 
@@ -217,9 +217,9 @@ together. It is held per player, so the two of you can be on different kits at o
 
 ## Quick reference
 
-| Surface | Sequencer | View slot | What it does |
-|------|---------|-----------|--------|
-| Drum cycler | 16 | 4 | Picks which drum destinations UP/DOWN walks through |
-| TR-8 alt latch | 13 | n/a (not a view) | Switches the TR-8 surface between the main and alt kit |
+| Surface | Sequencer | What it does |
+|------|---------|--------|
+| Drum cycler | 16 | Picks which drum destinations UP/DOWN walks through |
+| TR-8 alt latch | 13 (not a view) | Switches the TR-8 surface between the main and alt kit |
 
 <nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Harmony<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#drums">Drums</a>: <strong>Drum views</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/boom-tsk">Boom-tsk</a></nav>

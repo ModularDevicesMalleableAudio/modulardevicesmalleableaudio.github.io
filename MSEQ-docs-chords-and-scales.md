@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Chords and scales
+title: Key and following
 permalink: /documentation/MSEQ/chords-and-scales
 ---
 
@@ -10,53 +10,23 @@ permalink: /documentation/MSEQ/chords-and-scales
 
 <nav class="docs-section" aria-label="Section"><a href="/documentation/MSEQ/#harmony">Harmony</a></nav>
 
-<h1>Chords and scales</h1>
+<h1>Key and following</h1>
 
-The tonal centre of the whole rig. This page covers what a chord
-progression does to a sequence, how each chord is built from the root note and
-scale you pick, and which sequencers follow it at all. Writing the progression
-itself is on [Chord progression](/documentation/MSEQ/chords), and the per-sequencer
-voicing on [Voicing and modulation](/documentation/MSEQ/chord-voicing).
-
----
-
-## What it does to a sequence
-
-Those sequencers that are set to follow the chord progression will have the
-notes of their sequence transposed in line with the chord progression. This
-allows you to imply different chords while still keeping the same rhythm and
-spirit of the original sequence.
-
-For example, say you have a sequence that plays **C E G F** on repeat (the 1st,
-3rd, 5th and 4th degrees of the scale). The rows that follow the progression
-will be transposed, and the rows that don't will remain stationary. With the
-1st, 3rd and 5th following and the 4th staying put, transposing to the fifth
-chord (G) turns that phrase into **G B D F**.
-
-Same pattern, same groove, different chord. Which rows follow is set per
-sequencer in [Chord Edit](/documentation/MSEQ/chord-voicing#chord-edit-view-type-13), and whether
-a sequencer follows at all is the [CP toggle](#cp-toggle-row-1).
+How each sequencer follows the [chord progression](/documentation/MSEQ/chords): the
+key every chord is built in, which sequencers follow at all, and how fast each
+one walks the progression. Which notes of a chord each sequencer plays is on
+[Voicing and modulation](/documentation/MSEQ/chord-voicing).
 
 ---
 
-## How chords are constructed
-
-The chord at each bar is built from the current scale's root note and the chord degree you have selected. The chord-adjustment setting (see *Root Note + Scale* below) then colours it, offsetting individual rows so a chord is voiced rather than stacked straight up the scale.
-
-Inversions reorder the notes of the chord:
-
-- <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c29d0d;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>**Third inversion**: the third of the chord is moved to the bass
-- <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#b50e19;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>**Fifth inversion**: the fifth of the chord is moved to the bass
-
-**Blue (random inversion)** re-evaluates at each bar boundary: it randomly chooses a subset of the currently-active chord rows and drops each chosen note by one octave, so the voicing varies bar to bar rather than cycling through fixed positions. **Green (mixed random)** also re-evaluates each bar, but picks from a fixed distribution (third inversion (35%), fifth inversion (35%), or a Blue-style random-inversion voicing (30%)), and never leaves the chord in root position.
-
----
-
-## Root note + scale (view type 11)
+## Chord options view
 
 The chord options view is the global tonal centre control. It sets the root
-note and scale (minor or major) used by every chord-following sequencer, and
-additionally hosts the per-sequencer CP-follow toggle.
+note, the scale (minor or major) and the chord-adjustment mode used by every
+chord-following sequencer, and additionally hosts the per-sequencer CP-follow
+toggle. Each chord is built from the root note and scale set here, the chord
+degree the progression names for the current bar, and the chord-adjustment
+mode.
 
 <figure class="fig-pair">
 <input type="radio" name="chord-options" id="chord-options-webapp" class="pick-webapp" checked>
@@ -74,7 +44,7 @@ progression, and slate when it does not, so this rig has every sequencer followi
 The mint-green pad at the top of the RHS LP selects minor. The two blue pads beneath it show
 that both the major and minor chord-adjustment selectors are in Adjusted mode.*
 
-**Where it lives**: View slot 0 on the meta-sequencer, shared across both
+**Where it lives**: On the meta-sequencer (sequencer 16), shared across both
 players.
 
 ### Chord-root strip (row 8)
@@ -87,39 +57,69 @@ than a flat row.
 
 ### Scale mode (RHS rows 7–8 cols 7–8)
 
-- **Row 8 cols 7–8**: major/minor select. Major lights col 7 yellow and
-  leaves col 8 slate; minor lights col 8 mint green and leaves col 7 slate.
-  Changing it refreshes every scale-aware view at once.
-- **Row 7 cols 7–8**: three-state chord-adjustment selector. Col 7 sets the
-  mode used in major, col 8 the mode used in minor. Each press cycles through
-  the three:
+**Row 8 cols 7–8** select major or minor. Major lights col 7 yellow and leaves
+col 8 slate; minor lights col 8 mint green and leaves col 7 slate. A scale
+change immediately re-voices all chord-following sequencers and refreshes every
+scale-aware view at once.
 
-  | Colour | Mode | What you hear |
-  |--------|------|---------------|
-  | Dark   | **Plain**    | No adjustment; chords plane chromatically. |
-  | Blue   | **Adjusted** | Hand-tuned colouring, the default character. |
-  | Purple | **Diatonic** | Exact diatonic chords, note arps harmonised to match. |
+### Chord adjustment (RHS row 7 cols 7–8)
 
-  Diatonic mode keeps chord progressions *and* moving note arps strictly in
-  scale. See [Note arp](/documentation/MSEQ/note-arp) for how it affects arps.
+The chord-adjustment mode decides how a chord is coloured once it is built,
+offsetting individual rows so a chord is voiced rather than stacked straight up
+the scale. It changes the character of every progression, so it is worth
+setting deliberately.
 
-A scale-mode change immediately re-voices all chord-following sequencers;
-it is a global event. Adjustment-mode changes apply on the next clock tick.
+Col 7 sets the mode used in major, col 8 the mode used in minor. Each press
+cycles through the three:
+
+| Colour | Mode | What you hear |
+|--------|------|---------------|
+| Dark   | **Plain**    | No adjustment; chords plane chromatically. |
+| Blue   | **Adjusted** | Hand-tuned colouring, the default character. |
+| Purple | **Diatonic** | Exact diatonic chords, note arps harmonised to match. |
+
+Diatonic mode keeps chord progressions *and* moving note arps strictly in
+scale. See [Note arp](/documentation/MSEQ/note-arp) for how it affects arps.
+Adjustment-mode changes apply on the next clock tick.
 
 ### CP toggle (row 1)
 
 Row 1 holds one cell per chord-following sequencer. LHS cols 1–7 are sequencers
 1–7; RHS cols 1–7 are sequencers 9–15 (sequencer 8 and sequencer 16 have no CP toggle and
 stay dark). Off is slate grey; on is that sequencer's own colour. See
-[Chord progression toggle](/documentation/MSEQ/toggles#chord-progression-toggle-view-11).
+[Chord progression toggle](/documentation/MSEQ/toggles#chord-progression-toggle).
+
+---
+
+## Chord clock division
+
+Each sequencer has an independent chord-progression advance rate, and the chord clock division view is where you set it. The rate decides how fast that sequencer walks through the 16-bar progression grid, independent of its note-clock division.
+
+**Where it lives**: On the meta-sequencer (sequencer 16). The view shows a per-sequencer rate selector on both LPs, and both LPs stay in sync.
+
+**Edit gesture**: One LP press per row. The column you press sets that row's sequencer to that rate.
+
+| Rate | Step divisor | Chord changes |
+|------|-------------|---------------|
+| 1 | 128 | Every ~8 bars |
+| 2 | 64 | Every 4 bars |
+| 3 | 32 | Every 2 bars |
+| 4 (default) | 16 | Every bar |
+| 5 | 8 | Every half bar (8 steps) |
+| 6 | 4 | Every quarter bar (4 steps) |
+| 7 | 2 | Every 2 steps |
+| 8 | 1 | Every step |
+
+Rates 1–4 produce bar-constant chords (the chord is stable within each bar). Rates 5–8 advance the chord within a bar: useful for chord-arpeggiation effects where each step of a bar lands on a different progression slot.
 
 ---
 
 ## Cross-references
 
-- [Chord progression](/documentation/MSEQ/chords): writing the progression itself, bar by bar
+- [Chord progression](/documentation/MSEQ/chords): what following the progression does to a sequence, and writing the progression itself, bar by bar, with its inversions
 - [Voicing and modulation](/documentation/MSEQ/chord-voicing): which notes of a chord each sequencer plays
 - [Toggle views](/documentation/MSEQ/toggles): the CP-follow toggle, documented alongside the other toggles
 - [Note arp](/documentation/MSEQ/note-arp): how diatonic mode affects moving note arps
+- [Reset and randomise](/documentation/MSEQ/reset): chord options and chord clock division deliberately ignore the reset and randomise gestures
 
-<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#harmony">Harmony</a>: <strong>Chords and scales</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chords">Chord progression</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav>
+<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#harmony">Harmony</a>: <a href="/documentation/MSEQ/chords">Chord progression</a><span class="sep" aria-hidden="true"> · </span><strong>Key and following</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav>

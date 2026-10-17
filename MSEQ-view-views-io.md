@@ -28,18 +28,18 @@ page indicator, and its top pad paints cloud-sync status.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press LHS col 8 on a slot | Session row | Load full local session | none |
-| SHIFT + LHS col 8 | Session row | Save full local session | shift |
-| SHIFT + MUTE + LHS col 8 | Session row | Initialise slot | shift+mute |
-| Press data pad, then live row | Data column → top row | Load a saved sequencer into a live sequencer | none |
-| SHIFT + live row, then slot pad | Top row → session row | Save a live sequencer into a slot | shift |
-| Press RHS col 8, then RHS 88 | Chord column → chord top | Load saved chord progression | none |
-| SHIFT + RHS 88, then RHS col 8 | Chord top → chord row | Save chord progression | shift |
-| REC_ARM + load/undo gesture | Any load/undo pad | Arm or replace a bar-edge cue | rec_arm |
-| Bare LHS 88 | Top-right LHS LP | Undo or redo the most recent load | none |
-| Bare LHS 89 | Col 9 top | Sync now | none |
-| SHIFT + LHS 89 | Col 9 top | Toggle background sync enabled | shift |
-| SHIFT + MUTE + LHS 89 | Col 9 top | Reset sync status/backoff | shift+mute |
+| Press LHS col 8 on a slot | <span class="cell-label">Where</span> Session row | <span class="cell-label">Action</span> Load full local session | <span class="cell-label">Modifiers</span> none |
+| SHIFT + LHS col 8 | <span class="cell-label">Where</span> Session row | <span class="cell-label">Action</span> Save full local session | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + MUTE + LHS col 8 | <span class="cell-label">Where</span> Session row | <span class="cell-label">Action</span> Initialise slot | <span class="cell-label">Modifiers</span> shift+mute |
+| Press data pad, then live row | <span class="cell-label">Where</span> Data column → top row | <span class="cell-label">Action</span> Load a saved sequencer into a live sequencer | <span class="cell-label">Modifiers</span> none |
+| SHIFT + live row, then slot pad | <span class="cell-label">Where</span> Top row → session row | <span class="cell-label">Action</span> Save a live sequencer into a slot | <span class="cell-label">Modifiers</span> shift |
+| Press RHS col 8, then RHS 88 | <span class="cell-label">Where</span> Chord column → chord top | <span class="cell-label">Action</span> Load saved chord progression | <span class="cell-label">Modifiers</span> none |
+| SHIFT + RHS 88, then RHS col 8 | <span class="cell-label">Where</span> Chord top → chord row | <span class="cell-label">Action</span> Save chord progression | <span class="cell-label">Modifiers</span> shift |
+| REC_ARM + load/undo gesture | <span class="cell-label">Where</span> Any load/undo pad | <span class="cell-label">Action</span> Arm or replace a bar-edge cue | <span class="cell-label">Modifiers</span> rec_arm |
+| Bare LHS 88 | <span class="cell-label">Where</span> Top-right LHS LP | <span class="cell-label">Action</span> Undo or redo the most recent load | <span class="cell-label">Modifiers</span> none |
+| Bare LHS 89 | <span class="cell-label">Where</span> Col 9 top | <span class="cell-label">Action</span> Sync now | <span class="cell-label">Modifiers</span> none |
+| SHIFT + LHS 89 | <span class="cell-label">Where</span> Col 9 top | <span class="cell-label">Action</span> Toggle background sync enabled | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + MUTE + LHS 89 | <span class="cell-label">Where</span> Col 9 top | <span class="cell-label">Action</span> Reset sync status/backoff | <span class="cell-label">Modifiers</span> shift+mute |
 
 A pink blinking LHS 88 means a PEER-view cue is pending; bare LHS 88 dismisses
 that cross-view cue instead of firing undo.

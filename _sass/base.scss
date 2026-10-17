@@ -303,6 +303,40 @@ main th { font-weight: bold;  border-bottom: var(--border); }
 main tbody tr:last-child td { border-bottom: none; }
 @media only screen and (max-width: 600px) { main table { display: block;  width: max-content;  max-width: 100%;  overflow-x: auto; } }
 
+/*
+ * A run the docs joined with no-break spaces (a gesture, an arp sequence). The
+ * generator ships it as a span so the choice can depend on the width: on a
+ * wide screen it stays on one line as the author wrote it, on a phone it may
+ * wrap, because a column that cannot break is wider than the screen and
+ * squeezes the column beside it to one word per line. The bold part of a
+ * gesture is the key combo (SHIFT + MUTE), which still never splits.
+ */
+.keep-together { white-space: nowrap; }
+@media only screen and (max-width: 600px) {
+  .keep-together { white-space: normal; }
+  .keep-together strong { white-space: nowrap; }
+}
+
+/*
+ * A table of records (one row per gesture, mostly the four-column shortcut
+ * tables) cannot fit a phone: every column gets two words and the last one
+ * runs off the edge. So on a phone each row becomes a card, the first cell as
+ * its title and the rest as labelled lines. The generator writes each cell's
+ * column heading into it as .cell-label, which only the card shows, and that
+ * label is also what selects these tables. Grids and lookup tables carry no
+ * labels and keep the sideways scroll above.
+ */
+.cell-label { display: none; }
+@media only screen and (max-width: 600px) {
+  main table:has(.cell-label) { display: block;  width: auto;  max-width: none;  overflow: visible;  border: none; }
+  main table:has(.cell-label) thead { display: none; }
+  main table:has(.cell-label) :is(tbody, tr, td) { display: block; }
+  main table:has(.cell-label) tr { border: var(--border);  padding: 10px 12px;  margin: 0 0 $space-tight; }
+  main table:has(.cell-label) td { border: none;  padding: 2px 0; }
+  main table:has(.cell-label) td:first-child { padding-bottom: 6px;  margin-bottom: 4px;  border-bottom: dashed 1px rgba(219, 219, 219, 0.3); }
+  .cell-label { display: inline;  font-size: 0.85em;  text-transform: uppercase;  letter-spacing: 0.08em;  opacity: 0.6;  margin-right: 0.4em; }
+}
+
 /**
  * Form
  */

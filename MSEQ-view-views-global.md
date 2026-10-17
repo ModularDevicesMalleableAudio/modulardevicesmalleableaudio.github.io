@@ -34,10 +34,10 @@ bottom row doubles as octave control under modifiers.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a sequencer button | Seq selectors | Select that sequencer (8 per LP bank; 16 total). Switching sequencer returns the view to global mode. | none |
-| Press the active sequencer button | Seq selectors | Return to global view mode (all 8 View selectors lit) without changing sequencer. | none |
-| Press a view button (rows 1–8) | View selectors | Select that single view for the active sequencer. | none |
-| Press the active view button again | View selectors | Toggle back to global mode (all views active). | none |
+| Press a sequencer button | <span class="cell-label">Where</span> Seq selectors | <span class="cell-label">Action</span> Select that sequencer (8 per LP bank; 16 total). Switching sequencer returns the view to global mode. | <span class="cell-label">Modifiers</span> none |
+| Press the active sequencer button | <span class="cell-label">Where</span> Seq selectors | <span class="cell-label">Action</span> Return to global view mode (all 8 View selectors lit) without changing sequencer. | <span class="cell-label">Modifiers</span> none |
+| Press a view button (rows 1–8) | <span class="cell-label">Where</span> View selectors | <span class="cell-label">Action</span> Select that single view for the active sequencer. | <span class="cell-label">Modifiers</span> none |
+| Press the active view button again | <span class="cell-label">Where</span> View selectors | <span class="cell-label">Action</span> Toggle back to global mode (all views active). | <span class="cell-label">Modifiers</span> none |
 
 > View selectors are for view selection **only**. They never participate
 > in editing gestures. Row mutes belong to the active view (row modes in
@@ -47,22 +47,22 @@ bottom row doubles as octave control under modifiers.
 
 | Buttons held | Status | Typical meaning | Modifiers |
 |---|---|---|---|
-| *(none)* | `LC_OFF` | Plain press: view's default edit | none |
-| SHIFT | `LC_SHIFT` | Alternate edit (e.g. percentage chance, length write) | shift |
-| MUTE | `LC_MUTE` | Mute-flavoured edit / presets | mute |
-| SOLO | `LC_SOLO` | Sustain / legato-flavoured edit | solo |
-| REC ARM | `LC_REC_ARM` | Cued (bar-boundary) variants | rec_arm |
-| 8A | `LC_8A` | Inverse-mod (trig view) | 8a |
-| 8B | `LC_8B` | Euclidean overlay (trig view) | 8b |
-| SHIFT + MUTE | `LC_SHIFT_MUTE` | **Reset** (view-aware) | shift+mute |
-| SHIFT + SOLO | `LC_SHIFT_SOLO` | **Randomise** (view-aware) | shift+solo |
+| *(none)* | <span class="cell-label">Status</span> `LC_OFF` | <span class="cell-label">Typical meaning</span> Plain press: view's default edit | <span class="cell-label">Modifiers</span> none |
+| SHIFT | <span class="cell-label">Status</span> `LC_SHIFT` | <span class="cell-label">Typical meaning</span> Alternate edit (e.g. percentage chance, length write) | <span class="cell-label">Modifiers</span> shift |
+| MUTE | <span class="cell-label">Status</span> `LC_MUTE` | <span class="cell-label">Typical meaning</span> Mute-flavoured edit / presets | <span class="cell-label">Modifiers</span> mute |
+| SOLO | <span class="cell-label">Status</span> `LC_SOLO` | <span class="cell-label">Typical meaning</span> Sustain / legato-flavoured edit | <span class="cell-label">Modifiers</span> solo |
+| REC ARM | <span class="cell-label">Status</span> `LC_REC_ARM` | <span class="cell-label">Typical meaning</span> Cued (bar-boundary) variants | <span class="cell-label">Modifiers</span> rec_arm |
+| 8A | <span class="cell-label">Status</span> `LC_8A` | <span class="cell-label">Typical meaning</span> Inverse-mod (trig view) | <span class="cell-label">Modifiers</span> 8a |
+| 8B | <span class="cell-label">Status</span> `LC_8B` | <span class="cell-label">Typical meaning</span> Euclidean overlay (trig view) | <span class="cell-label">Modifiers</span> 8b |
+| SHIFT + MUTE | <span class="cell-label">Status</span> `LC_SHIFT_MUTE` | <span class="cell-label">Typical meaning</span> **Reset** (view-aware) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO | <span class="cell-label">Status</span> `LC_SHIFT_SOLO` | <span class="cell-label">Typical meaning</span> **Randomise** (view-aware) | <span class="cell-label">Modifiers</span> shift+solo |
 
 ### Reset / randomise (view-aware)
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| SHIFT + MUTE, then press a pad | LP grid | Reset the current view's data. What gets reset is per-view: see each view file and [Reset and randomise](/documentation/MSEQ/reset). | shift+mute |
-| SHIFT + SOLO, then press a pad | LP grid | Randomise the current view's data (per-view semantics). | shift+solo |
+| SHIFT + MUTE, then press a pad | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Reset the current view's data. What gets reset is per-view: see each view file and [Reset and randomise](/documentation/MSEQ/reset). | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO, then press a pad | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Randomise the current view's data (per-view semantics). | <span class="cell-label">Modifiers</span> shift+solo |
 
 Views with **no** reset/randomise: NOTE_ARP, CHORD_EDIT, CHORD_OPTIONS,
 CHORD_CLOCK_DIVISION, CLOCK_DIV, SLEEP, JAM_KEYBOARD has its own variant.
@@ -71,21 +71,21 @@ CHORD_CLOCK_DIVISION, CLOCK_DIV, SLEEP, JAM_KEYBOARD has its own variant.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press (no modifier) | LC top row | Cue sequencer mute/unmute at the next 8-bar boundary; pressing again cancels the cue. | none |
-| REC ARM + press | LC top row | Same, but at the next 16-bar boundary. | rec_arm |
-| SHIFT + press | LC top row | Sequencer octave **up** (max +4). | shift |
-| MUTE + press | LC top row | Jam-keyboard octave **up** (max +8). | mute |
-| Press while autodrop cued | LC top row | Cancel the pending autodrop for that sequencer. | none |
+| Press (no modifier) | <span class="cell-label">Where</span> LC top row | <span class="cell-label">Action</span> Cue sequencer mute/unmute at the next 8-bar boundary; pressing again cancels the cue. | <span class="cell-label">Modifiers</span> none |
+| REC ARM + press | <span class="cell-label">Where</span> LC top row | <span class="cell-label">Action</span> Same, but at the next 16-bar boundary. | <span class="cell-label">Modifiers</span> rec_arm |
+| SHIFT + press | <span class="cell-label">Where</span> LC top row | <span class="cell-label">Action</span> Sequencer octave **up** (max +4). | <span class="cell-label">Modifiers</span> shift |
+| MUTE + press | <span class="cell-label">Where</span> LC top row | <span class="cell-label">Action</span> Jam-keyboard octave **up** (max +8). | <span class="cell-label">Modifiers</span> mute |
+| Press while autodrop cued | <span class="cell-label">Where</span> LC top row | <span class="cell-label">Action</span> Cancel the pending autodrop for that sequencer. | <span class="cell-label">Modifiers</span> none |
 
 ### LC bottom row (sequencer autodrops / octave down)
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press (no modifier) | LC bottom row | Cue a **mute autodrop** (sequencer temporarily silenced, auto-reverts). Re-press cancels/replaces. | none |
-| REC ARM + press | LC bottom row | Cue a **16-bar mute autodrop** (fires at bar 0, lasts the full cycle). | rec_arm |
-| SHIFT + SOLO + press | LC bottom row | Cue a **CC autodrop**. On a synth sequencer the cue shows on the LEDs but nothing is silenced yet (see [Autodrop view reference](/documentation/MSEQ/views/autodrop)). | shift+solo |
-| SHIFT + press | LC bottom row | Sequencer octave **down** (min −4). | shift |
-| MUTE + press | LC bottom row | Jam-keyboard octave **down** (min 0). | mute |
+| Press (no modifier) | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Cue a **mute autodrop** (sequencer temporarily silenced, auto-reverts). Re-press cancels/replaces. | <span class="cell-label">Modifiers</span> none |
+| REC ARM + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Cue a **16-bar mute autodrop** (fires at bar 0, lasts the full cycle). | <span class="cell-label">Modifiers</span> rec_arm |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Cue a **CC autodrop**. On a synth sequencer the cue shows on the LEDs but nothing is silenced yet (see [Autodrop view reference](/documentation/MSEQ/views/autodrop)). | <span class="cell-label">Modifiers</span> shift+solo |
+| SHIFT + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Sequencer octave **down** (min −4). | <span class="cell-label">Modifiers</span> shift |
+| MUTE + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Jam-keyboard octave **down** (min 0). | <span class="cell-label">Modifiers</span> mute |
 
 ## See also
 

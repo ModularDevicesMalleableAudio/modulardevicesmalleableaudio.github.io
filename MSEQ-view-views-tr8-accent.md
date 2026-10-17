@@ -31,11 +31,11 @@ writes that row's accent instantly. No modifier needed.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP grid | Set the step (column) to the pressed row's accent | none |
-| SHIFT + MUTE + press row R | LP grid | **Reset**: all 16 steps → accent of row R | shift+mute |
-| SHIFT + MUTE + press | LHS LP col 9 | **Reset**: all 16 steps → `6` (row 6) | shift+mute |
-| SHIFT + SOLO + press row R | LP grid | **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | shift+solo |
-| SHIFT + SOLO + press | LHS LP col 9 | **Randomise**: all 16 steps uniform random across values 1–8 | shift+solo |
+| Press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the step (column) to the pressed row's accent | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset**: all 16 steps → accent of row R | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + MUTE + press | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Reset**: all 16 steps → `6` (row 6) | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise**: all 16 steps gaussian around row R (clamped to rows 1–8) | <span class="cell-label">Modifiers</span> shift+solo |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Randomise**: all 16 steps uniform random across values 1–8 | <span class="cell-label">Modifiers</span> shift+solo |
 
 ## See also
 

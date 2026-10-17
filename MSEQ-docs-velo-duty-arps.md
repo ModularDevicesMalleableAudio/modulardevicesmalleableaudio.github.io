@@ -191,10 +191,10 @@ length.
 
 | Gesture | Effect |
 |---------|--------|
-| **SHIFT + MUTE** + row mute button | Reset that row to its neutral value: 6 on a velocity arp, 5 on a duty arp |
-| **SHIFT + MUTE** + RHS row R | Set every step of the selected row to row R's value |
-| **SHIFT + SOLO** + row mute button | Randomise the selected row across 1 to 8 |
-| **SHIFT + SOLO** + RHS row R | Randomise the selected row around row R's value |
+| <span class="keep-together">**SHIFT + MUTE** + row mute button</span> | Reset that row to its neutral value: 6 on a velocity arp, 5 on a duty arp |
+| <span class="keep-together">**SHIFT + MUTE** + RHS row R</span> | Set every step of the selected row to row R's value |
+| <span class="keep-together">**SHIFT + SOLO** + row mute button</span> | Randomise the selected row across <span class="keep-together">1 to 8</span> |
+| <span class="keep-together">**SHIFT + SOLO** + RHS row R</span> | Randomise the selected row around row R's value |
 
 On the TR-8, reset gives each voice its own resting velocity: 3 on the second
 rows of a paired voice (BD2 and SD2 on the main kit, RS2 and CP2 on the alt),

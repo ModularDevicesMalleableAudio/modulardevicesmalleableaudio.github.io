@@ -36,24 +36,24 @@ separate views with independent tables.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press column N (2–8) | LHS LP | Select that row (length unchanged) | none |
-| Double-tap column N (2–8) (≤350 ms) | LHS LP | Set the row's arp length to N | none |
-| Press column 1 | LHS LP | Select the row only (length unchanged) | none |
-| Double-tap column 1 (≤350 ms) | LHS LP | Toggle the row's length 0 ↔ 1 | none |
-| SHIFT + press column N (2–8) | LHS LP | Set the row's length to N on a single press | shift |
-| SHIFT + press column 1 | LHS LP | Toggle the row's length 0 ↔ 1 | shift |
-| SHIFT + press | LHS LP col 9 | Disable the row (length → 0) | shift |
-| SHIFT + MUTE + press | LHS LP col 9 | **Hard reset**: length → 0, all 8 step values → default 4 | shift+mute |
-| SHIFT + SOLO + press | LHS LP col 9 | **Randomise** all 8 step values (length unchanged) | shift+solo |
+| Press column N (2–8) | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Select that row (length unchanged) | <span class="cell-label">Modifiers</span> none |
+| Double-tap column N (2–8) (≤350 ms) | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Set the row's arp length to N | <span class="cell-label">Modifiers</span> none |
+| Press column 1 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Select the row only (length unchanged) | <span class="cell-label">Modifiers</span> none |
+| Double-tap column 1 (≤350 ms) | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Toggle the row's length 0 ↔ 1 | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press column N (2–8) | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Set the row's length to N on a single press | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + press column 1 | <span class="cell-label">Where</span> LHS LP | <span class="cell-label">Action</span> Toggle the row's length 0 ↔ 1 | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + press | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> Disable the row (length → 0) | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + MUTE + press | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Hard reset**: length → 0, all 8 step values → default 4 | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> LHS LP col 9 | <span class="cell-label">Action</span> **Randomise** all 8 step values (length unchanged) | <span class="cell-label">Modifiers</span> shift+solo |
 
 ### RHS: value editor
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | RHS LP | Write the pressed row's value into the selected row's arp step (column 1–8) | none |
-| SHIFT + press column N | RHS LP | Write the value **and** set the row's arp length to N (this can shrink the length) | shift |
-| SHIFT + MUTE + press | RHS LP | **Reset**: fill selected arp with the row's constant value | shift+mute |
-| SHIFT + SOLO + press | RHS LP | **Randomise**: gaussian fill of the selected arp | shift+solo |
+| Press | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Write the pressed row's value into the selected row's arp step (column 1–8) | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press column N | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> Write the value **and** set the row's arp length to N (this can shrink the length) | <span class="cell-label">Modifiers</span> shift |
+| SHIFT + MUTE + press | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> **Reset**: fill selected arp with the row's constant value | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> RHS LP | <span class="cell-label">Action</span> **Randomise**: gaussian fill of the selected arp | <span class="cell-label">Modifiers</span> shift+solo |
 
 > Length writes on unassigned rows are silently ignored (focus still
 > follows the press). Unmodified, an RHS press never touches the length:

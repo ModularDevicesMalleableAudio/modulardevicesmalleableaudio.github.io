@@ -29,8 +29,8 @@ any sequencer; both LPs update immediately.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8 cell | LP grid | Toggle that sequencer's mod-wheel routing on/off (applies on the next CC1 frame) | none |
-| Turn LC8 knob 2 | LC knob | Broadcast the mod-wheel value to every sequencer whose toggle is on | any |
+| Press row 8 cell | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle that sequencer's mod-wheel routing on/off (applies on the next CC1 frame) | <span class="cell-label">Modifiers</span> none |
+| Turn LC8 knob 2 | <span class="cell-label">Where</span> LC knob | <span class="cell-label">Action</span> Broadcast the mod-wheel value to every sequencer whose toggle is on | <span class="cell-label">Modifiers</span> any |
 
 ## See also
 

@@ -34,27 +34,27 @@ corresponding status; with no modifier a press toggles `OFF` ↔ `ON`.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP grid | Toggle `OFF` ↔ `ON` (`TRIGMUTE` → `ON`; sustain steps break first) | none |
-| SHIFT + press | LP grid | Toggle `PERCENTAGE_CHANCE` (chance level set per-sequencer via LC knob) | shift |
-| MUTE + press | LP grid | Toggle `TRIGMUTE` (force-silence the step) | mute |
-| SOLO + press, twice | LP grid | Sustain region: first press = start, second press = end (wraps across bar end) | solo |
-| REC ARM + press | LP grid | Cycle mod division: `OFF` → `MOD1` → `MOD2` → `MOD4` → `MOD8` → `MOD16` → `OFF` | rec_arm |
-| 8A + press | LP grid | Inverse mod: → `INVMOD4` (`MOD8` → `INVMOD8`, `MOD16` → `INVMOD16`); press again converts back to `MOD` | 8a |
-| 8B + press | LP grid | Euclidean overlay: pressed step = rotation point; same step again toggles the row's Euclidean off | 8b |
-| SHIFT + MUTE + press | LP grid | **Reset row**: all 16 steps → `OFF`, Euclidean pattern cleared | shift+mute |
-| SHIFT + SOLO + press | LP grid | **Randomise row**: random-density trig fill | shift+solo |
+| Press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle `OFF` ↔ `ON` (`TRIGMUTE` → `ON`; sustain steps break first) | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle `PERCENTAGE_CHANCE` (chance level set per-sequencer via LC knob) | <span class="cell-label">Modifiers</span> shift |
+| MUTE + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Toggle `TRIGMUTE` (force-silence the step) | <span class="cell-label">Modifiers</span> mute |
+| SOLO + press, twice | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Sustain region: first press = start, second press = end (wraps across bar end) | <span class="cell-label">Modifiers</span> solo |
+| REC ARM + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Cycle mod division: `OFF` → `MOD1` → `MOD2` → `MOD4` → `MOD8` → `MOD16` → `OFF` | <span class="cell-label">Modifiers</span> rec_arm |
+| 8A + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Inverse mod: → `INVMOD4` (`MOD8` → `INVMOD8`, `MOD16` → `INVMOD16`); press again converts back to `MOD` | <span class="cell-label">Modifiers</span> 8a |
+| 8B + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Euclidean overlay: pressed step = rotation point; same step again toggles the row's Euclidean off | <span class="cell-label">Modifiers</span> 8b |
+| SHIFT + MUTE + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset row**: all 16 steps → `OFF`, Euclidean pattern cleared | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise row**: random-density trig fill | <span class="cell-label">Modifiers</span> shift+solo |
 
 ### Row mute buttons (LP column 9, LHS only)
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | Row mutes | Instant toggle row `MUTED` ↔ `UNMUTED` | none |
-| SHIFT + press | Row mutes | Row autodrop cue (muted row comes in / active row drops out, auto-reverts) | shift |
-| MUTE + press | Row mutes | Toggle `DRONE` mode | mute |
-| SOLO + press | Row mutes | Toggle `LEGATO` mode | solo |
-| REC ARM + press | Row mutes | Cue mute/unmute transition at next bar 0 | rec_arm |
-| MUTE + REC ARM + press | Row mutes | Cue `DRONE` at next bar 0 | mute+rec_arm |
-| SOLO + REC ARM + press | Row mutes | Cue `LEGATO` at next bar 0 | solo+rec_arm |
+| Press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Instant toggle row `MUTED` ↔ `UNMUTED` | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Row autodrop cue (muted row comes in / active row drops out, auto-reverts) | <span class="cell-label">Modifiers</span> shift |
+| MUTE + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Toggle `DRONE` mode | <span class="cell-label">Modifiers</span> mute |
+| SOLO + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Toggle `LEGATO` mode | <span class="cell-label">Modifiers</span> solo |
+| REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue mute/unmute transition at next bar 0 | <span class="cell-label">Modifiers</span> rec_arm |
+| MUTE + REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue `DRONE` at next bar 0 | <span class="cell-label">Modifiers</span> mute+rec_arm |
+| SOLO + REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue `LEGATO` at next bar 0 | <span class="cell-label">Modifiers</span> solo+rec_arm |
 
 ### Euclidean fader controls (LC faders, while in trig view)
 
@@ -67,15 +67,15 @@ corresponding status; with no modifier a press toggles `OFF` ↔ `ON`.
 
 | Control | P1 / P2 fader | Action | Modifiers |
 |---|---|---|---|
-| Density | 6 / 14 | Pulses in the selected row's Euclidean pattern (0–length) | any |
-| Rotation | 7 / 15 | Pattern start offset (same as 8B step press) | any |
-| Length | 8 / 16 | Pattern length 1–16. Clamps rotation; density is kept, and every step fires while density exceeds length | any |
+| Density | <span class="cell-label">P1 / P2 fader</span> 6 / 14 | <span class="cell-label">Action</span> Pulses in the selected row's Euclidean pattern (0–length) | <span class="cell-label">Modifiers</span> any |
+| Rotation | <span class="cell-label">P1 / P2 fader</span> 7 / 15 | <span class="cell-label">Action</span> Pattern start offset (same as 8B step press) | <span class="cell-label">Modifiers</span> any |
+| Length | <span class="cell-label">P1 / P2 fader</span> 8 / 16 | <span class="cell-label">Action</span> Pattern length 1–16. Clamps rotation; density is kept, and every step fires while density exceeds length | <span class="cell-label">Modifiers</span> any |
 
 ### Special case
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 1 (bottom row, H) | Row mutes | Boom-TSK toggle: fires a fixed 4-on-the-floor BD (steps 1/5/9/13) + off-beat CH (steps 3/7/11/15) pattern on TR-8; immediately mutes every other row of sequencer 13 (main and alt) and force-unmutes the sequencer. Pressing again clears the patterns and re-mutes row 1. | none |
+| Press row 1 (bottom row, H) | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Boom-TSK toggle: fires a fixed 4-on-the-floor BD (steps 1/5/9/13) + off-beat CH (steps 3/7/11/15) pattern on TR-8; immediately mutes every other row of sequencer 13 (main and alt) and force-unmutes the sequencer. Pressing again clears the patterns and re-mutes row 1. | <span class="cell-label">Modifiers</span> none |
 
 ## See also
 

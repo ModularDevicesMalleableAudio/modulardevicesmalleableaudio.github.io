@@ -20,7 +20,7 @@ remember and nothing to press again.
 They work at two levels: **sequencer autodrops** drop a whole sequencer, and
 **row autodrops** drop one row of one sequencer.
 
-<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#why-they-are-worth-cueing-rather-than-muting-by-hand">Why they are worth cueing rather than muting by hand</a><span class="sep" aria-hidden="true"> · </span><a href="#try-this-first">Try this first</a><span class="sep" aria-hidden="true"> · </span><a href="#when-your-press-takes-effect">When your press takes effect</a><span class="sep" aria-hidden="true"> · </span><a href="#quick-reference">Quick reference</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-autodrops">Sequencer autodrops</a><span class="sep" aria-hidden="true"> · </span><a href="#row-autodrops">Row autodrops</a><span class="sep" aria-hidden="true"> · </span><a href="#view-81-the-autodrop-view">View 8.1: the autodrop view</a><span class="sep" aria-hidden="true"> · </span><a href="#cc-autodrop-sweeps">CC autodrop sweeps</a><span class="sep" aria-hidden="true"> · </span><a href="#limitations">Limitations</a></nav>
+<nav class="docs-contents" aria-label="On this page"><b>On this page:</b> <a href="#why-they-are-worth-cueing-rather-than-muting-by-hand">Why they are worth cueing rather than muting by hand</a><span class="sep" aria-hidden="true"> · </span><a href="#try-this-first">Try this first</a><span class="sep" aria-hidden="true"> · </span><a href="#when-your-press-takes-effect">When your press takes effect</a><span class="sep" aria-hidden="true"> · </span><a href="#quick-reference">Quick reference</a><span class="sep" aria-hidden="true"> · </span><a href="#sequencer-autodrops">Sequencer autodrops</a><span class="sep" aria-hidden="true"> · </span><a href="#row-autodrops">Row autodrops</a><span class="sep" aria-hidden="true"> · </span><a href="#the-autodrop-view">The autodrop view</a><span class="sep" aria-hidden="true"> · </span><a href="#cc-autodrop-sweeps">CC autodrop sweeps</a><span class="sep" aria-hidden="true"> · </span><a href="#limitations">Limitations</a></nav>
 
 ---
 
@@ -93,14 +93,14 @@ The drop lengths that come out of that, for a row or a sequencer:
 
 | What | Controller | Modifier | Effect |
 |------|-----------|----------|--------|
-| Sequencer mute autodrop | LC bottom row | None | Temporarily mute whole sequencer |
-| Sequencer 16-bar autodrop | LC bottom row | REC ARM | Temporarily mute for full 16-bar cycle |
-| Sequencer CC autodrop | LC bottom row | SHIFT + SOLO | Cue a CC drop (see *Limitations*) |
-| Row autodrop (muted→in) | Launchpad col 9 | SHIFT | Temporarily bring muted row in |
-| Row autodrop (active→out) | Launchpad col 9 | SHIFT | Temporarily drop active row out |
-| Manual sequencer cue (any flavour) | View 8.1 | none (row chooses flavour) | Direct mute/CC/note cue |
-| Manual TR-8 voice cue | View 8.1 RHS cols 5–6 | none | Cue a TR-8 voice for autodrop |
-| Per-seq autodrop eligibility | View 8.1 row 8 | none | Toggle whether automatic cycles may drop that seq |
+| Sequencer mute autodrop | <span class="cell-label">Controller</span> LC bottom row | <span class="cell-label">Modifier</span> None | <span class="cell-label">Effect</span> Temporarily mute whole sequencer |
+| Sequencer 16-bar autodrop | <span class="cell-label">Controller</span> LC bottom row | <span class="cell-label">Modifier</span> REC ARM | <span class="cell-label">Effect</span> Temporarily mute for full 16-bar cycle |
+| Sequencer CC autodrop | <span class="cell-label">Controller</span> LC bottom row | <span class="cell-label">Modifier</span> SHIFT + SOLO | <span class="cell-label">Effect</span> Cue a CC drop (see *Limitations*) |
+| Row autodrop (muted→in) | <span class="cell-label">Controller</span> Launchpad col 9 | <span class="cell-label">Modifier</span> SHIFT | <span class="cell-label">Effect</span> Temporarily bring muted row in |
+| Row autodrop (active→out) | <span class="cell-label">Controller</span> Launchpad col 9 | <span class="cell-label">Modifier</span> SHIFT | <span class="cell-label">Effect</span> Temporarily drop active row out |
+| Manual sequencer cue (any flavour) | <span class="cell-label">Controller</span> Autodrop view | <span class="cell-label">Modifier</span> none (row chooses flavour) | <span class="cell-label">Effect</span> Direct mute/CC/note cue |
+| Manual TR-8 voice cue | <span class="cell-label">Controller</span> Autodrop view, RHS cols 5–6 | <span class="cell-label">Modifier</span> none | <span class="cell-label">Effect</span> Cue a TR-8 voice for autodrop |
+| Per-seq autodrop eligibility | <span class="cell-label">Controller</span> Autodrop view, row 8 | <span class="cell-label">Modifier</span> none | <span class="cell-label">Effect</span> Toggle whether automatic cycles may drop that seq |
 
 ---
 
@@ -146,8 +146,8 @@ mute state directly, so it follows its own rules:
 | Pressed in a dead zone of the cycle | Nothing happens (no length resolves there) |
 
 Unlike the other two gestures, the drop length here is not fixed: it comes from
-where you are in the 16-bar cycle when you press, the same rule the view-8.1
-manual cues use.
+where you are in the 16-bar cycle when you press, the same rule the autodrop
+view's manual cues use.
 
 ### What the LEDs do
 
@@ -230,7 +230,7 @@ Row LED colours for each of these states are in the "Row LED colours" section of
 
 ---
 
-## View 8.1: the autodrop view
+## The autodrop view
 
 A modifier-free manual-cue surface on the Launchpad that complements the LC
 bottom row. Reach it with the col-9 view selector; it renders on both LPs of
@@ -298,7 +298,7 @@ a set rather than during one.
   mute flavours work exactly as documented. TR-8 voices and the master bus are
   the exception, and do fire real MIDI.
 - **Automatic cycles only ever mute a synth sequencer.** They never pick the CC
-  or note flavours for you. View 8.1's manual cues are unaffected: you can still
+  or note flavours for you. The autodrop view's manual cues are unaffected: you can still
   choose note or CC explicitly with a row 5 or row 6 press.
 - **Sequencer 13 has no CC autodrop**, and sequencers 14 and 15 have none at
   all. On sequencer 13 the SHIFT + SOLO gesture falls back to a plain mute

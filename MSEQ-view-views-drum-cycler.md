@@ -43,8 +43,8 @@ walk is a property of the rig, not of a player.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a pad on the top row | RHS LP row 8 | Toggle that slot in or out of the walk (`0` ↔ its preset value) | none |
-| Press a reserved pad | RHS LP row 8, cols 7–8 | Nothing. No destination is mapped there | none |
+| Press a pad on the top row | <span class="cell-label">Where</span> RHS LP row 8 | <span class="cell-label">Action</span> Toggle that slot in or out of the walk (`0` ↔ its preset value) | <span class="cell-label">Modifiers</span> none |
+| Press a reserved pad | <span class="cell-label">Where</span> RHS LP row 8, cols 7–8 | <span class="cell-label">Action</span> Nothing. No destination is mapped there | <span class="cell-label">Modifiers</span> none |
 
 > Each slot holds a signed sequencer number: `13` is TR-8 normal, `-13` is
 > TR-8 alt, `0` is out of the walk. UP/DOWN walks to the next **non-zero**

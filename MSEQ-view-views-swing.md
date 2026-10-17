@@ -41,11 +41,11 @@ there isn't one it does nothing until you press a pad.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press | LP grid | Set the pressed column's sequencer to the pressed row's coarse swing level, and aim the fine knob at it | none |
-| Turn knob | LC bottom-row knob 8 | Fine offset 0–127 for the aimed sequencer, interpolating toward the next coarse level | any |
-| SHIFT + MUTE + press | LP grid | **Reset that slot**: level → row 1 (straight), fine → 0 | shift+mute |
-| SHIFT + SOLO + press | LP grid | **Randomise that slot**: level → uniform random across rows 1–8 (fine untouched) | shift+solo |
-| SHIFT + MUTE / SOLO | Row mutes | No-op on this view | any |
+| Press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the pressed column's sequencer to the pressed row's coarse swing level, and aim the fine knob at it | <span class="cell-label">Modifiers</span> none |
+| Turn knob | <span class="cell-label">Where</span> LC bottom-row knob 8 | <span class="cell-label">Action</span> Fine offset 0–127 for the aimed sequencer, interpolating toward the next coarse level | <span class="cell-label">Modifiers</span> any |
+| SHIFT + MUTE + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset that slot**: level → row 1 (straight), fine → 0 | <span class="cell-label">Modifiers</span> shift+mute |
+| SHIFT + SOLO + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise that slot**: level → uniform random across rows 1–8 (fine untouched) | <span class="cell-label">Modifiers</span> shift+solo |
+| SHIFT + MUTE / SOLO | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> No-op on this view | <span class="cell-label">Modifiers</span> any |
 
 ## See also
 

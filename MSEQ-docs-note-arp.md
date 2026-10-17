@@ -110,14 +110,14 @@ set to seconds (column 2). The other columns stretch the same shape wider.
 
 | Row | Shape | Scale steps | In C minor |
 |-----|-------|-------------|------------|
-| 8 | Up | 0 1 2 3 4 5 6 7 | C D E♭ F G A♭ B♭ C |
-| 7 | Double up | 0 0 1 1 2 2 3 3 | C C D D E♭ E♭ F F |
-| 6 | Up with a pedal tone | 0 1 0 2 0 3 0 4 | C D C E♭ C F C G |
-| 5 | Double up with a pedal tone | 0 0 1 1 0 0 2 2 | C C D D C C E♭ E♭ |
-| 4 | Double down with a pedal tone | 2 2 1 1 2 2 0 0 | E♭ E♭ D D E♭ E♭ C C |
-| 3 | Down with a pedal tone | 4 3 4 2 4 1 4 0 | G F G E♭ G D G C |
-| 2 | Double down | 3 3 2 2 1 1 0 0 | F F E♭ E♭ D D C C |
-| 1 | Down | 7 6 5 4 3 2 1 0 | C B♭ A♭ G F E♭ D C |
+| 8 | Up | <span class="keep-together">0 1 2 3 4 5 6 7</span> | <span class="keep-together">C D E♭ F G A♭ B♭ C</span> |
+| 7 | Double up | <span class="keep-together">0 0 1 1 2 2 3 3</span> | <span class="keep-together">C C D D E♭ E♭ F F</span> |
+| 6 | Up with a pedal tone | <span class="keep-together">0 1 0 2 0 3 0 4</span> | <span class="keep-together">C D C E♭ C F C G</span> |
+| 5 | Double up with a pedal tone | <span class="keep-together">0 0 1 1 0 0 2 2</span> | <span class="keep-together">C C D D C C E♭ E♭</span> |
+| 4 | Double down with a pedal tone | <span class="keep-together">2 2 1 1 2 2 0 0</span> | <span class="keep-together">E♭ E♭ D D E♭ E♭ C C</span> |
+| 3 | Down with a pedal tone | <span class="keep-together">4 3 4 2 4 1 4 0</span> | <span class="keep-together">G F G E♭ G D G C</span> |
+| 2 | Double down | <span class="keep-together">3 3 2 2 1 1 0 0</span> | <span class="keep-together">F F E♭ E♭ D D C C</span> |
+| 1 | Down | <span class="keep-together">7 6 5 4 3 2 1 0</span> | <span class="keep-together">C B♭ A♭ G F E♭ D C</span> |
 
 Wide intervals run out of keyboard, so their figures are shorter and repeat to
 fill all eight steps.
@@ -150,7 +150,7 @@ the same.
 
 If the sequencer follows a chord progression, set the chord-adjustment
 selector to **Diatonic** (see
-[Scale mode](/documentation/MSEQ/chords-and-scales#scale-mode-rhs-rows-78-cols-78)) to keep
+[Chord adjustment](/documentation/MSEQ/chords-and-scales#chord-adjustment-rhs-row-7-cols-78)) to keep
 your note arps in the scale as the chords change. In the other modes the whole
 pattern shifts with the chord, and can land on notes outside the scale.
 
@@ -160,6 +160,6 @@ pattern shifts with the chord, and can land on notes outside the scale.
 
 - [Octave tree](/documentation/MSEQ/octave-tree): the other way to move a row's pitch
 - [Velocity and duty arps](/documentation/MSEQ/velo-duty-arps): the same edit model for velocity and duty
-- [Chords and scales](/documentation/MSEQ/chords-and-scales): the scale these patterns follow
+- [Key and following](/documentation/MSEQ/chords-and-scales): the scale these patterns follow
 
 <nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Playing<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#arps">Arps</a>: <strong>Note arps</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/velo-duty-arps">Velocity and duty arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-arps">CC arps</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/cc-assignments">CC assignments</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></nav>

@@ -33,10 +33,10 @@ on which two divisions are involved.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press row 8 / 7 / 6 | LP grid | Set target speed FULL / HALF / QUARTER (applies on the next division coincidence) | none |
-| Press row 3 / 2 / 1 | LP grid | Set target division TRIPLETS / SIXTEENTHS / DOTTED (applies on the next division coincidence) | none |
-| Press the already-active cell | LP grid | No-op | none |
-| SHIFT + MUTE / SHIFT + SOLO | LP grid | **No-op**: deliberately excluded from reset/randomise | any |
+| Press row 8 / 7 / 6 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set target speed FULL / HALF / QUARTER (applies on the next division coincidence) | <span class="cell-label">Modifiers</span> none |
+| Press row 3 / 2 / 1 | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set target division TRIPLETS / SIXTEENTHS / DOTTED (applies on the next division coincidence) | <span class="cell-label">Modifiers</span> none |
+| Press the already-active cell | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> No-op | <span class="cell-label">Modifiers</span> none |
+| SHIFT + MUTE / SHIFT + SOLO | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **No-op**: deliberately excluded from reset/randomise | <span class="cell-label">Modifiers</span> any |
 
 > Either player's LHS edits sequencers 1–7 and either player's RHS edits sequencers
 > 9–15. The view is shared.

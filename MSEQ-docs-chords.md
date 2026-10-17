@@ -14,9 +14,36 @@ permalink: /documentation/MSEQ/chords
 
 The chord progression view lets you sequence which chord plays on each bar
 of the 16-bar cycle, and optionally apply an inversion to each chord. It is
-displayed on the Launchpad and shared across both players. The root note and
-scale those chords come from are on
-[Chords and scales](/documentation/MSEQ/chords-and-scales).
+displayed on the Launchpad and shared across both players. Which sequencers
+follow it, how fast, and the key its chords are built in are on
+[Key and following](/documentation/MSEQ/chords-and-scales).
+
+---
+
+## What it does to a sequence
+
+Those sequencers that are set to follow the chord progression will have the
+notes of their sequence transposed in line with the chord progression. This
+allows you to imply different chords while still keeping the same rhythm and
+spirit of the original sequence.
+
+For example, say you have a sequence that plays **C E G F** on repeat (the 1st,
+3rd, 5th and 4th degrees of the scale). The rows that follow the progression
+will be transposed, and the rows that don't will remain stationary. With the
+1st, 3rd and 5th following and the 4th staying put, transposing to the fifth
+chord (G) turns that phrase into **G B D F**.
+
+Same pattern, same groove, different chord. Following is set at two levels:
+
+- **Per sequencer**: the [CP toggle](/documentation/MSEQ/chords-and-scales#cp-toggle-row-1)
+  switches a sequencer's following on or off as a whole.
+- **Per row**: [Chord Edit](/documentation/MSEQ/chord-voicing#chord-edit) picks which of a
+  following sequencer's 8 scale rows move with the chord. In the example
+  above, that is what keeps the 4th row stationary.
+
+Each chord is built from the root note and scale, the chord degree the
+progression names for the current bar, and the
+[chord-adjustment mode](/documentation/MSEQ/chords-and-scales#chord-adjustment-rhs-row-7-cols-78).
 
 ---
 
@@ -36,8 +63,8 @@ The **current bar** is highlighted in magenta regardless of inversion state.
 | Colour | Inversion |
 |--------|-----------|
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f9fcff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>White (bright) | No inversion: root position |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c29d0d;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Mustard | Third inversion |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#b50e19;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red | Fifth inversion |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c29d0d;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Mustard | Third inversion: the third of the chord moves to the bass |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#b50e19;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red | Fifth inversion: the fifth of the chord moves to the bass |
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#2f71eb;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Blue | Random inversion: randomly drops a selection of active chord notes by one octave on each bar, producing an unpredictable chord voicing |
 | <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#01af42;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | Mixed random: randomly picks third inversion (35%), fifth inversion (35%), or a random-inversion voicing (30%) on each bar; root position is never used |
 
@@ -75,40 +102,17 @@ Each player can edit the progression independently; changes take effect immediat
 
 ## Notes
 
-- The chord progression is global: every sequencer that follows it reads the same chords and the same inversions.
+- The chord progression is global: every sequencer that follows it reads the same chords and the same inversions, each at its own [chord clock division](/documentation/MSEQ/chords-and-scales#chord-clock-division) rate.
 - The highlighted column is the bar you are on, counted bar 0 (the top of the cycle) to bar 15.
 - Both Launchpads (left and right) display the chord progression view simultaneously: bars 0–7 on the LHS LP, bars 8–15 on the RHS LP.
 
 ---
 
-## Per-chord clock division (view type 25)
-
-Each sequencer has an independent chord-progression advance rate, and the chord clock division view is where you set it. The rate decides how fast that sequencer walks through the 16-bar progression grid, independent of its note-clock division.
-
-**Where it lives**: View slot 1 on the meta-sequencer. The view shows a per-sequencer rate selector on both LPs, and both LPs stay in sync.
-
-**Edit gesture**: One LP press per row. The column you press sets that row's sequencer to that rate.
-
-| Rate | Step divisor | Chord changes |
-|------|-------------|---------------|
-| 1 | 128 | Every ~8 bars |
-| 2 | 64 | Every 4 bars |
-| 3 | 32 | Every 2 bars |
-| 4 (default) | 16 | Every bar |
-| 5 | 8 | Every half bar (8 steps) |
-| 6 | 4 | Every quarter bar (4 steps) |
-| 7 | 2 | Every 2 steps |
-| 8 | 1 | Every step |
-
-Rates 1–4 produce bar-constant chords (the chord is stable within each bar). Rates 5–8 advance the chord within a bar: useful for chord-arpeggiation effects where each step of a bar lands on a different progression slot.
-
----
-
 ## Cross-references
 
-- [Chords and scales](/documentation/MSEQ/chords-and-scales): root note, scale, and what a progression does to a sequence
+- [Key and following](/documentation/MSEQ/chords-and-scales): the key, which sequencers follow the progression, and how fast each walks it
 - [Voicing and modulation](/documentation/MSEQ/chord-voicing): chord edit and the per-bar chord modulator
 - [Trigs](/documentation/MSEQ/trigs): the trig view, where a chord-following sequencer plays its chords
-- [Reset and randomise](/documentation/MSEQ/reset): the full reset/randomise matrix. The chord progression grid (view 12) is the only chord view that answers those gestures; chord options (11), chord edit (13) and chord clock division (25) all ignore them deliberately, being either too disruptive or a single value
+- [Reset and randomise](/documentation/MSEQ/reset): the full reset/randomise matrix. The chord progression grid is the only chord view that answers those gestures; chord options, chord edit and chord clock division all ignore them deliberately, being either too disruptive or a single value
 
-<nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#harmony">Harmony</a>: <a href="/documentation/MSEQ/chords-and-scales">Chords and scales</a><span class="sep" aria-hidden="true"> · </span><strong>Chord progression</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav>
+<nav class="docs-page-nav" aria-label="Page navigation"><span class="prev">← Arps<span class="sep" aria-hidden="true"> › </span><a href="/documentation/MSEQ/arp-curves">Arp curves</a></span><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/#harmony">Harmony</a>: <strong>Chord progression</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chords-and-scales">Key and following</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/chord-voicing">Voicing and modulation</a></nav>
