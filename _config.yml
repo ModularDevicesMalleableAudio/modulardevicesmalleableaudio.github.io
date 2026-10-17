@@ -33,11 +33,12 @@ exclude:
   - README.md
   - scripts/
   - assets/mseq/archive/
+  - docs/mseq/MSEQ-docs-manifest.json
 
 footer: mdma
 
 # Site navigation. Labels and targets live here, not in page front matter, so
-# nav entries can point at generated pages (MSEQ-docs-*.md, whose titles and
+# nav entries can point at generated pages (docs/mseq/MSEQ-docs-*.md, whose titles and
 # filenames are owned by scripts/build_site_docs.py in the sequencer repo)
 # without this site depending on either. Rendered by _includes/header.html and
 # _includes/main-header.html.

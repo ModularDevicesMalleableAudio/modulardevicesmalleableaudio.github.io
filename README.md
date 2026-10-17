@@ -7,15 +7,16 @@ Source for the Modular Devices / Malleable Audio site:
 
 The MSEQ documentation is authored in the `docs/` directory of the
 [`sequencer`](https://github.com/ModularDevicesMalleableAudio/sequencer) repo.
-The `MSEQ-docs-*.md`, `MSEQ-view-*.md`, and `MSEQ-docs-manifest.json` files in
-this repo are generated output and must not be edited by hand. The generator
+Everything in `docs/mseq/` (`MSEQ-docs-*.md`, `MSEQ-view-*.md`, and
+`MSEQ-docs-manifest.json`) is generated output and must not be edited by hand.
+Each page sets its own `permalink`, so the directory never appears in a URL. The generator
 checks their recorded hashes and refuses to overwrite hand-edited output.
 
 Publishing is a deliberate operator step:
 
 ```sh
 cd ~/code/sequencer
-uv run --script scripts/build_site_docs.py --out ~/code/mdma/mdma
+uv run --script scripts/build_site_docs.py --out ~/code/mdma/mdma   # writes docs/mseq/
 
 cd ~/code/mdma/mdma
 ./scripts/build-local.sh
@@ -45,7 +46,7 @@ searchable contents drawer, per-page contents, prev/next paging, the
 webapp/hardware figure toggles, tap-to-zoom images, and light/dark and text-size
 controls.
 
-The running order and section headings come from `MSEQ-docs-index.md`, so
+The running order and section headings come from `docs/mseq/MSEQ-docs-index.md`, so
 regenerating the docs is enough — this script needs no edit when pages are
 added, renamed or reordered. It needs `pandoc` (markdown) and Pillow (images are
 re-encoded to WebP at phone width, taking 10MB of assets down to about 2.4MB);
@@ -107,7 +108,7 @@ subpath or onto a custom domain.
 | `_sass/` | Styles, imported by `assets/*.scss` |
 | `assets/` | Images and compiled CSS entry points |
 | `scripts/` | Local build helpers; untracked, never published |
-| `MSEQ-docs-*.md` | MSEQ documentation, mapped by `permalink` to `/documentation/MSEQ/...` |
+| `docs/mseq/` | Generated MSEQ documentation, mapped by `permalink` to `/documentation/MSEQ/...` |
 | `documentation.html` | Redirect stub: `/documentation/` → `/documentation/MSEQ/manual` |
 
 The top navigation is the `nav:` list in `_config.yml` — labels and URLs, read
