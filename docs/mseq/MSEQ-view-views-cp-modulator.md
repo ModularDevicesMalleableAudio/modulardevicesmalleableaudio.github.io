@@ -21,7 +21,7 @@ sequencers ride different movement over the same progression.
 
 ## Interaction
 
-16 columns (LHS = bars 0–7, RHS = bars 8–15) × 8 rows in two bands:
+16 columns (LHS = bars 1–8, RHS = bars 9–16) × 8 rows in two bands:
 
 - **Bottom row (row 1)**: the toggle row, which cycles that bar's
   modulation status OFF → ON → PERC_CHANCE → MOD1 → MOD2 → OFF.

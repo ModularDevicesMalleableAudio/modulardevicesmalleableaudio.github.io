@@ -52,9 +52,9 @@ corresponding status; with no modifier a press toggles `OFF` ↔ `ON`.
 | SHIFT + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Row autodrop cue (muted row comes in / active row drops out, auto-reverts) | <span class="cell-label">Modifiers</span> shift |
 | MUTE + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Toggle `DRONE` mode | <span class="cell-label">Modifiers</span> mute |
 | SOLO + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Toggle `LEGATO` mode | <span class="cell-label">Modifiers</span> solo |
-| REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue mute/unmute transition at next bar 0 | <span class="cell-label">Modifiers</span> rec_arm |
-| MUTE + REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue `DRONE` at next bar 0 | <span class="cell-label">Modifiers</span> mute+rec_arm |
-| SOLO + REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue `LEGATO` at next bar 0 | <span class="cell-label">Modifiers</span> solo+rec_arm |
+| REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue mute/unmute transition at next bar 1 | <span class="cell-label">Modifiers</span> rec_arm |
+| MUTE + REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue `DRONE` at next bar 1 | <span class="cell-label">Modifiers</span> mute+rec_arm |
+| SOLO + REC ARM + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> Cue `LEGATO` at next bar 1 | <span class="cell-label">Modifiers</span> solo+rec_arm |
 
 ### Euclidean fader controls (LC faders, while in trig view)
 

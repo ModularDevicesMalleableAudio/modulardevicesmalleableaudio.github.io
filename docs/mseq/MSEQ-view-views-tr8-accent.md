@@ -23,8 +23,9 @@ the step velocity/duty views, targeting the global `tr8_accent` array.
 Columns are steps (LHS = 1–8, RHS = 9–16), rows are values (row 1 bottom =
 no accent … row 8 top = full accent). Each step lights a **single pad** at
 the height of its stored value, not a bar filled from the bottom; a
-positioner colour marks the playing step, and columns whose step carries a
-trig anywhere in the kit are shaded slate behind the contour. Pressing a pad
+positioner colour marks the playing step, and columns where any row of
+either bank plays a trig (a stored trig or a Euclidean hit, at its rotated
+step) are shaded slate behind the contour. Accent values do not rotate. Pressing a pad
 writes that row's accent instantly. No modifier needed.
 
 ## Shortcuts

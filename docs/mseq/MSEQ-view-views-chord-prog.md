@@ -20,7 +20,7 @@ reads the same progression.
 
 ## Interaction
 
-16 columns (LHS LP = bars 0–7, RHS = bars 8–15) × 8 rows (chord degrees,
+16 columns (LHS LP = bars 1–8, RHS = bars 9–16) × 8 rows (chord degrees,
 top = 8 … bottom = 1). The lit cell per column is that bar's chord; its
 colour is the inversion (white = root, mustard = third, red = fifth,
 blue = random inversion, green = random status). The current bar is
@@ -30,8 +30,11 @@ highlighted magenta. Both players edit the same shared arrays.
 
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
-| Press a new cell | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set that bar's chord to the pressed row | <span class="cell-label">Modifiers</span> none |
-| Press the lit cell again | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Cycle inversion: white → mustard → red → blue → green → white | <span class="cell-label">Modifiers</span> none |
+| Press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set that bar's chord to the pressed row, root position (white) | <span class="cell-label">Modifiers</span> none |
+| SHIFT + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the chord, third inversion (mustard) | <span class="cell-label">Modifiers</span> shift |
+| MUTE + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the chord, fifth inversion (red) | <span class="cell-label">Modifiers</span> mute |
+| SOLO + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the chord, random inversion (blue) | <span class="cell-label">Modifiers</span> solo |
+| REC ARM + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> Set the chord, mixed random (green) | <span class="cell-label">Modifiers</span> rec_arm |
 | SHIFT + MUTE + press row R | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Reset**: all 16 bars → chord degree (R − 1) | <span class="cell-label">Modifiers</span> shift+mute |
 | SHIFT + MUTE + press | <span class="cell-label">Where</span> Row mutes | <span class="cell-label">Action</span> **Reset**: all 16 bars → degree 0 (root) | <span class="cell-label">Modifiers</span> shift+mute |
 | SHIFT + SOLO + press | <span class="cell-label">Where</span> LP grid | <span class="cell-label">Action</span> **Randomise**: each bar → uniform random degree 0–6 | <span class="cell-label">Modifiers</span> shift+solo |

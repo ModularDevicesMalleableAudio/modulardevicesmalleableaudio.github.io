@@ -23,7 +23,8 @@ for **duty**. The third is on the TR-8, for **accent**.
 
 To edit, press any pad on the grid: the column picks the step, the row sets the value,
 and the write happens straight away with no modifier held. The columns shaded slate grey
-are the steps that carry a trig.
+are the steps where a trig plays, counting Euclidean hits and following any
+[rotation](/documentation/MSEQ/rotation).
 
 Holding SHIFT and pressing MUTE resets all sixteen steps to the level of the row you
 press, and holding SHIFT and pressing SOLO randomises them around it.

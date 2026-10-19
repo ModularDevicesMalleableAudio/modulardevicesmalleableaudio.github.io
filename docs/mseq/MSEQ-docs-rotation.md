@@ -24,7 +24,8 @@ arrow to randomise it.
 On a **synth sequencer** the arrows rotate the whole pattern, every row
 together. They work in any view except IO and peer IO, where the same arrows
 page through the catalog. In a view that does not show trigs you will not see
-the pattern move, but you will hear it. The jam keyboard is the one exception:
+the pattern move, but you will hear it. Each step's velocity and duty value
+moves with its trig, so the step views shift along with the pattern. The jam keyboard is the one exception:
 there the arrows rotate the jam keyboard's own pattern (see
 [Jam keyboard](/documentation/MSEQ/jam-keyboard)).
 
@@ -33,5 +34,10 @@ can shift a single voice against the others. They act on the selected row, the
 last row you pressed with 8B in the trig view, in whichever bank (main or alt)
 is showing, and reset and randomise act on that row only. Boom-tsk is left
 alone: while it is playing, row 1 does not rotate.
+
+Accent does not rotate. The TR-8 has one accent lane shared by every row, so a
+rotated hit plays with the accent of the step it lands on. The slate columns in
+the accent view follow the hits, so they always show which accent steps are in
+use.
 
 <nav class="docs-page-nav" aria-label="Page navigation"><a href="/documentation/MSEQ/#playing">Playing</a>: <a href="/documentation/MSEQ/selection">Selecting sequencers and views</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/trigs">Trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/building-a-pattern">Building a pattern</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/step-views">Step values</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/octave-tree">Octave tree</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/mutes">Mutes and row states</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/euclidean">Euclidean trigs</a><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/reset">Reset and randomise</a><span class="sep" aria-hidden="true"> · </span><strong>Pattern rotation</strong><span class="sep" aria-hidden="true"> · </span><a href="/documentation/MSEQ/jam-keyboard">Jam keyboard</a></nav>

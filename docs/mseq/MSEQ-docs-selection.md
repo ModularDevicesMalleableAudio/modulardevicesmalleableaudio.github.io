@@ -47,7 +47,7 @@ button.
 
 ---
 
-## Navigating the TR-8
+## Navigating the TR-8 sequencer
 
 The TR-8 has more to play than one grid can hold: 15 drum tracks plus boom-tsk.
 So its sequencer is split across two grids that share one top-row button, a

@@ -82,7 +82,7 @@ CHORD_CLOCK_DIVISION, CLOCK_DIV, SLEEP, JAM_KEYBOARD has its own variant.
 | Gesture | Where | Action | Modifiers |
 |---|---|---|---|
 | Press (no modifier) | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Cue a **mute autodrop** (sequencer temporarily silenced, auto-reverts). Re-press cancels/replaces. | <span class="cell-label">Modifiers</span> none |
-| REC ARM + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Cue a **16-bar mute autodrop** (fires at bar 0, lasts the full cycle). | <span class="cell-label">Modifiers</span> rec_arm |
+| REC ARM + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Cue a **16-bar mute autodrop** (fires at bar 1, lasts the full cycle). | <span class="cell-label">Modifiers</span> rec_arm |
 | SHIFT + SOLO + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Cue a **CC autodrop**. On a synth sequencer the cue shows on the LEDs but nothing is silenced yet (see [Autodrop view reference](/documentation/MSEQ/views/autodrop)). | <span class="cell-label">Modifiers</span> shift+solo |
 | SHIFT + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Sequencer octave **down** (min −4). | <span class="cell-label">Modifiers</span> shift |
 | MUTE + press | <span class="cell-label">Where</span> LC bottom row | <span class="cell-label">Action</span> Jam-keyboard octave **down** (min 0). | <span class="cell-label">Modifiers</span> mute |

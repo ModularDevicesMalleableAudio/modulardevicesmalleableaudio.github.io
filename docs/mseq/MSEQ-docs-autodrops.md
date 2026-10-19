@@ -27,7 +27,7 @@ They work at two levels: **sequencer autodrops** drop a whole sequencer, and
 ## Why they are worth cueing rather than muting by hand
 
 Because the length of the drop comes from *when* you press. Every autodrop ends
-at the same place, bar 0 of the next cycle, and starts at whichever timing point
+at the same place, bar 1 of the next cycle, and starts at whichever timing point
 comes next, so a cue placed early in the cycle produces a long absence and one
 placed near the end produces a quick fill. Pressing later gets you a shorter
 drop, which means you can accelerate a passage by pressing the same button
@@ -62,30 +62,30 @@ only then does the drop start.
 
 | Point in the cycle | What happens there |
 |---|---|
-| **Bar 0** | Cued drops start, **and** every drop already running ends. Cued mutes and unmutes also resolve here. |
-| **Bar 8** | Cued drops start. 8-bar cued mutes resolve. |
-| **Bar 12** | Cued drops start. |
-| **Bar 15, steps 1, 9 and 13** | Cued drops start. |
+| **Bar 1** | Cued drops start, **and** every drop already running ends. Cued mutes and unmutes also resolve here. |
+| **Bar 9** | Cued drops start. 8-bar cued mutes resolve. |
+| **Bar 13** | Cued drops start. |
+| **Bar 16, steps 1, 9 and 13** | Cued drops start. |
 
 Two consequences worth holding on to:
 
-- **Bar 0 is the only place a drop ends.** However late in the cycle a drop
-  begins, it finishes at the next bar 0, so pressing later gives you a shorter
+- **Bar 1 is the only place a drop ends.** However late in the cycle a drop
+  begins, it finishes at the next bar 1, so pressing later gives you a shorter
   drop. That is the acceleration effect: cue early for a long absence, cue near
   the end of the cycle for a quick fill.
-- **The 16-bar autodrop is the exception.** It starts only at bar 0, never at
+- **The 16-bar autodrop is the exception.** It starts only at bar 1, never at
   the intermediate points, which is what makes it last a full cycle.
 
 The drop lengths that come out of that, for a row or a sequencer:
 
 | Cue flips to active at | Reverts at | Drop duration |
 |------------------------|-------------|---------------|
-| Bar 0 | next bar 0 | 16 bars |
-| Bar 8 | next bar 0 | 8 bars |
-| Bar 12 | next bar 0 | 4 bars |
-| Bar 15 step 1 | next bar 0 | 1 bar (16 steps) |
-| Bar 15 step 9 | next bar 0 | 8 steps |
-| Bar 15 step 13 | next bar 0 | 4 steps |
+| Bar 1 | next bar 1 | 16 bars |
+| Bar 9 | next bar 1 | 8 bars |
+| Bar 13 | next bar 1 | 4 bars |
+| Bar 16 step 1 | next bar 1 | 1 bar (16 steps) |
+| Bar 16 step 9 | next bar 1 | 8 steps |
+| Bar 16 step 13 | next bar 1 | 4 steps |
 
 ---
 
@@ -173,10 +173,10 @@ Each autodrop type is a two-step chain: **cue → active → resolved**.
 | CC autodrop cued | CC autodrop active (see *Limitations*) | Unmuted |
 | Note autodrop cued | Note autodrop active (see *Limitations*) | Unmuted |
 
-Standard autodrops fire at bar 0, bar 8, bar 12, or bar 15 steps 1/9/13,
-whichever comes next, and resolve back to Unmuted **only at the next bar 0**,
-never at an intermediate timing point. The 16-bar autodrop fires only at bar 0.
-8-bar cued mutes also resolve at bar 8, but those are regular mutes rather than
+Standard autodrops fire at bar 1, bar 9, bar 13, or bar 16 steps 1/9/13,
+whichever comes next, and resolve back to Unmuted **only at the next bar 1**,
+never at an intermediate timing point. The 16-bar autodrop fires only at bar 1.
+8-bar cued mutes also resolve at bar 9, but those are regular mutes rather than
 autodrops (see [Mutes and row states](/documentation/MSEQ/mutes)).
 
 ---
@@ -216,7 +216,7 @@ UNMUTED).
 | Legato, autodrop cued | Legato, autodropped out | Was legato → **temporarily silent** |
 | Unmuted, autodrop cued | Unmuted, autodropped out | Was playing → **temporarily silent** |
 
-**Step 2: the drop reverts at bar 0:**
+**Step 2: the drop reverts at bar 1:**
 
 | From (active) | To (reverted) | Effect |
 |---------------|---------------|--------|

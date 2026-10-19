@@ -267,18 +267,18 @@ it. Row play modes are covered on their own in
 
 ## Modulo division reference
 
-The 16-bar cycle counts bars 0–15. Mod and InvMod conditions evaluate at the bar level (not the step level):
+The 16-bar cycle counts bars 1–16. Mod and InvMod conditions evaluate at the bar level (not the step level):
 
 | Status | Fires on bars | Mnemonic |
 |--------|---------------|----------|
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e3aed7;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD1 | 0, 2, 4, 6, 8, 10, 12, 14 | Every other bar (even) |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e7d8fd;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD2 | 1, 3, 5, 7, 9, 11, 13, 15 | Every other bar (odd) |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#77c5ff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD4 | 3, 7, 11, 15 | Every 4th bar |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#609dff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD8 | 7, 15 | Every 8th bar |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#013ac0;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD16 | 15 | Once per cycle |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c29d0d;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>INVMOD4 | All except 3, 7, 11, 15 | 3 out of 4 bars |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#822c08;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>INVMOD8 | All except 7, 15 | 7 out of 8 bars |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#820610;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>INVMOD16 | All except 15 | 15 out of 16 bars |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e3aed7;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD1 | 1, 3, 5, 7, 9, 11, 13, 15 | Every other bar (odd) |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#e7d8fd;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD2 | 2, 4, 6, 8, 10, 12, 14, 16 | Every other bar (even) |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#77c5ff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD4 | 4, 8, 12, 16 | Every 4th bar |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#609dff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD8 | 8, 16 | Every 8th bar |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#013ac0;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>MOD16 | 16 | Once per cycle |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c29d0d;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>INVMOD4 | All except 4, 8, 12, 16 | 3 out of 4 bars |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#822c08;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>INVMOD8 | All except 8, 16 | 7 out of 8 bars |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#820610;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>INVMOD16 | All except 16 | 15 out of 16 bars |
 
 ---
 

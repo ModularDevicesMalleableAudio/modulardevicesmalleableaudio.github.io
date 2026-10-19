@@ -23,8 +23,9 @@ lowest setting and row 8 as the highest.
 Columns are steps (LHS = 1–8, RHS = 9–16), rows are values (row 1 bottom =
 lowest velocity … row 8 top = highest). Each step lights a **single pad** at
 the height of its stored value, not a bar filled from the bottom; a
-positioner colour marks the playing step, and columns whose step carries a
-trig are shaded slate behind the contour. Pressing a pad writes that row's
+positioner colour marks the playing step, and columns where a row plays a
+trig (a stored trig or a Euclidean hit) are shaded slate behind the contour.
+Values and shading both follow the sequencer's rotation. Pressing a pad writes that row's
 velocity to that step instantly. No modifier needed.
 
 ## Shortcuts

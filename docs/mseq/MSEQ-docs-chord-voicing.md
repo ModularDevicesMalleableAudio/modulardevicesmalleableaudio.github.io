@@ -72,7 +72,7 @@ That is all the split is: where the editor lives on your selector, so it sits al
 
 ### Layout
 
-The view is a 16-column × 8-row grid spanning the full pair of Launchpads (left LP = bars 0–7, right LP = bars 8–15). Two functional bands:
+The view is a 16-column × 8-row grid spanning the full pair of Launchpads (left LP = bars 1–8, right LP = bars 9–16). Two functional bands:
 
 - **Bottom row (row 1, the "toggle row"):** decides whether that bar modulates at all.
 

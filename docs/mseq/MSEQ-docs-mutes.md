@@ -44,20 +44,20 @@ music: a **cue** or an **autodrop**.
 ### Cues
 
 A cue is a mute change you set now that lands later, at the next 8-bar or 16-bar
-boundary of the cycle. MSEQ runs a 16-bar cycle, counted bar 0 to bar 15, so
-bar 0 is the top of the cycle and bar 8 is the halfway point. A cue lets you
+boundary of the cycle. MSEQ runs a 16-bar cycle, counted bar 1 to bar 16, so
+bar 1 is the top of the cycle and bar 9 is the halfway point. A cue lets you
 bring a sequencer in, or take it out, exactly where the music turns over rather
 than wherever your hands happened to be.
 
 - **8-bar cue** (a plain press on the LaunchControl's top row of buttons) lands
-  at bar 8 or bar 0, whichever comes round first. Press in the first half of the
-  cycle and it lands at bar 8. Press in the second half and it waits for bar 0.
-- **16-bar cue** (the same press with REC ARM held) only ever lands at bar 0.
-- **Row cues** only ever land at bar 0. A row has no 8-bar cue, so a row cued at
-  bar 9 waits seven bars.
+  at bar 9 or bar 1, whichever comes round first. Press in the first half of the
+  cycle and it lands at bar 9. Press in the second half and it waits for bar 1.
+- **16-bar cue** (the same press with REC ARM held) only ever lands at bar 1.
+- **Row cues** only ever land at bar 1. A row has no 8-bar cue, so a row cued at
+  bar 10 waits seven bars.
 
 A cue is not a next-bar promise. Pressed just after a boundary, it can sit for
-up to eight bars (or up to sixteen, if it only lands at bar 0) before anything
+up to eight bars (or up to sixteen, if it only lands at bar 1) before anything
 happens.
 
 ### Autodrops
@@ -67,21 +67,21 @@ point and then takes itself back off. A playing sequencer or row goes silent at
 the next timing point and comes back at the top of the next cycle, with no
 second press.
 
-Every autodrop ends at bar 0, but it starts at whichever timing point comes next
+Every autodrop ends at bar 1, but it starts at whichever timing point comes next
 after your press, so **the length of the drop depends on when you press**:
 
 | You press during | The drop starts at | It lasts |
 |---|---|---|
-| Bars 0 to 7 | Bar 8 | 8 bars |
-| Bars 8 to 11 | Bar 12 | 4 bars |
-| Bars 12 to 14 | Bar 15, step 1 | 1 bar (16 steps) |
-| Bar 15, steps 1 to 8 | Bar 15, step 9 | 8 steps |
-| Bar 15, steps 9 to 12 | Bar 15, step 13 | 4 steps |
+| Bars 1 to 8 | Bar 9 | 8 bars |
+| Bars 9 to 12 | Bar 13 | 4 bars |
+| Bars 13 to 15 | Bar 16, step 1 | 1 bar (16 steps) |
+| Bar 16, steps 1 to 8 | Bar 16, step 9 | 8 steps |
+| Bar 16, steps 9 to 12 | Bar 16, step 13 | 4 steps |
 
 Cue early for a long break, or cue in the last bar for a quick fill. Press the
 same button later each cycle and the drops get shorter, which pushes the music
 towards the turnaround without you counting a single bar. Hold REC ARM and the
-drop waits for bar 0 instead and lasts the full 16 bars.
+drop waits for bar 1 instead and lasts the full 16 bars.
 
 A muted row works the other way round: it autodrops **in**, playing for the
 length of the drop and then going quiet again. The full gestures and every
@@ -122,7 +122,7 @@ is doing:
 | Cued to autodrop | Cancels the autodrop: the sequencer keeps playing |
 
 Hold **REC ARM** and the same presses cue to the 16-bar boundary instead, so the
-change waits for bar 0.
+change waits for bar 1.
 
 Under two other modifiers the top row changes octaves instead:
 
@@ -133,8 +133,8 @@ Under two other modifiers the top row changes octaves instead:
 
 Press a sequencer's button in the LC's **bottom row of buttons** (1B to 7B) to
 cue an autodrop. The sequencer goes silent at the next timing point and comes
-back on its own at bar 0 (the timing is under [Autodrops](#autodrops) above).
-Hold **REC ARM** to cue a 16-bar autodrop instead, which waits for bar 0 and
+back on its own at bar 1 (the timing is under [Autodrops](#autodrops) above).
+Hold **REC ARM** to cue a 16-bar autodrop instead, which waits for bar 1 and
 lasts the whole cycle.
 
 | Sequencer is | Bottom-row press | REC ARM + bottom-row press |
@@ -216,7 +216,7 @@ Each row can be in one of four play modes:
 
 ### Cued transitions
 
-A row cue lands at bar 0 only (see [Cues](#cues) above). You can cue a row from
+A row cue lands at bar 1 only (see [Cues](#cues) above). You can cue a row from
 any of the four states to any other.
 
 Pressing the same cue gesture again cancels it and leaves the row in the mode it
@@ -225,7 +225,7 @@ rather than a wait.
 
 Hold **SHIFT** and press a row's button to cue a row autodrop from whichever
 state the row is in. A playing row drops out and a muted row drops in, and the
-row goes back to its state at bar 0 (see [Autodrops](#autodrops) above).
+row goes back to its state at bar 1 (see [Autodrops](#autodrops) above).
 
 ### Row LED colours
 

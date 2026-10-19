@@ -14,9 +14,14 @@ permalink: /documentation/MSEQ/chords
 
 The chord progression view lets you sequence which chord plays on each bar
 of the 16-bar cycle, and optionally apply an inversion to each chord. It is
-displayed on the Launchpad and shared across both players. Which sequencers
-follow it, how fast, and the key its chords are built in are on
-[Key and following](/documentation/MSEQ/chords-and-scales).
+displayed on the Launchpad and shared across both players. Around it you can:
+
+- Choose which sequencers follow the progression with the
+  [CP toggle](/documentation/MSEQ/chords-and-scales#cp-toggle-row-1).
+- Set how fast the progression applies to each sequencer, per sequencer,
+  with [chord clock division](/documentation/MSEQ/chords-and-scales#chord-clock-division).
+- Set the key the chords are built in (root note and scale) in the
+  [chord options view](/documentation/MSEQ/chords-and-scales#chord-options-view).
 
 ---
 
@@ -47,28 +52,37 @@ progression names for the current bar, and the
 
 ---
 
-## The grid
+## What you see and how to edit it
 
-The view shows a 16-column × 8-row grid:
+The view is a 16-column × 8-row grid across both Launchpads: bars 1–8 on the
+LHS LP, bars 9–16 on the RHS LP.
 
-- **Columns** represent bars 0–15 of the 16-bar cycle (left to right).
-- **Rows** represent the 8 available chords of the current scale (top to bottom = chords 8 down to 1).
+- **Columns** are the 16 bars of the cycle, left to right.
+- **Rows** are the 8 chords of the current scale, chord 1 at the bottom and
+  chord 8 at the top.
 
-The **lit cell** in each column indicates which chord plays on that bar. The **colour** of the lit cell indicates which inversion is applied to that chord.
+The lit pad in each column is the chord that plays on that bar, and its colour
+is the inversion applied to it. The bar playing now lights magenta, whatever
+its inversion.
 
-The **current bar** is highlighted in magenta regardless of inversion state.
+Press a pad to set that bar's chord to the row you pressed. Hold a button on
+the LaunchControl as you press to set the bar's inversion at the same time:
 
-### Inversion colours
+| Colour | Inversion | Button held |
+|--------|-----------|-------------|
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f9fcff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>White (bright) | No inversion: root position | *(none)* |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c29d0d;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Mustard | Third inversion: the third of the chord moves to the bass | SHIFT |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#b50e19;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red | Fifth inversion: the fifth of the chord moves to the bass | MUTE |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#2f71eb;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Blue | Random inversion: randomly drops a selection of active chord notes by one octave on each bar, producing an unpredictable chord voicing | SOLO |
+| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#01af42;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | Mixed random: randomly picks third inversion (35%), fifth inversion (35%), or a random-inversion voicing (30%) on each bar; root position is never used | REC ARM |
 
-| Colour | Inversion |
-|--------|-----------|
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#f9fcff;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>White (bright) | No inversion: root position |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#c29d0d;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Mustard | Third inversion: the third of the chord moves to the bass |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#b50e19;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Red | Fifth inversion: the fifth of the chord moves to the bass |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#2f71eb;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Blue | Random inversion: randomly drops a selection of active chord notes by one octave on each bar, producing an unpredictable chord voicing |
-| <span style="display:inline-block;inline-size:.95em;block-size:.95em;background:#01af42;border:solid 1px rgba(219,219,219,0.5);vertical-align:-.12em;margin-inline-end:.55em"></span>Green | Mixed random: randomly picks third inversion (35%), fifth inversion (35%), or a random-inversion voicing (30%) on each bar; root position is never used |
+A plain press always sets root position, so to clear a bar's inversion, press
+its pad again with no button held. Hold **SHIFT + MUTE** or **SHIFT + SOLO**
+and press to reset or randomise the whole progression (see
+[Reset and randomise](/documentation/MSEQ/reset)).
 
----
+Each player can edit the progression independently; changes take effect
+immediately on the shared progression.
 
 <figure class="fig-pair">
 <input type="radio" name="chord-prog" id="chord-prog-webapp" class="pick-webapp" checked>
@@ -89,22 +103,9 @@ bar playing right now.*
 
 ---
 
-## Editing the progression
-
-Pressing a pad in the chord progression view sets the chord for that column to the row you pressed. The column immediately updates to reflect the new chord.
-
-Pressing the pad again cycles through the inversion colours for that step:
-White → Mustard → Red → Blue → Green → White → …
-
-Each player can edit the progression independently; changes take effect immediately on the shared progression.
-
----
-
 ## Notes
 
 - The chord progression is global: every sequencer that follows it reads the same chords and the same inversions, each at its own [chord clock division](/documentation/MSEQ/chords-and-scales#chord-clock-division) rate.
-- The highlighted column is the bar you are on, counted bar 0 (the top of the cycle) to bar 15.
-- Both Launchpads (left and right) display the chord progression view simultaneously: bars 0–7 on the LHS LP, bars 8–15 on the RHS LP.
 
 ---
 
